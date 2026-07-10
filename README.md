@@ -32,13 +32,14 @@ import (
 
 func main() {
 	token := os.Getenv("COMPUTESPHERE_API_TOKEN")
+	accountID := os.Getenv("COMPUTESPHERE_ACCOUNT_ID")
 	bearer := func(_ context.Context, req *http.Request) error {
 		req.Header.Set("Authorization", "Bearer "+token)
 		return nil
 	}
 
 	client, err := computesphere.NewClient(
-		"https://api.computesphere.com/api/v2",
+		"https://api.computesphere.com/v2",
 		computesphere.WithRequestEditorFn(bearer),
 	)
 	if err != nil {
