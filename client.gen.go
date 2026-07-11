@@ -3441,19 +3441,23 @@ type GitRepositoryListObject string
 
 // Guardrail defines model for Guardrail.
 type Guardrail struct {
-	AccountId            openapi_types.UUID `json:"account_id"`
-	CreatedBy            openapi_types.UUID `json:"created_by"`
-	Description          string             `json:"description"`
-	Effect               GuardrailEffect    `json:"effect"`
-	Id                   openapi_types.UUID `json:"id"`
-	IsPredefinedAssigned bool               `json:"is_predefined_assigned"`
-	Message              string             `json:"message"`
-	Name                 string             `json:"name"`
-	Object               GuardrailObject    `json:"object"`
-	Rules                []GuardrailRule    `json:"rules"`
-	Scope                GuardrailScope     `json:"scope"`
-	Status               bool               `json:"status"`
-	Type                 GuardrailType      `json:"type"`
+	AccountId openapi_types.UUID `json:"account_id"`
+
+	// CreatedBy User id of the creator. Null for system-provided
+	// (predefined) guardrails and for records created before
+	// creator attribution was captured.
+	CreatedBy            *openapi_types.UUID `json:"created_by"`
+	Description          string              `json:"description"`
+	Effect               GuardrailEffect     `json:"effect"`
+	Id                   openapi_types.UUID  `json:"id"`
+	IsPredefinedAssigned bool                `json:"is_predefined_assigned"`
+	Message              string              `json:"message"`
+	Name                 string              `json:"name"`
+	Object               GuardrailObject     `json:"object"`
+	Rules                []GuardrailRule     `json:"rules"`
+	Scope                GuardrailScope      `json:"scope"`
+	Status               bool                `json:"status"`
+	Type                 GuardrailType       `json:"type"`
 }
 
 // GuardrailEffect defines model for Guardrail.Effect.
@@ -26479,6 +26483,7 @@ func (r ListGuardrailsResp) StatusCode() int {
 type CreateGuardrailResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
+	JSON201                   *Guardrail
 	ApplicationproblemJSON400 *ValidationFailed
 	ApplicationproblemJSON401 *Unauthenticated
 	ApplicationproblemJSON500 *InternalError
@@ -37057,6 +37062,13 @@ func ParseCreateGuardrailResp(rsp *http.Response) (*CreateGuardrailResp, error) 
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest Guardrail
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest ValidationFailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
