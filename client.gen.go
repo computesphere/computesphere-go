@@ -538,6 +538,12 @@ const (
 	DeploymentStatusObjectDeploymentStatus DeploymentStatusObject = "deployment_status"
 )
 
+// Defines values for DeploymentUpdateRequestImageType.
+const (
+	DeploymentUpdateRequestImageTypePrivate DeploymentUpdateRequestImageType = "private"
+	DeploymentUpdateRequestImageTypePublic  DeploymentUpdateRequestImageType = "public"
+)
+
 // Defines values for DeploymentVersionObject.
 const (
 	DeploymentVersionObjectDeploymentVersion DeploymentVersionObject = "deployment_version"
@@ -1384,10 +1390,10 @@ const (
 
 // Defines values for ListSubscriptionFeaturesParamsAccessibility.
 const (
-	ListSubscriptionFeaturesParamsAccessibilityDisabled ListSubscriptionFeaturesParamsAccessibility = "disabled"
-	ListSubscriptionFeaturesParamsAccessibilityGeneral  ListSubscriptionFeaturesParamsAccessibility = "general"
-	ListSubscriptionFeaturesParamsAccessibilityPrivate  ListSubscriptionFeaturesParamsAccessibility = "private"
-	ListSubscriptionFeaturesParamsAccessibilityPublic   ListSubscriptionFeaturesParamsAccessibility = "public"
+	Disabled ListSubscriptionFeaturesParamsAccessibility = "disabled"
+	General  ListSubscriptionFeaturesParamsAccessibility = "general"
+	Private  ListSubscriptionFeaturesParamsAccessibility = "private"
+	Public   ListSubscriptionFeaturesParamsAccessibility = "public"
 )
 
 // APIToken defines model for APIToken.
@@ -2965,16 +2971,48 @@ type DeploymentStatusObject string
 // DeploymentUpdateRequest Capability-gated update request. Only the field(s) supported by the
 // resolved resource type are applied; unsupported fields return 422.
 type DeploymentUpdateRequest struct {
-	Autoscaling          *map[string]interface{} `json:"autoscaling,omitempty"`
-	BuildConfig          *map[string]interface{} `json:"build_config,omitempty"`
-	DbConfig             *map[string]interface{} `json:"db_config,omitempty"`
-	HealthCheck          *map[string]interface{} `json:"health_check,omitempty"`
-	Image                *map[string]interface{} `json:"image,omitempty"`
-	LogDrains            *map[string]interface{} `json:"log_drains,omitempty"`
-	Networking           *map[string]interface{} `json:"networking,omitempty"`
-	Port                 *int                    `json:"port,omitempty"`
-	Schedule             *map[string]interface{} `json:"schedule,omitempty"`
-	AdditionalProperties map[string]interface{}  `json:"-"`
+	Autoscaling *map[string]interface{}              `json:"autoscaling,omitempty"`
+	BuildConfig *DeploymentUpdateRequest_BuildConfig `json:"build_config,omitempty"`
+	DbConfig    *map[string]interface{}              `json:"db_config,omitempty"`
+	HealthCheck *map[string]interface{}              `json:"health_check,omitempty"`
+
+	// Image Container image update. For a private registry, `url` is the
+	// registry endpoint — required for providers that authenticate
+	// with username + password (azure, docker, other, custom).
+	Image                *DeploymentUpdateRequest_Image `json:"image,omitempty"`
+	LogDrains            *map[string]interface{}        `json:"log_drains,omitempty"`
+	Networking           *map[string]interface{}        `json:"networking,omitempty"`
+	Port                 *int                           `json:"port,omitempty"`
+	Schedule             *map[string]interface{}        `json:"schedule,omitempty"`
+	AdditionalProperties map[string]interface{}         `json:"-"`
+}
+
+// DeploymentUpdateRequest_BuildConfig defines model for DeploymentUpdateRequest.BuildConfig.
+type DeploymentUpdateRequest_BuildConfig struct {
+	// BuildArgs Explicit docker build args passed to the build. PUBLIC
+	// values only — build args are baked into the image layers,
+	// so they must never carry secrets (use secret variables,
+	// which are injected at deploy time instead). Merged over
+	// the NEXT_PUBLIC_*/VITE_* args auto-derived from env vars;
+	// an explicit key wins on collision.
+	BuildArgs            *map[string]string     `json:"build_args,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// DeploymentUpdateRequestImageType defines model for DeploymentUpdateRequest.Image.Type.
+type DeploymentUpdateRequestImageType string
+
+// DeploymentUpdateRequest_Image Container image update. For a private registry, `url` is the
+// registry endpoint — required for providers that authenticate
+// with username + password (azure, docker, other, custom).
+type DeploymentUpdateRequest_Image struct {
+	Name                 *string                           `json:"name,omitempty"`
+	Password             *string                           `json:"password,omitempty"`
+	Provider             *string                           `json:"provider,omitempty"`
+	Type                 *DeploymentUpdateRequestImageType `json:"type,omitempty"`
+	Url                  *string                           `json:"url,omitempty"`
+	Username             *string                           `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:"-"`
 }
 
 // DeploymentVersion A single build/release version for a deployment.
@@ -3029,7 +3067,25 @@ type Domain struct {
 
 	// CheckedAt When the controller last observed this domain.
 	CheckedAt *time.Time `json:"checked_at,omitempty"`
-	Domain    string     `json:"domain"`
+
+	// DnsRecords DNS records the customer must create at their DNS provider to
+	// point this custom domain at the deployment — a single proxied
+	// CNAME to the deployment's platform domain. Empty for the platform
+	// ("default") domain. The console renders these for self-serve setup.
+	DnsRecords *[]struct {
+		// Name The hostname being configured.
+		Name string `json:"name"`
+
+		// Proxied Whether the record should be proxied (Cloudflare orange-cloud).
+		Proxied *bool `json:"proxied,omitempty"`
+
+		// Type Record type, e.g. CNAME.
+		Type string `json:"type"`
+
+		// Value The target to point the record at.
+		Value string `json:"value"`
+	} `json:"dns_records,omitempty"`
+	Domain string `json:"domain"`
 
 	// Hostname Alias of `domain` — the fully-qualified hostname this object represents.
 	Hostname *string `json:"hostname,omitempty"`
@@ -3233,6 +3289,12 @@ type Environment struct {
 
 	// CustomDomain User-supplied custom domain, or null when unset
 	CustomDomain *string `json:"custom_domain"`
+
+	// DeploymentCount Number of deployments in this environment. Populated on the single Get; 0 on list responses.
+	DeploymentCount int `json:"deployment_count"`
+
+	// Deployments Deployments in this environment. Populated on the single Get; empty on list responses.
+	Deployments []ServiceDeployment `json:"deployments"`
 
 	// DomainPath Path-to-deployment-id map (always present, may be empty)
 	DomainPath map[string]string `json:"domain_path"`
@@ -4435,12 +4497,18 @@ type ServiceObject string
 type ServiceDeployment struct {
 	EnvId string `json:"env_id"`
 
-	// Environment Human-readable environment name, null when not eager-loaded
-	Environment *string                 `json:"environment"`
+	// Environment Environment reference (id + name), null when not eager-loaded
+	Environment *ServiceDeploymentEnv   `json:"environment"`
 	Id          string                  `json:"id"`
 	Name        string                  `json:"name"`
 	Object      ServiceDeploymentObject `json:"object"`
 	ServiceId   string                  `json:"service_id"`
+
+	// ServiceName Service name (same value as `name`); present so environment-scoped consumers can read service identity without a separate fetch
+	ServiceName string `json:"service_name"`
+
+	// ServiceType Service type (same value as `type`); matches the frontend deployment shape
+	ServiceType string `json:"service_type"`
 
 	// SphereCount Number of spherelets running this deployment. The
 	// project page sums this across deployments to render the
@@ -4452,6 +4520,12 @@ type ServiceDeployment struct {
 
 // ServiceDeploymentObject defines model for ServiceDeployment.Object.
 type ServiceDeploymentObject string
+
+// ServiceDeploymentEnv Minimal environment reference embedded on a ServiceDeployment.
+type ServiceDeploymentEnv struct {
+	Id   string `json:"id"`
+	Name string `json:"name"`
+}
 
 // ServiceDeploymentList defines model for ServiceDeploymentList.
 type ServiceDeploymentList struct {
@@ -7013,6 +7087,217 @@ func (a DeploymentUpdateRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(object)
 }
 
+// Getter for additional properties for DeploymentUpdateRequest_BuildConfig. Returns the specified
+// element and whether it was found
+func (a DeploymentUpdateRequest_BuildConfig) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentUpdateRequest_BuildConfig
+func (a *DeploymentUpdateRequest_BuildConfig) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_BuildConfig to handle AdditionalProperties
+func (a *DeploymentUpdateRequest_BuildConfig) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["build_args"]; found {
+		err = json.Unmarshal(raw, &a.BuildArgs)
+		if err != nil {
+			return fmt.Errorf("error reading 'build_args': %w", err)
+		}
+		delete(object, "build_args")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_BuildConfig to handle AdditionalProperties
+func (a DeploymentUpdateRequest_BuildConfig) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.BuildArgs != nil {
+		object["build_args"], err = json.Marshal(a.BuildArgs)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'build_args': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DeploymentUpdateRequest_Image. Returns the specified
+// element and whether it was found
+func (a DeploymentUpdateRequest_Image) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentUpdateRequest_Image
+func (a *DeploymentUpdateRequest_Image) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_Image to handle AdditionalProperties
+func (a *DeploymentUpdateRequest_Image) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["name"]; found {
+		err = json.Unmarshal(raw, &a.Name)
+		if err != nil {
+			return fmt.Errorf("error reading 'name': %w", err)
+		}
+		delete(object, "name")
+	}
+
+	if raw, found := object["password"]; found {
+		err = json.Unmarshal(raw, &a.Password)
+		if err != nil {
+			return fmt.Errorf("error reading 'password': %w", err)
+		}
+		delete(object, "password")
+	}
+
+	if raw, found := object["provider"]; found {
+		err = json.Unmarshal(raw, &a.Provider)
+		if err != nil {
+			return fmt.Errorf("error reading 'provider': %w", err)
+		}
+		delete(object, "provider")
+	}
+
+	if raw, found := object["type"]; found {
+		err = json.Unmarshal(raw, &a.Type)
+		if err != nil {
+			return fmt.Errorf("error reading 'type': %w", err)
+		}
+		delete(object, "type")
+	}
+
+	if raw, found := object["url"]; found {
+		err = json.Unmarshal(raw, &a.Url)
+		if err != nil {
+			return fmt.Errorf("error reading 'url': %w", err)
+		}
+		delete(object, "url")
+	}
+
+	if raw, found := object["username"]; found {
+		err = json.Unmarshal(raw, &a.Username)
+		if err != nil {
+			return fmt.Errorf("error reading 'username': %w", err)
+		}
+		delete(object, "username")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_Image to handle AdditionalProperties
+func (a DeploymentUpdateRequest_Image) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.Name != nil {
+		object["name"], err = json.Marshal(a.Name)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'name': %w", err)
+		}
+	}
+
+	if a.Password != nil {
+		object["password"], err = json.Marshal(a.Password)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'password': %w", err)
+		}
+	}
+
+	if a.Provider != nil {
+		object["provider"], err = json.Marshal(a.Provider)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'provider': %w", err)
+		}
+	}
+
+	if a.Type != nil {
+		object["type"], err = json.Marshal(a.Type)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'type': %w", err)
+		}
+	}
+
+	if a.Url != nil {
+		object["url"], err = json.Marshal(a.Url)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'url': %w", err)
+		}
+	}
+
+	if a.Username != nil {
+		object["username"], err = json.Marshal(a.Username)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'username': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
 // Getter for additional properties for DeploymentVersion. Returns the specified
 // element and whether it was found
 func (a DeploymentVersion) Get(fieldName string) (value interface{}, found bool) {
@@ -7161,6 +7446,14 @@ func (a *Domain) UnmarshalJSON(b []byte) error {
 		delete(object, "checked_at")
 	}
 
+	if raw, found := object["dns_records"]; found {
+		err = json.Unmarshal(raw, &a.DnsRecords)
+		if err != nil {
+			return fmt.Errorf("error reading 'dns_records': %w", err)
+		}
+		delete(object, "dns_records")
+	}
+
 	if raw, found := object["domain"]; found {
 		err = json.Unmarshal(raw, &a.Domain)
 		if err != nil {
@@ -7271,6 +7564,13 @@ func (a Domain) MarshalJSON() ([]byte, error) {
 		object["checked_at"], err = json.Marshal(a.CheckedAt)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'checked_at': %w", err)
+		}
+	}
+
+	if a.DnsRecords != nil {
+		object["dns_records"], err = json.Marshal(a.DnsRecords)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'dns_records': %w", err)
 		}
 	}
 
