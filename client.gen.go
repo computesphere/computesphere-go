@@ -235,6 +235,12 @@ const (
 	AlertRuleAlertTypeMemory AlertRuleAlertType = "memory"
 )
 
+// Defines values for AlertRuleEmailDelivery.
+const (
+	Off AlertRuleEmailDelivery = "off"
+	On  AlertRuleEmailDelivery = "on"
+)
+
 // Defines values for AlertRuleObject.
 const (
 	AlertRuleObjectAlertRule AlertRuleObject = "alert_rule"
@@ -317,16 +323,28 @@ const (
 
 // Defines values for BuildStatus.
 const (
-	BuildStatusBuilding     BuildStatus = "building"
-	BuildStatusBuilt        BuildStatus = "built"
-	BuildStatusCanceled     BuildStatus = "canceled"
-	BuildStatusCanceling    BuildStatus = "canceling"
-	BuildStatusDeploying    BuildStatus = "deploying"
-	BuildStatusDispatched   BuildStatus = "dispatched"
-	BuildStatusFailed       BuildStatus = "failed"
-	BuildStatusPending      BuildStatus = "pending"
-	BuildStatusPredeploying BuildStatus = "predeploying"
-	BuildStatusSucceeded    BuildStatus = "succeeded"
+	BuildStatusAwaitingApproval BuildStatus = "awaiting_approval"
+	BuildStatusBuilding         BuildStatus = "building"
+	BuildStatusBuilt            BuildStatus = "built"
+	BuildStatusCanceled         BuildStatus = "canceled"
+	BuildStatusCanceling        BuildStatus = "canceling"
+	BuildStatusDeploying        BuildStatus = "deploying"
+	BuildStatusDispatched       BuildStatus = "dispatched"
+	BuildStatusFailed           BuildStatus = "failed"
+	BuildStatusPending          BuildStatus = "pending"
+	BuildStatusPredeploying     BuildStatus = "predeploying"
+	BuildStatusSucceeded        BuildStatus = "succeeded"
+)
+
+// Defines values for BuildTriggerSource.
+const (
+	BuildTriggerSourceApi      BuildTriggerSource = "api"
+	BuildTriggerSourceCli      BuildTriggerSource = "cli"
+	BuildTriggerSourceGitPush  BuildTriggerSource = "git_push"
+	BuildTriggerSourceManual   BuildTriggerSource = "manual"
+	BuildTriggerSourcePromote  BuildTriggerSource = "promote"
+	BuildTriggerSourceRollback BuildTriggerSource = "rollback"
+	BuildTriggerSourceTemplate BuildTriggerSource = "template"
 )
 
 // Defines values for BuildCacheObject.
@@ -365,6 +383,17 @@ const (
 	BulkUpdateAccountMemberRolesRequestRolesRoleMember BulkUpdateAccountMemberRolesRequestRolesRole = "member"
 )
 
+// Defines values for ClientIpObject.
+const (
+	ClientIpObjectClientIp ClientIpObject = "client_ip"
+)
+
+// Defines values for ClientIpVersion.
+const (
+	Ipv4 ClientIpVersion = "ipv4"
+	Ipv6 ClientIpVersion = "ipv6"
+)
+
 // Defines values for CloneDeploymentResultObject.
 const (
 	DeploymentCloneResult CloneDeploymentResultObject = "deployment_clone_result"
@@ -401,6 +430,19 @@ const (
 	CreateAlertRuleRequestSeverityLevelHigh   CreateAlertRuleRequestSeverityLevel = "high"
 	CreateAlertRuleRequestSeverityLevelLow    CreateAlertRuleRequestSeverityLevel = "low"
 	CreateAlertRuleRequestSeverityLevelMedium CreateAlertRuleRequestSeverityLevel = "medium"
+)
+
+// Defines values for CreateDatabaseRequestVersion.
+const (
+	N16 CreateDatabaseRequestVersion = "16"
+	N17 CreateDatabaseRequestVersion = "17"
+	N18 CreateDatabaseRequestVersion = "18"
+)
+
+// Defines values for CreateDatabaseTunnelSessionRequestRoute.
+const (
+	CreateDatabaseTunnelSessionRequestRouteDirect CreateDatabaseTunnelSessionRequestRoute = "direct"
+	CreateDatabaseTunnelSessionRequestRoutePooled CreateDatabaseTunnelSessionRequestRoute = "pooled"
 )
 
 // Defines values for CreateFeatureRequestRequestAccessibility.
@@ -469,6 +511,240 @@ const (
 	CurrentUserObjectCurrentUser CurrentUserObject = "current_user"
 )
 
+// Defines values for DatabaseBackupsReason.
+const (
+	DatabaseBackupsReasonCapacity      DatabaseBackupsReason = "capacity"
+	DatabaseBackupsReasonNotInRegion   DatabaseBackupsReason = "not_in_region"
+	DatabaseBackupsReasonPlatformError DatabaseBackupsReason = "platform_error"
+)
+
+// Defines values for DatabaseObject.
+const (
+	DatabaseObjectDatabase DatabaseObject = "database"
+)
+
+// Defines values for DatabaseReasonCode.
+const (
+	DatabaseReasonCodeCapacityUnavailable DatabaseReasonCode = "capacity_unavailable"
+	DatabaseReasonCodePlatformError       DatabaseReasonCode = "platform_error"
+	DatabaseReasonCodeQuotaExceeded       DatabaseReasonCode = "quota_exceeded"
+	DatabaseReasonCodeStorageFull         DatabaseReasonCode = "storage_full"
+)
+
+// Defines values for DatabaseRedundancy.
+const (
+	DatabaseRedundancySingleZone    DatabaseRedundancy = "single-zone"
+	DatabaseRedundancyZoneRedundant DatabaseRedundancy = "zone-redundant"
+)
+
+// Defines values for DatabaseBackupKind.
+const (
+	OnDemand  DatabaseBackupKind = "on_demand"
+	Scheduled DatabaseBackupKind = "scheduled"
+)
+
+// Defines values for DatabaseBackupObject.
+const (
+	DatabaseBackupObjectDatabaseBackup DatabaseBackupObject = "database_backup"
+)
+
+// Defines values for DatabaseBackupStatus.
+const (
+	DatabaseBackupStatusCompleted DatabaseBackupStatus = "completed"
+	DatabaseBackupStatusFailed    DatabaseBackupStatus = "failed"
+	DatabaseBackupStatusRunning   DatabaseBackupStatus = "running"
+)
+
+// Defines values for DatabaseBackupListObject.
+const (
+	DatabaseBackupListObjectList DatabaseBackupListObject = "list"
+)
+
+// Defines values for DatabaseConnectionObject.
+const (
+	DatabaseConnectionObjectDatabaseConnection DatabaseConnectionObject = "database_connection"
+)
+
+// Defines values for DatabaseConnectionSslmode.
+const (
+	DatabaseConnectionSslmodeRequire DatabaseConnectionSslmode = "require"
+)
+
+// Defines values for DatabaseEngine.
+const (
+	Postgresql DatabaseEngine = "postgresql"
+)
+
+// Defines values for DatabaseHighAvailability.
+const (
+	DatabaseHighAvailabilityNone      DatabaseHighAvailability = "none"
+	DatabaseHighAvailabilityStandby   DatabaseHighAvailability = "standby"
+	DatabaseHighAvailabilityThreeZone DatabaseHighAvailability = "three_zone"
+)
+
+// Defines values for DatabaseInjectionMode.
+const (
+	DatabaseInjectionModeAll      DatabaseInjectionMode = "all"
+	DatabaseInjectionModeNone     DatabaseInjectionMode = "none"
+	DatabaseInjectionModeSelected DatabaseInjectionMode = "selected"
+)
+
+// Defines values for DatabaseInjectionObject.
+const (
+	DatabaseInjectionObjectDatabaseInjection DatabaseInjectionObject = "database_injection"
+)
+
+// Defines values for DatabaseInstanceTypeFamily.
+const (
+	DatabaseInstanceTypeFamilyFlex     DatabaseInstanceTypeFamily = "flex"
+	DatabaseInstanceTypeFamilyFree     DatabaseInstanceTypeFamily = "free"
+	DatabaseInstanceTypeFamilyPlus     DatabaseInstanceTypeFamily = "plus"
+	DatabaseInstanceTypeFamilyStandard DatabaseInstanceTypeFamily = "standard"
+)
+
+// Defines values for DatabaseInstanceTypeObject.
+const (
+	DatabaseInstanceTypeObjectDatabaseInstanceType DatabaseInstanceTypeObject = "database_instance_type"
+)
+
+// Defines values for DatabaseInstanceTypePriceGroup.
+const (
+	DatabaseInstanceTypePriceGroupPremium  DatabaseInstanceTypePriceGroup = "premium"
+	DatabaseInstanceTypePriceGroupStandard DatabaseInstanceTypePriceGroup = "standard"
+)
+
+// Defines values for DatabaseInstanceTypeUnavailableReason.
+const (
+	NotInRegion DatabaseInstanceTypeUnavailableReason = "not_in_region"
+)
+
+// Defines values for DatabaseInstanceTypeListObject.
+const (
+	DatabaseInstanceTypeListObjectList DatabaseInstanceTypeListObject = "list"
+)
+
+// Defines values for DatabaseListObject.
+const (
+	DatabaseListObjectList DatabaseListObject = "list"
+)
+
+// Defines values for DatabaseMemberRole.
+const (
+	Primary DatabaseMemberRole = "primary"
+	Standby DatabaseMemberRole = "standby"
+)
+
+// Defines values for DatabaseMetricUnit.
+const (
+	DatabaseMetricUnitBytes        DatabaseMetricUnit = "bytes"
+	DatabaseMetricUnitCores        DatabaseMetricUnit = "cores"
+	DatabaseMetricUnitCount        DatabaseMetricUnit = "count"
+	DatabaseMetricUnitMilliseconds DatabaseMetricUnit = "milliseconds"
+	DatabaseMetricUnitPerSecond    DatabaseMetricUnit = "per_second"
+	DatabaseMetricUnitPercent      DatabaseMetricUnit = "percent"
+	DatabaseMetricUnitSeconds      DatabaseMetricUnit = "seconds"
+)
+
+// Defines values for DatabaseMetricCatalogObject.
+const (
+	DatabaseMetricCatalogObjectDatabaseMetricCatalog DatabaseMetricCatalogObject = "database_metric_catalog"
+)
+
+// Defines values for DatabaseMetricsResponseObject.
+const (
+	DatabaseMetrics DatabaseMetricsResponseObject = "database_metrics"
+)
+
+// Defines values for DatabaseMetricsResponseUnit.
+const (
+	DatabaseMetricsResponseUnitBytes        DatabaseMetricsResponseUnit = "bytes"
+	DatabaseMetricsResponseUnitCores        DatabaseMetricsResponseUnit = "cores"
+	DatabaseMetricsResponseUnitCount        DatabaseMetricsResponseUnit = "count"
+	DatabaseMetricsResponseUnitMilliseconds DatabaseMetricsResponseUnit = "milliseconds"
+	DatabaseMetricsResponseUnitPerSecond    DatabaseMetricsResponseUnit = "per_second"
+	DatabaseMetricsResponseUnitPercent      DatabaseMetricsResponseUnit = "percent"
+	DatabaseMetricsResponseUnitSeconds      DatabaseMetricsResponseUnit = "seconds"
+)
+
+// Defines values for DatabaseMonthlyPriceCurrency.
+const (
+	Usd DatabaseMonthlyPriceCurrency = "usd"
+)
+
+// Defines values for DatabasePlanDurability.
+const (
+	Asynchronous DatabasePlanDurability = "asynchronous"
+	Synchronous  DatabasePlanDurability = "synchronous"
+)
+
+// Defines values for DatabasePlanObject.
+const (
+	DatabasePlanObjectDatabasePlan DatabasePlanObject = "database_plan"
+)
+
+// Defines values for DatabasePlanRedundancy.
+const (
+	DatabasePlanRedundancySingleZone    DatabasePlanRedundancy = "single-zone"
+	DatabasePlanRedundancyZoneRedundant DatabasePlanRedundancy = "zone-redundant"
+)
+
+// Defines values for DatabasePlanUnavailableReason.
+const (
+	DatabasePlanUnavailableReasonNotInRegion  DatabasePlanUnavailableReason = "not_in_region"
+	DatabasePlanUnavailableReasonSubscription DatabasePlanUnavailableReason = "subscription"
+)
+
+// Defines values for DatabasePlanCode.
+const (
+	DatabasePlanCodeHa       DatabasePlanCode = "ha"
+	DatabasePlanCodeHobby    DatabasePlanCode = "hobby"
+	DatabasePlanCodeStandard DatabasePlanCode = "standard"
+)
+
+// Defines values for DatabasePlanListObject.
+const (
+	DatabasePlanListObjectList DatabasePlanListObject = "list"
+)
+
+// Defines values for DatabasePublicAccessObject.
+const (
+	DatabasePublicAccessObjectDatabasePublicAccess DatabasePublicAccessObject = "database_public_access"
+)
+
+// Defines values for DatabasePublicConnectionSslmode.
+const (
+	VerifyFull DatabasePublicConnectionSslmode = "verify-full"
+)
+
+// Defines values for DatabaseStatus.
+const (
+	DatabaseStatusAvailable    DatabaseStatus = "available"
+	DatabaseStatusDegraded     DatabaseStatus = "degraded"
+	DatabaseStatusDeleting     DatabaseStatus = "deleting"
+	DatabaseStatusFailed       DatabaseStatus = "failed"
+	DatabaseStatusFailingOver  DatabaseStatus = "failing_over"
+	DatabaseStatusMaintenance  DatabaseStatus = "maintenance"
+	DatabaseStatusProvisioning DatabaseStatus = "provisioning"
+	DatabaseStatusResizing     DatabaseStatus = "resizing"
+	DatabaseStatusRestoring    DatabaseStatus = "restoring"
+)
+
+// Defines values for DatabaseTunnelSessionObject.
+const (
+	DatabaseTunnelSessionObjectDatabaseTunnelSession DatabaseTunnelSessionObject = "database_tunnel_session"
+)
+
+// Defines values for DatabaseTunnelSessionRoute.
+const (
+	DatabaseTunnelSessionRouteDirect DatabaseTunnelSessionRoute = "direct"
+	DatabaseTunnelSessionRoutePooled DatabaseTunnelSessionRoute = "pooled"
+)
+
+// Defines values for DatabaseTunnelSessionSslmode.
+const (
+	DatabaseTunnelSessionSslmodeRequire DatabaseTunnelSessionSslmode = "require"
+)
+
 // Defines values for DeployLogEntryCode.
 const (
 	DeployLogEntryCodeAccepted        DeployLogEntryCode = "accepted"
@@ -513,6 +789,29 @@ const (
 	DeploymentEventListObjectList DeploymentEventListObject = "list"
 )
 
+// Defines values for DeploymentHealthReasonCode.
+const (
+	DeploymentHealthReasonCodeCompleted       DeploymentHealthReasonCode = "completed"
+	DeploymentHealthReasonCodeConfigError     DeploymentHealthReasonCode = "config_error"
+	DeploymentHealthReasonCodeCrashLoop       DeploymentHealthReasonCode = "crash_loop"
+	DeploymentHealthReasonCodeEvicted         DeploymentHealthReasonCode = "evicted"
+	DeploymentHealthReasonCodeExitedWithError DeploymentHealthReasonCode = "exited_with_error"
+	DeploymentHealthReasonCodeImagePullFailed DeploymentHealthReasonCode = "image_pull_failed"
+	DeploymentHealthReasonCodeOutOfMemory     DeploymentHealthReasonCode = "out_of_memory"
+	DeploymentHealthReasonCodeStarting        DeploymentHealthReasonCode = "starting"
+	DeploymentHealthReasonCodeUnhealthy       DeploymentHealthReasonCode = "unhealthy"
+)
+
+// Defines values for DeploymentHealthState.
+const (
+	DeploymentHealthStateCompleted DeploymentHealthState = "completed"
+	DeploymentHealthStateFailed    DeploymentHealthState = "failed"
+	DeploymentHealthStateRunning   DeploymentHealthState = "running"
+	DeploymentHealthStateStarting  DeploymentHealthState = "starting"
+	DeploymentHealthStateUnhealthy DeploymentHealthState = "unhealthy"
+	DeploymentHealthStateUnknown   DeploymentHealthState = "unknown"
+)
+
 // Defines values for DeploymentListObject.
 const (
 	DeploymentListObjectList DeploymentListObject = "list"
@@ -523,9 +822,40 @@ const (
 	DeploymentOutputObjectDeployment DeploymentOutputObject = "deployment"
 )
 
+// Defines values for DeploymentOutputRawDeployPolicy.
+const (
+	DeploymentOutputRawDeployPolicyApproval DeploymentOutputRawDeployPolicy = "approval"
+	DeploymentOutputRawDeployPolicyAuto     DeploymentOutputRawDeployPolicy = "auto"
+)
+
+// Defines values for DeploymentOutputRawEffectiveDeployPolicy.
+const (
+	DeploymentOutputRawEffectiveDeployPolicyApproval DeploymentOutputRawEffectiveDeployPolicy = "approval"
+	DeploymentOutputRawEffectiveDeployPolicyAuto     DeploymentOutputRawEffectiveDeployPolicy = "auto"
+)
+
+// Defines values for DeploymentOutputRawTriggerOn.
+const (
+	DeploymentOutputRawTriggerOnBranch DeploymentOutputRawTriggerOn = "branch"
+	DeploymentOutputRawTriggerOnTag    DeploymentOutputRawTriggerOn = "tag"
+)
+
 // Defines values for DeploymentSphereletObject.
 const (
 	DeploymentSphereletObjectDeploymentSpherelet DeploymentSphereletObject = "deployment_spherelet"
+)
+
+// Defines values for DeploymentSphereletReasonCode.
+const (
+	Completed       DeploymentSphereletReasonCode = "completed"
+	ConfigError     DeploymentSphereletReasonCode = "config_error"
+	CrashLoop       DeploymentSphereletReasonCode = "crash_loop"
+	Evicted         DeploymentSphereletReasonCode = "evicted"
+	ExitedWithError DeploymentSphereletReasonCode = "exited_with_error"
+	ImagePullFailed DeploymentSphereletReasonCode = "image_pull_failed"
+	OutOfMemory     DeploymentSphereletReasonCode = "out_of_memory"
+	Starting        DeploymentSphereletReasonCode = "starting"
+	Unhealthy       DeploymentSphereletReasonCode = "unhealthy"
 )
 
 // Defines values for DeploymentSphereletListObject.
@@ -538,10 +868,22 @@ const (
 	DeploymentStatusObjectDeploymentStatus DeploymentStatusObject = "deployment_status"
 )
 
+// Defines values for DeploymentUpdateRequestDeployPolicy.
+const (
+	DeploymentUpdateRequestDeployPolicyApproval DeploymentUpdateRequestDeployPolicy = "approval"
+	DeploymentUpdateRequestDeployPolicyAuto     DeploymentUpdateRequestDeployPolicy = "auto"
+)
+
 // Defines values for DeploymentUpdateRequestImageType.
 const (
 	DeploymentUpdateRequestImageTypePrivate DeploymentUpdateRequestImageType = "private"
 	DeploymentUpdateRequestImageTypePublic  DeploymentUpdateRequestImageType = "public"
+)
+
+// Defines values for DeploymentUpdateRequestTriggerOn.
+const (
+	DeploymentUpdateRequestTriggerOnBranch DeploymentUpdateRequestTriggerOn = "branch"
+	DeploymentUpdateRequestTriggerOnTag    DeploymentUpdateRequestTriggerOn = "tag"
 )
 
 // Defines values for DeploymentVersionObject.
@@ -549,9 +891,31 @@ const (
 	DeploymentVersionObjectDeploymentVersion DeploymentVersionObject = "deployment_version"
 )
 
+// Defines values for DeploymentVersionTriggerSource.
+const (
+	DeploymentVersionTriggerSourceApi      DeploymentVersionTriggerSource = "api"
+	DeploymentVersionTriggerSourceCli      DeploymentVersionTriggerSource = "cli"
+	DeploymentVersionTriggerSourceGitPush  DeploymentVersionTriggerSource = "git_push"
+	DeploymentVersionTriggerSourceManual   DeploymentVersionTriggerSource = "manual"
+	DeploymentVersionTriggerSourcePromote  DeploymentVersionTriggerSource = "promote"
+	DeploymentVersionTriggerSourceRollback DeploymentVersionTriggerSource = "rollback"
+	DeploymentVersionTriggerSourceTemplate DeploymentVersionTriggerSource = "template"
+)
+
 // Defines values for DeploymentVersionDetailObject.
 const (
 	DeploymentVersionDetailObjectDeploymentVersion DeploymentVersionDetailObject = "deployment_version"
+)
+
+// Defines values for DeploymentVersionDetailTriggerSource.
+const (
+	DeploymentVersionDetailTriggerSourceApi      DeploymentVersionDetailTriggerSource = "api"
+	DeploymentVersionDetailTriggerSourceCli      DeploymentVersionDetailTriggerSource = "cli"
+	DeploymentVersionDetailTriggerSourceGitPush  DeploymentVersionDetailTriggerSource = "git_push"
+	DeploymentVersionDetailTriggerSourceManual   DeploymentVersionDetailTriggerSource = "manual"
+	DeploymentVersionDetailTriggerSourcePromote  DeploymentVersionDetailTriggerSource = "promote"
+	DeploymentVersionDetailTriggerSourceRollback DeploymentVersionDetailTriggerSource = "rollback"
+	DeploymentVersionDetailTriggerSourceTemplate DeploymentVersionDetailTriggerSource = "template"
 )
 
 // Defines values for DeploymentVersionListObject.
@@ -607,9 +971,28 @@ const (
 	DomainListObjectList DomainListObject = "list"
 )
 
+// Defines values for EnvVarScope.
+const (
+	EnvVarScopeBoth    EnvVarScope = "both"
+	EnvVarScopeBuild   EnvVarScope = "build"
+	EnvVarScopeRuntime EnvVarScope = "runtime"
+)
+
 // Defines values for EnvVarsResponseObject.
 const (
 	EnvVars EnvVarsResponseObject = "env_vars"
+)
+
+// Defines values for EnvironmentDeployPolicy.
+const (
+	EnvironmentDeployPolicyApproval EnvironmentDeployPolicy = "approval"
+	EnvironmentDeployPolicyAuto     EnvironmentDeployPolicy = "auto"
+)
+
+// Defines values for EnvironmentKind.
+const (
+	EnvironmentKindPreview  EnvironmentKind = "preview"
+	EnvironmentKindStandard EnvironmentKind = "standard"
 )
 
 // Defines values for EnvironmentObject.
@@ -650,6 +1033,12 @@ const (
 // Defines values for GitBranchListObject.
 const (
 	GitBranchListObjectList GitBranchListObject = "list"
+)
+
+// Defines values for GitConnectionAuthType.
+const (
+	GithubApp GitConnectionAuthType = "github_app"
+	Oauth     GitConnectionAuthType = "oauth"
 )
 
 // Defines values for GitConnectionObject.
@@ -797,6 +1186,14 @@ const (
 	InvitationEventPageObjectList InvitationEventPageObject = "list"
 )
 
+// Defines values for LogEntryLevel.
+const (
+	Debug LogEntryLevel = "debug"
+	Error LogEntryLevel = "error"
+	Info  LogEntryLevel = "info"
+	Warn  LogEntryLevel = "warn"
+)
+
 // Defines values for LogHistogramObject.
 const (
 	LogHistogramObjectLogHistogram LogHistogramObject = "log_histogram"
@@ -820,6 +1217,21 @@ const (
 // Defines values for MetricsResponseObject.
 const (
 	Metrics MetricsResponseObject = "metrics"
+)
+
+// Defines values for MetricsResponseUnitsCpu.
+const (
+	VCPU MetricsResponseUnitsCpu = "vCPU"
+)
+
+// Defines values for MetricsResponseUnitsMemory.
+const (
+	Bytes MetricsResponseUnitsMemory = "bytes"
+)
+
+// Defines values for MetricsResponseUnitsSpherelets.
+const (
+	Count MetricsResponseUnitsSpherelets = "count"
 )
 
 // Defines values for NotificationObject.
@@ -878,9 +1290,16 @@ const (
 	PluginListObjectList PluginListObject = "list"
 )
 
+// Defines values for PreviewTriggerTrigger.
+const (
+	PreviewTriggerTriggerApi PreviewTriggerTrigger = "api"
+	PreviewTriggerTriggerGit PreviewTriggerTrigger = "git"
+)
+
 // Defines values for ProblemCode.
 const (
 	ProblemCodeAPITOKENEXPIRED           ProblemCode = "API_TOKEN_EXPIRED"
+	ProblemCodeApprovalSelfForbidden     ProblemCode = "approval_self_forbidden"
 	ProblemCodeBadGateway                ProblemCode = "bad_gateway"
 	ProblemCodeConflict                  ProblemCode = "conflict"
 	ProblemCodeDEPLOYMENTFAILED          ProblemCode = "DEPLOYMENT_FAILED"
@@ -897,6 +1316,7 @@ const (
 	ProblemCodeNotFound                  ProblemCode = "not_found"
 	ProblemCodeNotImplemented            ProblemCode = "not_implemented"
 	ProblemCodePAYMENTREQUIRED           ProblemCode = "PAYMENT_REQUIRED"
+	ProblemCodePLANUPGRADEREQUIRED       ProblemCode = "PLAN_UPGRADE_REQUIRED"
 	ProblemCodePROJECTQUOTAEXCEEDED      ProblemCode = "PROJECT_QUOTA_EXCEEDED"
 	ProblemCodePayloadTooLarge           ProblemCode = "payload_too_large"
 	ProblemCodePreconditionFailed        ProblemCode = "precondition_failed"
@@ -951,6 +1371,11 @@ const (
 // Defines values for RestoreResultObject.
 const (
 	SnapshotRestore RestoreResultObject = "snapshot_restore"
+)
+
+// Defines values for ResumeAutodeployResponseAutodeploy.
+const (
+	Active ResumeAutodeployResponseAutodeploy = "active"
 )
 
 // Defines values for RuntimeLanguage.
@@ -1033,6 +1458,14 @@ const (
 	SnapshotObjectSnapshot SnapshotObject = "snapshot"
 )
 
+// Defines values for SnapshotReasonCode.
+const (
+	SnapshotReasonCodePlatformStorageError SnapshotReasonCode = "platform_storage_error"
+	SnapshotReasonCodeQuotaExceeded        SnapshotReasonCode = "quota_exceeded"
+	SnapshotReasonCodeStorageFull          SnapshotReasonCode = "storage_full"
+	SnapshotReasonCodeVolumeInUse          SnapshotReasonCode = "volume_in_use"
+)
+
 // Defines values for SnapshotListObject.
 const (
 	SnapshotListObjectList SnapshotListObject = "list"
@@ -1078,6 +1511,14 @@ const (
 	SpherestorMountObjectSpherestorMount SpherestorMountObject = "spherestor_mount"
 )
 
+// Defines values for SpherestorMountReasonCode.
+const (
+	SpherestorMountReasonCodePlatformStorageError SpherestorMountReasonCode = "platform_storage_error"
+	SpherestorMountReasonCodeQuotaExceeded        SpherestorMountReasonCode = "quota_exceeded"
+	SpherestorMountReasonCodeStorageFull          SpherestorMountReasonCode = "storage_full"
+	SpherestorMountReasonCodeVolumeInUse          SpherestorMountReasonCode = "volume_in_use"
+)
+
 // Defines values for SpherestorResourceObject.
 const (
 	SpherestorResourceObjectSpherestorResource SpherestorResourceObject = "spherestor_resource"
@@ -1086,6 +1527,14 @@ const (
 // Defines values for SpherestorVolumeObject.
 const (
 	SpherestorVolumeObjectSpherestorVolume SpherestorVolumeObject = "spherestor_volume"
+)
+
+// Defines values for SpherestorVolumeReasonCode.
+const (
+	SpherestorVolumeReasonCodePlatformStorageError SpherestorVolumeReasonCode = "platform_storage_error"
+	SpherestorVolumeReasonCodeQuotaExceeded        SpherestorVolumeReasonCode = "quota_exceeded"
+	SpherestorVolumeReasonCodeStorageFull          SpherestorVolumeReasonCode = "storage_full"
+	SpherestorVolumeReasonCodeVolumeInUse          SpherestorVolumeReasonCode = "volume_in_use"
 )
 
 // Defines values for SpherestorVolumeListObject.
@@ -1214,10 +1663,23 @@ const (
 	UpdateCurrentUserRequestThemeSystem UpdateCurrentUserRequestTheme = "system"
 )
 
+// Defines values for UpdateDatabaseInjectionRequestMode.
+const (
+	All      UpdateDatabaseInjectionRequestMode = "all"
+	None     UpdateDatabaseInjectionRequestMode = "none"
+	Selected UpdateDatabaseInjectionRequestMode = "selected"
+)
+
 // Defines values for UpdateDomainPathRequestAction.
 const (
 	Add    UpdateDomainPathRequestAction = "add"
 	Remove UpdateDomainPathRequestAction = "remove"
+)
+
+// Defines values for UpdateEnvironmentRequestDeployPolicy.
+const (
+	Approval UpdateEnvironmentRequestDeployPolicy = "approval"
+	Auto     UpdateEnvironmentRequestDeployPolicy = "auto"
 )
 
 // Defines values for UpdateTeamProjectRoleRequestRole.
@@ -1272,6 +1734,12 @@ const (
 	LogDirectionForward  LogDirection = "forward"
 )
 
+// Defines values for ListActivityLogsParamsCategory.
+const (
+	Access  ListActivityLogsParamsCategory = "access"
+	Compute ListActivityLogsParamsCategory = "compute"
+)
+
 // Defines values for ListAlertRulesParamsAlertType.
 const (
 	ListAlertRulesParamsAlertTypeCpu    ListAlertRulesParamsAlertType = "cpu"
@@ -1292,18 +1760,30 @@ const (
 	ListAlertRulesParamsActiveTrue  ListAlertRulesParamsActive = "true"
 )
 
+// Defines values for ListAPITokensParamsType.
+const (
+	Account ListAPITokensParamsType = "account"
+	User    ListAPITokensParamsType = "user"
+)
+
+// Defines values for ListDeploymentsParamsInclude.
+const (
+	Counts ListDeploymentsParamsInclude = "counts"
+)
+
 // Defines values for ListDeploymentBuildsParamsStatus.
 const (
-	ListDeploymentBuildsParamsStatusBuilding     ListDeploymentBuildsParamsStatus = "building"
-	ListDeploymentBuildsParamsStatusBuilt        ListDeploymentBuildsParamsStatus = "built"
-	ListDeploymentBuildsParamsStatusCanceled     ListDeploymentBuildsParamsStatus = "canceled"
-	ListDeploymentBuildsParamsStatusCanceling    ListDeploymentBuildsParamsStatus = "canceling"
-	ListDeploymentBuildsParamsStatusDeploying    ListDeploymentBuildsParamsStatus = "deploying"
-	ListDeploymentBuildsParamsStatusDispatched   ListDeploymentBuildsParamsStatus = "dispatched"
-	ListDeploymentBuildsParamsStatusFailed       ListDeploymentBuildsParamsStatus = "failed"
-	ListDeploymentBuildsParamsStatusPending      ListDeploymentBuildsParamsStatus = "pending"
-	ListDeploymentBuildsParamsStatusPredeploying ListDeploymentBuildsParamsStatus = "predeploying"
-	ListDeploymentBuildsParamsStatusSucceeded    ListDeploymentBuildsParamsStatus = "succeeded"
+	ListDeploymentBuildsParamsStatusAwaitingApproval ListDeploymentBuildsParamsStatus = "awaiting_approval"
+	ListDeploymentBuildsParamsStatusBuilding         ListDeploymentBuildsParamsStatus = "building"
+	ListDeploymentBuildsParamsStatusBuilt            ListDeploymentBuildsParamsStatus = "built"
+	ListDeploymentBuildsParamsStatusCanceled         ListDeploymentBuildsParamsStatus = "canceled"
+	ListDeploymentBuildsParamsStatusCanceling        ListDeploymentBuildsParamsStatus = "canceling"
+	ListDeploymentBuildsParamsStatusDeploying        ListDeploymentBuildsParamsStatus = "deploying"
+	ListDeploymentBuildsParamsStatusDispatched       ListDeploymentBuildsParamsStatus = "dispatched"
+	ListDeploymentBuildsParamsStatusFailed           ListDeploymentBuildsParamsStatus = "failed"
+	ListDeploymentBuildsParamsStatusPending          ListDeploymentBuildsParamsStatus = "pending"
+	ListDeploymentBuildsParamsStatusPredeploying     ListDeploymentBuildsParamsStatus = "predeploying"
+	ListDeploymentBuildsParamsStatusSucceeded        ListDeploymentBuildsParamsStatus = "succeeded"
 )
 
 // Defines values for ListDeploymentBuildsParamsMode.
@@ -1384,8 +1864,14 @@ const (
 
 // Defines values for ListPlansParamsActive.
 const (
-	False ListPlansParamsActive = "false"
-	True  ListPlansParamsActive = "true"
+	ListPlansParamsActiveFalse ListPlansParamsActive = "false"
+	ListPlansParamsActiveTrue  ListPlansParamsActive = "true"
+)
+
+// Defines values for ListProjectsParamsActive.
+const (
+	ListProjectsParamsActiveFalse ListProjectsParamsActive = "false"
+	ListProjectsParamsActiveTrue  ListProjectsParamsActive = "true"
 )
 
 // Defines values for ListSubscriptionFeaturesParamsAccessibility.
@@ -1425,6 +1911,12 @@ type APITokenList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -1499,7 +1991,7 @@ type AccountEvent struct {
 	// on read — renaming a user or revoking a token does not rewrite
 	// history. The mask format on `email_masked` matches the
 	// invitation event contract: first letter + "***" + "@" +
-	// domain (e.g. `p***@perizer.com`).
+	// domain (e.g. `e***@computesphere.com`).
 	Actor *ActorRef `json:"actor,omitempty"`
 
 	// ActorUserId **Deprecated.** Switch to `actor` (ActorRef). Kept for one
@@ -1590,6 +2082,12 @@ type AccountFeatureList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -1655,6 +2153,12 @@ type AccountInvoiceList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -1671,6 +2175,12 @@ type AccountList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -1714,6 +2224,12 @@ type AccountMemberList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -1961,9 +2477,13 @@ type Activity struct {
 	// on read — renaming a user or revoking a token does not rewrite
 	// history. The mask format on `email_masked` matches the
 	// invitation event contract: first letter + "***" + "@" +
-	// domain (e.g. `p***@perizer.com`).
+	// domain (e.g. `e***@computesphere.com`).
 	Actor     *ActorRef `json:"actor,omitempty"`
 	CreatedAt time.Time `json:"created_at"`
+
+	// DeploymentId Deployment the event is about. Null on events that aren't
+	// about a deployment, and on older rows that didn't record one.
+	DeploymentId *string `json:"deployment_id"`
 
 	// Id Opaque activity identifier
 	Id string `json:"id"`
@@ -2012,6 +2532,12 @@ type ActivityList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2043,7 +2569,7 @@ type ActivityListObject string
 // on read — renaming a user or revoking a token does not rewrite
 // history. The mask format on `email_masked` matches the
 // invitation event contract: first letter + "***" + "@" +
-// domain (e.g. `p***@perizer.com`).
+// domain (e.g. `e***@computesphere.com`).
 type ActorRef struct {
 	DisplayName string `json:"display_name"`
 
@@ -2072,7 +2598,30 @@ type AddAccountMemberRequestRole string
 
 // AddDomainRequest defines model for AddDomainRequest.
 type AddDomainRequest struct {
-	Domain               string                 `json:"domain"`
+	// Certificate PEM-encoded certificate chain. Required when `type` is `custom`.
+	Certificate *string `json:"certificate,omitempty"`
+	Domain      string  `json:"domain"`
+
+	// PrivateKey PEM-encoded private key. Required when `type` is `custom`. Write-only.
+	PrivateKey *string `json:"private_key,omitempty"`
+
+	// Type Certificate mode: `letsencrypt` (default) provisions and renews a
+	// managed certificate automatically; `custom` uses the caller-supplied
+	// `certificate` + `private_key` (bring-your-own). Kept as a free-form
+	// string (not an enum) to avoid cross-schema enum-constant collisions
+	// in the generated clients.
+	Type *string `json:"type,omitempty"`
+
+	// ValidationMethod How the certificate is validated. `http` (default) validates
+	// automatically once the domain's traffic reaches ComputeSphere.
+	// `txt` is TXT pre-validation, for moving a domain that is live
+	// somewhere else with no downtime: add the domain, add the
+	// `validation_records` (from the domain or its DNS guidance) at
+	// your current DNS host, wait for `active` while the old host keeps
+	// serving, then switch the traffic records. Only for certificates
+	// ComputeSphere issues (`type` `letsencrypt`). Free-form string
+	// (not an enum) for the same generated-client reason as `type`.
+	ValidationMethod     *string                `json:"validation_method,omitempty"`
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
@@ -2092,18 +2641,38 @@ type AddTeamProjectRequestRole string
 
 // AlertRule defines model for AlertRule.
 type AlertRule struct {
-	Active        bool               `json:"active"`
-	AlertType     AlertRuleAlertType `json:"alert_type"`
-	CreatedAt     time.Time          `json:"created_at"`
-	EnvironmentId openapi_types.UUID `json:"environment_id"`
+	Active    bool               `json:"active"`
+	AlertType AlertRuleAlertType `json:"alert_type"`
+	CreatedAt time.Time          `json:"created_at"`
 
-	// EvaluationPeriod Evaluation period in seconds
-	EvaluationPeriod int                    `json:"evaluation_period"`
-	Id               openapi_types.UUID     `json:"id"`
-	Object           AlertRuleObject        `json:"object"`
-	ProjectId        openapi_types.UUID     `json:"project_id"`
-	SeverityLevel    AlertRuleSeverityLevel `json:"severity_level"`
-	Status           string                 `json:"status"`
+	// EffectiveEvaluationPeriod The window the rule really evaluates over, in seconds: the
+	// evaluation period rounded down to whole minutes, never below 120.
+	// An alert fires after the metric has been over the threshold for
+	// this long.
+	EffectiveEvaluationPeriod int `json:"effective_evaluation_period"`
+
+	// EmailDelivery Returned when a rule is created. Whether alert emails reach
+	// anyone in the project today: on when the project's
+	// alert_emails_enabled is on and at least one recipient resolves
+	// (configured notification emails, else the account owner and
+	// admins). In-app notifications are sent either way.
+	EmailDelivery *AlertRuleEmailDelivery `json:"email_delivery,omitempty"`
+	EnvironmentId openapi_types.UUID      `json:"environment_id"`
+
+	// EvaluationPeriod Evaluation period in seconds, as stored. Rules evaluate in whole
+	// minutes with a minimum of 120 seconds; see
+	// effective_evaluation_period.
+	EvaluationPeriod int                `json:"evaluation_period"`
+	Id               openapi_types.UUID `json:"id"`
+	Object           AlertRuleObject    `json:"object"`
+
+	// ProjectAlertEnabled Whether alerts are turned on for the project. Alerts of a project
+	// with this off are not delivered. Creating an active rule turns it
+	// on; turning it off afterwards is respected.
+	ProjectAlertEnabled bool                   `json:"project_alert_enabled"`
+	ProjectId           openapi_types.UUID     `json:"project_id"`
+	SeverityLevel       AlertRuleSeverityLevel `json:"severity_level"`
+	Status              string                 `json:"status"`
 
 	// Threshold Threshold percentage
 	Threshold int `json:"threshold"`
@@ -2111,6 +2680,13 @@ type AlertRule struct {
 
 // AlertRuleAlertType defines model for AlertRule.AlertType.
 type AlertRuleAlertType string
+
+// AlertRuleEmailDelivery Returned when a rule is created. Whether alert emails reach
+// anyone in the project today: on when the project's
+// alert_emails_enabled is on and at least one recipient resolves
+// (configured notification emails, else the account owner and
+// admins). In-app notifications are sent either way.
+type AlertRuleEmailDelivery string
 
 // AlertRuleObject defines model for AlertRule.Object.
 type AlertRuleObject string
@@ -2127,6 +2703,12 @@ type AlertRuleList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2137,6 +2719,21 @@ type AlertRuleListObject string
 // ApplyRequest defines model for ApplyRequest.
 type ApplyRequest struct {
 	Resources []struct {
+		// Input The resource's fields — the same keys as a computesphere.yaml
+		// service. Git build-source keys for web services:
+		// `build_source` (`git`), `git_url`, `branch`,
+		// `git_connection_id`, `runtime_type` (`docker` | `native`),
+		// `language`, `dockerfile`, `context`, `root_dir` and
+		// `watch_paths` (a list of globs).
+		//
+		// On an existing web service these keys update its build
+		// source in place: an image service switches to git (same
+		// service, variables, domains and routes; requires
+		// `git_connection_id`), and a git service merges the change
+		// (keys left out keep their stored values). A changed
+		// repository, branch or connection starts a build instead of
+		// a redeploy. Sending `image` together with git keys is
+		// rejected.
 		Input *map[string]interface{} `json:"input,omitempty"`
 		Name  string                  `json:"name"`
 		Type  string                  `json:"type"`
@@ -2204,7 +2801,12 @@ type ApplyResult struct {
 	//   * `skipped` — atomic mode: an earlier resource in the batch failed and this
 	//     resource was never attempted.
 	Status ApplyResultStatus `json:"status"`
-	Type   string            `json:"type"`
+
+	// Type The service type (`web-service`, `static-site`, …). A manifest
+	// that declares its own topology also gets a `project` and an
+	// `environment` row for each one the apply created, so a partial
+	// apply lists everything it left behind.
+	Type string `json:"type"`
 }
 
 // ApplyResultObject defines model for ApplyResult.Object.
@@ -2257,10 +2859,48 @@ type BootSphereFilesResponseObject string
 
 // Build A single build-and-deploy run.
 type Build struct {
+	// ApprovedAt When the deploy was approved. Null until approved.
+	ApprovedAt *time.Time `json:"approved_at"`
+
+	// ApprovedBy User id of the project admin who approved the deploy. Null until approved.
+	ApprovedBy *string `json:"approved_by"`
+
+	// AwaitingApprovalAt When the build started waiting for deploy approval. Null when it never waited.
+	AwaitingApprovalAt *time.Time `json:"awaiting_approval_at"`
+
+	// BuildDurationSeconds Build phase only: `started_at` → `built_at`, in seconds. Excludes
+	// the deploy handoff; `duration_seconds` covers the whole run.
+	BuildDurationSeconds *float32 `json:"build_duration_seconds"`
+
+	// BuiltAt When the image build finished. Null for runs that never build
+	// (image deploys, rollbacks) and while the build is still running.
+	BuiltAt *time.Time `json:"built_at"`
+
 	// CacheHitRatio Fraction of the build served from cache, 0–1
 	CacheHitRatio *float32   `json:"cache_hit_ratio,omitempty"`
 	CanceledAt    *time.Time `json:"canceled_at,omitempty"`
-	CreatedAt     time.Time  `json:"created_at"`
+
+	// CommitAuthor Author name of the deployed commit, when known.
+	CommitAuthor *string `json:"commit_author"`
+
+	// CommitMessage Message of the deployed commit (truncated to 2000 characters), when known.
+	CommitMessage *string `json:"commit_message"`
+
+	// CommitSha Deployed commit, when the git provider reported it.
+	CommitSha *string   `json:"commit_sha"`
+	CreatedAt time.Time `json:"created_at"`
+
+	// DeclaredBuildArgs The build-arg names the build's Dockerfile declares with `ARG`,
+	// across all stages, sorted. Only these can be baked into the
+	// image, so promotion compares only the declared public
+	// build-time values. Null when unknown: older builds, and
+	// builds that have not finished building.
+	DeclaredBuildArgs *[]string `json:"declared_build_args"`
+
+	// DeployedBy Who triggered the deploy — a user (console / CLI) or an API
+	// token. Captured when the deploy was created and never
+	// re-resolved. Null for git pushes and system-initiated deploys.
+	DeployedBy *ActorRef `json:"deployed_by"`
 
 	// DeploymentId Set once the build succeeds and a deployment is created
 	DeploymentId *string `json:"deployment_id"`
@@ -2269,13 +2909,22 @@ type Build struct {
 	DurationSeconds *float32 `json:"duration_seconds"`
 	EnvironmentId   *string  `json:"environment_id,omitempty"`
 
-	// FailureMessage Human-readable failure summary, set on failure
+	// FailureMessage Customer-safe failure summary, set on failure. Curated text only:
+	// raw build-runner or platform error text is never returned here
+	// (the build logs carry the detail).
 	FailureMessage *string `json:"failure_message,omitempty"`
 
-	// FailureReason Stable machine-readable failure code, set on failure
+	// FailureReason Stable machine-readable failure code, set on failure or
+	// cancellation. Deploy approval adds `rejected` (a project admin
+	// rejected the build) and `approval_expired` (not approved within
+	// 7 days); a build replaced by a newer one reads
+	// `canceled_by_newer`.
 	FailureReason *string    `json:"failure_reason,omitempty"`
 	FinishedAt    *time.Time `json:"finished_at,omitempty"`
-	Id            string     `json:"id"`
+
+	// GitRef Branch or ref the deploy was requested for. Null when not git-sourced or unknown.
+	GitRef *string `json:"git_ref"`
+	Id     string  `json:"id"`
 
 	// ImageDigest Digest of the produced image, set on success
 	ImageDigest *string `json:"image_digest,omitempty"`
@@ -2295,13 +2944,40 @@ type Build struct {
 	Object           BuildObject       `json:"object"`
 	PipelineTier     BuildPipelineTier `json:"pipeline_tier"`
 	PreDeployCommand *string           `json:"pre_deploy_command,omitempty"`
-	ServiceId        string            `json:"service_id"`
-	SourceKind       BuildSourceKind   `json:"source_kind"`
+
+	// PromotedFrom Set when this build was promoted from another environment
+	// (`trigger_source` `promote`): the source build, its deployment
+	// and that environment's name. Null for every other build.
+	PromotedFrom *BuildPromotedFrom `json:"promoted_from"`
+
+	// RejectReason The reason given when the build was rejected, if any.
+	RejectReason *string `json:"reject_reason"`
+
+	// RejectedAt When the build was rejected. Null unless rejected.
+	RejectedAt *time.Time `json:"rejected_at"`
+
+	// RejectedBy User id of the project admin who rejected the build. Null unless rejected.
+	RejectedBy *string         `json:"rejected_by"`
+	ServiceId  string          `json:"service_id"`
+	SourceKind BuildSourceKind `json:"source_kind"`
 
 	// SourceRef Identifier of the built source (archive checksum, git ref, or image reference)
-	SourceRef string      `json:"source_ref"`
-	StartedAt time.Time   `json:"started_at"`
-	Status    BuildStatus `json:"status"`
+	SourceRef string    `json:"source_ref"`
+	StartedAt time.Time `json:"started_at"`
+
+	// Status `awaiting_approval` is the deploy-approval gate: the image is
+	// built but the deployment's `deploy_policy` is `approval`, so
+	// nothing (not even the pre-deploy command) runs until a project
+	// admin approves or rejects it.
+	Status BuildStatus `json:"status"`
+
+	// TriggerSource What started this deploy: `git_push` (a push to the connected
+	// branch), `manual` (the console), `cli` (the csph CLI), `rollback`,
+	// `promote` (an image promoted from another environment), `api`
+	// (an API token / automation), or `template`. Null when
+	// unknown (records created before this field existed, or
+	// system-initiated deploys).
+	TriggerSource *BuildTriggerSource `json:"trigger_source"`
 }
 
 // BuildMode Build mode, snapshotted from the manifest at trigger time
@@ -2316,8 +2992,19 @@ type BuildPipelineTier string
 // BuildSourceKind defines model for Build.SourceKind.
 type BuildSourceKind string
 
-// BuildStatus defines model for Build.Status.
+// BuildStatus `awaiting_approval` is the deploy-approval gate: the image is
+// built but the deployment's `deploy_policy` is `approval`, so
+// nothing (not even the pre-deploy command) runs until a project
+// admin approves or rejects it.
 type BuildStatus string
+
+// BuildTriggerSource What started this deploy: `git_push` (a push to the connected
+// branch), `manual` (the console), `cli` (the csph CLI), `rollback`,
+// `promote` (an image promoted from another environment), `api`
+// (an API token / automation), or `template`. Null when
+// unknown (records created before this field existed, or
+// system-initiated deploys).
+type BuildTriggerSource string
 
 // BuildCache Build cache state for a deployment's service.
 type BuildCache struct {
@@ -2355,6 +3042,12 @@ type BuildList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2375,6 +3068,24 @@ type BuildLogStreamToken struct {
 
 // BuildLogStreamTokenObject defines model for BuildLogStreamToken.Object.
 type BuildLogStreamTokenObject string
+
+// BuildPromotedFrom The build a promoted build was promoted from.
+type BuildPromotedFrom struct {
+	// BuildId The source build whose image this build deploys.
+	BuildId string `json:"build_id"`
+
+	// DeploymentId The source build's deployment.
+	DeploymentId *string `json:"deployment_id"`
+
+	// EnvironmentName The source environment's name when the build was promoted.
+	EnvironmentName *string `json:"environment_name"`
+}
+
+// BuildRejectRequest Optional reason for rejecting a build waiting for deploy approval.
+type BuildRejectRequest struct {
+	// Reason Why the build was rejected; shown to project members on the build.
+	Reason *string `json:"reason,omitempty"`
+}
 
 // BuildRuntime defines model for BuildRuntime.
 type BuildRuntime struct {
@@ -2404,6 +3115,12 @@ type BuildRuntimeList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2461,6 +3178,23 @@ type BulkUpdateAccountMemberRolesRequest struct {
 
 // BulkUpdateAccountMemberRolesRequestRolesRole defines model for BulkUpdateAccountMemberRolesRequest.Roles.Role.
 type BulkUpdateAccountMemberRolesRequestRolesRole string
+
+// ClientIp defines model for ClientIp.
+type ClientIp struct {
+	// Cidr Single-host range, e.g. "203.0.113.7/32".
+	Cidr string `json:"cidr"`
+
+	// Ip e.g. "203.0.113.7" or "2001:db8::5".
+	Ip      string          `json:"ip"`
+	Object  ClientIpObject  `json:"object"`
+	Version ClientIpVersion `json:"version"`
+}
+
+// ClientIpObject defines model for ClientIp.Object.
+type ClientIpObject string
+
+// ClientIpVersion defines model for ClientIp.Version.
+type ClientIpVersion string
 
 // CloneDeploymentRequest defines model for CloneDeploymentRequest.
 type CloneDeploymentRequest struct {
@@ -2539,9 +3273,13 @@ type CreateAccountRequest struct {
 
 // CreateAlertRuleRequest defines model for CreateAlertRuleRequest.
 type CreateAlertRuleRequest struct {
-	Active           *bool                               `json:"active,omitempty"`
-	AlertType        CreateAlertRuleRequestAlertType     `json:"alert_type"`
-	EnvironmentId    *openapi_types.UUID                 `json:"environment_id,omitempty"`
+	Active        *bool                           `json:"active,omitempty"`
+	AlertType     CreateAlertRuleRequestAlertType `json:"alert_type"`
+	EnvironmentId *openapi_types.UUID             `json:"environment_id,omitempty"`
+
+	// EvaluationPeriod Seconds the metric must stay over the threshold. Rules evaluate in
+	// whole minutes with a minimum of 120 seconds, so smaller values
+	// behave as 120; the response returns effective_evaluation_period.
 	EvaluationPeriod int                                 `json:"evaluation_period"`
 	ProjectId        openapi_types.UUID                  `json:"project_id"`
 	SeverityLevel    CreateAlertRuleRequestSeverityLevel `json:"severity_level"`
@@ -2553,6 +3291,52 @@ type CreateAlertRuleRequestAlertType string
 
 // CreateAlertRuleRequestSeverityLevel defines model for CreateAlertRuleRequest.SeverityLevel.
 type CreateAlertRuleRequestSeverityLevel string
+
+// CreateDatabaseRequest defines model for CreateDatabaseRequest.
+type CreateDatabaseRequest struct {
+	// Engine Database engine. Descriptive only: the product is SphereDB and the
+	// engine is what it runs. More engines (valkey, mariadb) join this
+	// enum as they launch.
+	Engine        DatabaseEngine     `json:"engine"`
+	EnvironmentId openapi_types.UUID `json:"environment_id"`
+
+	// HighAvailability `none`: one instance. `standby`: a primary and a standby in another
+	// zone with automatic failover. `three_zone`: a primary and two
+	// standbys across three zones, synchronous, no acknowledged-write
+	// loss. Standbys need an instance type with 1 vCPU or more.
+	HighAvailability *DatabaseHighAvailability `json:"high_availability,omitempty"`
+
+	// Inject Give every service in the environment the pooled connection
+	// string as `DATABASE_URL`. Change later with
+	// `updateDatabaseInjection`.
+	Inject *bool `json:"inject,omitempty"`
+
+	// InstanceType Instance type id from `listDatabaseInstanceTypes`, e.g. `pg-2c-4g`. Required unless the deprecated `plan` is sent.
+	InstanceType *string `json:"instance_type,omitempty"`
+
+	// Name Lowercase letters, digits and hyphens; unique in the environment.
+	Name string `json:"name"`
+
+	// Plan Deprecated; use `instance_type`. Can't be combined with `instance_type` or `high_availability`.
+	// Deprecated:
+	Plan      *DatabasePlanCode `json:"plan,omitempty"`
+	StorageGb *int              `json:"storage_gb,omitempty"`
+
+	// Version Major version. Defaults to the latest supported.
+	Version *CreateDatabaseRequestVersion `json:"version,omitempty"`
+}
+
+// CreateDatabaseRequestVersion Major version. Defaults to the latest supported.
+type CreateDatabaseRequestVersion string
+
+// CreateDatabaseTunnelSessionRequest defines model for CreateDatabaseTunnelSessionRequest.
+type CreateDatabaseTunnelSessionRequest struct {
+	// Route `direct` for tools and migrations (default), `pooled` to test app-style connections.
+	Route *CreateDatabaseTunnelSessionRequestRoute `json:"route,omitempty"`
+}
+
+// CreateDatabaseTunnelSessionRequestRoute `direct` for tools and migrations (default), `pooled` to test app-style connections.
+type CreateDatabaseTunnelSessionRequestRoute string
 
 // CreateDeploymentRequest Two shapes accepted depending on `service_id`:
 //
@@ -2657,6 +3441,23 @@ type CreateGuardrailRuleRequest struct {
 	Value interface{} `json:"value"`
 }
 
+// CreatePreviewRequest defines model for CreatePreviewRequest.
+type CreatePreviewRequest struct {
+	// Alias Key for this preview within the project. Re-using an alias
+	// updates that preview. Normalized to a DNS-safe slug; generated
+	// when omitted.
+	Alias *string `json:"alias,omitempty"`
+
+	// GitRef Branch or commit SHA to build. Defaults to each service's tracked branch.
+	GitRef *string `json:"git_ref,omitempty"`
+
+	// SourceEnvironmentId Standard environment to cut the preview from (a preview is rejected)
+	SourceEnvironmentId openapi_types.UUID `json:"source_environment_id"`
+
+	// TtlDays Days until the preview expires. Defaults to 7 when omitted or not positive.
+	TtlDays *int `json:"ttl_days,omitempty"`
+}
+
 // CreateProjectRequest defines model for CreateProjectRequest.
 type CreateProjectRequest struct {
 	AccountId   openapi_types.UUID `json:"account_id"`
@@ -2729,6 +3530,12 @@ type CronJobRunList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2759,6 +3566,12 @@ type CronJobRunLogList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2789,6 +3602,568 @@ type CurrentUser struct {
 
 // CurrentUserObject defines model for CurrentUser.Object.
 type CurrentUserObject string
+
+// Database defines model for Database.
+type Database struct {
+	AccountId openapi_types.UUID `json:"account_id"`
+
+	// Backups Whether the database is backed up. When `enabled` is false the
+	// database still runs, but can't be restored to a point in time.
+	// `not_in_region`: backups aren't offered in this region yet.
+	// `capacity` / `platform_error`: temporarily unavailable on our
+	// side; we're alerted and will enable them.
+	Backups struct {
+		Enabled bool                   `json:"enabled"`
+		Reason  *DatabaseBackupsReason `json:"reason"`
+	} `json:"backups"`
+	CreatedAt time.Time `json:"created_at"`
+
+	// Engine Database engine. Descriptive only: the product is SphereDB and the
+	// engine is what it runs. More engines (valkey, mariadb) join this
+	// enum as they launch.
+	Engine        DatabaseEngine     `json:"engine"`
+	EnvironmentId openapi_types.UUID `json:"environment_id"`
+
+	// Error Customer-safe error text; empty when there is none.
+	Error string `json:"error"`
+
+	// HighAvailability `none`: one instance. `standby`: a primary and a standby in another
+	// zone with automatic failover. `three_zone`: a primary and two
+	// standbys across three zones, synchronous, no acknowledged-write
+	// loss. Standbys need an instance type with 1 vCPU or more.
+	HighAvailability DatabaseHighAvailability `json:"high_availability"`
+	Id               openapi_types.UUID       `json:"id"`
+
+	// InstanceType Instance type id, e.g. `pg-2c-4g`.
+	InstanceType string     `json:"instance_type"`
+	LastBackupAt *time.Time `json:"last_backup_at"`
+	Links        struct {
+		Backups    *string `json:"backups,omitempty"`
+		Connection *string `json:"connection,omitempty"`
+		Metrics    *string `json:"metrics,omitempty"`
+		Self       string  `json:"self"`
+	} `json:"links"`
+	Members []DatabaseMember `json:"members"`
+
+	// MinorVersion Running minor version, e.g. "17.10". Minor updates apply automatically.
+	MinorVersion *string        `json:"minor_version"`
+	Name         string         `json:"name"`
+	Object       DatabaseObject `json:"object"`
+
+	// Plan Deprecated storage profile; use `instance_type` and `high_availability`.
+	// Deprecated:
+	Plan      DatabasePlanCode   `json:"plan"`
+	ProjectId openapi_types.UUID `json:"project_id"`
+
+	// PublicAccess The database's public endpoint. Off by default; only addresses in
+	// `allowed_cidrs` can connect when it's on.
+	PublicAccess DatabasePublicAccess `json:"public_access"`
+	ReasonCode   *DatabaseReasonCode  `json:"reason_code"`
+
+	// Redundancy Derived from the plan.
+	Redundancy DatabaseRedundancy `json:"redundancy"`
+
+	// Region Region of the environment, e.g. "eastus2".
+	Region string `json:"region"`
+
+	// RestoreWindowDays Point-in-time restore window.
+	RestoreWindowDays *int `json:"restore_window_days,omitempty"`
+
+	// Status `degraded`: serving, but a standby is missing (ha plan).
+	// `failed`: provisioning or a change failed; see `error`.
+	Status        DatabaseStatus `json:"status"`
+	StorageGb     int            `json:"storage_gb"`
+	StorageUsedGb *float32       `json:"storage_used_gb"`
+	UpdatedAt     time.Time      `json:"updated_at"`
+
+	// Version Major version, e.g. "17".
+	Version string `json:"version"`
+}
+
+// DatabaseBackupsReason defines model for Database.Backups.Reason.
+type DatabaseBackupsReason string
+
+// DatabaseObject defines model for Database.Object.
+type DatabaseObject string
+
+// DatabaseReasonCode defines model for Database.ReasonCode.
+type DatabaseReasonCode string
+
+// DatabaseRedundancy Derived from the plan.
+type DatabaseRedundancy string
+
+// DatabaseBackup defines model for DatabaseBackup.
+type DatabaseBackup struct {
+	CompletedAt *time.Time           `json:"completed_at"`
+	Id          string               `json:"id"`
+	Kind        DatabaseBackupKind   `json:"kind"`
+	Object      DatabaseBackupObject `json:"object"`
+	SizeGb      *float32             `json:"size_gb"`
+	StartedAt   time.Time            `json:"started_at"`
+	Status      DatabaseBackupStatus `json:"status"`
+}
+
+// DatabaseBackupKind defines model for DatabaseBackup.Kind.
+type DatabaseBackupKind string
+
+// DatabaseBackupObject defines model for DatabaseBackup.Object.
+type DatabaseBackupObject string
+
+// DatabaseBackupStatus defines model for DatabaseBackup.Status.
+type DatabaseBackupStatus string
+
+// DatabaseBackupList defines model for DatabaseBackupList.
+type DatabaseBackupList struct {
+	Items  []DatabaseBackup         `json:"items"`
+	Object DatabaseBackupListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination    Pagination `json:"pagination"`
+	RestoreWindow struct {
+		Earliest *time.Time `json:"earliest"`
+		Latest   *time.Time `json:"latest"`
+	} `json:"restore_window"`
+	Warnings []Warning `json:"warnings"`
+}
+
+// DatabaseBackupListObject defines model for DatabaseBackupList.Object.
+type DatabaseBackupListObject string
+
+// DatabaseConnection defines model for DatabaseConnection.
+type DatabaseConnection struct {
+	DatabaseId openapi_types.UUID       `json:"database_id"`
+	Direct     DatabaseRoute            `json:"direct"`
+	Object     DatabaseConnectionObject `json:"object"`
+	Pooled     DatabaseRoute            `json:"pooled"`
+
+	// Public Public endpoint routes; null unless public access is enabled.
+	Public   *DatabasePublicConnection `json:"public"`
+	Revealed bool                      `json:"revealed"`
+	Sslmode  DatabaseConnectionSslmode `json:"sslmode"`
+}
+
+// DatabaseConnectionObject defines model for DatabaseConnection.Object.
+type DatabaseConnectionObject string
+
+// DatabaseConnectionSslmode defines model for DatabaseConnection.Sslmode.
+type DatabaseConnectionSslmode string
+
+// DatabaseEngine Database engine. Descriptive only: the product is SphereDB and the
+// engine is what it runs. More engines (valkey, mariadb) join this
+// enum as they launch.
+type DatabaseEngine string
+
+// DatabaseHighAvailability `none`: one instance. `standby`: a primary and a standby in another
+// zone with automatic failover. `three_zone`: a primary and two
+// standbys across three zones, synchronous, no acknowledged-write
+// loss. Standbys need an instance type with 1 vCPU or more.
+type DatabaseHighAvailability string
+
+// DatabaseInjection defines model for DatabaseInjection.
+type DatabaseInjection struct {
+	DatabaseId    openapi_types.UUID      `json:"database_id"`
+	IncludeDirect bool                    `json:"include_direct"`
+	Mode          DatabaseInjectionMode   `json:"mode"`
+	Object        DatabaseInjectionObject `json:"object"`
+
+	// ServiceIds Services receiving the variable when `mode` is `selected`; empty otherwise.
+	ServiceIds []openapi_types.UUID `json:"service_ids"`
+
+	// VariableName Variable holding the pooled string. The direct one is `<variable_name>_DIRECT`.
+	VariableName string `json:"variable_name"`
+}
+
+// DatabaseInjectionMode defines model for DatabaseInjection.Mode.
+type DatabaseInjectionMode string
+
+// DatabaseInjectionObject defines model for DatabaseInjection.Object.
+type DatabaseInjectionObject string
+
+// DatabaseInstanceType defines model for DatabaseInstanceType.
+type DatabaseInstanceType struct {
+	// Available False when the type can't be created here; see `unavailable_reason`.
+	Available bool `json:"available"`
+
+	// Burstable True on 1–2 vCPU types, which burst to their full vCPU.
+	Burstable bool `json:"burstable"`
+
+	// Engine Database engine. Descriptive only: the product is SphereDB and the
+	// engine is what it runs. More engines (valkey, mariadb) join this
+	// enum as they launch.
+	Engine DatabaseEngine `json:"engine"`
+
+	// Family `free`: one per account, sleeps when idle. `flex`: shared CPU.
+	// `standard`: dedicated vCPU. `plus`: dedicated vCPU with twice the
+	// memory per vCPU of standard.
+	Family DatabaseInstanceTypeFamily `json:"family"`
+
+	// HighAvailabilityAllowed Whether `standby` and `three_zone` are offered.
+	HighAvailabilityAllowed bool `json:"high_availability_allowed"`
+
+	// Id Instance type id used on create and resize, e.g. `pg-2c-4g`.
+	Id string `json:"id"`
+
+	// IncludedStorageGb Storage included in the price; more is billed per GB.
+	IncludedStorageGb int `json:"included_storage_gb"`
+
+	// MaxConnections Direct connections; pooled connections allow 5×.
+	MaxConnections int                  `json:"max_connections"`
+	MemoryMb       int                  `json:"memory_mb"`
+	MonthlyPrice   DatabaseMonthlyPrice `json:"monthly_price"`
+
+	// Name Display name, e.g. "Standard 2" or "Plus 4".
+	Name   string                     `json:"name"`
+	Object DatabaseInstanceTypeObject `json:"object"`
+
+	// PriceGroup The region's price group; premium regions cost 25% more.
+	PriceGroup DatabaseInstanceTypePriceGroup `json:"price_group"`
+
+	// UnavailableReason Null when available.
+	UnavailableReason *DatabaseInstanceTypeUnavailableReason `json:"unavailable_reason"`
+
+	// Vcpu vCPU; fractions are shared CPU.
+	Vcpu float32 `json:"vcpu"`
+}
+
+// DatabaseInstanceTypeFamily `free`: one per account, sleeps when idle. `flex`: shared CPU.
+// `standard`: dedicated vCPU. `plus`: dedicated vCPU with twice the
+// memory per vCPU of standard.
+type DatabaseInstanceTypeFamily string
+
+// DatabaseInstanceTypeObject defines model for DatabaseInstanceType.Object.
+type DatabaseInstanceTypeObject string
+
+// DatabaseInstanceTypePriceGroup The region's price group; premium regions cost 25% more.
+type DatabaseInstanceTypePriceGroup string
+
+// DatabaseInstanceTypeUnavailableReason Null when available.
+type DatabaseInstanceTypeUnavailableReason string
+
+// DatabaseInstanceTypeList defines model for DatabaseInstanceTypeList.
+type DatabaseInstanceTypeList struct {
+	Items  []DatabaseInstanceType         `json:"items"`
+	Object DatabaseInstanceTypeListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination Pagination `json:"pagination"`
+	Warnings   []Warning  `json:"warnings"`
+}
+
+// DatabaseInstanceTypeListObject defines model for DatabaseInstanceTypeList.Object.
+type DatabaseInstanceTypeListObject string
+
+// DatabaseList defines model for DatabaseList.
+type DatabaseList struct {
+	Items  []Database         `json:"items"`
+	Object DatabaseListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination Pagination `json:"pagination"`
+	Warnings   []Warning  `json:"warnings"`
+}
+
+// DatabaseListObject defines model for DatabaseList.Object.
+type DatabaseListObject string
+
+// DatabaseMember defines model for DatabaseMember.
+type DatabaseMember struct {
+	Role DatabaseMemberRole `json:"role"`
+
+	// Zone Availability zone number ("1", "2", "3"); null when not yet placed.
+	Zone *string `json:"zone"`
+}
+
+// DatabaseMemberRole defines model for DatabaseMember.Role.
+type DatabaseMemberRole string
+
+// DatabaseMetric defines model for DatabaseMetric.
+type DatabaseMetric struct {
+	// Kpi Shown in the KPI row.
+	Kpi   bool   `json:"kpi"`
+	Label string `json:"label"`
+
+	// Limit Plan limit to draw as a reference line.
+	Limit *float32           `json:"limit"`
+	Slug  string             `json:"slug"`
+	Unit  DatabaseMetricUnit `json:"unit"`
+}
+
+// DatabaseMetricUnit defines model for DatabaseMetric.Unit.
+type DatabaseMetricUnit string
+
+// DatabaseMetricCatalog defines model for DatabaseMetricCatalog.
+type DatabaseMetricCatalog struct {
+	DatabaseId openapi_types.UUID `json:"database_id"`
+
+	// Engine Database engine. Descriptive only: the product is SphereDB and the
+	// engine is what it runs. More engines (valkey, mariadb) join this
+	// enum as they launch.
+	Engine DatabaseEngine              `json:"engine"`
+	Items  []DatabaseMetric            `json:"items"`
+	Object DatabaseMetricCatalogObject `json:"object"`
+}
+
+// DatabaseMetricCatalogObject defines model for DatabaseMetricCatalog.Object.
+type DatabaseMetricCatalogObject string
+
+// DatabaseMetricsResponse defines model for DatabaseMetricsResponse.
+type DatabaseMetricsResponse struct {
+	DatabaseId openapi_types.UUID `json:"database_id"`
+
+	// Limit Plan limit for this metric, when there is one.
+	Limit  *float32                      `json:"limit"`
+	Object DatabaseMetricsResponseObject `json:"object"`
+
+	// Series One series per member (or one aggregate series).
+	Series []struct {
+		// Label "instance 1" … "instance N" for per-instance metrics, or "all".
+		Label string `json:"label"`
+
+		// Values [unix_ts, value] pairs.
+		Values [][]float64 `json:"values"`
+	} `json:"series"`
+
+	// Step Sampling step actually used, in seconds.
+	Step int `json:"step"`
+
+	// Type Metric slug that was queried.
+	Type string                      `json:"type"`
+	Unit DatabaseMetricsResponseUnit `json:"unit"`
+}
+
+// DatabaseMetricsResponseObject defines model for DatabaseMetricsResponse.Object.
+type DatabaseMetricsResponseObject string
+
+// DatabaseMetricsResponseUnit defines model for DatabaseMetricsResponse.Unit.
+type DatabaseMetricsResponseUnit string
+
+// DatabaseMonthlyPrice defines model for DatabaseMonthlyPrice.
+type DatabaseMonthlyPrice struct {
+	// Amount Price per month in the currency's minor unit (USD cents).
+	Amount   int64                        `json:"amount"`
+	Currency DatabaseMonthlyPriceCurrency `json:"currency"`
+}
+
+// DatabaseMonthlyPriceCurrency defines model for DatabaseMonthlyPrice.Currency.
+type DatabaseMonthlyPriceCurrency string
+
+// DatabasePlan defines model for DatabasePlan.
+type DatabasePlan struct {
+	// Available False when the plan can't be created here; see `unavailable_reason`.
+	Available bool `json:"available"`
+
+	// Code `hobby`: one instance, single zone. `standard`: one instance on
+	// zone-redundant storage. `ha`: a primary and two standbys, one per
+	// zone across three zones, automatic failover, synchronous commits
+	// (no acknowledged-write loss).
+	Code DatabasePlanCode `json:"code"`
+
+	// Durability `synchronous` (ha): a commit is acknowledged only once a standby
+	// has it, so failover loses no acknowledged writes.
+	// `asynchronous`: single instance; point-in-time recovery from
+	// continuous backups.
+	Durability DatabasePlanDurability `json:"durability"`
+
+	// Engine Database engine. Descriptive only: the product is SphereDB and the
+	// engine is what it runs. More engines (valkey, mariadb) join this
+	// enum as they launch.
+	Engine         DatabaseEngine `json:"engine"`
+	Instances      int            `json:"instances"`
+	MaxConnections int            `json:"max_connections"`
+	MemoryGb       float32        `json:"memory_gb"`
+
+	// MonthlyPriceUsd Compute price per month; storage is billed per GB on top. Null while pricing is pending.
+	MonthlyPriceUsd *float32 `json:"monthly_price_usd"`
+
+	// Name Display name ("Hobby", "Standard", "High availability").
+	Name       string                 `json:"name"`
+	Object     DatabasePlanObject     `json:"object"`
+	Redundancy DatabasePlanRedundancy `json:"redundancy"`
+
+	// RequiredSubscription Subscription tier that unlocks the plan when `available` is false.
+	RequiredSubscription   *string  `json:"required_subscription"`
+	StoragePriceGbMonthUsd *float32 `json:"storage_price_gb_month_usd"`
+
+	// UnavailableReason `not_in_region`: the environment's region doesn't offer this
+	// plan's storage yet. `subscription`: the account's subscription
+	// doesn't include it (see `required_subscription`). Null when
+	// available.
+	UnavailableReason *DatabasePlanUnavailableReason `json:"unavailable_reason"`
+	Vcpu              float32                        `json:"vcpu"`
+}
+
+// DatabasePlanDurability `synchronous` (ha): a commit is acknowledged only once a standby
+// has it, so failover loses no acknowledged writes.
+// `asynchronous`: single instance; point-in-time recovery from
+// continuous backups.
+type DatabasePlanDurability string
+
+// DatabasePlanObject defines model for DatabasePlan.Object.
+type DatabasePlanObject string
+
+// DatabasePlanRedundancy defines model for DatabasePlan.Redundancy.
+type DatabasePlanRedundancy string
+
+// DatabasePlanUnavailableReason `not_in_region`: the environment's region doesn't offer this
+// plan's storage yet. `subscription`: the account's subscription
+// doesn't include it (see `required_subscription`). Null when
+// available.
+type DatabasePlanUnavailableReason string
+
+// DatabasePlanCode `hobby`: one instance, single zone. `standard`: one instance on
+// zone-redundant storage. `ha`: a primary and two standbys, one per
+// zone across three zones, automatic failover, synchronous commits
+// (no acknowledged-write loss).
+type DatabasePlanCode string
+
+// DatabasePlanList defines model for DatabasePlanList.
+type DatabasePlanList struct {
+	Items  []DatabasePlan         `json:"items"`
+	Object DatabasePlanListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination Pagination `json:"pagination"`
+	Warnings   []Warning  `json:"warnings"`
+}
+
+// DatabasePlanListObject defines model for DatabasePlanList.Object.
+type DatabasePlanListObject string
+
+// DatabasePublicAccess The database's public endpoint. Off by default; only addresses in
+// `allowed_cidrs` can connect when it's on.
+type DatabasePublicAccess struct {
+	// AllowedCidrs IPv4 or IPv6 ranges in CIDR form, e.g. "203.0.113.7/32".
+	AllowedCidrs []string           `json:"allowed_cidrs"`
+	DatabaseId   openapi_types.UUID `json:"database_id"`
+	Enabled      bool               `json:"enabled"`
+
+	// Hostname Public hostname, e.g. "d-1a2b3c4d.db.us-east-1.computesphere.com",
+	// while the endpoint is enabled; null when it's off. Stable for the
+	// life of the database.
+	Hostname *string                    `json:"hostname"`
+	Object   DatabasePublicAccessObject `json:"object"`
+
+	// UpdatedAt When the settings last changed; null if never set.
+	UpdatedAt *time.Time `json:"updated_at"`
+}
+
+// DatabasePublicAccessObject defines model for DatabasePublicAccess.Object.
+type DatabasePublicAccessObject string
+
+// DatabasePublicConnection Connecting from outside ComputeSphere (BI tools, laptops,
+// integrations). Present only when the public endpoint is enabled.
+// Services running on ComputeSphere use the injected `DATABASE_URL`
+// instead; the public endpoint refuses traffic from platform addresses.
+type DatabasePublicConnection struct {
+	AllowedCidrs []string                        `json:"allowed_cidrs"`
+	Direct       DatabaseRoute                   `json:"direct"`
+	Hostname     string                          `json:"hostname"`
+	Pooled       DatabaseRoute                   `json:"pooled"`
+	Sslmode      DatabasePublicConnectionSslmode `json:"sslmode"`
+}
+
+// DatabasePublicConnectionSslmode defines model for DatabasePublicConnection.Sslmode.
+type DatabasePublicConnectionSslmode string
+
+// DatabaseRoute defines model for DatabaseRoute.
+type DatabaseRoute struct {
+	Database string `json:"database"`
+
+	// Host Private hostname, reachable only from services in the environment; the public hostname on the public endpoint.
+	Host string `json:"host"`
+
+	// Label "For your app" (pooled) or "For tools and migrations" (direct); "For tools, migrations and CDC" on the public endpoint.
+	Label string `json:"label"`
+
+	// Password Masked ("••••••••") unless revealed.
+	Password string `json:"password"`
+	Port     int    `json:"port"`
+
+	// Uri postgresql:// URI with sslmode=require; on the public endpoint
+	// sslmode=verify-full&sslrootcert=system (libpq 16+ verifies the
+	// publicly trusted certificate against the OS trust store; older
+	// libpq needs sslrootcert pointing at a CA bundle). The password is
+	// masked unless revealed.
+	Uri      string `json:"uri"`
+	Username string `json:"username"`
+}
+
+// DatabaseStatus `degraded`: serving, but a standby is missing (ha plan).
+// `failed`: provisioning or a change failed; see `error`.
+type DatabaseStatus string
+
+// DatabaseTunnelSession defines model for DatabaseTunnelSession.
+type DatabaseTunnelSession struct {
+	Database   string             `json:"database"`
+	DatabaseId openapi_types.UUID `json:"database_id"`
+
+	// EdgeUrl WebSocket URL of the database region's edge, e.g. wss://tunnel.us-east-1.computesphere.com/v1/tunnel
+	EdgeUrl string `json:"edge_url"`
+
+	// ExpiresAt New streams can be opened until this time.
+	ExpiresAt time.Time `json:"expires_at"`
+
+	// Id Session id; appears in the activity log and the edge's audit records.
+	Id string `json:"id"`
+
+	// MaxSessionSeconds Upper bound for any single stream.
+	MaxSessionSeconds int                         `json:"max_session_seconds"`
+	Object            DatabaseTunnelSessionObject `json:"object"`
+
+	// Password Null unless the caller has write access to the project.
+	Password *string                      `json:"password"`
+	Route    DatabaseTunnelSessionRoute   `json:"route"`
+	Sslmode  DatabaseTunnelSessionSslmode `json:"sslmode"`
+
+	// Ticket Opaque bearer ticket for the edge. Treat as a secret; never log it.
+	Ticket   string `json:"ticket"`
+	Username string `json:"username"`
+}
+
+// DatabaseTunnelSessionObject defines model for DatabaseTunnelSession.Object.
+type DatabaseTunnelSessionObject string
+
+// DatabaseTunnelSessionRoute defines model for DatabaseTunnelSession.Route.
+type DatabaseTunnelSessionRoute string
+
+// DatabaseTunnelSessionSslmode defines model for DatabaseTunnelSession.Sslmode.
+type DatabaseTunnelSessionSslmode string
 
 // DeleteSphereFileRequest defines model for DeleteSphereFileRequest.
 type DeleteSphereFileRequest struct {
@@ -2841,6 +4216,12 @@ type DeployLogList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2870,6 +4251,12 @@ type DeploymentEventList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2877,8 +4264,52 @@ type DeploymentEventList struct {
 // DeploymentEventListObject defines model for DeploymentEventList.Object.
 type DeploymentEventListObject string
 
+// DeploymentHealth Live health of the deployment's spherelets, reduced to the worst
+// spherelet. Reflects actual runtime state, so it can show a crash
+// loop or an out-of-memory restart while `status` still reads
+// Running. Omitted when live state is unavailable.
+type DeploymentHealth struct {
+	// ReasonCode Product reason code when unhealthy, starting or completed (same codes as spherelet `reason_code`). Null while running normally.
+	ReasonCode *DeploymentHealthReasonCode `json:"reason_code"`
+
+	// ReasonMessage Plain-language explanation of `reason_code`. Null when `reason_code` is null.
+	ReasonMessage *string `json:"reason_message"`
+
+	// RestartCount Total restarts across the deployment's spherelets.
+	RestartCount int                   `json:"restart_count"`
+	State        DeploymentHealthState `json:"state"`
+}
+
+// DeploymentHealthReasonCode Product reason code when unhealthy, starting or completed (same codes as spherelet `reason_code`). Null while running normally.
+type DeploymentHealthReasonCode string
+
+// DeploymentHealthState defines model for DeploymentHealth.State.
+type DeploymentHealthState string
+
+// DeploymentHealthCheck A deployment's saved health check, every field present. `0` for
+// `timeout_seconds` or `readiness_failure_threshold` means the
+// platform default. Absent on types without a health check.
+type DeploymentHealthCheck struct {
+	Enabled             bool   `json:"enabled"`
+	InitialDelaySeconds int    `json:"initial_delay_seconds"`
+	Path                string `json:"path"`
+	PeriodSeconds       int    `json:"period_seconds"`
+	Port                int    `json:"port"`
+
+	// ReadinessFailureThreshold Consecutive failures before a spherelet leaves traffic; `0` = platform default (3).
+	ReadinessFailureThreshold int `json:"readiness_failure_threshold"`
+
+	// TimeoutSeconds Probe timeout in seconds; `0` = platform default (3s).
+	TimeoutSeconds int `json:"timeout_seconds"`
+}
+
 // DeploymentList defines model for DeploymentList.
 type DeploymentList struct {
+	// Counts Per-status deployment totals, present only for
+	// `GET /deployments?include=counts`. Computed over the same filters
+	// as the list except `status`. `total` also counts deployments whose
+	// status maps to none of the four buckets.
+	Counts *DeploymentStatusCounts  `json:"counts,omitempty"`
 	Items  []map[string]interface{} `json:"items"`
 	Object DeploymentListObject     `json:"object"`
 
@@ -2886,6 +4317,12 @@ type DeploymentList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2897,9 +4334,19 @@ type DeploymentListObject string
 // additional properties are resource-type specific (see GET
 // /schemas/{type} for the authoritative JSON Schema per type).
 type DeploymentOutput struct {
-	Id                   string                 `json:"id"`
-	Name                 string                 `json:"name"`
-	Object               DeploymentOutputObject `json:"object"`
+	Id     string                 `json:"id"`
+	Name   string                 `json:"name"`
+	Object DeploymentOutputObject `json:"object"`
+
+	// Outputs Type-specific outputs. Web services return `url` (the public
+	// address) and `internal_url` (the address other services in the
+	// same environment use) on create, read and redeploy.
+	Outputs *map[string]string `json:"outputs,omitempty"`
+
+	// Raw Full deployment record for detail views. Type-specific fields
+	// are described by GET /schemas/{type}; the fields below are
+	// present for every type.
+	Raw                  *DeploymentOutput_Raw  `json:"raw,omitempty"`
 	Status               string                 `json:"status"`
 	Type                 string                 `json:"type"`
 	AdditionalProperties map[string]interface{} `json:"-"`
@@ -2907,6 +4354,56 @@ type DeploymentOutput struct {
 
 // DeploymentOutputObject defines model for DeploymentOutput.Object.
 type DeploymentOutputObject string
+
+// DeploymentOutputRawDeployPolicy The deployment's own deploy-policy override; null when it inherits the environment's.
+type DeploymentOutputRawDeployPolicy string
+
+// DeploymentOutputRawEffectiveDeployPolicy The deploy policy that applies — the override, else the environment's policy, else `auto`.
+type DeploymentOutputRawEffectiveDeployPolicy string
+
+// DeploymentOutputRawTriggerOn What a git push must be to build (`branch` by default).
+type DeploymentOutputRawTriggerOn string
+
+// DeploymentOutput_Raw Full deployment record for detail views. Type-specific fields
+// are described by GET /schemas/{type}; the fields below are
+// present for every type.
+type DeploymentOutput_Raw struct {
+	// AutodeployPausedAt When push-to-deploy was paused (a rollback pauses it so the
+	// next push doesn't replace the rolled-back version); null
+	// while pushes build. Resume with
+	// `POST /deployments/{id}/resume-autodeploy`.
+	AutodeployPausedAt *time.Time `json:"autodeploy_paused_at"`
+
+	// DeployPolicy The deployment's own deploy-policy override; null when it inherits the environment's.
+	DeployPolicy *DeploymentOutputRawDeployPolicy `json:"deploy_policy"`
+
+	// EffectiveDeployPolicy The deploy policy that applies — the override, else the environment's policy, else `auto`.
+	EffectiveDeployPolicy *DeploymentOutputRawEffectiveDeployPolicy `json:"effective_deploy_policy,omitempty"`
+
+	// HealthCheck A deployment's saved health check, every field present. `0` for
+	// `timeout_seconds` or `readiness_failure_threshold` means the
+	// platform default. Absent on types without a health check.
+	HealthCheck *DeploymentHealthCheck `json:"health_check,omitempty"`
+
+	// LastDeployedAt When a deploy last finished rolling out successfully. Null until the first successful rollout.
+	LastDeployedAt *time.Time `json:"last_deployed_at"`
+
+	// NextRunAt Cron jobs only: the next scheduled run (UTC), computed from
+	// the schedule. Schedules run in UTC unless they pin a zone
+	// with a `CRON_TZ=` prefix. Null for other types, suspended
+	// jobs, or an unparseable schedule.
+	NextRunAt *time.Time `json:"next_run_at"`
+
+	// Region Region of the deployment's environment. Null when not set.
+	Region *string `json:"region"`
+
+	// TagPattern Tag glob used when `trigger_on` is `tag`; null when unset.
+	TagPattern *string `json:"tag_pattern"`
+
+	// TriggerOn What a git push must be to build (`branch` by default).
+	TriggerOn            *DeploymentOutputRawTriggerOn `json:"trigger_on,omitempty"`
+	AdditionalProperties map[string]interface{}        `json:"-"`
+}
 
 // DeploymentSpherelet defines model for DeploymentSpherelet.
 type DeploymentSpherelet struct {
@@ -2924,20 +4421,33 @@ type DeploymentSpherelet struct {
 	// context, but cannot disambiguate spherelets in a picker
 	// — every sibling carries the same value. Use `display_name`
 	// for disambiguation.
-	Name string `json:"name"`
+	Name   string                    `json:"name"`
+	Object DeploymentSphereletObject `json:"object"`
+	Phase  string                    `json:"phase"`
+	Ready  bool                      `json:"ready"`
 
-	// Node Deprecated. Always returned as `null` going forward; will
-	// be removed in a future major version. Surfaces no
-	// information clients should rely on.
-	Node      *string                   `json:"node"`
-	Object    DeploymentSphereletObject `json:"object"`
-	Phase     string                    `json:"phase"`
-	Ready     bool                      `json:"ready"`
-	StartedAt time.Time                 `json:"started_at"`
+	// ReasonCode Why the spherelet is not healthy, as a stable code. Null while
+	// healthy. `unhealthy` covers conditions without a specific code.
+	ReasonCode *DeploymentSphereletReasonCode `json:"reason_code"`
+
+	// ReasonMessage Plain-language explanation of `reason_code`, suitable for display. Null while healthy.
+	ReasonMessage *string `json:"reason_message"`
+
+	// RestartCount How many times this spherelet's process has restarted. Null when
+	// live spherelet state is unavailable.
+	RestartCount *int `json:"restart_count"`
+
+	// StartedAt When the spherelet's current process started. Null when live
+	// spherelet state is unavailable.
+	StartedAt *time.Time `json:"started_at"`
 }
 
 // DeploymentSphereletObject defines model for DeploymentSpherelet.Object.
 type DeploymentSphereletObject string
+
+// DeploymentSphereletReasonCode Why the spherelet is not healthy, as a stable code. Null while
+// healthy. `unhealthy` covers conditions without a specific code.
+type DeploymentSphereletReasonCode string
 
 // DeploymentSphereletList defines model for DeploymentSphereletList.
 type DeploymentSphereletList struct {
@@ -2948,6 +4458,12 @@ type DeploymentSphereletList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -2957,7 +4473,15 @@ type DeploymentSphereletListObject string
 
 // DeploymentStatus defines model for DeploymentStatus.
 type DeploymentStatus struct {
-	Id              openapi_types.UUID     `json:"id"`
+	// Health Live health of the deployment's spherelets, reduced to the worst
+	// spherelet. Reflects actual runtime state, so it can show a crash
+	// loop or an out-of-memory restart while `status` still reads
+	// Running. Omitted when live state is unavailable.
+	Health *DeploymentHealth  `json:"health,omitempty"`
+	Id     openapi_types.UUID `json:"id"`
+
+	// LastDeployedAt When a deploy last finished rolling out successfully. Null until the first successful rollout.
+	LastDeployedAt  *time.Time             `json:"last_deployed_at"`
 	MaxSphereCount  int                    `json:"max_sphere_count"`
 	Object          DeploymentStatusObject `json:"object"`
 	SphereCount     int                    `json:"sphere_count"`
@@ -2968,34 +4492,306 @@ type DeploymentStatus struct {
 // DeploymentStatusObject defines model for DeploymentStatus.Object.
 type DeploymentStatusObject string
 
+// DeploymentStatusCounts Per-status deployment totals, present only for
+// `GET /deployments?include=counts`. Computed over the same filters
+// as the list except `status`. `total` also counts deployments whose
+// status maps to none of the four buckets.
+type DeploymentStatusCounts struct {
+	Deploying int `json:"deploying"`
+	Failed    int `json:"failed"`
+	Running   int `json:"running"`
+	Stopped   int `json:"stopped"`
+	Total     int `json:"total"`
+}
+
 // DeploymentUpdateRequest Capability-gated update request. Only the field(s) supported by the
 // resolved resource type are applied; unsupported fields return 422.
 type DeploymentUpdateRequest struct {
-	Autoscaling *map[string]interface{}              `json:"autoscaling,omitempty"`
+	Autoscaling *map[string]interface{} `json:"autoscaling,omitempty"`
+
+	// BuildConfig Git build source (web services, cron jobs and static sites). A
+	// merge, never a replacement: a field left out keeps its stored value, and an
+	// explicit JSON `null` clears it (every field accepts `null`;
+	// generated SDK clients omit unset fields, so they never clear
+	// by accident). Settings the body does not name — the
+	// push webhook, watch paths, build args — are kept, so push-to-deploy
+	// keeps working after a branch or path edit.
+	//
+	// **Switch an image service to git.** On a service that deploys a
+	// container image, sending `git_url` (with `git_connection_id`)
+	// switches it to a git source in place: same deployment id, so its
+	// variables, custom domains and path routes stay attached. The build
+	// mode is `native` when `language` is sent, else `docker`. Registry
+	// credentials and the pinned digest of the old image are cleared;
+	// the running image keeps serving until the first build replaces
+	// it. The connection must belong to the account and be able to clone
+	// the repository, or the request fails with `404` / `422` and nothing
+	// is changed. Other fields without `git_url` on an image service
+	// return `422`.
+	//
+	// **Builds.** Unless `skip_redeploy` is `true`, a changed source — a
+	// switch, or a new `git_url`, `branch` or `git_connection_id` —
+	// starts a build, which deploys when it succeeds. Path, command and
+	// build-arg edits are saved for the next build and start nothing,
+	// like `PUT /deployments/{id}/manifest`. A `build_config` update
+	// never redeploys the running image.
+	//
+	// **Static sites.** A static site always builds from git, so
+	// `build_config` repoints or retunes it in place: `git_url`,
+	// `branch`, `git_connection_id`, `root_directory` (alias of
+	// `root_dir`), `install_command`, `build_command`,
+	// `publish_directory` and `spa`. The rules are those of create: `git_url`
+	// must name a repository (`owner/repo`) and cannot be cleared,
+	// `build_command` cannot be empty, and `root_directory` and
+	// `publish_directory` must stay inside the repository (no `..`).
+	// A new `git_connection_id` must belong to the account; when
+	// `git_url` changes without one, the current connection is kept
+	// and must be able to clone the new repository. `build_type`,
+	// `dockerfile`, `context` and `run_command` do not apply and
+	// return `422`. The site's hostname, custom domains and current
+	// live build are untouched: the next build — the one a changed
+	// source starts, a push to the new repository/branch, or a manual
+	// Deploy — replaces it only when it succeeds, and a settings-only
+	// edit (or `skip_redeploy`) is picked up by the next push or
+	// Deploy. Validation failures return `422` with the offending
+	// field in `errors[]`. `spa` is a serving setting, not a build
+	// setting: changing it applies to the live site at once, with no
+	// build.
 	BuildConfig *DeploymentUpdateRequest_BuildConfig `json:"build_config,omitempty"`
-	DbConfig    *map[string]interface{}              `json:"db_config,omitempty"`
-	HealthCheck *map[string]interface{}              `json:"health_check,omitempty"`
+
+	// DbConfig Managed database settings (postgresql, redis, mariadb, rabbitmq).
+	// A merge, never a replacement: a field left out keeps its saved
+	// value, and the stored credentials and database name are never
+	// touched. `storage` can only grow (`400` otherwise). MariaDB and
+	// RabbitMQ keep the version they were created with (a different
+	// `version` returns `422`) and are validated as the v1 config
+	// endpoint validates them.
+	DbConfig *DeploymentUpdateRequest_DbConfig `json:"db_config,omitempty"`
+
+	// DeployPolicy Per-deployment override of the environment's deploy policy:
+	// `auto`, `approval`, or `null` to inherit the environment's.
+	// Requires the project admin role. Omit to leave it unchanged.
+	DeployPolicy *DeploymentUpdateRequestDeployPolicy `json:"deploy_policy"`
+
+	// HealthCheck Health-check settings (web services). A merge, never a
+	// replacement: a field left out keeps its saved value, so
+	// `{"enabled": false}` turns the check off and keeps its path,
+	// port and timings. The result is validated; an invalid
+	// combination returns `400`.
+	HealthCheck *DeploymentUpdateRequest_HealthCheck `json:"health_check,omitempty"`
 
 	// Image Container image update. For a private registry, `url` is the
 	// registry endpoint — required for providers that authenticate
 	// with username + password (azure, docker, other, custom).
-	Image                *DeploymentUpdateRequest_Image `json:"image,omitempty"`
-	LogDrains            *map[string]interface{}        `json:"log_drains,omitempty"`
-	Networking           *map[string]interface{}        `json:"networking,omitempty"`
-	Port                 *int                           `json:"port,omitempty"`
-	Schedule             *map[string]interface{}        `json:"schedule,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:"-"`
+	//
+	// Registry credentials (`password`, `access_key`, `secret_key`,
+	// `gcp_credentials`) are write-only: reads never return them. A
+	// credential left out keeps its saved value while the image stays
+	// `private` on the same `provider` and registry (same registry
+	// host in `name`, and `url` omitted or unchanged), so changing
+	// only the image name or tag keeps the saved credentials. Pointing
+	// the image at a different registry requires sending the
+	// credentials again.
+	Image     *DeploymentUpdateRequest_Image `json:"image,omitempty"`
+	LogDrains *map[string]interface{}        `json:"log_drains,omitempty"`
+
+	// Networking Network access settings. `type` + `whitelisted_ips` control
+	// IP access as before; `default_url_disabled` (ADR 0129) turns
+	// the service's default `d-*.computesphere.app` URL off/on —
+	// routing only, the DNS record survives as a CNAME anchor.
+	// Setting it `true` is rejected with `422` unless the service
+	// has a custom domain verified and serving; removing the last
+	// serving custom domain resets it to `false` automatically.
+	Networking *DeploymentUpdateRequest_Networking `json:"networking,omitempty"`
+	Port       *int                                `json:"port,omitempty"`
+
+	// Schedule Cron-job schedule. A merge, never a replacement: a field left out
+	// keeps its saved value, and a suspended job stays suspended.
+	Schedule *DeploymentUpdateRequest_Schedule `json:"schedule,omitempty"`
+
+	// SkipRedeploy Save the change without rolling it out. For `build_config`, also
+	// suppresses the build a changed source would start.
+	SkipRedeploy *bool `json:"skip_redeploy,omitempty"`
+
+	// TagPattern Glob a tag must match to build when `trigger_on` is `tag`,
+	// e.g. `v*`. `*` does not cross a `/`. Required when
+	// `trigger_on` is `tag`; an empty string clears it.
+	TagPattern *string `json:"tag_pattern,omitempty"`
+
+	// TriggerOn What a git push must be to build: `branch` (pushes to the
+	// tracked branch, the default) or `tag` (pushes of a tag
+	// matching `tag_pattern`; branch pushes are ignored).
+	TriggerOn            *DeploymentUpdateRequestTriggerOn `json:"trigger_on,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:"-"`
 }
 
-// DeploymentUpdateRequest_BuildConfig defines model for DeploymentUpdateRequest.BuildConfig.
+// DeploymentUpdateRequest_BuildConfig Git build source (web services, cron jobs and static sites). A
+// merge, never a replacement: a field left out keeps its stored value, and an
+// explicit JSON `null` clears it (every field accepts `null`;
+// generated SDK clients omit unset fields, so they never clear
+// by accident). Settings the body does not name — the
+// push webhook, watch paths, build args — are kept, so push-to-deploy
+// keeps working after a branch or path edit.
+//
+// **Switch an image service to git.** On a service that deploys a
+// container image, sending `git_url` (with `git_connection_id`)
+// switches it to a git source in place: same deployment id, so its
+// variables, custom domains and path routes stay attached. The build
+// mode is `native` when `language` is sent, else `docker`. Registry
+// credentials and the pinned digest of the old image are cleared;
+// the running image keeps serving until the first build replaces
+// it. The connection must belong to the account and be able to clone
+// the repository, or the request fails with `404` / `422` and nothing
+// is changed. Other fields without `git_url` on an image service
+// return `422`.
+//
+// **Builds.** Unless `skip_redeploy` is `true`, a changed source — a
+// switch, or a new `git_url`, `branch` or `git_connection_id` —
+// starts a build, which deploys when it succeeds. Path, command and
+// build-arg edits are saved for the next build and start nothing,
+// like `PUT /deployments/{id}/manifest`. A `build_config` update
+// never redeploys the running image.
+//
+// **Static sites.** A static site always builds from git, so
+// `build_config` repoints or retunes it in place: `git_url`,
+// `branch`, `git_connection_id`, `root_directory` (alias of
+// `root_dir`), `install_command`, `build_command`,
+// `publish_directory` and `spa`. The rules are those of create: `git_url`
+// must name a repository (`owner/repo`) and cannot be cleared,
+// `build_command` cannot be empty, and `root_directory` and
+// `publish_directory` must stay inside the repository (no `..`).
+// A new `git_connection_id` must belong to the account; when
+// `git_url` changes without one, the current connection is kept
+// and must be able to clone the new repository. `build_type`,
+// `dockerfile`, `context` and `run_command` do not apply and
+// return `422`. The site's hostname, custom domains and current
+// live build are untouched: the next build — the one a changed
+// source starts, a push to the new repository/branch, or a manual
+// Deploy — replaces it only when it succeeds, and a settings-only
+// edit (or `skip_redeploy`) is picked up by the next push or
+// Deploy. Validation failures return `422` with the offending
+// field in `errors[]`. `spa` is a serving setting, not a build
+// setting: changing it applies to the live site at once, with no
+// build.
 type DeploymentUpdateRequest_BuildConfig struct {
+	// Branch Branch to build and to deploy on push. `git_branch` is a deprecated alias.
+	Branch *string `json:"branch,omitempty"`
+
 	// BuildArgs Explicit docker build args passed to the build. PUBLIC
 	// values only — build args are baked into the image layers,
 	// so they must never carry secrets (use secret variables,
 	// which are injected at deploy time instead). Merged over
 	// the NEXT_PUBLIC_*/VITE_* args auto-derived from env vars;
 	// an explicit key wins on collision.
-	BuildArgs            *map[string]string     `json:"build_args,omitempty"`
+	BuildArgs *map[string]string `json:"build_args,omitempty"`
+
+	// BuildCommand Build command.
+	BuildCommand *string `json:"build_command,omitempty"`
+
+	// BuildType Build mode, `docker` or `native`. Defaults to `native` when `language` is set, else `docker`.
+	BuildType *string `json:"build_type,omitempty"`
+
+	// Context Docker build context directory. Defaults to `root_dir`, then the repository root.
+	Context *string `json:"context,omitempty"`
+
+	// Dockerfile Dockerfile path relative to the repository root; the bare
+	// default `Dockerfile` resolves inside the build context.
+	Dockerfile *string `json:"dockerfile,omitempty"`
+
+	// GitConnectionId Git connection that clones the repository and delivers pushes.
+	// Required to switch an image service to git. `connection_id` is
+	// a deprecated alias.
+	GitConnectionId *string `json:"git_connection_id,omitempty"`
+
+	// GitUrl Repository URL. On an image service, switches it to git. Cannot
+	// be cleared on a git service. `git_repo` is accepted as a
+	// deprecated alias.
+	GitUrl *string `json:"git_url,omitempty"`
+
+	// InstallCommand Static sites only: dependency install command (e.g. `npm ci`);
+	// `null` reverts to the inferred default. `422` on other types.
+	InstallCommand *string `json:"install_command,omitempty"`
+
+	// Language Managed toolchain for a native build (nodejs, python, go, …).
+	Language *string `json:"language,omitempty"`
+
+	// PublishDirectory Static sites only: directory the build emits and that gets
+	// published (e.g. `dist`, `build`, `out`); `null` reverts to
+	// `dist`. Relative to the repository, no `..`. `422` on other
+	// types.
+	PublishDirectory *string `json:"publish_directory,omitempty"`
+
+	// RootDir The service's directory in a monorepo. A leading `/` means the repository root.
+	RootDir *string `json:"root_dir,omitempty"`
+
+	// RootDirectory Alias of `root_dir`, the name the static-site schema uses.
+	// `root_dir` wins when both are sent.
+	RootDirectory *string `json:"root_directory,omitempty"`
+
+	// RunCommand Start command (native builds).
+	RunCommand *string `json:"run_command,omitempty"`
+
+	// Spa Static sites only: single-page-app fallback. `true` (the
+	// default) serves `index.html` for paths that match no file,
+	// so client-side routes resolve. `false` answers them with the
+	// site's `404.html` and status `404` (a plain 404 page when the
+	// site has none) — the right choice for plain HTML and
+	// multi-page sites. Applies to the live site immediately, with
+	// no build. `null` reverts to `true`. `422` on other types.
+	Spa *bool `json:"spa,omitempty"`
+
+	// Version Language version for a native build (e.g. `20` for Node.js).
+	Version *string `json:"version,omitempty"`
+
+	// WatchPaths gitignore-style globs; a push builds only when a changed file
+	// matches one. Defaults to `root_dir`, else every push.
+	WatchPaths           *[]string              `json:"watch_paths,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// DeploymentUpdateRequest_DbConfig Managed database settings (postgresql, redis, mariadb, rabbitmq).
+// A merge, never a replacement: a field left out keeps its saved
+// value, and the stored credentials and database name are never
+// touched. `storage` can only grow (`400` otherwise). MariaDB and
+// RabbitMQ keep the version they were created with (a different
+// `version` returns `422`) and are validated as the v1 config
+// endpoint validates them.
+type DeploymentUpdateRequest_DbConfig struct {
+	// Storage Storage in GB; can only grow.
+	Storage *int `json:"storage,omitempty"`
+
+	// Version Engine version (postgresql, redis only).
+	Version              *string                `json:"version,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// DeploymentUpdateRequestDeployPolicy Per-deployment override of the environment's deploy policy:
+// `auto`, `approval`, or `null` to inherit the environment's.
+// Requires the project admin role. Omit to leave it unchanged.
+type DeploymentUpdateRequestDeployPolicy string
+
+// DeploymentUpdateRequest_HealthCheck Health-check settings (web services). A merge, never a
+// replacement: a field left out keeps its saved value, so
+// `{"enabled": false}` turns the check off and keeps its path,
+// port and timings. The result is validated; an invalid
+// combination returns `400`.
+type DeploymentUpdateRequest_HealthCheck struct {
+	Enabled             *bool `json:"enabled,omitempty"`
+	InitialDelaySeconds *int  `json:"initial_delay_seconds,omitempty"`
+
+	// Path HTTP path probed. Required while `enabled` is `true`.
+	Path          *string `json:"path,omitempty"`
+	PeriodSeconds *int    `json:"period_seconds,omitempty"`
+
+	// Port Port probed; `0` probes the service port.
+	Port *int `json:"port,omitempty"`
+
+	// ReadinessFailureThreshold Consecutive failures before a spherelet is taken out of
+	// traffic; `0` uses the platform default (3).
+	ReadinessFailureThreshold *int `json:"readiness_failure_threshold,omitempty"`
+
+	// TimeoutSeconds Probe timeout; `0` uses the platform default (3s).
+	TimeoutSeconds       *int                   `json:"timeout_seconds,omitempty"`
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
@@ -3005,42 +4801,181 @@ type DeploymentUpdateRequestImageType string
 // DeploymentUpdateRequest_Image Container image update. For a private registry, `url` is the
 // registry endpoint — required for providers that authenticate
 // with username + password (azure, docker, other, custom).
+//
+// Registry credentials (`password`, `access_key`, `secret_key`,
+// `gcp_credentials`) are write-only: reads never return them. A
+// credential left out keeps its saved value while the image stays
+// `private` on the same `provider` and registry (same registry
+// host in `name`, and `url` omitted or unchanged), so changing
+// only the image name or tag keeps the saved credentials. Pointing
+// the image at a different registry requires sending the
+// credentials again.
 type DeploymentUpdateRequest_Image struct {
-	Name                 *string                           `json:"name,omitempty"`
-	Password             *string                           `json:"password,omitempty"`
-	Provider             *string                           `json:"provider,omitempty"`
+	// AccessKey AWS access key id for an `ecr` registry. Write-only.
+	AccessKey *string `json:"access_key,omitempty"`
+
+	// GcpCredentials Service-account JSON key for a `gcr` registry. Write-only.
+	GcpCredentials *string `json:"gcp_credentials,omitempty"`
+	Name           *string `json:"name,omitempty"`
+
+	// Password Registry password or token. Write-only.
+	Password *string `json:"password,omitempty"`
+	Provider *string `json:"provider,omitempty"`
+
+	// Region AWS region of an `ecr` registry.
+	Region *string `json:"region,omitempty"`
+
+	// SecretKey AWS secret access key for an `ecr` registry. Write-only.
+	SecretKey            *string                           `json:"secret_key,omitempty"`
 	Type                 *DeploymentUpdateRequestImageType `json:"type,omitempty"`
 	Url                  *string                           `json:"url,omitempty"`
 	Username             *string                           `json:"username,omitempty"`
 	AdditionalProperties map[string]interface{}            `json:"-"`
 }
 
+// DeploymentUpdateRequest_Networking Network access settings. `type` + `whitelisted_ips` control
+// IP access as before; `default_url_disabled` (ADR 0129) turns
+// the service's default `d-*.computesphere.app` URL off/on —
+// routing only, the DNS record survives as a CNAME anchor.
+// Setting it `true` is rejected with `422` unless the service
+// has a custom domain verified and serving; removing the last
+// serving custom domain resets it to `false` automatically.
+type DeploymentUpdateRequest_Networking struct {
+	DefaultUrlDisabled   *bool                  `json:"default_url_disabled,omitempty"`
+	Type                 *string                `json:"type,omitempty"`
+	WhitelistedIps       *[]string              `json:"whitelisted_ips,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// DeploymentUpdateRequest_Schedule Cron-job schedule. A merge, never a replacement: a field left out
+// keeps its saved value, and a suspended job stays suspended.
+type DeploymentUpdateRequest_Schedule struct {
+	// Command Command the job runs.
+	Command *string `json:"command,omitempty"`
+
+	// Cron Cron expression (UTC unless prefixed with `CRON_TZ=`). An invalid expression returns `400`.
+	Cron                 *string                `json:"cron,omitempty"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// DeploymentUpdateRequestTriggerOn What a git push must be to build: `branch` (pushes to the
+// tracked branch, the default) or `tag` (pushes of a tag
+// matching `tag_pattern`; branch pushes are ignored).
+type DeploymentUpdateRequestTriggerOn string
+
 // DeploymentVersion A single build/release version for a deployment.
 type DeploymentVersion struct {
-	CreatedAt            time.Time               `json:"created_at"`
-	Id                   string                  `json:"id"`
-	Object               DeploymentVersionObject `json:"object"`
-	Status               *string                 `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}  `json:"-"`
+	// BuildId The build that produced this version. Null for configuration-only redeploys and older versions.
+	BuildId *string `json:"build_id"`
+
+	// CommitAuthor Author name of the deployed commit, when known.
+	CommitAuthor *string `json:"commit_author"`
+
+	// CommitMessage Message of the deployed commit (truncated to 2000 characters), when known.
+	CommitMessage *string `json:"commit_message"`
+
+	// CommitSha Deployed commit, when the git provider reported it.
+	CommitSha *string   `json:"commit_sha"`
+	CreatedAt time.Time `json:"created_at"`
+
+	// DeployedBy Who triggered the deploy — a user (console / CLI) or an API
+	// token. Captured when the deploy was created and never
+	// re-resolved. Null for git pushes and system-initiated deploys.
+	DeployedBy   *ActorRef `json:"deployed_by"`
+	DeploymentId *string   `json:"deployment_id,omitempty"`
+
+	// FinishedAt When this version's rollout settled (running or failed). Null while rolling out.
+	FinishedAt *time.Time `json:"finished_at"`
+
+	// GitRef Branch or ref the deploy was requested for. Null when not git-sourced or unknown.
+	GitRef    *string                 `json:"git_ref"`
+	Id        string                  `json:"id"`
+	IsCurrent *bool                   `json:"is_current,omitempty"`
+	Name      *string                 `json:"name,omitempty"`
+	Object    DeploymentVersionObject `json:"object"`
+
+	// RolloutDurationSeconds Rollout time in seconds, `created_at` → `finished_at`. Null until the rollout settles.
+	RolloutDurationSeconds *float32 `json:"rollout_duration_seconds"`
+	Status                 *string  `json:"status,omitempty"`
+
+	// TriggerSource What started this deploy: `git_push` (a push to the connected
+	// branch), `manual` (the console), `cli` (the csph CLI), `rollback`,
+	// `promote` (an image promoted from another environment), `api`
+	// (an API token / automation), or `template`. Null when
+	// unknown (records created before this field existed, or
+	// system-initiated deploys).
+	TriggerSource        *DeploymentVersionTriggerSource `json:"trigger_source"`
+	Version              *int                            `json:"version,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:"-"`
 }
 
 // DeploymentVersionObject defines model for DeploymentVersion.Object.
 type DeploymentVersionObject string
 
+// DeploymentVersionTriggerSource What started this deploy: `git_push` (a push to the connected
+// branch), `manual` (the console), `cli` (the csph CLI), `rollback`,
+// `promote` (an image promoted from another environment), `api`
+// (an API token / automation), or `template`. Null when
+// unknown (records created before this field existed, or
+// system-initiated deploys).
+type DeploymentVersionTriggerSource string
+
 // DeploymentVersionDetail defines model for DeploymentVersionDetail.
 type DeploymentVersionDetail struct {
-	CreatedAt    time.Time                     `json:"created_at"`
-	DeploymentId openapi_types.UUID            `json:"deployment_id"`
-	Id           openapi_types.UUID            `json:"id"`
-	IsCurrent    bool                          `json:"is_current"`
-	Name         string                        `json:"name"`
-	Object       DeploymentVersionDetailObject `json:"object"`
-	UpdatedAt    time.Time                     `json:"updated_at"`
-	Version      int                           `json:"version"`
+	// BuildId The build that produced this version. Null for configuration-only redeploys and older versions.
+	BuildId *string `json:"build_id"`
+
+	// CommitAuthor Author name of the deployed commit, when known.
+	CommitAuthor *string `json:"commit_author"`
+
+	// CommitMessage Message of the deployed commit (truncated to 2000 characters), when known.
+	CommitMessage *string `json:"commit_message"`
+
+	// CommitSha Deployed commit, when the git provider reported it.
+	CommitSha *string   `json:"commit_sha"`
+	CreatedAt time.Time `json:"created_at"`
+
+	// DeployedBy Who triggered the deploy — a user (console / CLI) or an API
+	// token. Captured when the deploy was created and never
+	// re-resolved. Null for git pushes and system-initiated deploys.
+	DeployedBy   *ActorRef          `json:"deployed_by"`
+	DeploymentId openapi_types.UUID `json:"deployment_id"`
+
+	// FinishedAt When this version's rollout settled (running or failed). Null while rolling out.
+	FinishedAt *time.Time `json:"finished_at"`
+
+	// GitRef Branch or ref the deploy was requested for. Null when not git-sourced or unknown.
+	GitRef    *string                       `json:"git_ref"`
+	Id        openapi_types.UUID            `json:"id"`
+	IsCurrent bool                          `json:"is_current"`
+	Name      string                        `json:"name"`
+	Object    DeploymentVersionDetailObject `json:"object"`
+
+	// RolloutDurationSeconds Rollout time in seconds, `created_at` → `finished_at`. Null until the rollout settles.
+	RolloutDurationSeconds *float32 `json:"rollout_duration_seconds"`
+	Status                 *string  `json:"status,omitempty"`
+
+	// TriggerSource What started this deploy: `git_push` (a push to the connected
+	// branch), `manual` (the console), `cli` (the csph CLI), `rollback`,
+	// `promote` (an image promoted from another environment), `api`
+	// (an API token / automation), or `template`. Null when
+	// unknown (records created before this field existed, or
+	// system-initiated deploys).
+	TriggerSource *DeploymentVersionDetailTriggerSource `json:"trigger_source"`
+	UpdatedAt     time.Time                             `json:"updated_at"`
+	Version       int                                   `json:"version"`
 }
 
 // DeploymentVersionDetailObject defines model for DeploymentVersionDetail.Object.
 type DeploymentVersionDetailObject string
+
+// DeploymentVersionDetailTriggerSource What started this deploy: `git_push` (a push to the connected
+// branch), `manual` (the console), `cli` (the csph CLI), `rollback`,
+// `promote` (an image promoted from another environment), `api`
+// (an API token / automation), or `template`. Null when
+// unknown (records created before this field existed, or
+// system-initiated deploys).
+type DeploymentVersionDetailTriggerSource string
 
 // DeploymentVersionList defines model for DeploymentVersionList.
 type DeploymentVersionList struct {
@@ -3051,6 +4986,12 @@ type DeploymentVersionList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3069,14 +5010,18 @@ type Domain struct {
 	CheckedAt *time.Time `json:"checked_at,omitempty"`
 
 	// DnsRecords DNS records the customer must create at their DNS provider to
-	// point this custom domain at the deployment — a single proxied
-	// CNAME to the deployment's platform domain. Empty for the platform
-	// ("default") domain. The console renders these for self-serve setup.
+	// point this custom domain at the deployment — a DNS-only (never
+	// proxied) CNAME to the deployment's platform domain. List and get
+	// return the record for this hostname; verify re-checks the whole
+	// domain group, so it returns one record per hostname in the group
+	// (an apex and its `www.` variant), this hostname first. Empty for
+	// the platform ("default") domain. The console renders these for
+	// self-serve setup.
 	DnsRecords *[]struct {
 		// Name The hostname being configured.
 		Name string `json:"name"`
 
-		// Proxied Whether the record should be proxied (Cloudflare orange-cloud).
+		// Proxied Whether the DNS host should proxy the record. Always false — leave the record DNS-only.
 		Proxied *bool `json:"proxied,omitempty"`
 
 		// Type Record type, e.g. CNAME.
@@ -3094,7 +5039,9 @@ type Domain struct {
 	// IsPrimary True for the domain as entered by the user; false for auto-variants.
 	IsPrimary *bool `json:"is_primary,omitempty"`
 
-	// Message Operator-facing detail for non-active states.
+	// Message Customer-safe detail for non-active states. Raw certificate
+	// authority, DNS provider or platform error text is never returned
+	// here; `status` is the stable code.
 	Message     *string `json:"message,omitempty"`
 	NotAfter    *string `json:"not_after,omitempty"`
 	NotBefore   *string `json:"not_before,omitempty"`
@@ -3103,20 +5050,37 @@ type Domain struct {
 	// Status Reconciliation state. `pending_dns` — waiting for the user's
 	// DNS records; `validating` — validation records created,
 	// awaiting verification; `issuing` — certificate being issued;
-	// `active` — serving; `action_required` — gave up after the
-	// pending ceiling, use the verify endpoint to re-enter.
+	// `active` — serving; `action_required` — not resolved within
+	// 72 hours. The domain is still re-checked hourly and becomes
+	// `active` on its own once DNS is correct; the verify endpoint
+	// re-checks it immediately.
 	Status *DomainStatus `json:"status,omitempty"`
 
 	// Type Certificate source.
-	Type                 *DomainType            `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{} `json:"-"`
+	Type *DomainType `json:"type,omitempty"`
+
+	// ValidationMethod How this domain's certificate is validated. `http` (default) —
+	// validated automatically once the domain's traffic reaches
+	// ComputeSphere. `txt` — TXT pre-validation: add the
+	// `validation_records` at your current DNS host first, so the
+	// domain becomes `active` with its certificate issued before you
+	// move its traffic records. Empty for the platform domain.
+	ValidationMethod *string `json:"validation_method,omitempty"`
+
+	// ValidationRecords For a `txt` domain that isn't `active` yet: the TXT records to add
+	// at your current DNS host, before changing `dns_records`. Omitted
+	// once the domain is active.
+	ValidationRecords    *[]DomainValidationRecord `json:"validation_records,omitempty"`
+	AdditionalProperties map[string]interface{}    `json:"-"`
 }
 
 // DomainStatus Reconciliation state. `pending_dns` — waiting for the user's
 // DNS records; `validating` — validation records created,
 // awaiting verification; `issuing` — certificate being issued;
-// `active` — serving; `action_required` — gave up after the
-// pending ceiling, use the verify endpoint to re-enter.
+// `active` — serving; `action_required` — not resolved within
+// 72 hours. The domain is still re-checked hourly and becomes
+// `active` on its own once DNS is correct; the verify endpoint
+// re-checks it immediately.
 type DomainStatus string
 
 // DomainType Certificate source.
@@ -3124,11 +5088,13 @@ type DomainType string
 
 // DomainCertSummary defines model for DomainCertSummary.
 type DomainCertSummary struct {
-	ExpiresAt string                  `json:"expires_at"`
-	Message   string                  `json:"message"`
-	Object    DomainCertSummaryObject `json:"object"`
-	Status    bool                    `json:"status"`
-	Type      string                  `json:"type"`
+	ExpiresAt string `json:"expires_at"`
+
+	// Message Customer-safe certificate status detail. Raw platform error text is never returned here.
+	Message string                  `json:"message"`
+	Object  DomainCertSummaryObject `json:"object"`
+	Status  bool                    `json:"status"`
+	Type    string                  `json:"type"`
 }
 
 // DomainCertSummaryObject defines model for DomainCertSummary.Object.
@@ -3168,6 +5134,12 @@ type DomainDetailList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3179,7 +5151,11 @@ type DomainDetailListObject string
 // at a deployment or environment. The records are tailored to the
 // detected DNS host's capabilities; subdomains get a CNAME, apex
 // (root) domains get a CNAME / ALIAS / A+AAAA depending on the host,
-// and wildcards return no records (not self-serve yet).
+// and wildcards return no records (not self-serve yet). Adding an apex
+// domain also attaches its `www.` hostname, so the guidance for an apex
+// includes a `www` CNAME too: the top-level fields describe the entered
+// domain, and `records` carries every record to add, each labelled
+// with the `hostname` it brings live.
 type DomainDnsGuidance struct {
 	// Apex Best-effort registrable apex of the entered domain. Multi-level
 	// public suffixes (e.g. co.uk) are a known limitation.
@@ -3206,12 +5182,23 @@ type DomainDnsGuidance struct {
 	// detected.
 	Provider string `json:"provider"`
 
-	// Records The DNS records the customer should add. Empty for wildcards.
+	// Records The DNS records the customer should add, for every hostname the
+	// domain serves (an apex returns its root records plus a `www`
+	// CNAME). Empty for wildcards.
 	Records []DomainDnsRecord `json:"records"`
 
 	// Target The ComputeSphere hostname the customer's record should point at.
-	Target               string                 `json:"target"`
-	AdditionalProperties map[string]interface{} `json:"-"`
+	Target string `json:"target"`
+
+	// ValidationMethod The attached domain's certificate validation method, `http` or
+	// `txt`. Omitted when the domain isn't attached yet.
+	ValidationMethod *string `json:"validation_method,omitempty"`
+
+	// ValidationRecords For a domain on TXT pre-validation that isn't active yet: the TXT
+	// records to add at the CURRENT DNS host, for every hostname of the
+	// domain, before changing `records`.
+	ValidationRecords    *[]DomainValidationRecord `json:"validation_records,omitempty"`
+	AdditionalProperties map[string]interface{}    `json:"-"`
 }
 
 // DomainDnsGuidanceObject defines model for DomainDnsGuidance.Object.
@@ -3235,6 +5222,11 @@ type DomainDnsHints struct {
 
 // DomainDnsRecord A single DNS record the customer should create at their DNS host.
 type DomainDnsRecord struct {
+	// Hostname The fully-qualified hostname this record brings live (e.g.
+	// "example.com" for an "@" record, "www.example.com" for the `www`
+	// companion of an apex).
+	Hostname *string `json:"hostname,omitempty"`
+
 	// Name The host/label for the record (e.g. "@" for the root, "www", "api").
 	Name string `json:"name"`
 
@@ -3265,6 +5257,12 @@ type DomainList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3272,11 +5270,48 @@ type DomainList struct {
 // DomainListObject defines model for DomainList.Object.
 type DomainListObject string
 
+// DomainValidationRecord A TXT record for TXT pre-validation of a custom domain. Add it at the
+// domain's current DNS host; it can stay in place after the move.
+type DomainValidationRecord struct {
+	// Hostname The domain hostname this record validates (e.g. `www.example.com`).
+	Hostname string `json:"hostname"`
+
+	// Name Fully-qualified record name.
+	Name string `json:"name"`
+
+	// Purpose `certificate` proves control of the domain so its certificate can
+	// be issued; `ownership` proves ownership of the hostname. Free-form
+	// string (not an enum) to avoid cross-schema enum-constant
+	// collisions in the generated clients.
+	Purpose string `json:"purpose"`
+
+	// Type Record type. Always `TXT` today.
+	Type string `json:"type"`
+
+	// Value Record value.
+	Value                string                 `json:"value"`
+	AdditionalProperties map[string]interface{} `json:"-"`
+}
+
+// EnvVarScope Where a variable is delivered. `runtime`: injected into the running
+// service only. `build`: available to the build only — never injected
+// into the running service or the pre-deploy command. `both`: build and
+// runtime. Defaults: a plain variable is `both`; a secret is `runtime`
+// and reaches the build only when set to `build` or `both`. A secret in
+// the build is never a build arg: a Docker build reads it from a
+// BuildKit secret mount (`RUN --mount=type=secret,id=<KEY>` then read
+// `/run/secrets/<KEY>`); native and static builds see it as an
+// environment variable of the build command only.
+type EnvVarScope string
+
 // EnvVarsResponse defines model for EnvVarsResponse.
 type EnvVarsResponse struct {
 	EnvVars    map[string]string     `json:"env_vars"`
 	Object     EnvVarsResponseObject `json:"object"`
 	SecretVars map[string]string     `json:"secret_vars"`
+
+	// VariableScopes The effective scope of every key in `env_vars` and `secret_vars`, defaults filled in.
+	VariableScopes map[string]EnvVarScope `json:"variable_scopes"`
 }
 
 // EnvVarsResponseObject defines model for EnvVarsResponse.Object.
@@ -3290,30 +5325,78 @@ type Environment struct {
 	// CustomDomain User-supplied custom domain, or null when unset
 	CustomDomain *string `json:"custom_domain"`
 
+	// DefaultUrlDisabled When true the environment's default `e-*.computesphere.app`
+	// URL stops serving (routing only — its DNS record survives as
+	// the CNAME anchor for custom domains). Settable only while
+	// the environment has a serving custom domain (ADR 0129).
+	DefaultUrlDisabled *bool `json:"default_url_disabled,omitempty"`
+
+	// DeployPolicy Whether builds deploy automatically (`auto`, the default) or
+	// wait at `awaiting_approval` until a project admin approves
+	// them (`approval`). Deployments may override it with their own
+	// `deploy_policy`.
+	DeployPolicy EnvironmentDeployPolicy `json:"deploy_policy"`
+
 	// DeploymentCount Number of deployments in this environment. Populated on the single Get; 0 on list responses.
 	DeploymentCount int `json:"deployment_count"`
 
 	// Deployments Deployments in this environment. Populated on the single Get; empty on list responses.
 	Deployments []ServiceDeployment `json:"deployments"`
 
-	// DomainPath Path-to-deployment-id map (always present, may be empty)
+	// DomainPath Path-to-deployment-id map for the environment's DEFAULT
+	// domain (always present, may be empty). Retained for
+	// compatibility — the per-domain shape is `domain_paths`.
 	DomainPath map[string]string `json:"domain_path"`
+
+	// DomainPaths Per-domain path routing (ADR 0133): domain → (path →
+	// deployment id). The empty-string key is the environment's
+	// default domain and mirrors `domain_path`. Omitted when the
+	// environment has no path bindings.
+	DomainPaths *map[string]map[string]string `json:"domain_paths,omitempty"`
+
+	// ExpiresAt When the preview is torn down unless it is updated or extended
+	// first (each update resets it). Previews only.
+	ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 	// Id Opaque environment identifier
 	Id string `json:"id"`
 
+	// Kind `preview` for an expiring preview environment (ADR 0125),
+	// `standard` otherwise. The preview fields below are present only
+	// on previews.
+	Kind EnvironmentKind `json:"kind"`
+
 	// Name Display name
-	Name          string             `json:"name"`
-	NetworkAccess *NetworkAccess     `json:"network_access"`
-	NetworkPolicy *NetworkPolicy     `json:"network_policy"`
-	Object        EnvironmentObject  `json:"object"`
-	ProjectId     openapi_types.UUID `json:"project_id"`
-	Region        string             `json:"region"`
+	Name          string            `json:"name"`
+	NetworkAccess *NetworkAccess    `json:"network_access"`
+	NetworkPolicy *NetworkPolicy    `json:"network_policy"`
+	Object        EnvironmentObject `json:"object"`
+
+	// Preview What created a preview environment (ADR 0125). Git-triggered
+	// previews carry the pull request; API-triggered previews carry only
+	// `trigger: api`.
+	Preview   *PreviewTrigger    `json:"preview,omitempty"`
+	ProjectId openapi_types.UUID `json:"project_id"`
+	Region    string             `json:"region"`
+
+	// SourceEnvironmentId Standard environment the preview was cut from. Previews only.
+	SourceEnvironmentId *string `json:"source_environment_id,omitempty"`
 
 	// SubDomain Auto-generated subdomain on computesphere.app
 	SubDomain *string   `json:"sub_domain"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
+
+// EnvironmentDeployPolicy Whether builds deploy automatically (`auto`, the default) or
+// wait at `awaiting_approval` until a project admin approves
+// them (`approval`). Deployments may override it with their own
+// `deploy_policy`.
+type EnvironmentDeployPolicy string
+
+// EnvironmentKind `preview` for an expiring preview environment (ADR 0125),
+// `standard` otherwise. The preview fields below are present only
+// on previews.
+type EnvironmentKind string
 
 // EnvironmentObject defines model for Environment.Object.
 type EnvironmentObject string
@@ -3327,6 +5410,12 @@ type EnvironmentList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3401,6 +5490,12 @@ type GitBranchList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3410,21 +5505,35 @@ type GitBranchListObject string
 
 // GitConnection defines model for GitConnection.
 type GitConnection struct {
-	AccountId    openapi_types.UUID     `json:"account_id"`
-	CreatedAt    time.Time              `json:"created_at"`
-	Id           openapi_types.UUID     `json:"id"`
-	Object       GitConnectionObject    `json:"object"`
-	ProjectCount int                    `json:"project_count"`
+	AccountId openapi_types.UUID `json:"account_id"`
+
+	// AuthType How the connection authenticates: `github_app` for a ComputeSphere
+	// GitHub App installation, `oauth` for a user OAuth grant (every
+	// GitLab and Bitbucket connection, and older GitHub ones).
+	AuthType     GitConnectionAuthType `json:"auth_type"`
+	CreatedAt    time.Time             `json:"created_at"`
+	Id           openapi_types.UUID    `json:"id"`
+	Object       GitConnectionObject   `json:"object"`
+	ProjectCount int                   `json:"project_count"`
+
+	// Provider Git host. A GitHub App connection reports `github`, like a GitHub
+	// OAuth connection; `auth_type` tells them apart.
 	Provider     GitConnectionProvider  `json:"provider"`
 	ServiceCount int                    `json:"service_count"`
 	Services     []GitConnectionService `json:"services"`
 	Username     string                 `json:"username"`
 }
 
+// GitConnectionAuthType How the connection authenticates: `github_app` for a ComputeSphere
+// GitHub App installation, `oauth` for a user OAuth grant (every
+// GitLab and Bitbucket connection, and older GitHub ones).
+type GitConnectionAuthType string
+
 // GitConnectionObject defines model for GitConnection.Object.
 type GitConnectionObject string
 
-// GitConnectionProvider defines model for GitConnection.Provider.
+// GitConnectionProvider Git host. A GitHub App connection reports `github`, like a GitHub
+// OAuth connection; `auth_type` tells them apart.
 type GitConnectionProvider string
 
 // GitConnectionList defines model for GitConnectionList.
@@ -3436,6 +5545,12 @@ type GitConnectionList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3494,6 +5609,12 @@ type GitRepositoryList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3561,6 +5682,12 @@ type GuardrailAuditLogList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3577,6 +5704,12 @@ type GuardrailList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3679,7 +5812,7 @@ type InvitationEventActorObject string
 
 // InvitationEventInvitationRef Denormalized snapshot of the parent invitation, included on
 // each entry of the account-wide feed. Email is masked at the
-// wire boundary (`s***@perizer.com`) — the raw recipient
+// wire boundary (`s***@computesphere.com`) — the raw recipient
 // address is never serialized.
 type InvitationEventInvitationRef struct {
 	EmailMasked string                             `json:"email_masked"`
@@ -3705,7 +5838,7 @@ type InvitationEventListObject string
 
 // InvitationEventMetadata Sanitized per-variant metadata. Only the keys appropriate to
 // the parent event_type will be set; other fields are absent.
-// Recipient email is always masked (`s***@perizer.com`); raw IP
+// Recipient email is always masked (`s***@computesphere.com`); raw IP
 // and user-agent are never serialized.
 //
 // Per-variant keys:
@@ -3735,6 +5868,12 @@ type InvitationEventPage struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3752,11 +5891,14 @@ type ListSphereFilesRequest struct {
 
 // LogEntry A single log line.
 type LogEntry struct {
-	// Level Detected severity ("error" / "warn" / "info" / "debug") when
-	// the upstream log pipeline classified the line. Empty for
-	// streams the pipeline couldn't classify.
-	Level   *string `json:"level,omitempty"`
-	Message *string `json:"message,omitempty"`
+	// Level Severity of the line. Uses the log pipeline's classification
+	// when it has one, otherwise the line itself (a structured
+	// `level` / `severity` field, then the leading level keyword
+	// such as `ERROR` or `[warn]`); `info` when nothing matches.
+	// The live stream (`/logs/runtime/stream`) classifies lines
+	// the same way.
+	Level   *LogEntryLevel `json:"level,omitempty"`
+	Message *string        `json:"message,omitempty"`
 
 	// Spherelet Six-character identifier of the spherelet that emitted this
 	// line. Stable across requests; the same id is used by the
@@ -3766,6 +5908,14 @@ type LogEntry struct {
 	Timestamp            *time.Time             `json:"timestamp,omitempty"`
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
+
+// LogEntryLevel Severity of the line. Uses the log pipeline's classification
+// when it has one, otherwise the line itself (a structured
+// `level` / `severity` field, then the leading level keyword
+// such as `ERROR` or `[warn]`); `info` when nothing matches.
+// The live stream (`/logs/runtime/stream`) classifies lines
+// the same way.
+type LogEntryLevel string
 
 // LogHistogram Per-bucket log volume across the requested range. Bars are
 // ordered oldest first. Empty `items` array signals "no
@@ -3797,6 +5947,12 @@ type LogList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3828,7 +5984,12 @@ type Manifest struct {
 	Service string `json:"service"`
 
 	// WatchPaths gitignore-style globs. A push only triggers a build when a
-	// changed file matches one of these. Defaults to `["**"]`.
+	// changed file matches one of these. `**` matches any number
+	// of directories (`backend/**/Dockerfile`, `**/*.go`); a
+	// pattern without a slash matches at any depth; a directory
+	// matches every file under it. A push whose payload may be
+	// incomplete (20 or more commits) always builds. Defaults to
+	// `["**"]`.
 	WatchPaths *[]string `json:"watch_paths,omitempty"`
 }
 
@@ -3858,19 +6019,38 @@ type ManifestValidationObject string
 // parameter. Each value is a matrix of the form
 // `[{ metric: {...}, values: [[unix_ts, "value"], ...] }, ...]`.
 type MetricsResponse struct {
-	// Cpu CPU usage matrix (mCore by timestamp)
+	// Cpu CPU usage matrix (vCPU in use by timestamp)
 	Cpu *interface{} `json:"cpu,omitempty"`
 
-	// Memory Memory usage matrix (bytes by timestamp)
+	// Memory Memory usage matrix (bytes by timestamp, peak within each step)
 	Memory *interface{}          `json:"memory,omitempty"`
 	Object MetricsResponseObject `json:"object"`
 
-	// Spherelets Spherelet count matrix
+	// Spherelets Spherelet count matrix (peak within each step)
 	Spherelets *interface{} `json:"spherelets,omitempty"`
+
+	// Step Sampling step actually used, in seconds.
+	Step *int `json:"step,omitempty"`
+
+	// Units Unit of each metric's values.
+	Units *struct {
+		Cpu        MetricsResponseUnitsCpu        `json:"cpu"`
+		Memory     MetricsResponseUnitsMemory     `json:"memory"`
+		Spherelets MetricsResponseUnitsSpherelets `json:"spherelets"`
+	} `json:"units,omitempty"`
 }
 
 // MetricsResponseObject defines model for MetricsResponse.Object.
 type MetricsResponseObject string
+
+// MetricsResponseUnitsCpu defines model for MetricsResponse.Units.Cpu.
+type MetricsResponseUnitsCpu string
+
+// MetricsResponseUnitsMemory defines model for MetricsResponse.Units.Memory.
+type MetricsResponseUnitsMemory string
+
+// MetricsResponseUnitsSpherelets defines model for MetricsResponse.Units.Spherelets.
+type MetricsResponseUnitsSpherelets string
 
 // NetworkAccess defines model for NetworkAccess.
 type NetworkAccess struct {
@@ -3896,25 +6076,55 @@ type NewSphereFileFolderRequest struct {
 
 // Notification defines model for Notification.
 type Notification struct {
-	AccountId         openapi_types.UUID  `json:"account_id"`
-	Body              string              `json:"body"`
-	CreatedAt         time.Time           `json:"created_at"`
-	Id                openapi_types.UUID  `json:"id"`
-	Module            string              `json:"module"`
-	ModuleId          string              `json:"module_id"`
-	NotificationLevel string              `json:"notification_level"`
-	Object            NotificationObject  `json:"object"`
-	Seen              bool                `json:"seen"`
-	Title             string              `json:"title"`
-	TriggeredBy       string              `json:"triggered_by"`
-	Type              string              `json:"type"`
-	Url               string              `json:"url"`
-	UserEmail         openapi_types.Email `json:"user_email"`
-	UserId            openapi_types.UUID  `json:"user_id"`
+	AccountId openapi_types.UUID `json:"account_id"`
+	Body      string             `json:"body"`
+	CreatedAt time.Time          `json:"created_at"`
+
+	// Extras Action context for the notification (invitation accept/reject links and tokens, related resource ids). null when the notification has none.
+	Extras   *NotificationExtras `json:"extras"`
+	Id       openapi_types.UUID  `json:"id"`
+	Module   string              `json:"module"`
+	ModuleId string              `json:"module_id"`
+
+	// NotificationLevel info, warning, success or error. Alert notifications map the rule severity (high to error, medium to warning, low to info); a resolved alert is success.
+	NotificationLevel string             `json:"notification_level"`
+	Object            NotificationObject `json:"object"`
+	Seen              bool               `json:"seen"`
+	Title             string             `json:"title"`
+	TriggeredBy       string             `json:"triggered_by"`
+
+	// Type Notification type, e.g. activity, deployment, billing, payment, invites or alert.
+	Type      string              `json:"type"`
+	Url       string              `json:"url"`
+	UserEmail openapi_types.Email `json:"user_email"`
+	UserId    openapi_types.UUID  `json:"user_id"`
 }
 
 // NotificationObject defines model for Notification.Object.
 type NotificationObject string
+
+// NotificationExtras defines model for NotificationExtras.
+type NotificationExtras struct {
+	// Accept Accept action URL (invitations)
+	Accept string `json:"accept"`
+
+	// AcceptToken Opaque token for the accept action; omitted when not applicable
+	AcceptToken   *string `json:"accept_token,omitempty"`
+	DeploymentId  string  `json:"deployment_id"`
+	EnvironmentId string  `json:"environment_id"`
+	ProjectId     string  `json:"project_id"`
+
+	// Reject Reject action URL (invitations)
+	Reject string `json:"reject"`
+
+	// RejectToken Opaque token for the reject action; omitted when not applicable
+	RejectToken *string `json:"reject_token,omitempty"`
+
+	// RuleId Alert rule that produced the notification; present on alert notifications only
+	RuleId    *string `json:"rule_id,omitempty"`
+	ServiceId string  `json:"service_id"`
+	TeamId    string  `json:"team_id"`
+}
 
 // NotificationList defines model for NotificationList.
 type NotificationList struct {
@@ -3925,6 +6135,12 @@ type NotificationList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -3978,6 +6194,12 @@ type NotificationWebhookContentType string
 // (never null). `total = 0` on empty pages. Both offset and cursor
 // pagination are supported; clients should prefer `next` URLs over
 // constructing query strings.
+//
+// Offset lists: `page` is 1-based, `page_size` is the requested
+// (clamped) size, and `total` is the exact count of rows matching
+// every filter. Cursor lists: the next-page cursor is carried only
+// in `next_cursor` (null on the last page) and `total` describes the
+// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 type Pagination struct {
 	// Next Absolute-path URL for the next page, or null
 	Next *string `json:"next"`
@@ -4020,6 +6242,12 @@ type PaymentHistoryList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4065,6 +6293,12 @@ type PlanList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4099,12 +6333,45 @@ type PluginList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
 
 // PluginListObject defines model for PluginList.Object.
 type PluginListObject string
+
+// PreviewActionResult defines model for PreviewActionResult.
+type PreviewActionResult struct {
+	// Message Human-readable outcome
+	Message string `json:"message"`
+}
+
+// PreviewTrigger What created a preview environment (ADR 0125). Git-triggered
+// previews carry the pull request; API-triggered previews carry only
+// `trigger: api`.
+type PreviewTrigger struct {
+	// GitRef Head commit SHA most recently deployed into the preview.
+	// Git-triggered previews only.
+	GitRef *string `json:"git_ref,omitempty"`
+
+	// GitRepo Repository as `owner/name`. Git-triggered previews only.
+	GitRepo *string `json:"git_repo,omitempty"`
+
+	// PrNumber Pull request number. Git-triggered previews only.
+	PrNumber *int `json:"pr_number,omitempty"`
+
+	// Trigger `git` — a pull request (webhook); `api` — POST /previews
+	Trigger PreviewTriggerTrigger `json:"trigger"`
+}
+
+// PreviewTriggerTrigger `git` — a pull request (webhook); `api` — POST /previews
+type PreviewTriggerTrigger string
 
 // Problem RFC 7807 Problem Details envelope for every non-2xx response
 type Problem struct {
@@ -4158,6 +6425,9 @@ type Project struct {
 	// Active Whether the project is enabled
 	Active bool `json:"active"`
 
+	// AlertEmailsEnabled Whether alert emails (firing and resolved) are sent for the project. On by default
+	AlertEmailsEnabled bool `json:"alert_emails_enabled"`
+
 	// AlertEnabled Whether alert delivery is turned on
 	AlertEnabled bool      `json:"alert_enabled"`
 	CreatedAt    time.Time `json:"created_at"`
@@ -4210,6 +6480,12 @@ type ProjectList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4252,6 +6528,22 @@ type ProjectRoleResolution struct {
 // ProjectRoleResolutionObject defines model for ProjectRoleResolution.Object.
 type ProjectRoleResolutionObject string
 
+// PromoteBuildRequest The build to promote to this deployment. Exactly one of `build_id`
+// or `from_deployment_id` is required.
+type PromoteBuildRequest struct {
+	// AcknowledgeBuildArgs Promote even though the image's public build-time values
+	// (`NEXT_PUBLIC_*`, `VITE_*`, `REACT_APP_*`, `PUBLIC_*`) differ
+	// from this environment's — the image keeps the source
+	// environment's values.
+	AcknowledgeBuildArgs *bool `json:"acknowledge_build_args,omitempty"`
+
+	// BuildId A succeeded build of the same service in another environment.
+	BuildId *openapi_types.UUID `json:"build_id,omitempty"`
+
+	// FromDeploymentId Another environment's deployment of the same service; its latest succeeded build is promoted.
+	FromDeploymentId *openapi_types.UUID `json:"from_deployment_id,omitempty"`
+}
+
 // Region defines model for Region.
 type Region struct {
 	// Available Whether this region currently accepts new environments
@@ -4277,6 +6569,12 @@ type RegionList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4290,6 +6588,18 @@ type RenameSphereFileRequest struct {
 	Path          string             `json:"path"`
 	RenamePath    string             `json:"rename_path"`
 	SpherestorId  openapi_types.UUID `json:"spherestor_id"`
+}
+
+// RestoreDatabaseRequest defines model for RestoreDatabaseRequest.
+type RestoreDatabaseRequest struct {
+	// EnvironmentId Environment for the new database; the source's when omitted. Must be in the same region.
+	EnvironmentId *openapi_types.UUID `json:"environment_id"`
+
+	// Name Name of the new database.
+	Name string `json:"name"`
+
+	// TargetTime Point in time to restore to; latest when omitted. Must be inside the restore window.
+	TargetTime *time.Time `json:"target_time"`
 }
 
 // RestoreResult defines model for RestoreResult.
@@ -4312,6 +6622,16 @@ type RestoreSnapshotRequest struct {
 	TargetServiceName   *string             `json:"target_service_name,omitempty"`
 }
 
+// ResumeAutodeployResponse defines model for ResumeAutodeployResponse.
+type ResumeAutodeployResponse struct {
+	// Autodeploy Push-to-deploy state after the call.
+	Autodeploy   ResumeAutodeployResponseAutodeploy `json:"autodeploy"`
+	DeploymentId string                             `json:"deployment_id"`
+}
+
+// ResumeAutodeployResponseAutodeploy Push-to-deploy state after the call.
+type ResumeAutodeployResponseAutodeploy string
+
 // RollbackRequest defines model for RollbackRequest.
 type RollbackRequest struct {
 	// DeploymentId Deployment version id to roll back to
@@ -4327,10 +6647,22 @@ type Runtime struct {
 	// Node, `go build -o app ./...` for Go). Provide a value to override.
 	BuildCommand *string `json:"build_command,omitempty"`
 
-	// Context Build context directory (`docker` mode). Defaults to `root_dir`.
+	// Context Build context directory relative to the repo root (`docker`
+	// mode). Defaults to `root_dir`, then the repo root. Paths are
+	// repo-relative: a leading `/` means the repo root and backslashes
+	// are read as `/`; `..` is rejected. `native` and `static` builds use `root_dir` as
+	// their context.
 	Context *string `json:"context,omitempty"`
 
-	// Dockerfile Path to the Dockerfile relative to the repo root (`docker` mode)
+	// Dockerfile Path to the Dockerfile relative to the repo root (`docker` mode),
+	// e.g. `frontend/apps/app/Dockerfile`. Exception: the bare default
+	// `Dockerfile` (or an empty value) resolves inside the build
+	// context, so with `context: backend` it means
+	// `backend/Dockerfile`; use `./Dockerfile` to force the repo-root
+	// file. Paths are repo-relative: a leading `/` means the repo root
+	// and backslashes are read as `/`; `..` is rejected. The build fails with a clear
+	// message if the file is missing or resolves (including through a
+	// symlink) outside the repository.
 	Dockerfile *string `json:"dockerfile,omitempty"`
 
 	// Image Fully-qualified image reference to pull and run (`image` mode)
@@ -4365,7 +6697,12 @@ type Runtime struct {
 	Version *string `json:"version,omitempty"`
 
 	// WatchPaths gitignore-style globs. A push only triggers a build when a
-	// changed file matches one of these. Defaults to `["**"]`.
+	// changed file matches one of these. `**` matches any number
+	// of directories (`backend/**/Dockerfile`, `**/*.go`); a
+	// pattern without a slash matches at any depth; a directory
+	// matches every file under it. A push whose payload may be
+	// incomplete (20 or more commits) always builds. Defaults to
+	// `["**"]`.
 	WatchPaths *[]string `json:"watch_paths,omitempty"`
 }
 
@@ -4397,6 +6734,9 @@ type RuntimeLogStreamTokenObject string
 
 // ScaleRequest defines model for ScaleRequest.
 type ScaleRequest struct {
+	// SkipRedeploy Save the new count without rolling it out.
+	SkipRedeploy *bool `json:"skip_redeploy,omitempty"`
+
 	// Spherelets Target spherelet count
 	Spherelets int `json:"spherelets"`
 }
@@ -4457,6 +6797,12 @@ type SearchResultList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4498,11 +6844,14 @@ type ServiceDeployment struct {
 	EnvId string `json:"env_id"`
 
 	// Environment Environment reference (id + name), null when not eager-loaded
-	Environment *ServiceDeploymentEnv   `json:"environment"`
-	Id          string                  `json:"id"`
-	Name        string                  `json:"name"`
-	Object      ServiceDeploymentObject `json:"object"`
-	ServiceId   string                  `json:"service_id"`
+	Environment *ServiceDeploymentEnv `json:"environment"`
+	Id          string                `json:"id"`
+
+	// LastDeployedAt When a deploy last finished rolling out successfully. Null until the first successful rollout.
+	LastDeployedAt *time.Time              `json:"last_deployed_at"`
+	Name           string                  `json:"name"`
+	Object         ServiceDeploymentObject `json:"object"`
+	ServiceId      string                  `json:"service_id"`
 
 	// ServiceName Service name (same value as `name`); present so environment-scoped consumers can read service identity without a separate fetch
 	ServiceName string `json:"service_name"`
@@ -4525,6 +6874,9 @@ type ServiceDeploymentObject string
 type ServiceDeploymentEnv struct {
 	Id   string `json:"id"`
 	Name string `json:"name"`
+
+	// Region Region the environment runs in. Null when not set.
+	Region *string `json:"region"`
 }
 
 // ServiceDeploymentList defines model for ServiceDeploymentList.
@@ -4536,6 +6888,12 @@ type ServiceDeploymentList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4552,6 +6910,12 @@ type ServiceList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4567,13 +6931,32 @@ type SetCustomDomainRequest struct {
 
 // SetEnvVarRequest defines model for SetEnvVarRequest.
 type SetEnvVarRequest struct {
-	Value string `json:"value"`
+	// Scope Where a variable is delivered. `runtime`: injected into the running
+	// service only. `build`: available to the build only — never injected
+	// into the running service or the pre-deploy command. `both`: build and
+	// runtime. Defaults: a plain variable is `both`; a secret is `runtime`
+	// and reaches the build only when set to `build` or `both`. A secret in
+	// the build is never a build arg: a Docker build reads it from a
+	// BuildKit secret mount (`RUN --mount=type=secret,id=<KEY>` then read
+	// `/run/secrets/<KEY>`); native and static builds see it as an
+	// environment variable of the build command only.
+	Scope *EnvVarScope `json:"scope,omitempty"`
+
+	// SkipRedeploy Save the variable without redeploying.
+	SkipRedeploy *bool  `json:"skip_redeploy,omitempty"`
+	Value        string `json:"value"`
 }
 
 // SetEnvVarsRequest defines model for SetEnvVarsRequest.
 type SetEnvVarsRequest struct {
 	EnvVars    *map[string]string `json:"env_vars,omitempty"`
 	SecretVars *map[string]string `json:"secret_vars,omitempty"`
+
+	// SkipRedeploy Save the variables without redeploying.
+	SkipRedeploy *bool `json:"skip_redeploy,omitempty"`
+
+	// VariableScopes Per-key scope. Omit (or send null) to keep the saved scope of every key that still exists. A map replaces the saved scopes: a key you leave out takes its default (plain `both`, secret `runtime`). Every key must be in `env_vars` or `secret_vars` after this write, otherwise `400`.
+	VariableScopes *map[string]EnvVarScope `json:"variable_scopes"`
 }
 
 // SetEnvironmentSecretsRequest defines model for SetEnvironmentSecretsRequest.
@@ -4593,24 +6976,43 @@ type SetEnvironmentVariablesRequest struct {
 
 // Snapshot defines model for Snapshot.
 type Snapshot struct {
-	CreatedAt       time.Time          `json:"created_at"`
-	DeploymentId    openapi_types.UUID `json:"deployment_id"`
-	Details         *string            `json:"details"`
-	Duration        int64              `json:"duration"`
-	Id              openapi_types.UUID `json:"id"`
-	Name            string             `json:"name"`
-	Object          SnapshotObject     `json:"object"`
-	Preserved       bool               `json:"preserved"`
-	Remarks         *string            `json:"remarks"`
-	Status          string             `json:"status"`
-	TriggeredBy     *string            `json:"triggered_by"`
-	TriggeredByName *string            `json:"triggered_by_name"`
-	Type            string             `json:"type"`
-	UpdatedAt       time.Time          `json:"updated_at"`
+	CreatedAt    time.Time          `json:"created_at"`
+	DeploymentId openapi_types.UUID `json:"deployment_id"`
+
+	// Details Customer-safe status detail for the snapshot (for example why it
+	// failed). Raw platform or cloud-provider error text is never
+	// returned here: unrecognised errors are replaced by a generic
+	// message and reported through `reason_code`.
+	Details   *string            `json:"details"`
+	Duration  int64              `json:"duration"`
+	Id        openapi_types.UUID `json:"id"`
+	Name      string             `json:"name"`
+	Object    SnapshotObject     `json:"object"`
+	Preserved bool               `json:"preserved"`
+
+	// ReasonCode Stable code for `details`. Null when there is no error.
+	// `platform_storage_error` means the failure was on the platform side
+	// and there is nothing for the customer to fix;
+	// `storage_full`, `quota_exceeded` and `volume_in_use` are
+	// customer-actionable.
+	ReasonCode      *SnapshotReasonCode `json:"reason_code"`
+	Remarks         *string             `json:"remarks"`
+	Status          string              `json:"status"`
+	TriggeredBy     *string             `json:"triggered_by"`
+	TriggeredByName *string             `json:"triggered_by_name"`
+	Type            string              `json:"type"`
+	UpdatedAt       time.Time           `json:"updated_at"`
 }
 
 // SnapshotObject defines model for Snapshot.Object.
 type SnapshotObject string
+
+// SnapshotReasonCode Stable code for `details`. Null when there is no error.
+// `platform_storage_error` means the failure was on the platform side
+// and there is nothing for the customer to fix;
+// `storage_full`, `quota_exceeded` and `volume_in_use` are
+// customer-actionable.
+type SnapshotReasonCode string
 
 // SnapshotList defines model for SnapshotList.
 type SnapshotList struct {
@@ -4621,6 +7023,12 @@ type SnapshotList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4652,6 +7060,12 @@ type SnapshotLogList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4734,6 +7148,12 @@ type SphereFileList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4773,7 +7193,8 @@ type SphereletResource struct {
 type SpherestorMount struct {
 	DeploymentId openapi_types.UUID `json:"deployment_id"`
 
-	// Error Most recent reconciliation error from the controller
+	// Error Customer-safe summary of the most recent mount error. Raw
+	// platform or cloud-provider error text is never returned here.
 	Error *string `json:"error,omitempty"`
 
 	// Id Mount record id
@@ -4784,8 +7205,15 @@ type SpherestorMount struct {
 	Object    SpherestorMountObject `json:"object"`
 
 	// Path Absolute path inside the spherelet where the volume mounts
-	Path         string             `json:"path"`
-	SpherestorId openapi_types.UUID `json:"spherestor_id"`
+	Path string `json:"path"`
+
+	// ReasonCode Stable code for `error`. Null when there is no error.
+	// `platform_storage_error` means the failure was on the platform side
+	// and there is nothing for the customer to fix;
+	// `storage_full`, `quota_exceeded` and `volume_in_use` are
+	// customer-actionable.
+	ReasonCode   *SpherestorMountReasonCode `json:"reason_code"`
+	SpherestorId openapi_types.UUID         `json:"spherestor_id"`
 
 	// Status True once the controller has reconciled the mount
 	Status bool `json:"status"`
@@ -4793,6 +7221,13 @@ type SpherestorMount struct {
 
 // SpherestorMountObject defines model for SpherestorMount.Object.
 type SpherestorMountObject string
+
+// SpherestorMountReasonCode Stable code for `error`. Null when there is no error.
+// `platform_storage_error` means the failure was on the platform side
+// and there is nothing for the customer to fix;
+// `storage_full`, `quota_exceeded` and `volume_in_use` are
+// customer-actionable.
+type SpherestorMountReasonCode string
 
 // SpherestorResource defines model for SpherestorResource.
 type SpherestorResource struct {
@@ -4807,12 +7242,22 @@ type SpherestorResourceObject string
 
 // SpherestorVolume defines model for SpherestorVolume.
 type SpherestorVolume struct {
-	EnvironmentId openapi_types.UUID     `json:"environment_id"`
-	Error         string                 `json:"error"`
-	Id            openapi_types.UUID     `json:"id"`
-	Name          string                 `json:"name"`
-	Object        SpherestorVolumeObject `json:"object"`
-	ServiceCount  int                    `json:"service_count"`
+	EnvironmentId openapi_types.UUID `json:"environment_id"`
+
+	// Error Customer-safe provisioning error, empty when there is none. Raw
+	// platform or cloud-provider error text is never returned here.
+	Error  string                 `json:"error"`
+	Id     openapi_types.UUID     `json:"id"`
+	Name   string                 `json:"name"`
+	Object SpherestorVolumeObject `json:"object"`
+
+	// ReasonCode Stable code for `error`. Null when there is no error.
+	// `platform_storage_error` means the failure was on the platform side
+	// and there is nothing for the customer to fix;
+	// `storage_full`, `quota_exceeded` and `volume_in_use` are
+	// customer-actionable.
+	ReasonCode   *SpherestorVolumeReasonCode `json:"reason_code"`
+	ServiceCount int                         `json:"service_count"`
 
 	// Status true once the underlying spherestor is ready; false during provisioning
 	Status      bool   `json:"status"`
@@ -4823,6 +7268,13 @@ type SpherestorVolume struct {
 // SpherestorVolumeObject defines model for SpherestorVolume.Object.
 type SpherestorVolumeObject string
 
+// SpherestorVolumeReasonCode Stable code for `error`. Null when there is no error.
+// `platform_storage_error` means the failure was on the platform side
+// and there is nothing for the customer to fix;
+// `storage_full`, `quota_exceeded` and `volume_in_use` are
+// customer-actionable.
+type SpherestorVolumeReasonCode string
+
 // SpherestorVolumeList defines model for SpherestorVolumeList.
 type SpherestorVolumeList struct {
 	Items  []SpherestorVolume         `json:"items"`
@@ -4832,6 +7284,12 @@ type SpherestorVolumeList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4881,6 +7339,12 @@ type SubscriptionCategoryList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4934,6 +7398,12 @@ type SubscriptionFeatureList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -4986,6 +7456,12 @@ type SubscriptionListResponse struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5057,6 +7533,12 @@ type TeamList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5109,6 +7591,12 @@ type TeamProjectList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5154,9 +7642,13 @@ type UpdateAccountMemberRoleRequestRole string
 
 // UpdateAlertRuleRequest All fields optional; only present fields are applied.
 type UpdateAlertRuleRequest struct {
-	Active           *bool                                `json:"active,omitempty"`
-	AlertType        *UpdateAlertRuleRequestAlertType     `json:"alert_type,omitempty"`
-	EnvironmentId    *openapi_types.UUID                  `json:"environment_id,omitempty"`
+	Active        *bool                            `json:"active,omitempty"`
+	AlertType     *UpdateAlertRuleRequestAlertType `json:"alert_type,omitempty"`
+	EnvironmentId *openapi_types.UUID              `json:"environment_id,omitempty"`
+
+	// EvaluationPeriod Seconds the metric must stay over the threshold. Rules evaluate in
+	// whole minutes with a minimum of 120 seconds, so smaller values
+	// behave as 120; the response returns effective_evaluation_period.
 	EvaluationPeriod *int                                 `json:"evaluation_period,omitempty"`
 	SeverityLevel    *UpdateAlertRuleRequestSeverityLevel `json:"severity_level,omitempty"`
 	Threshold        *int                                 `json:"threshold,omitempty"`
@@ -5193,10 +7685,61 @@ type UpdateCurrentUserRequest struct {
 // UpdateCurrentUserRequestTheme defines model for UpdateCurrentUserRequest.Theme.
 type UpdateCurrentUserRequestTheme string
 
+// UpdateDatabaseInjectionRequest defines model for UpdateDatabaseInjectionRequest.
+type UpdateDatabaseInjectionRequest struct {
+	IncludeDirect *bool                              `json:"include_direct,omitempty"`
+	Mode          UpdateDatabaseInjectionRequestMode `json:"mode"`
+	ServiceIds    *[]openapi_types.UUID              `json:"service_ids,omitempty"`
+	VariableName  *string                            `json:"variable_name,omitempty"`
+}
+
+// UpdateDatabaseInjectionRequestMode defines model for UpdateDatabaseInjectionRequest.Mode.
+type UpdateDatabaseInjectionRequestMode string
+
+// UpdateDatabasePublicAccessRequest defines model for UpdateDatabasePublicAccessRequest.
+type UpdateDatabasePublicAccessRequest struct {
+	// AcknowledgeOpenToInternet Must be true to allow `0.0.0.0/0` or `::/0`.
+	AcknowledgeOpenToInternet *bool `json:"acknowledge_open_to_internet,omitempty"`
+
+	// AllowedCidrs Replaces the allowlist. A bare address is treated as a single
+	// host (/32 or /128). Required, with at least one entry, when
+	// `enabled` is true. Kept as-is when omitted.
+	AllowedCidrs *[]string `json:"allowed_cidrs,omitempty"`
+	Enabled      bool      `json:"enabled"`
+}
+
+// UpdateDatabaseRequest All fields optional; only present fields are applied.
+type UpdateDatabaseRequest struct {
+	// HighAvailability `none`: one instance. `standby`: a primary and a standby in another
+	// zone with automatic failover. `three_zone`: a primary and two
+	// standbys across three zones, synchronous, no acknowledged-write
+	// loss. Standbys need an instance type with 1 vCPU or more.
+	HighAvailability *DatabaseHighAvailability `json:"high_availability,omitempty"`
+
+	// InstanceType New instance type id. Changes the size in place with a short restart.
+	InstanceType *string `json:"instance_type,omitempty"`
+
+	// Plan Deprecated; use `instance_type` and `high_availability`.
+	// Deprecated:
+	Plan *DatabasePlanCode `json:"plan,omitempty"`
+
+	// StorageGb Grow only.
+	StorageGb *int `json:"storage_gb,omitempty"`
+}
+
 // UpdateDomainPathRequest defines model for UpdateDomainPathRequest.
 type UpdateDomainPathRequest struct {
 	Action       UpdateDomainPathRequestAction `json:"action"`
 	DeploymentId openapi_types.UUID            `json:"deployment_id"`
+
+	// Domain Which of the environment's custom domains the path binds to.
+	// Omitted or empty binds the path under the environment's
+	// default domain (byte-compatible with existing callers). Must
+	// be a custom domain attached to this environment, else `422`.
+	// The same path may bind different deployments on different
+	// domains; rebinding a `(domain, path)` pair already bound to
+	// another deployment is a `409`.
+	Domain *string `json:"domain,omitempty"`
 
 	// Path URL path prefix to bind, e.g. `/api`
 	Path string `json:"path"`
@@ -5207,9 +7750,32 @@ type UpdateDomainPathRequestAction string
 
 // UpdateEnvironmentRequest defines model for UpdateEnvironmentRequest.
 type UpdateEnvironmentRequest struct {
-	Name          *string        `json:"name,omitempty"`
-	NetworkPolicy *NetworkPolicy `json:"network_policy,omitempty"`
+	// DefaultUrlDisabled Turn the environment's default `e-*.computesphere.app` URL
+	// off (`true`) or back on (`false`). Routing only — the DNS
+	// record is never deleted (it anchors custom-domain CNAMEs).
+	// Setting `true` is rejected with `422` unless the environment
+	// has at least one custom domain verified and serving; removing
+	// the last serving custom domain resets the flag to `false`
+	// automatically (ADR 0129). Omitting the field leaves the
+	// existing value untouched (PATCH semantics).
+	DefaultUrlDisabled *bool `json:"default_url_disabled,omitempty"`
+
+	// DeployPolicy Set the environment's deploy policy. `approval` makes builds
+	// wait at `awaiting_approval` for a project admin, and makes
+	// direct image deploys (image updates, redeploys, apply) require
+	// the project admin role. Changing it requires the project admin
+	// role (`403` otherwise). Omit to leave it unchanged.
+	DeployPolicy  *UpdateEnvironmentRequestDeployPolicy `json:"deploy_policy,omitempty"`
+	Name          *string                               `json:"name,omitempty"`
+	NetworkPolicy *NetworkPolicy                        `json:"network_policy,omitempty"`
 }
+
+// UpdateEnvironmentRequestDeployPolicy Set the environment's deploy policy. `approval` makes builds
+// wait at `awaiting_approval` for a project admin, and makes
+// direct image deploys (image updates, redeploys, apply) require
+// the project admin role. Changing it requires the project admin
+// role (`403` otherwise). Omit to leave it unchanged.
+type UpdateEnvironmentRequestDeployPolicy string
 
 // UpdateNetworkAccessRequest defines model for UpdateNetworkAccessRequest.
 type UpdateNetworkAccessRequest struct {
@@ -5225,7 +7791,12 @@ type UpdateNotificationRequest struct {
 
 // UpdateProjectRequest defines model for UpdateProjectRequest.
 type UpdateProjectRequest struct {
-	AccountId *openapi_types.UUID `json:"account_id,omitempty"`
+	// AlertEmailsEnabled Toggle alert emails (firing and resolved) for the project. On by
+	// default. When on, alert emails go to the project's configured
+	// notification emails, or to the account owner and admins when
+	// none are configured. In-app notifications are sent either way.
+	// Omitting the field leaves the existing value untouched.
+	AlertEmailsEnabled *bool `json:"alert_emails_enabled,omitempty"`
 
 	// AlertEnabled Toggle per-project alert dispatch. Omitting the field leaves
 	// the existing value untouched (PATCH semantics).
@@ -5321,6 +7892,12 @@ type UserAccountList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5352,6 +7929,12 @@ type UserPendingInvitationList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5361,21 +7944,22 @@ type UserPendingInvitationListObject string
 
 // UserProject defines model for UserProject.
 type UserProject struct {
-	AccountId       openapi_types.UUID `json:"account_id"`
-	Active          bool               `json:"active"`
-	AlertEnabled    bool               `json:"alert_enabled"`
-	CreatedAt       time.Time          `json:"created_at"`
-	CreatedBy       *string            `json:"created_by"`
-	DeploymentCount int                `json:"deployment_count"`
-	Description     *string            `json:"description"`
-	Id              string             `json:"id"`
-	LastOpenedAt    *time.Time         `json:"last_opened_at"`
-	Name            string             `json:"name"`
-	Object          UserProjectObject  `json:"object"`
-	ServiceCount    int                `json:"service_count"`
-	SphereCount     int                `json:"sphere_count"`
-	SpherestorUsed  int                `json:"spherestor_used"`
-	UserId          *string            `json:"user_id"`
+	AccountId          openapi_types.UUID `json:"account_id"`
+	Active             bool               `json:"active"`
+	AlertEmailsEnabled bool               `json:"alert_emails_enabled"`
+	AlertEnabled       bool               `json:"alert_enabled"`
+	CreatedAt          time.Time          `json:"created_at"`
+	CreatedBy          *string            `json:"created_by"`
+	DeploymentCount    int                `json:"deployment_count"`
+	Description        *string            `json:"description"`
+	Id                 string             `json:"id"`
+	LastOpenedAt       *time.Time         `json:"last_opened_at"`
+	Name               string             `json:"name"`
+	Object             UserProjectObject  `json:"object"`
+	ServiceCount       int                `json:"service_count"`
+	SphereCount        int                `json:"sphere_count"`
+	SpherestorUsed     int                `json:"spherestor_used"`
+	UserId             *string            `json:"user_id"`
 }
 
 // UserProjectObject defines model for UserProject.Object.
@@ -5390,6 +7974,12 @@ type UserProjectList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5415,6 +8005,12 @@ type UserSearchHistoryList struct {
 	// (never null). `total = 0` on empty pages. Both offset and cursor
 	// pagination are supported; clients should prefer `next` URLs over
 	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
 	Pagination Pagination `json:"pagination"`
 	Warnings   []Warning  `json:"warnings"`
 }
@@ -5448,6 +8044,9 @@ type ConnectionId = openapi_types.UUID
 
 // CronRunId defines model for CronRunId.
 type CronRunId = string
+
+// DatabaseId defines model for DatabaseId.
+type DatabaseId = openapi_types.UUID
 
 // DeployVersionId defines model for DeployVersionId.
 type DeployVersionId = openapi_types.UUID
@@ -5681,11 +8280,37 @@ type ListActivityLogsParams struct {
 	// ProjectId Scope results to a single project
 	ProjectId *openapi_types.UUID `form:"project_id,omitempty" json:"project_id,omitempty"`
 
+	// DeploymentId Scope results to events about a single deployment
+	DeploymentId *openapi_types.UUID `form:"deployment_id,omitempty" json:"deployment_id,omitempty"`
+
+	// EnvironmentId Scope results to events about the deployments in a single
+	// environment, deleted deployments included. Events that aren't
+	// about a deployment (for example, the environment's own
+	// create/update events) are not included.
+	EnvironmentId *openapi_types.UUID `form:"environment_id,omitempty" json:"environment_id,omitempty"`
+
+	// ServiceId Scope results to events about the deployments of a single
+	// service, deleted deployments included.
+	ServiceId *openapi_types.UUID `form:"service_id,omitempty" json:"service_id,omitempty"`
+
 	// Action Filter by action slug (e.g., `create`, `delete`, `deploy`)
 	Action *string `form:"action,omitempty" json:"action,omitempty"`
 
-	// Module Filter by module slug (e.g., `service`, `environment`, `project`)
+	// Module Filter by module slug (e.g., `service`, `environment`, `project`).
+	// Accepts one value or a comma-separated list (`api_token,member`).
+	// Matching is case-insensitive.
 	Module *string `form:"module,omitempty" json:"module,omitempty"`
+
+	// Category Filter by audit-log category. Matching on the module is
+	// case-insensitive.
+	//
+	// - `access`: events whose module is one of `api_token`,
+	//   `apitoken`, `member`, `user`.
+	// - `compute`: every other event.
+	//
+	// Combines with `module` (both must match). Any other value
+	// returns 400.
+	Category *ListActivityLogsParamsCategory `form:"category,omitempty" json:"category,omitempty"`
 
 	// Title Filter by exact title match
 	Title *string `form:"title,omitempty" json:"title,omitempty"`
@@ -5699,15 +8324,24 @@ type ListActivityLogsParams struct {
 	// Search Free-text match against title + remarks
 	Search *string `form:"search,omitempty" json:"search,omitempty"`
 
-	// StartDate Include only events at or after this RFC 3339 timestamp
+	// StartDate Include only events at or after this bound: an RFC 3339
+	// timestamp (`2026-08-30T12:00:00Z`, or with an offset such as
+	// `+02:00`, URL-encoded). A date `YYYY-MM-DD` is also accepted
+	// and read as 00:00:00 UTC that day. Any other format returns 400.
 	StartDate *time.Time `form:"start_date,omitempty" json:"start_date,omitempty"`
 
-	// EndDate Include only events at or before this RFC 3339 timestamp
+	// EndDate Include only events at or before this bound: an RFC 3339
+	// timestamp, inclusive of that instant. A date `YYYY-MM-DD` is
+	// also accepted and is inclusive of the whole UTC day. Any other
+	// format, or an `end_date` before `start_date`, returns 400.
 	EndDate *time.Time `form:"end_date,omitempty" json:"end_date,omitempty"`
 
 	// XAccountId Selects the active account for this request
 	XAccountId XAccountId `json:"x-account-id"`
 }
+
+// ListActivityLogsParamsCategory defines parameters for ListActivityLogs.
+type ListActivityLogsParamsCategory string
 
 // ListAlertRulesParams defines parameters for ListAlertRules.
 type ListAlertRulesParams struct {
@@ -5745,7 +8379,15 @@ type ListAPITokensParams struct {
 
 	// PageSize Results per page
 	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
+
+	// Type Narrow the caller's tokens: `user` returns personal tokens
+	// (not bound to an account), `account` returns account-bound
+	// tokens. Applied before paging, so `pagination.total` is exact.
+	Type *ListAPITokensParamsType `form:"type,omitempty" json:"type,omitempty"`
 }
+
+// ListAPITokensParamsType defines parameters for ListAPITokens.
+type ListAPITokensParamsType string
 
 // CreateAPITokenParams defines parameters for CreateAPIToken.
 type CreateAPITokenParams struct {
@@ -5771,6 +8413,27 @@ type ApplyManifestParams struct {
 	// resource failure. Default `false` preserves the original
 	// partial-success semantics for computesphere.yaml / CLI use.
 	Atomic *bool `form:"atomic,omitempty" json:"atomic,omitempty"`
+
+	// Partial Set to `true` when the manifest describes only part of each
+	// service (for example, just a new image). Settings the manifest
+	// declares are applied; nothing is removed. By default the manifest
+	// is the full definition of what it manages: a variable or health
+	// check that a previous apply of the file set, and that the file no
+	// longer declares, is removed. Settings made in the console or CLI
+	// are never removed by an apply that doesn't mention them.
+	Partial *bool `form:"partial,omitempty" json:"partial,omitempty"`
+}
+
+// ValidateApplyManifestParams defines parameters for ValidateApplyManifest.
+type ValidateApplyManifestParams struct {
+	// ProjectId Target project for a version-1 manifest or JSON resource set —
+	// the value you will pass to POST /apply. Ignored when the manifest
+	// declares its own `project` + `environments`. Must be sent together
+	// with `environment_id`.
+	ProjectId *openapi_types.UUID `form:"project_id,omitempty" json:"project_id,omitempty"`
+
+	// EnvironmentId Target environment, under the same rule as `project_id`.
+	EnvironmentId *openapi_types.UUID `form:"environment_id,omitempty" json:"environment_id,omitempty"`
 }
 
 // ListConnectionsParams defines parameters for ListConnections.
@@ -5811,22 +8474,118 @@ type ListRepositoryBranchesParams struct {
 	RepoId *string `form:"repo_id,omitempty" json:"repo_id,omitempty"`
 }
 
-// ListDeploymentsParams defines parameters for ListDeployments.
-type ListDeploymentsParams struct {
-	ServiceId     *openapi_types.UUID `form:"service_id,omitempty" json:"service_id,omitempty"`
+// ListDatabasesParams defines parameters for ListDatabases.
+type ListDatabasesParams struct {
+	ProjectId     *openapi_types.UUID `form:"project_id,omitempty" json:"project_id,omitempty"`
 	EnvironmentId *openapi_types.UUID `form:"environment_id,omitempty" json:"environment_id,omitempty"`
 
-	// Type Filter by resource type slug
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
+
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// CreateDatabaseParams defines parameters for CreateDatabase.
+type CreateDatabaseParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// ListDatabaseInstanceTypesParams defines parameters for ListDatabaseInstanceTypes.
+type ListDatabaseInstanceTypesParams struct {
+	EnvironmentId *openapi_types.UUID `form:"environment_id,omitempty" json:"environment_id,omitempty"`
+	Engine        *DatabaseEngine     `form:"engine,omitempty" json:"engine,omitempty"`
+
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// ListDatabasePlansParams defines parameters for ListDatabasePlans.
+type ListDatabasePlansParams struct {
+	EnvironmentId *openapi_types.UUID `form:"environment_id,omitempty" json:"environment_id,omitempty"`
+	Engine        *DatabaseEngine     `form:"engine,omitempty" json:"engine,omitempty"`
+
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// ListDatabaseBackupsParams defines parameters for ListDatabaseBackups.
+type ListDatabaseBackupsParams struct {
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
+}
+
+// GetDatabaseConnectionParams defines parameters for GetDatabaseConnection.
+type GetDatabaseConnectionParams struct {
+	Reveal *bool `form:"reveal,omitempty" json:"reveal,omitempty"`
+}
+
+// GetDatabaseMetricsParams defines parameters for GetDatabaseMetrics.
+type GetDatabaseMetricsParams struct {
+	// Type Metric slug from the catalogue (connections, tps, storage_used, ...)
+	Type string `form:"type" json:"type"`
+
+	// StartTime RFC 3339 lower bound for log window
+	StartTime *LogStartTime `form:"start_time,omitempty" json:"start_time,omitempty"`
+
+	// EndTime RFC 3339 upper bound for log window
+	EndTime *LogEndTime `form:"end_time,omitempty" json:"end_time,omitempty"`
+
+	// Step Sampling step in seconds; omit for automatic resolution.
+	Step *int `form:"step,omitempty" json:"step,omitempty"`
+}
+
+// ListDeploymentsParams defines parameters for ListDeployments.
+type ListDeploymentsParams struct {
+	ServiceId *openapi_types.UUID `form:"service_id,omitempty" json:"service_id,omitempty"`
+
+	// EnvironmentId Narrow to one environment.
+	EnvironmentId *openapi_types.UUID `form:"environment_id,omitempty" json:"environment_id,omitempty"`
+
+	// Env Alias of `environment_id`.
+	Env *openapi_types.UUID `form:"env,omitempty" json:"env,omitempty"`
+
+	// Type Filter by resource type slug. Legacy stored types are matched
+	// under their v2 slug (e.g. `web-service` also matches
+	// deployments created as `deploy_app` / `build_app`).
 	Type *string `form:"type,omitempty" json:"type,omitempty"`
 
-	// Page 1-based page number. Applied only to the account-wide branch
-	// (no `service_id` or `environment_id` filter).
+	// Q Case-insensitive substring search over the service,
+	// deployment and project names.
+	Q *string `form:"q,omitempty" json:"q,omitempty"`
+
+	// Status Comma-separated normalised status buckets: `running`,
+	// `stopped`, `failed`, `deploying`. Raw statuses map to buckets
+	// as follows — running: Running, Started, Restarted, Scheduled;
+	// deploying: Deploying, Building, Starting, Scheduling, Pending,
+	// Restarting, Redeploying, RollingBack, Predeploying; stopped:
+	// Stopped, Stopping, Suspended, Suspending; failed: Failed, Error,
+	// CrashLoopBackOff. Any other value is a 400.
+	Status *string `form:"status,omitempty" json:"status,omitempty"`
+
+	// Include Set to `counts` to add the `counts` object.
+	Include *ListDeploymentsParamsInclude `form:"include,omitempty" json:"include,omitempty"`
+
+	// Page 1-based page number (account view).
 	Page *int `form:"page,omitempty" json:"page,omitempty"`
 
-	// Size Page size. Applied only to the account-wide branch. Capped at
-	// 200 to protect the API.
+	// PageSize Page size (account view). Capped at 200. Defaults to 50, or
+	// 200 when `environment_id` is set.
+	PageSize *int `form:"page_size,omitempty" json:"page_size,omitempty"`
+
+	// Size Legacy alias of `page_size`.
 	Size *int `form:"size,omitempty" json:"size,omitempty"`
 }
+
+// ListDeploymentsParamsInclude defines parameters for ListDeployments.
+type ListDeploymentsParamsInclude string
 
 // ListDeploymentBuildsParams defines parameters for ListDeploymentBuilds.
 type ListDeploymentBuildsParams struct {
@@ -6060,7 +8819,15 @@ type GetDeploymentMetricsParams struct {
 	// EndTime RFC 3339 upper bound for log window
 	EndTime *LogEndTime `form:"end_time,omitempty" json:"end_time,omitempty"`
 
-	// Step Sampling step in seconds
+	// Step Sampling step in seconds. Omit for automatic resolution:
+	// about 200 points per range, rounded up to 15s, 30s, 1m, 2m,
+	// 5m, 10m, 15m, 30m, 1h, 2h, 3h, 6h, 12h or whole days (1h →
+	// 30s, 24h → 10m, 7d → 1h). A client step is bounded: at least
+	// 15s, coarse enough to stay under 11,000 points, and no
+	// coarser than the range. The step actually used is returned
+	// in `step`. CPU is a rate over max(step, 1m, 4 scrape
+	// intervals); memory and spherelet count take the maximum over
+	// the same window so short spikes are not lost between points.
 	Step *int `form:"step,omitempty" json:"step,omitempty"`
 
 	// Aggregation Cross-spherelet aggregation for the aggregated CPU and
@@ -6117,7 +8884,9 @@ type DeleteEnvironmentParams struct {
 // GetEnvironmentDomainDnsGuidanceParams defines parameters for GetEnvironmentDomainDnsGuidance.
 type GetEnvironmentDomainDnsGuidanceParams struct {
 	// Domain Fully-qualified custom domain to set up (e.g. app.example.com).
-	Domain string `form:"domain" json:"domain"`
+	// Optional — defaults to the environment's primary custom domain;
+	// a `400` when omitted and the environment has none.
+	Domain *string `form:"domain,omitempty" json:"domain,omitempty"`
 }
 
 // ListGuardrailsParams defines parameters for ListGuardrails.
@@ -6216,6 +8985,14 @@ type ListNotificationsParams struct {
 
 	// PageSize Results per page
 	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
+
+	// Seen Narrow to seen (`true`) or unseen (`false`) notifications.
+	// `pagination.total` counts only matching rows.
+	Seen *bool `form:"seen,omitempty" json:"seen,omitempty"`
+
+	// Unread Shorthand for `seen=false` when `true`; ignored when `false`.
+	// Combining `unread=true` with `seen=true` is a 400.
+	Unread *bool `form:"unread,omitempty" json:"unread,omitempty"`
 }
 
 // ListPlansParams defines parameters for ListPlans.
@@ -6253,15 +9030,36 @@ type ListPluginsParams struct {
 	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
 }
 
+// ListPreviewsParams defines parameters for ListPreviews.
+type ListPreviewsParams struct {
+	// ProjectId Project scope
+	ProjectId openapi_types.UUID `form:"project_id" json:"project_id"`
+}
+
 // ListProjectsParams defines parameters for ListProjects.
 type ListProjectsParams struct {
 	// AccountId Account scope
 	AccountId openapi_types.UUID `form:"account_id" json:"account_id"`
+
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
+
+	// Name Filter by exact project name
+	Name *string `form:"name,omitempty" json:"name,omitempty"`
+
+	// Active Filter by active state
+	Active *ListProjectsParamsActive `form:"active,omitempty" json:"active,omitempty"`
 }
+
+// ListProjectsParamsActive defines parameters for ListProjects.
+type ListProjectsParamsActive string
 
 // DeleteProjectParams defines parameters for DeleteProject.
 type DeleteProjectParams struct {
-	// Cascade Delete child environments + deployments first
+	// Cascade Delete child environments and deployments too (default). Set to false to refuse non-empty projects.
 	Cascade *bool `form:"cascade,omitempty" json:"cascade,omitempty"`
 }
 
@@ -6368,6 +9166,18 @@ type ListSubscriptionFeaturesParamsAccessibility string
 type ListTeamsParams struct {
 	// AccountId Account scope
 	AccountId openapi_types.UUID `form:"account_id" json:"account_id"`
+
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *PageSize `form:"page_size,omitempty" json:"page_size,omitempty"`
+
+	// Search Case-insensitive substring match on the team name
+	Search *string `form:"search,omitempty" json:"search,omitempty"`
+
+	// Name Filter by exact team name
+	Name *string `form:"name,omitempty" json:"name,omitempty"`
 }
 
 // CreateAccountJSONRequestBody defines body for CreateAccount for application/json ContentType.
@@ -6412,6 +9222,24 @@ type CreateConnectionJSONRequestBody = CreateGitConnectionRequest
 // InstallGitHubAppJSONRequestBody defines body for InstallGitHubApp for application/json ContentType.
 type InstallGitHubAppJSONRequestBody = InstallGitHubAppRequest
 
+// CreateDatabaseJSONRequestBody defines body for CreateDatabase for application/json ContentType.
+type CreateDatabaseJSONRequestBody = CreateDatabaseRequest
+
+// UpdateDatabaseJSONRequestBody defines body for UpdateDatabase for application/json ContentType.
+type UpdateDatabaseJSONRequestBody = UpdateDatabaseRequest
+
+// UpdateDatabaseInjectionJSONRequestBody defines body for UpdateDatabaseInjection for application/json ContentType.
+type UpdateDatabaseInjectionJSONRequestBody = UpdateDatabaseInjectionRequest
+
+// UpdateDatabasePublicAccessJSONRequestBody defines body for UpdateDatabasePublicAccess for application/json ContentType.
+type UpdateDatabasePublicAccessJSONRequestBody = UpdateDatabasePublicAccessRequest
+
+// RestoreDatabaseJSONRequestBody defines body for RestoreDatabase for application/json ContentType.
+type RestoreDatabaseJSONRequestBody = RestoreDatabaseRequest
+
+// CreateDatabaseTunnelSessionJSONRequestBody defines body for CreateDatabaseTunnelSession for application/json ContentType.
+type CreateDatabaseTunnelSessionJSONRequestBody = CreateDatabaseTunnelSessionRequest
+
 // CreateDeploymentJSONRequestBody defines body for CreateDeployment for application/json ContentType.
 type CreateDeploymentJSONRequestBody = CreateDeploymentRequest
 
@@ -6420,6 +9248,9 @@ type UpdateDeploymentJSONRequestBody = DeploymentUpdateRequest
 
 // TriggerBuildJSONRequestBody defines body for TriggerBuild for application/json ContentType.
 type TriggerBuildJSONRequestBody = TriggerBuildRequest
+
+// RejectBuildJSONRequestBody defines body for RejectBuild for application/json ContentType.
+type RejectBuildJSONRequestBody = BuildRejectRequest
 
 // CloneDeploymentJSONRequestBody defines body for CloneDeployment for application/json ContentType.
 type CloneDeploymentJSONRequestBody = CloneDeploymentRequest
@@ -6438,6 +9269,9 @@ type SetDeploymentEnvVarJSONRequestBody = SetEnvVarRequest
 
 // UpdateBuildManifestJSONRequestBody defines body for UpdateBuildManifest for application/json ContentType.
 type UpdateBuildManifestJSONRequestBody = Manifest
+
+// PromoteBuildJSONRequestBody defines body for PromoteBuild for application/json ContentType.
+type PromoteBuildJSONRequestBody = PromoteBuildRequest
 
 // RollbackDeploymentJSONRequestBody defines body for RollbackDeployment for application/json ContentType.
 type RollbackDeploymentJSONRequestBody = RollbackRequest
@@ -6469,6 +9303,9 @@ type UpdateEnvironmentDomainPathJSONRequestBody = UpdateDomainPathRequest
 // ToggleEnvironmentSubdomainJSONRequestBody defines body for ToggleEnvironmentSubdomain for application/json ContentType.
 type ToggleEnvironmentSubdomainJSONRequestBody = ToggleSubdomainRequest
 
+// AddEnvironmentDomainJSONRequestBody defines body for AddEnvironmentDomain for application/json ContentType.
+type AddEnvironmentDomainJSONRequestBody = AddDomainRequest
+
 // UpdateEnvironmentNetworkingJSONRequestBody defines body for UpdateEnvironmentNetworking for application/json ContentType.
 type UpdateEnvironmentNetworkingJSONRequestBody = UpdateNetworkAccessRequest
 
@@ -6498,6 +9335,9 @@ type UpsertNotificationSettingsJSONRequestBody = UpsertNotificationSettingsReque
 
 // UpdateNotificationJSONRequestBody defines body for UpdateNotification for application/json ContentType.
 type UpdateNotificationJSONRequestBody = UpdateNotificationRequest
+
+// CreatePreviewJSONRequestBody defines body for CreatePreview for application/json ContentType.
+type CreatePreviewJSONRequestBody = CreatePreviewRequest
 
 // CreateProjectJSONRequestBody defines body for CreateProject for application/json ContentType.
 type CreateProjectJSONRequestBody = CreateProjectRequest
@@ -6599,12 +9439,44 @@ func (a *AddDomainRequest) UnmarshalJSON(b []byte) error {
 		return err
 	}
 
+	if raw, found := object["certificate"]; found {
+		err = json.Unmarshal(raw, &a.Certificate)
+		if err != nil {
+			return fmt.Errorf("error reading 'certificate': %w", err)
+		}
+		delete(object, "certificate")
+	}
+
 	if raw, found := object["domain"]; found {
 		err = json.Unmarshal(raw, &a.Domain)
 		if err != nil {
 			return fmt.Errorf("error reading 'domain': %w", err)
 		}
 		delete(object, "domain")
+	}
+
+	if raw, found := object["private_key"]; found {
+		err = json.Unmarshal(raw, &a.PrivateKey)
+		if err != nil {
+			return fmt.Errorf("error reading 'private_key': %w", err)
+		}
+		delete(object, "private_key")
+	}
+
+	if raw, found := object["type"]; found {
+		err = json.Unmarshal(raw, &a.Type)
+		if err != nil {
+			return fmt.Errorf("error reading 'type': %w", err)
+		}
+		delete(object, "type")
+	}
+
+	if raw, found := object["validation_method"]; found {
+		err = json.Unmarshal(raw, &a.ValidationMethod)
+		if err != nil {
+			return fmt.Errorf("error reading 'validation_method': %w", err)
+		}
+		delete(object, "validation_method")
 	}
 
 	if len(object) != 0 {
@@ -6626,9 +9498,37 @@ func (a AddDomainRequest) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
+	if a.Certificate != nil {
+		object["certificate"], err = json.Marshal(a.Certificate)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'certificate': %w", err)
+		}
+	}
+
 	object["domain"], err = json.Marshal(a.Domain)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'domain': %w", err)
+	}
+
+	if a.PrivateKey != nil {
+		object["private_key"], err = json.Marshal(a.PrivateKey)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'private_key': %w", err)
+		}
+	}
+
+	if a.Type != nil {
+		object["type"], err = json.Marshal(a.Type)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'type': %w", err)
+		}
+	}
+
+	if a.ValidationMethod != nil {
+		object["validation_method"], err = json.Marshal(a.ValidationMethod)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'validation_method': %w", err)
+		}
 	}
 
 	for fieldName, field := range a.AdditionalProperties {
@@ -6830,6 +9730,22 @@ func (a *DeploymentOutput) UnmarshalJSON(b []byte) error {
 		delete(object, "object")
 	}
 
+	if raw, found := object["outputs"]; found {
+		err = json.Unmarshal(raw, &a.Outputs)
+		if err != nil {
+			return fmt.Errorf("error reading 'outputs': %w", err)
+		}
+		delete(object, "outputs")
+	}
+
+	if raw, found := object["raw"]; found {
+		err = json.Unmarshal(raw, &a.Raw)
+		if err != nil {
+			return fmt.Errorf("error reading 'raw': %w", err)
+		}
+		delete(object, "raw")
+	}
+
 	if raw, found := object["status"]; found {
 		err = json.Unmarshal(raw, &a.Status)
 		if err != nil {
@@ -6880,6 +9796,20 @@ func (a DeploymentOutput) MarshalJSON() ([]byte, error) {
 		return nil, fmt.Errorf("error marshaling 'object': %w", err)
 	}
 
+	if a.Outputs != nil {
+		object["outputs"], err = json.Marshal(a.Outputs)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'outputs': %w", err)
+		}
+	}
+
+	if a.Raw != nil {
+		object["raw"], err = json.Marshal(a.Raw)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'raw': %w", err)
+		}
+	}
+
 	object["status"], err = json.Marshal(a.Status)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'status': %w", err)
@@ -6888,6 +9818,194 @@ func (a DeploymentOutput) MarshalJSON() ([]byte, error) {
 	object["type"], err = json.Marshal(a.Type)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'type': %w", err)
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DeploymentOutput_Raw. Returns the specified
+// element and whether it was found
+func (a DeploymentOutput_Raw) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentOutput_Raw
+func (a *DeploymentOutput_Raw) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentOutput_Raw to handle AdditionalProperties
+func (a *DeploymentOutput_Raw) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["autodeploy_paused_at"]; found {
+		err = json.Unmarshal(raw, &a.AutodeployPausedAt)
+		if err != nil {
+			return fmt.Errorf("error reading 'autodeploy_paused_at': %w", err)
+		}
+		delete(object, "autodeploy_paused_at")
+	}
+
+	if raw, found := object["deploy_policy"]; found {
+		err = json.Unmarshal(raw, &a.DeployPolicy)
+		if err != nil {
+			return fmt.Errorf("error reading 'deploy_policy': %w", err)
+		}
+		delete(object, "deploy_policy")
+	}
+
+	if raw, found := object["effective_deploy_policy"]; found {
+		err = json.Unmarshal(raw, &a.EffectiveDeployPolicy)
+		if err != nil {
+			return fmt.Errorf("error reading 'effective_deploy_policy': %w", err)
+		}
+		delete(object, "effective_deploy_policy")
+	}
+
+	if raw, found := object["health_check"]; found {
+		err = json.Unmarshal(raw, &a.HealthCheck)
+		if err != nil {
+			return fmt.Errorf("error reading 'health_check': %w", err)
+		}
+		delete(object, "health_check")
+	}
+
+	if raw, found := object["last_deployed_at"]; found {
+		err = json.Unmarshal(raw, &a.LastDeployedAt)
+		if err != nil {
+			return fmt.Errorf("error reading 'last_deployed_at': %w", err)
+		}
+		delete(object, "last_deployed_at")
+	}
+
+	if raw, found := object["next_run_at"]; found {
+		err = json.Unmarshal(raw, &a.NextRunAt)
+		if err != nil {
+			return fmt.Errorf("error reading 'next_run_at': %w", err)
+		}
+		delete(object, "next_run_at")
+	}
+
+	if raw, found := object["region"]; found {
+		err = json.Unmarshal(raw, &a.Region)
+		if err != nil {
+			return fmt.Errorf("error reading 'region': %w", err)
+		}
+		delete(object, "region")
+	}
+
+	if raw, found := object["tag_pattern"]; found {
+		err = json.Unmarshal(raw, &a.TagPattern)
+		if err != nil {
+			return fmt.Errorf("error reading 'tag_pattern': %w", err)
+		}
+		delete(object, "tag_pattern")
+	}
+
+	if raw, found := object["trigger_on"]; found {
+		err = json.Unmarshal(raw, &a.TriggerOn)
+		if err != nil {
+			return fmt.Errorf("error reading 'trigger_on': %w", err)
+		}
+		delete(object, "trigger_on")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentOutput_Raw to handle AdditionalProperties
+func (a DeploymentOutput_Raw) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.AutodeployPausedAt != nil {
+		object["autodeploy_paused_at"], err = json.Marshal(a.AutodeployPausedAt)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'autodeploy_paused_at': %w", err)
+		}
+	}
+
+	if a.DeployPolicy != nil {
+		object["deploy_policy"], err = json.Marshal(a.DeployPolicy)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'deploy_policy': %w", err)
+		}
+	}
+
+	if a.EffectiveDeployPolicy != nil {
+		object["effective_deploy_policy"], err = json.Marshal(a.EffectiveDeployPolicy)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'effective_deploy_policy': %w", err)
+		}
+	}
+
+	if a.HealthCheck != nil {
+		object["health_check"], err = json.Marshal(a.HealthCheck)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'health_check': %w", err)
+		}
+	}
+
+	if a.LastDeployedAt != nil {
+		object["last_deployed_at"], err = json.Marshal(a.LastDeployedAt)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'last_deployed_at': %w", err)
+		}
+	}
+
+	if a.NextRunAt != nil {
+		object["next_run_at"], err = json.Marshal(a.NextRunAt)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'next_run_at': %w", err)
+		}
+	}
+
+	if a.Region != nil {
+		object["region"], err = json.Marshal(a.Region)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'region': %w", err)
+		}
+	}
+
+	if a.TagPattern != nil {
+		object["tag_pattern"], err = json.Marshal(a.TagPattern)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'tag_pattern': %w", err)
+		}
+	}
+
+	if a.TriggerOn != nil {
+		object["trigger_on"], err = json.Marshal(a.TriggerOn)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'trigger_on': %w", err)
+		}
 	}
 
 	for fieldName, field := range a.AdditionalProperties {
@@ -6948,6 +10066,14 @@ func (a *DeploymentUpdateRequest) UnmarshalJSON(b []byte) error {
 		delete(object, "db_config")
 	}
 
+	if raw, found := object["deploy_policy"]; found {
+		err = json.Unmarshal(raw, &a.DeployPolicy)
+		if err != nil {
+			return fmt.Errorf("error reading 'deploy_policy': %w", err)
+		}
+		delete(object, "deploy_policy")
+	}
+
 	if raw, found := object["health_check"]; found {
 		err = json.Unmarshal(raw, &a.HealthCheck)
 		if err != nil {
@@ -6996,6 +10122,30 @@ func (a *DeploymentUpdateRequest) UnmarshalJSON(b []byte) error {
 		delete(object, "schedule")
 	}
 
+	if raw, found := object["skip_redeploy"]; found {
+		err = json.Unmarshal(raw, &a.SkipRedeploy)
+		if err != nil {
+			return fmt.Errorf("error reading 'skip_redeploy': %w", err)
+		}
+		delete(object, "skip_redeploy")
+	}
+
+	if raw, found := object["tag_pattern"]; found {
+		err = json.Unmarshal(raw, &a.TagPattern)
+		if err != nil {
+			return fmt.Errorf("error reading 'tag_pattern': %w", err)
+		}
+		delete(object, "tag_pattern")
+	}
+
+	if raw, found := object["trigger_on"]; found {
+		err = json.Unmarshal(raw, &a.TriggerOn)
+		if err != nil {
+			return fmt.Errorf("error reading 'trigger_on': %w", err)
+		}
+		delete(object, "trigger_on")
+	}
+
 	if len(object) != 0 {
 		a.AdditionalProperties = make(map[string]interface{})
 		for fieldName, fieldBuf := range object {
@@ -7033,6 +10183,13 @@ func (a DeploymentUpdateRequest) MarshalJSON() ([]byte, error) {
 		object["db_config"], err = json.Marshal(a.DbConfig)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'db_config': %w", err)
+		}
+	}
+
+	if a.DeployPolicy != nil {
+		object["deploy_policy"], err = json.Marshal(a.DeployPolicy)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'deploy_policy': %w", err)
 		}
 	}
 
@@ -7078,6 +10235,27 @@ func (a DeploymentUpdateRequest) MarshalJSON() ([]byte, error) {
 		}
 	}
 
+	if a.SkipRedeploy != nil {
+		object["skip_redeploy"], err = json.Marshal(a.SkipRedeploy)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'skip_redeploy': %w", err)
+		}
+	}
+
+	if a.TagPattern != nil {
+		object["tag_pattern"], err = json.Marshal(a.TagPattern)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'tag_pattern': %w", err)
+		}
+	}
+
+	if a.TriggerOn != nil {
+		object["trigger_on"], err = json.Marshal(a.TriggerOn)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'trigger_on': %w", err)
+		}
+	}
+
 	for fieldName, field := range a.AdditionalProperties {
 		object[fieldName], err = json.Marshal(field)
 		if err != nil {
@@ -7112,12 +10290,140 @@ func (a *DeploymentUpdateRequest_BuildConfig) UnmarshalJSON(b []byte) error {
 		return err
 	}
 
+	if raw, found := object["branch"]; found {
+		err = json.Unmarshal(raw, &a.Branch)
+		if err != nil {
+			return fmt.Errorf("error reading 'branch': %w", err)
+		}
+		delete(object, "branch")
+	}
+
 	if raw, found := object["build_args"]; found {
 		err = json.Unmarshal(raw, &a.BuildArgs)
 		if err != nil {
 			return fmt.Errorf("error reading 'build_args': %w", err)
 		}
 		delete(object, "build_args")
+	}
+
+	if raw, found := object["build_command"]; found {
+		err = json.Unmarshal(raw, &a.BuildCommand)
+		if err != nil {
+			return fmt.Errorf("error reading 'build_command': %w", err)
+		}
+		delete(object, "build_command")
+	}
+
+	if raw, found := object["build_type"]; found {
+		err = json.Unmarshal(raw, &a.BuildType)
+		if err != nil {
+			return fmt.Errorf("error reading 'build_type': %w", err)
+		}
+		delete(object, "build_type")
+	}
+
+	if raw, found := object["context"]; found {
+		err = json.Unmarshal(raw, &a.Context)
+		if err != nil {
+			return fmt.Errorf("error reading 'context': %w", err)
+		}
+		delete(object, "context")
+	}
+
+	if raw, found := object["dockerfile"]; found {
+		err = json.Unmarshal(raw, &a.Dockerfile)
+		if err != nil {
+			return fmt.Errorf("error reading 'dockerfile': %w", err)
+		}
+		delete(object, "dockerfile")
+	}
+
+	if raw, found := object["git_connection_id"]; found {
+		err = json.Unmarshal(raw, &a.GitConnectionId)
+		if err != nil {
+			return fmt.Errorf("error reading 'git_connection_id': %w", err)
+		}
+		delete(object, "git_connection_id")
+	}
+
+	if raw, found := object["git_url"]; found {
+		err = json.Unmarshal(raw, &a.GitUrl)
+		if err != nil {
+			return fmt.Errorf("error reading 'git_url': %w", err)
+		}
+		delete(object, "git_url")
+	}
+
+	if raw, found := object["install_command"]; found {
+		err = json.Unmarshal(raw, &a.InstallCommand)
+		if err != nil {
+			return fmt.Errorf("error reading 'install_command': %w", err)
+		}
+		delete(object, "install_command")
+	}
+
+	if raw, found := object["language"]; found {
+		err = json.Unmarshal(raw, &a.Language)
+		if err != nil {
+			return fmt.Errorf("error reading 'language': %w", err)
+		}
+		delete(object, "language")
+	}
+
+	if raw, found := object["publish_directory"]; found {
+		err = json.Unmarshal(raw, &a.PublishDirectory)
+		if err != nil {
+			return fmt.Errorf("error reading 'publish_directory': %w", err)
+		}
+		delete(object, "publish_directory")
+	}
+
+	if raw, found := object["root_dir"]; found {
+		err = json.Unmarshal(raw, &a.RootDir)
+		if err != nil {
+			return fmt.Errorf("error reading 'root_dir': %w", err)
+		}
+		delete(object, "root_dir")
+	}
+
+	if raw, found := object["root_directory"]; found {
+		err = json.Unmarshal(raw, &a.RootDirectory)
+		if err != nil {
+			return fmt.Errorf("error reading 'root_directory': %w", err)
+		}
+		delete(object, "root_directory")
+	}
+
+	if raw, found := object["run_command"]; found {
+		err = json.Unmarshal(raw, &a.RunCommand)
+		if err != nil {
+			return fmt.Errorf("error reading 'run_command': %w", err)
+		}
+		delete(object, "run_command")
+	}
+
+	if raw, found := object["spa"]; found {
+		err = json.Unmarshal(raw, &a.Spa)
+		if err != nil {
+			return fmt.Errorf("error reading 'spa': %w", err)
+		}
+		delete(object, "spa")
+	}
+
+	if raw, found := object["version"]; found {
+		err = json.Unmarshal(raw, &a.Version)
+		if err != nil {
+			return fmt.Errorf("error reading 'version': %w", err)
+		}
+		delete(object, "version")
+	}
+
+	if raw, found := object["watch_paths"]; found {
+		err = json.Unmarshal(raw, &a.WatchPaths)
+		if err != nil {
+			return fmt.Errorf("error reading 'watch_paths': %w", err)
+		}
+		delete(object, "watch_paths")
 	}
 
 	if len(object) != 0 {
@@ -7139,10 +10445,363 @@ func (a DeploymentUpdateRequest_BuildConfig) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
+	if a.Branch != nil {
+		object["branch"], err = json.Marshal(a.Branch)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'branch': %w", err)
+		}
+	}
+
 	if a.BuildArgs != nil {
 		object["build_args"], err = json.Marshal(a.BuildArgs)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'build_args': %w", err)
+		}
+	}
+
+	if a.BuildCommand != nil {
+		object["build_command"], err = json.Marshal(a.BuildCommand)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'build_command': %w", err)
+		}
+	}
+
+	if a.BuildType != nil {
+		object["build_type"], err = json.Marshal(a.BuildType)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'build_type': %w", err)
+		}
+	}
+
+	if a.Context != nil {
+		object["context"], err = json.Marshal(a.Context)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'context': %w", err)
+		}
+	}
+
+	if a.Dockerfile != nil {
+		object["dockerfile"], err = json.Marshal(a.Dockerfile)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'dockerfile': %w", err)
+		}
+	}
+
+	if a.GitConnectionId != nil {
+		object["git_connection_id"], err = json.Marshal(a.GitConnectionId)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'git_connection_id': %w", err)
+		}
+	}
+
+	if a.GitUrl != nil {
+		object["git_url"], err = json.Marshal(a.GitUrl)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'git_url': %w", err)
+		}
+	}
+
+	if a.InstallCommand != nil {
+		object["install_command"], err = json.Marshal(a.InstallCommand)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'install_command': %w", err)
+		}
+	}
+
+	if a.Language != nil {
+		object["language"], err = json.Marshal(a.Language)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'language': %w", err)
+		}
+	}
+
+	if a.PublishDirectory != nil {
+		object["publish_directory"], err = json.Marshal(a.PublishDirectory)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'publish_directory': %w", err)
+		}
+	}
+
+	if a.RootDir != nil {
+		object["root_dir"], err = json.Marshal(a.RootDir)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'root_dir': %w", err)
+		}
+	}
+
+	if a.RootDirectory != nil {
+		object["root_directory"], err = json.Marshal(a.RootDirectory)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'root_directory': %w", err)
+		}
+	}
+
+	if a.RunCommand != nil {
+		object["run_command"], err = json.Marshal(a.RunCommand)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'run_command': %w", err)
+		}
+	}
+
+	if a.Spa != nil {
+		object["spa"], err = json.Marshal(a.Spa)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'spa': %w", err)
+		}
+	}
+
+	if a.Version != nil {
+		object["version"], err = json.Marshal(a.Version)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'version': %w", err)
+		}
+	}
+
+	if a.WatchPaths != nil {
+		object["watch_paths"], err = json.Marshal(a.WatchPaths)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'watch_paths': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DeploymentUpdateRequest_DbConfig. Returns the specified
+// element and whether it was found
+func (a DeploymentUpdateRequest_DbConfig) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentUpdateRequest_DbConfig
+func (a *DeploymentUpdateRequest_DbConfig) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_DbConfig to handle AdditionalProperties
+func (a *DeploymentUpdateRequest_DbConfig) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["storage"]; found {
+		err = json.Unmarshal(raw, &a.Storage)
+		if err != nil {
+			return fmt.Errorf("error reading 'storage': %w", err)
+		}
+		delete(object, "storage")
+	}
+
+	if raw, found := object["version"]; found {
+		err = json.Unmarshal(raw, &a.Version)
+		if err != nil {
+			return fmt.Errorf("error reading 'version': %w", err)
+		}
+		delete(object, "version")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_DbConfig to handle AdditionalProperties
+func (a DeploymentUpdateRequest_DbConfig) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.Storage != nil {
+		object["storage"], err = json.Marshal(a.Storage)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'storage': %w", err)
+		}
+	}
+
+	if a.Version != nil {
+		object["version"], err = json.Marshal(a.Version)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'version': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DeploymentUpdateRequest_HealthCheck. Returns the specified
+// element and whether it was found
+func (a DeploymentUpdateRequest_HealthCheck) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentUpdateRequest_HealthCheck
+func (a *DeploymentUpdateRequest_HealthCheck) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_HealthCheck to handle AdditionalProperties
+func (a *DeploymentUpdateRequest_HealthCheck) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["enabled"]; found {
+		err = json.Unmarshal(raw, &a.Enabled)
+		if err != nil {
+			return fmt.Errorf("error reading 'enabled': %w", err)
+		}
+		delete(object, "enabled")
+	}
+
+	if raw, found := object["initial_delay_seconds"]; found {
+		err = json.Unmarshal(raw, &a.InitialDelaySeconds)
+		if err != nil {
+			return fmt.Errorf("error reading 'initial_delay_seconds': %w", err)
+		}
+		delete(object, "initial_delay_seconds")
+	}
+
+	if raw, found := object["path"]; found {
+		err = json.Unmarshal(raw, &a.Path)
+		if err != nil {
+			return fmt.Errorf("error reading 'path': %w", err)
+		}
+		delete(object, "path")
+	}
+
+	if raw, found := object["period_seconds"]; found {
+		err = json.Unmarshal(raw, &a.PeriodSeconds)
+		if err != nil {
+			return fmt.Errorf("error reading 'period_seconds': %w", err)
+		}
+		delete(object, "period_seconds")
+	}
+
+	if raw, found := object["port"]; found {
+		err = json.Unmarshal(raw, &a.Port)
+		if err != nil {
+			return fmt.Errorf("error reading 'port': %w", err)
+		}
+		delete(object, "port")
+	}
+
+	if raw, found := object["readiness_failure_threshold"]; found {
+		err = json.Unmarshal(raw, &a.ReadinessFailureThreshold)
+		if err != nil {
+			return fmt.Errorf("error reading 'readiness_failure_threshold': %w", err)
+		}
+		delete(object, "readiness_failure_threshold")
+	}
+
+	if raw, found := object["timeout_seconds"]; found {
+		err = json.Unmarshal(raw, &a.TimeoutSeconds)
+		if err != nil {
+			return fmt.Errorf("error reading 'timeout_seconds': %w", err)
+		}
+		delete(object, "timeout_seconds")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_HealthCheck to handle AdditionalProperties
+func (a DeploymentUpdateRequest_HealthCheck) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.Enabled != nil {
+		object["enabled"], err = json.Marshal(a.Enabled)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'enabled': %w", err)
+		}
+	}
+
+	if a.InitialDelaySeconds != nil {
+		object["initial_delay_seconds"], err = json.Marshal(a.InitialDelaySeconds)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'initial_delay_seconds': %w", err)
+		}
+	}
+
+	if a.Path != nil {
+		object["path"], err = json.Marshal(a.Path)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'path': %w", err)
+		}
+	}
+
+	if a.PeriodSeconds != nil {
+		object["period_seconds"], err = json.Marshal(a.PeriodSeconds)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'period_seconds': %w", err)
+		}
+	}
+
+	if a.Port != nil {
+		object["port"], err = json.Marshal(a.Port)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'port': %w", err)
+		}
+	}
+
+	if a.ReadinessFailureThreshold != nil {
+		object["readiness_failure_threshold"], err = json.Marshal(a.ReadinessFailureThreshold)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'readiness_failure_threshold': %w", err)
+		}
+	}
+
+	if a.TimeoutSeconds != nil {
+		object["timeout_seconds"], err = json.Marshal(a.TimeoutSeconds)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'timeout_seconds': %w", err)
 		}
 	}
 
@@ -7180,6 +10839,22 @@ func (a *DeploymentUpdateRequest_Image) UnmarshalJSON(b []byte) error {
 		return err
 	}
 
+	if raw, found := object["access_key"]; found {
+		err = json.Unmarshal(raw, &a.AccessKey)
+		if err != nil {
+			return fmt.Errorf("error reading 'access_key': %w", err)
+		}
+		delete(object, "access_key")
+	}
+
+	if raw, found := object["gcp_credentials"]; found {
+		err = json.Unmarshal(raw, &a.GcpCredentials)
+		if err != nil {
+			return fmt.Errorf("error reading 'gcp_credentials': %w", err)
+		}
+		delete(object, "gcp_credentials")
+	}
+
 	if raw, found := object["name"]; found {
 		err = json.Unmarshal(raw, &a.Name)
 		if err != nil {
@@ -7202,6 +10877,22 @@ func (a *DeploymentUpdateRequest_Image) UnmarshalJSON(b []byte) error {
 			return fmt.Errorf("error reading 'provider': %w", err)
 		}
 		delete(object, "provider")
+	}
+
+	if raw, found := object["region"]; found {
+		err = json.Unmarshal(raw, &a.Region)
+		if err != nil {
+			return fmt.Errorf("error reading 'region': %w", err)
+		}
+		delete(object, "region")
+	}
+
+	if raw, found := object["secret_key"]; found {
+		err = json.Unmarshal(raw, &a.SecretKey)
+		if err != nil {
+			return fmt.Errorf("error reading 'secret_key': %w", err)
+		}
+		delete(object, "secret_key")
 	}
 
 	if raw, found := object["type"]; found {
@@ -7247,6 +10938,20 @@ func (a DeploymentUpdateRequest_Image) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
+	if a.AccessKey != nil {
+		object["access_key"], err = json.Marshal(a.AccessKey)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'access_key': %w", err)
+		}
+	}
+
+	if a.GcpCredentials != nil {
+		object["gcp_credentials"], err = json.Marshal(a.GcpCredentials)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'gcp_credentials': %w", err)
+		}
+	}
+
 	if a.Name != nil {
 		object["name"], err = json.Marshal(a.Name)
 		if err != nil {
@@ -7268,6 +10973,20 @@ func (a DeploymentUpdateRequest_Image) MarshalJSON() ([]byte, error) {
 		}
 	}
 
+	if a.Region != nil {
+		object["region"], err = json.Marshal(a.Region)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'region': %w", err)
+		}
+	}
+
+	if a.SecretKey != nil {
+		object["secret_key"], err = json.Marshal(a.SecretKey)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'secret_key': %w", err)
+		}
+	}
+
 	if a.Type != nil {
 		object["type"], err = json.Marshal(a.Type)
 		if err != nil {
@@ -7286,6 +11005,187 @@ func (a DeploymentUpdateRequest_Image) MarshalJSON() ([]byte, error) {
 		object["username"], err = json.Marshal(a.Username)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'username': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DeploymentUpdateRequest_Networking. Returns the specified
+// element and whether it was found
+func (a DeploymentUpdateRequest_Networking) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentUpdateRequest_Networking
+func (a *DeploymentUpdateRequest_Networking) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_Networking to handle AdditionalProperties
+func (a *DeploymentUpdateRequest_Networking) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["default_url_disabled"]; found {
+		err = json.Unmarshal(raw, &a.DefaultUrlDisabled)
+		if err != nil {
+			return fmt.Errorf("error reading 'default_url_disabled': %w", err)
+		}
+		delete(object, "default_url_disabled")
+	}
+
+	if raw, found := object["type"]; found {
+		err = json.Unmarshal(raw, &a.Type)
+		if err != nil {
+			return fmt.Errorf("error reading 'type': %w", err)
+		}
+		delete(object, "type")
+	}
+
+	if raw, found := object["whitelisted_ips"]; found {
+		err = json.Unmarshal(raw, &a.WhitelistedIps)
+		if err != nil {
+			return fmt.Errorf("error reading 'whitelisted_ips': %w", err)
+		}
+		delete(object, "whitelisted_ips")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_Networking to handle AdditionalProperties
+func (a DeploymentUpdateRequest_Networking) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.DefaultUrlDisabled != nil {
+		object["default_url_disabled"], err = json.Marshal(a.DefaultUrlDisabled)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'default_url_disabled': %w", err)
+		}
+	}
+
+	if a.Type != nil {
+		object["type"], err = json.Marshal(a.Type)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'type': %w", err)
+		}
+	}
+
+	if a.WhitelistedIps != nil {
+		object["whitelisted_ips"], err = json.Marshal(a.WhitelistedIps)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'whitelisted_ips': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DeploymentUpdateRequest_Schedule. Returns the specified
+// element and whether it was found
+func (a DeploymentUpdateRequest_Schedule) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DeploymentUpdateRequest_Schedule
+func (a *DeploymentUpdateRequest_Schedule) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_Schedule to handle AdditionalProperties
+func (a *DeploymentUpdateRequest_Schedule) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["command"]; found {
+		err = json.Unmarshal(raw, &a.Command)
+		if err != nil {
+			return fmt.Errorf("error reading 'command': %w", err)
+		}
+		delete(object, "command")
+	}
+
+	if raw, found := object["cron"]; found {
+		err = json.Unmarshal(raw, &a.Cron)
+		if err != nil {
+			return fmt.Errorf("error reading 'cron': %w", err)
+		}
+		delete(object, "cron")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DeploymentUpdateRequest_Schedule to handle AdditionalProperties
+func (a DeploymentUpdateRequest_Schedule) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.Command != nil {
+		object["command"], err = json.Marshal(a.Command)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'command': %w", err)
+		}
+	}
+
+	if a.Cron != nil {
+		object["cron"], err = json.Marshal(a.Cron)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'cron': %w", err)
 		}
 	}
 
@@ -7323,12 +11223,76 @@ func (a *DeploymentVersion) UnmarshalJSON(b []byte) error {
 		return err
 	}
 
+	if raw, found := object["build_id"]; found {
+		err = json.Unmarshal(raw, &a.BuildId)
+		if err != nil {
+			return fmt.Errorf("error reading 'build_id': %w", err)
+		}
+		delete(object, "build_id")
+	}
+
+	if raw, found := object["commit_author"]; found {
+		err = json.Unmarshal(raw, &a.CommitAuthor)
+		if err != nil {
+			return fmt.Errorf("error reading 'commit_author': %w", err)
+		}
+		delete(object, "commit_author")
+	}
+
+	if raw, found := object["commit_message"]; found {
+		err = json.Unmarshal(raw, &a.CommitMessage)
+		if err != nil {
+			return fmt.Errorf("error reading 'commit_message': %w", err)
+		}
+		delete(object, "commit_message")
+	}
+
+	if raw, found := object["commit_sha"]; found {
+		err = json.Unmarshal(raw, &a.CommitSha)
+		if err != nil {
+			return fmt.Errorf("error reading 'commit_sha': %w", err)
+		}
+		delete(object, "commit_sha")
+	}
+
 	if raw, found := object["created_at"]; found {
 		err = json.Unmarshal(raw, &a.CreatedAt)
 		if err != nil {
 			return fmt.Errorf("error reading 'created_at': %w", err)
 		}
 		delete(object, "created_at")
+	}
+
+	if raw, found := object["deployed_by"]; found {
+		err = json.Unmarshal(raw, &a.DeployedBy)
+		if err != nil {
+			return fmt.Errorf("error reading 'deployed_by': %w", err)
+		}
+		delete(object, "deployed_by")
+	}
+
+	if raw, found := object["deployment_id"]; found {
+		err = json.Unmarshal(raw, &a.DeploymentId)
+		if err != nil {
+			return fmt.Errorf("error reading 'deployment_id': %w", err)
+		}
+		delete(object, "deployment_id")
+	}
+
+	if raw, found := object["finished_at"]; found {
+		err = json.Unmarshal(raw, &a.FinishedAt)
+		if err != nil {
+			return fmt.Errorf("error reading 'finished_at': %w", err)
+		}
+		delete(object, "finished_at")
+	}
+
+	if raw, found := object["git_ref"]; found {
+		err = json.Unmarshal(raw, &a.GitRef)
+		if err != nil {
+			return fmt.Errorf("error reading 'git_ref': %w", err)
+		}
+		delete(object, "git_ref")
 	}
 
 	if raw, found := object["id"]; found {
@@ -7339,6 +11303,22 @@ func (a *DeploymentVersion) UnmarshalJSON(b []byte) error {
 		delete(object, "id")
 	}
 
+	if raw, found := object["is_current"]; found {
+		err = json.Unmarshal(raw, &a.IsCurrent)
+		if err != nil {
+			return fmt.Errorf("error reading 'is_current': %w", err)
+		}
+		delete(object, "is_current")
+	}
+
+	if raw, found := object["name"]; found {
+		err = json.Unmarshal(raw, &a.Name)
+		if err != nil {
+			return fmt.Errorf("error reading 'name': %w", err)
+		}
+		delete(object, "name")
+	}
+
 	if raw, found := object["object"]; found {
 		err = json.Unmarshal(raw, &a.Object)
 		if err != nil {
@@ -7347,12 +11327,36 @@ func (a *DeploymentVersion) UnmarshalJSON(b []byte) error {
 		delete(object, "object")
 	}
 
+	if raw, found := object["rollout_duration_seconds"]; found {
+		err = json.Unmarshal(raw, &a.RolloutDurationSeconds)
+		if err != nil {
+			return fmt.Errorf("error reading 'rollout_duration_seconds': %w", err)
+		}
+		delete(object, "rollout_duration_seconds")
+	}
+
 	if raw, found := object["status"]; found {
 		err = json.Unmarshal(raw, &a.Status)
 		if err != nil {
 			return fmt.Errorf("error reading 'status': %w", err)
 		}
 		delete(object, "status")
+	}
+
+	if raw, found := object["trigger_source"]; found {
+		err = json.Unmarshal(raw, &a.TriggerSource)
+		if err != nil {
+			return fmt.Errorf("error reading 'trigger_source': %w", err)
+		}
+		delete(object, "trigger_source")
+	}
+
+	if raw, found := object["version"]; found {
+		err = json.Unmarshal(raw, &a.Version)
+		if err != nil {
+			return fmt.Errorf("error reading 'version': %w", err)
+		}
+		delete(object, "version")
 	}
 
 	if len(object) != 0 {
@@ -7374,9 +11378,65 @@ func (a DeploymentVersion) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
+	if a.BuildId != nil {
+		object["build_id"], err = json.Marshal(a.BuildId)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'build_id': %w", err)
+		}
+	}
+
+	if a.CommitAuthor != nil {
+		object["commit_author"], err = json.Marshal(a.CommitAuthor)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'commit_author': %w", err)
+		}
+	}
+
+	if a.CommitMessage != nil {
+		object["commit_message"], err = json.Marshal(a.CommitMessage)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'commit_message': %w", err)
+		}
+	}
+
+	if a.CommitSha != nil {
+		object["commit_sha"], err = json.Marshal(a.CommitSha)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'commit_sha': %w", err)
+		}
+	}
+
 	object["created_at"], err = json.Marshal(a.CreatedAt)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'created_at': %w", err)
+	}
+
+	if a.DeployedBy != nil {
+		object["deployed_by"], err = json.Marshal(a.DeployedBy)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'deployed_by': %w", err)
+		}
+	}
+
+	if a.DeploymentId != nil {
+		object["deployment_id"], err = json.Marshal(a.DeploymentId)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'deployment_id': %w", err)
+		}
+	}
+
+	if a.FinishedAt != nil {
+		object["finished_at"], err = json.Marshal(a.FinishedAt)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'finished_at': %w", err)
+		}
+	}
+
+	if a.GitRef != nil {
+		object["git_ref"], err = json.Marshal(a.GitRef)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'git_ref': %w", err)
+		}
 	}
 
 	object["id"], err = json.Marshal(a.Id)
@@ -7384,15 +11444,50 @@ func (a DeploymentVersion) MarshalJSON() ([]byte, error) {
 		return nil, fmt.Errorf("error marshaling 'id': %w", err)
 	}
 
+	if a.IsCurrent != nil {
+		object["is_current"], err = json.Marshal(a.IsCurrent)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'is_current': %w", err)
+		}
+	}
+
+	if a.Name != nil {
+		object["name"], err = json.Marshal(a.Name)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'name': %w", err)
+		}
+	}
+
 	object["object"], err = json.Marshal(a.Object)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'object': %w", err)
+	}
+
+	if a.RolloutDurationSeconds != nil {
+		object["rollout_duration_seconds"], err = json.Marshal(a.RolloutDurationSeconds)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'rollout_duration_seconds': %w", err)
+		}
 	}
 
 	if a.Status != nil {
 		object["status"], err = json.Marshal(a.Status)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'status': %w", err)
+		}
+	}
+
+	if a.TriggerSource != nil {
+		object["trigger_source"], err = json.Marshal(a.TriggerSource)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'trigger_source': %w", err)
+		}
+	}
+
+	if a.Version != nil {
+		object["version"], err = json.Marshal(a.Version)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'version': %w", err)
 		}
 	}
 
@@ -7534,6 +11629,22 @@ func (a *Domain) UnmarshalJSON(b []byte) error {
 		delete(object, "type")
 	}
 
+	if raw, found := object["validation_method"]; found {
+		err = json.Unmarshal(raw, &a.ValidationMethod)
+		if err != nil {
+			return fmt.Errorf("error reading 'validation_method': %w", err)
+		}
+		delete(object, "validation_method")
+	}
+
+	if raw, found := object["validation_records"]; found {
+		err = json.Unmarshal(raw, &a.ValidationRecords)
+		if err != nil {
+			return fmt.Errorf("error reading 'validation_records': %w", err)
+		}
+		delete(object, "validation_records")
+	}
+
 	if len(object) != 0 {
 		a.AdditionalProperties = make(map[string]interface{})
 		for fieldName, fieldBuf := range object {
@@ -7639,6 +11750,20 @@ func (a Domain) MarshalJSON() ([]byte, error) {
 		object["type"], err = json.Marshal(a.Type)
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'type': %w", err)
+		}
+	}
+
+	if a.ValidationMethod != nil {
+		object["validation_method"], err = json.Marshal(a.ValidationMethod)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'validation_method': %w", err)
+		}
+	}
+
+	if a.ValidationRecords != nil {
+		object["validation_records"], err = json.Marshal(a.ValidationRecords)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'validation_records': %w", err)
 		}
 	}
 
@@ -7756,6 +11881,22 @@ func (a *DomainDnsGuidance) UnmarshalJSON(b []byte) error {
 		delete(object, "target")
 	}
 
+	if raw, found := object["validation_method"]; found {
+		err = json.Unmarshal(raw, &a.ValidationMethod)
+		if err != nil {
+			return fmt.Errorf("error reading 'validation_method': %w", err)
+		}
+		delete(object, "validation_method")
+	}
+
+	if raw, found := object["validation_records"]; found {
+		err = json.Unmarshal(raw, &a.ValidationRecords)
+		if err != nil {
+			return fmt.Errorf("error reading 'validation_records': %w", err)
+		}
+		delete(object, "validation_records")
+	}
+
 	if len(object) != 0 {
 		a.AdditionalProperties = make(map[string]interface{})
 		for fieldName, fieldBuf := range object {
@@ -7825,6 +11966,20 @@ func (a DomainDnsGuidance) MarshalJSON() ([]byte, error) {
 	object["target"], err = json.Marshal(a.Target)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'target': %w", err)
+	}
+
+	if a.ValidationMethod != nil {
+		object["validation_method"], err = json.Marshal(a.ValidationMethod)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'validation_method': %w", err)
+		}
+	}
+
+	if a.ValidationRecords != nil {
+		object["validation_records"], err = json.Marshal(a.ValidationRecords)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'validation_records': %w", err)
+		}
 	}
 
 	for fieldName, field := range a.AdditionalProperties {
@@ -7970,6 +12125,14 @@ func (a *DomainDnsRecord) UnmarshalJSON(b []byte) error {
 		return err
 	}
 
+	if raw, found := object["hostname"]; found {
+		err = json.Unmarshal(raw, &a.Hostname)
+		if err != nil {
+			return fmt.Errorf("error reading 'hostname': %w", err)
+		}
+		delete(object, "hostname")
+	}
+
 	if raw, found := object["name"]; found {
 		err = json.Unmarshal(raw, &a.Name)
 		if err != nil {
@@ -8029,6 +12192,13 @@ func (a DomainDnsRecord) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
 
+	if a.Hostname != nil {
+		object["hostname"], err = json.Marshal(a.Hostname)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'hostname': %w", err)
+		}
+	}
+
 	object["name"], err = json.Marshal(a.Name)
 	if err != nil {
 		return nil, fmt.Errorf("error marshaling 'name': %w", err)
@@ -8046,6 +12216,124 @@ func (a DomainDnsRecord) MarshalJSON() ([]byte, error) {
 		if err != nil {
 			return nil, fmt.Errorf("error marshaling 'proxy': %w", err)
 		}
+	}
+
+	object["type"], err = json.Marshal(a.Type)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'type': %w", err)
+	}
+
+	object["value"], err = json.Marshal(a.Value)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'value': %w", err)
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for DomainValidationRecord. Returns the specified
+// element and whether it was found
+func (a DomainValidationRecord) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for DomainValidationRecord
+func (a *DomainValidationRecord) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for DomainValidationRecord to handle AdditionalProperties
+func (a *DomainValidationRecord) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["hostname"]; found {
+		err = json.Unmarshal(raw, &a.Hostname)
+		if err != nil {
+			return fmt.Errorf("error reading 'hostname': %w", err)
+		}
+		delete(object, "hostname")
+	}
+
+	if raw, found := object["name"]; found {
+		err = json.Unmarshal(raw, &a.Name)
+		if err != nil {
+			return fmt.Errorf("error reading 'name': %w", err)
+		}
+		delete(object, "name")
+	}
+
+	if raw, found := object["purpose"]; found {
+		err = json.Unmarshal(raw, &a.Purpose)
+		if err != nil {
+			return fmt.Errorf("error reading 'purpose': %w", err)
+		}
+		delete(object, "purpose")
+	}
+
+	if raw, found := object["type"]; found {
+		err = json.Unmarshal(raw, &a.Type)
+		if err != nil {
+			return fmt.Errorf("error reading 'type': %w", err)
+		}
+		delete(object, "type")
+	}
+
+	if raw, found := object["value"]; found {
+		err = json.Unmarshal(raw, &a.Value)
+		if err != nil {
+			return fmt.Errorf("error reading 'value': %w", err)
+		}
+		delete(object, "value")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for DomainValidationRecord to handle AdditionalProperties
+func (a DomainValidationRecord) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	object["hostname"], err = json.Marshal(a.Hostname)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'hostname': %w", err)
+	}
+
+	object["name"], err = json.Marshal(a.Name)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'name': %w", err)
+	}
+
+	object["purpose"], err = json.Marshal(a.Purpose)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'purpose': %w", err)
 	}
 
 	object["type"], err = json.Marshal(a.Type)
@@ -8393,9 +12681,9 @@ type ClientInterface interface {
 	ApplyManifest(ctx context.Context, params *ApplyManifestParams, body ApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ValidateApplyManifestWithBody request with any body
-	ValidateApplyManifestWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ValidateApplyManifestWithBody(ctx context.Context, params *ValidateApplyManifestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	ValidateApplyManifest(ctx context.Context, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ValidateApplyManifest(ctx context.Context, params *ValidateApplyManifestParams, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListConnections request
 	ListConnections(ctx context.Context, params *ListConnectionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -8424,6 +12712,69 @@ type ClientInterface interface {
 
 	// ListConnectionRepositories request
 	ListConnectionRepositories(ctx context.Context, cid ConnectionId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListDatabases request
+	ListDatabases(ctx context.Context, params *ListDatabasesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateDatabaseWithBody request with any body
+	CreateDatabaseWithBody(ctx context.Context, params *CreateDatabaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateDatabase(ctx context.Context, params *CreateDatabaseParams, body CreateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListDatabaseInstanceTypes request
+	ListDatabaseInstanceTypes(ctx context.Context, params *ListDatabaseInstanceTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListDatabasePlans request
+	ListDatabasePlans(ctx context.Context, params *ListDatabasePlansParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteDatabase request
+	DeleteDatabase(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetDatabase request
+	GetDatabase(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateDatabaseWithBody request with any body
+	UpdateDatabaseWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UpdateDatabase(ctx context.Context, id DatabaseId, body UpdateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListDatabaseBackups request
+	ListDatabaseBackups(ctx context.Context, id DatabaseId, params *ListDatabaseBackupsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetDatabaseConnection request
+	GetDatabaseConnection(ctx context.Context, id DatabaseId, params *GetDatabaseConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RotateDatabaseCredentials request
+	RotateDatabaseCredentials(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetDatabaseInjection request
+	GetDatabaseInjection(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateDatabaseInjectionWithBody request with any body
+	UpdateDatabaseInjectionWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UpdateDatabaseInjection(ctx context.Context, id DatabaseId, body UpdateDatabaseInjectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetDatabaseMetrics request
+	GetDatabaseMetrics(ctx context.Context, id DatabaseId, params *GetDatabaseMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListDatabaseMetricCatalog request
+	ListDatabaseMetricCatalog(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateDatabasePublicAccessWithBody request with any body
+	UpdateDatabasePublicAccessWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UpdateDatabasePublicAccess(ctx context.Context, id DatabaseId, body UpdateDatabasePublicAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RestoreDatabaseWithBody request with any body
+	RestoreDatabaseWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RestoreDatabase(ctx context.Context, id DatabaseId, body RestoreDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateDatabaseTunnelSessionWithBody request with any body
+	CreateDatabaseTunnelSessionWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateDatabaseTunnelSession(ctx context.Context, id DatabaseId, body CreateDatabaseTunnelSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListDeployments request
 	ListDeployments(ctx context.Context, params *ListDeploymentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -8458,6 +12809,9 @@ type ClientInterface interface {
 	// GetBuild request
 	GetBuild(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ApproveBuild request
+	ApproveBuild(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CancelBuild request
 	CancelBuild(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -8466,6 +12820,11 @@ type ClientInterface interface {
 
 	// GetBuildLogStreamToken request
 	GetBuildLogStreamToken(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RejectBuildWithBody request with any body
+	RejectBuildWithBody(ctx context.Context, id DeploymentId, bid BuildId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RejectBuild(ctx context.Context, id DeploymentId, bid BuildId, body RejectBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetBuildCache request
 	GetBuildCache(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -8563,11 +12922,19 @@ type ClientInterface interface {
 	// GetDeploymentMetrics request
 	GetDeploymentMetrics(ctx context.Context, id DeploymentId, params *GetDeploymentMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// PromoteBuildWithBody request with any body
+	PromoteBuildWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PromoteBuild(ctx context.Context, id DeploymentId, body PromoteBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// RestartDeployment request
 	RestartDeployment(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ResumeDeployment request
 	ResumeDeployment(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ResumeDeploymentAutodeploy request
+	ResumeDeploymentAutodeploy(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RollbackDeploymentWithBody request with any body
 	RollbackDeploymentWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -8670,6 +13037,20 @@ type ClientInterface interface {
 
 	ToggleEnvironmentSubdomain(ctx context.Context, eid EnvironmentId, body ToggleEnvironmentSubdomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListEnvironmentDomains request
+	ListEnvironmentDomains(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// AddEnvironmentDomainWithBody request with any body
+	AddEnvironmentDomainWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	AddEnvironmentDomain(ctx context.Context, eid EnvironmentId, body AddEnvironmentDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteEnvironmentDomain request
+	DeleteEnvironmentDomain(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PromoteEnvironmentDomain request
+	PromoteEnvironmentDomain(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// UpdateEnvironmentNetworkingWithBody request with any body
 	UpdateEnvironmentNetworkingWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -8770,6 +13151,26 @@ type ClientInterface interface {
 
 	// GetPlugin request
 	GetPlugin(ctx context.Context, plid PluginId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListPreviews request
+	ListPreviews(ctx context.Context, params *ListPreviewsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreatePreviewWithBody request with any body
+	CreatePreviewWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreatePreview(ctx context.Context, body CreatePreviewJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeletePreview request
+	DeletePreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetPreview request
+	GetPreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// AbortPreview request
+	AbortPreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ExtendPreview request
+	ExtendPreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListProjects request
 	ListProjects(ctx context.Context, params *ListProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -8986,6 +13387,9 @@ type ClientInterface interface {
 	UpdateCurrentUserWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	UpdateCurrentUser(ctx context.Context, body UpdateCurrentUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetCurrentIp request
+	GetCurrentIp(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListUserProjects request
 	ListUserProjects(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -9594,8 +13998,8 @@ func (c *Client) ApplyManifest(ctx context.Context, params *ApplyManifestParams,
 	return c.Client.Do(req)
 }
 
-func (c *Client) ValidateApplyManifestWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewValidateApplyManifestRequestWithBody(c.Server, contentType, body)
+func (c *Client) ValidateApplyManifestWithBody(ctx context.Context, params *ValidateApplyManifestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidateApplyManifestRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -9606,8 +14010,8 @@ func (c *Client) ValidateApplyManifestWithBody(ctx context.Context, contentType 
 	return c.Client.Do(req)
 }
 
-func (c *Client) ValidateApplyManifest(ctx context.Context, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewValidateApplyManifestRequest(c.Server, body)
+func (c *Client) ValidateApplyManifest(ctx context.Context, params *ValidateApplyManifestParams, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewValidateApplyManifestRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -9728,6 +14132,282 @@ func (c *Client) ListRepositoryBranches(ctx context.Context, cid ConnectionId, p
 
 func (c *Client) ListConnectionRepositories(ctx context.Context, cid ConnectionId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListConnectionRepositoriesRequest(c.Server, cid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListDatabases(ctx context.Context, params *ListDatabasesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDatabasesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateDatabaseWithBody(ctx context.Context, params *CreateDatabaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateDatabaseRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateDatabase(ctx context.Context, params *CreateDatabaseParams, body CreateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateDatabaseRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListDatabaseInstanceTypes(ctx context.Context, params *ListDatabaseInstanceTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDatabaseInstanceTypesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListDatabasePlans(ctx context.Context, params *ListDatabasePlansParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDatabasePlansRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeleteDatabase(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteDatabaseRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetDatabase(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDatabaseRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateDatabaseWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDatabaseRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateDatabase(ctx context.Context, id DatabaseId, body UpdateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDatabaseRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListDatabaseBackups(ctx context.Context, id DatabaseId, params *ListDatabaseBackupsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDatabaseBackupsRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetDatabaseConnection(ctx context.Context, id DatabaseId, params *GetDatabaseConnectionParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDatabaseConnectionRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RotateDatabaseCredentials(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRotateDatabaseCredentialsRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetDatabaseInjection(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDatabaseInjectionRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateDatabaseInjectionWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDatabaseInjectionRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateDatabaseInjection(ctx context.Context, id DatabaseId, body UpdateDatabaseInjectionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDatabaseInjectionRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetDatabaseMetrics(ctx context.Context, id DatabaseId, params *GetDatabaseMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetDatabaseMetricsRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListDatabaseMetricCatalog(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDatabaseMetricCatalogRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateDatabasePublicAccessWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDatabasePublicAccessRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateDatabasePublicAccess(ctx context.Context, id DatabaseId, body UpdateDatabasePublicAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateDatabasePublicAccessRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RestoreDatabaseWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestoreDatabaseRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RestoreDatabase(ctx context.Context, id DatabaseId, body RestoreDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRestoreDatabaseRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateDatabaseTunnelSessionWithBody(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateDatabaseTunnelSessionRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateDatabaseTunnelSession(ctx context.Context, id DatabaseId, body CreateDatabaseTunnelSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateDatabaseTunnelSessionRequest(c.Server, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -9882,6 +14562,18 @@ func (c *Client) GetBuild(ctx context.Context, id DeploymentId, bid BuildId, req
 	return c.Client.Do(req)
 }
 
+func (c *Client) ApproveBuild(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewApproveBuildRequest(c.Server, id, bid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) CancelBuild(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCancelBuildRequest(c.Server, id, bid)
 	if err != nil {
@@ -9908,6 +14600,30 @@ func (c *Client) StreamBuildLogs(ctx context.Context, id DeploymentId, bid Build
 
 func (c *Client) GetBuildLogStreamToken(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetBuildLogStreamTokenRequest(c.Server, id, bid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RejectBuildWithBody(ctx context.Context, id DeploymentId, bid BuildId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRejectBuildRequestWithBody(c.Server, id, bid, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RejectBuild(ctx context.Context, id DeploymentId, bid BuildId, body RejectBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRejectBuildRequest(c.Server, id, bid, body)
 	if err != nil {
 		return nil, err
 	}
@@ -10326,6 +15042,30 @@ func (c *Client) GetDeploymentMetrics(ctx context.Context, id DeploymentId, para
 	return c.Client.Do(req)
 }
 
+func (c *Client) PromoteBuildWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPromoteBuildRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PromoteBuild(ctx context.Context, id DeploymentId, body PromoteBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPromoteBuildRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) RestartDeployment(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRestartDeploymentRequest(c.Server, id)
 	if err != nil {
@@ -10340,6 +15080,18 @@ func (c *Client) RestartDeployment(ctx context.Context, id DeploymentId, reqEdit
 
 func (c *Client) ResumeDeployment(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewResumeDeploymentRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ResumeDeploymentAutodeploy(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewResumeDeploymentAutodeployRequest(c.Server, id)
 	if err != nil {
 		return nil, err
 	}
@@ -10794,6 +15546,66 @@ func (c *Client) ToggleEnvironmentSubdomain(ctx context.Context, eid Environment
 	return c.Client.Do(req)
 }
 
+func (c *Client) ListEnvironmentDomains(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListEnvironmentDomainsRequest(c.Server, eid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) AddEnvironmentDomainWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddEnvironmentDomainRequestWithBody(c.Server, eid, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) AddEnvironmentDomain(ctx context.Context, eid EnvironmentId, body AddEnvironmentDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAddEnvironmentDomainRequest(c.Server, eid, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeleteEnvironmentDomain(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteEnvironmentDomainRequest(c.Server, eid, domain)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PromoteEnvironmentDomain(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPromoteEnvironmentDomainRequest(c.Server, eid, domain)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) UpdateEnvironmentNetworkingWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateEnvironmentNetworkingRequestWithBody(c.Server, eid, contentType, body)
 	if err != nil {
@@ -11228,6 +16040,90 @@ func (c *Client) ListPlugins(ctx context.Context, params *ListPluginsParams, req
 
 func (c *Client) GetPlugin(ctx context.Context, plid PluginId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetPluginRequest(c.Server, plid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListPreviews(ctx context.Context, params *ListPreviewsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListPreviewsRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreatePreviewWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreatePreviewRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreatePreview(ctx context.Context, body CreatePreviewJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreatePreviewRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeletePreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeletePreviewRequest(c.Server, eid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetPreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPreviewRequest(c.Server, eid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) AbortPreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAbortPreviewRequest(c.Server, eid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ExtendPreview(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewExtendPreviewRequest(c.Server, eid)
 	if err != nil {
 		return nil, err
 	}
@@ -12188,6 +17084,18 @@ func (c *Client) UpdateCurrentUserWithBody(ctx context.Context, contentType stri
 
 func (c *Client) UpdateCurrentUser(ctx context.Context, body UpdateCurrentUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUpdateCurrentUserRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetCurrentIp(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetCurrentIpRequest(c.Server)
 	if err != nil {
 		return nil, err
 	}
@@ -13870,6 +18778,54 @@ func NewListActivityLogsRequest(server string, params *ListActivityLogsParams) (
 
 		}
 
+		if params.DeploymentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "deployment_id", runtime.ParamLocationQuery, *params.DeploymentId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.EnvironmentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "environment_id", runtime.ParamLocationQuery, *params.EnvironmentId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.ServiceId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "service_id", runtime.ParamLocationQuery, *params.ServiceId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		if params.Action != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "action", runtime.ParamLocationQuery, *params.Action); err != nil {
@@ -13889,6 +18845,22 @@ func NewListActivityLogsRequest(server string, params *ListActivityLogsParams) (
 		if params.Module != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "module", runtime.ParamLocationQuery, *params.Module); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Category != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "category", runtime.ParamLocationQuery, *params.Category); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
@@ -14373,6 +19345,22 @@ func NewListAPITokensRequest(server string, params *ListAPITokensParams) (*http.
 
 		}
 
+		if params.Type != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "type", runtime.ParamLocationQuery, *params.Type); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -14586,6 +19574,22 @@ func NewApplyManifestRequestWithBody(server string, params *ApplyManifestParams,
 
 		}
 
+		if params.Partial != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "partial", runtime.ParamLocationQuery, *params.Partial); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -14600,18 +19604,18 @@ func NewApplyManifestRequestWithBody(server string, params *ApplyManifestParams,
 }
 
 // NewValidateApplyManifestRequest calls the generic ValidateApplyManifest builder with application/json body
-func NewValidateApplyManifestRequest(server string, body ValidateApplyManifestJSONRequestBody) (*http.Request, error) {
+func NewValidateApplyManifestRequest(server string, params *ValidateApplyManifestParams, body ValidateApplyManifestJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewValidateApplyManifestRequestWithBody(server, "application/json", bodyReader)
+	return NewValidateApplyManifestRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewValidateApplyManifestRequestWithBody generates requests for ValidateApplyManifest with any type of body
-func NewValidateApplyManifestRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewValidateApplyManifestRequestWithBody(server string, params *ValidateApplyManifestParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -14627,6 +19631,44 @@ func NewValidateApplyManifestRequestWithBody(server string, contentType string, 
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "project_id", runtime.ParamLocationQuery, *params.ProjectId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.EnvironmentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "environment_id", runtime.ParamLocationQuery, *params.EnvironmentId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("POST", queryURL.String(), body)
@@ -15052,6 +20094,958 @@ func NewListConnectionRepositoriesRequest(server string, cid ConnectionId) (*htt
 	return req, nil
 }
 
+// NewListDatabasesRequest generates requests for ListDatabases
+func NewListDatabasesRequest(server string, params *ListDatabasesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.ProjectId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "project_id", runtime.ParamLocationQuery, *params.ProjectId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.EnvironmentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "environment_id", runtime.ParamLocationQuery, *params.EnvironmentId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewCreateDatabaseRequest calls the generic CreateDatabase builder with application/json body
+func NewCreateDatabaseRequest(server string, params *CreateDatabaseParams, body CreateDatabaseJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateDatabaseRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateDatabaseRequestWithBody generates requests for CreateDatabase with any type of body
+func NewCreateDatabaseRequestWithBody(server string, params *CreateDatabaseParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewListDatabaseInstanceTypesRequest generates requests for ListDatabaseInstanceTypes
+func NewListDatabaseInstanceTypesRequest(server string, params *ListDatabaseInstanceTypesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/instance-types")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.EnvironmentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "environment_id", runtime.ParamLocationQuery, *params.EnvironmentId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Engine != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "engine", runtime.ParamLocationQuery, *params.Engine); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewListDatabasePlansRequest generates requests for ListDatabasePlans
+func NewListDatabasePlansRequest(server string, params *ListDatabasePlansParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/plans")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.EnvironmentId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "environment_id", runtime.ParamLocationQuery, *params.EnvironmentId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Engine != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "engine", runtime.ParamLocationQuery, *params.Engine); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewDeleteDatabaseRequest generates requests for DeleteDatabase
+func NewDeleteDatabaseRequest(server string, id DatabaseId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDatabaseRequest generates requests for GetDatabase
+func NewGetDatabaseRequest(server string, id DatabaseId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateDatabaseRequest calls the generic UpdateDatabase builder with application/json body
+func NewUpdateDatabaseRequest(server string, id DatabaseId, body UpdateDatabaseJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateDatabaseRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewUpdateDatabaseRequestWithBody generates requests for UpdateDatabase with any type of body
+func NewUpdateDatabaseRequestWithBody(server string, id DatabaseId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListDatabaseBackupsRequest generates requests for ListDatabaseBackups
+func NewListDatabaseBackupsRequest(server string, id DatabaseId, params *ListDatabaseBackupsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/backups", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDatabaseConnectionRequest generates requests for GetDatabaseConnection
+func NewGetDatabaseConnectionRequest(server string, id DatabaseId, params *GetDatabaseConnectionParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/connection", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Reveal != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "reveal", runtime.ParamLocationQuery, *params.Reveal); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewRotateDatabaseCredentialsRequest generates requests for RotateDatabaseCredentials
+func NewRotateDatabaseCredentialsRequest(server string, id DatabaseId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/credentials/rotate", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetDatabaseInjectionRequest generates requests for GetDatabaseInjection
+func NewGetDatabaseInjectionRequest(server string, id DatabaseId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/injection", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateDatabaseInjectionRequest calls the generic UpdateDatabaseInjection builder with application/json body
+func NewUpdateDatabaseInjectionRequest(server string, id DatabaseId, body UpdateDatabaseInjectionJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateDatabaseInjectionRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewUpdateDatabaseInjectionRequestWithBody generates requests for UpdateDatabaseInjection with any type of body
+func NewUpdateDatabaseInjectionRequestWithBody(server string, id DatabaseId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/injection", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetDatabaseMetricsRequest generates requests for GetDatabaseMetrics
+func NewGetDatabaseMetricsRequest(server string, id DatabaseId, params *GetDatabaseMetricsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/metrics", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "type", runtime.ParamLocationQuery, params.Type); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		if params.StartTime != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "start_time", runtime.ParamLocationQuery, *params.StartTime); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.EndTime != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "end_time", runtime.ParamLocationQuery, *params.EndTime); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Step != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "step", runtime.ParamLocationQuery, *params.Step); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListDatabaseMetricCatalogRequest generates requests for ListDatabaseMetricCatalog
+func NewListDatabaseMetricCatalogRequest(server string, id DatabaseId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/metrics/catalog", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUpdateDatabasePublicAccessRequest calls the generic UpdateDatabasePublicAccess builder with application/json body
+func NewUpdateDatabasePublicAccessRequest(server string, id DatabaseId, body UpdateDatabasePublicAccessJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateDatabasePublicAccessRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewUpdateDatabasePublicAccessRequestWithBody generates requests for UpdateDatabasePublicAccess with any type of body
+func NewUpdateDatabasePublicAccessRequestWithBody(server string, id DatabaseId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/public-access", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRestoreDatabaseRequest calls the generic RestoreDatabase builder with application/json body
+func NewRestoreDatabaseRequest(server string, id DatabaseId, body RestoreDatabaseJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRestoreDatabaseRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewRestoreDatabaseRequestWithBody generates requests for RestoreDatabase with any type of body
+func NewRestoreDatabaseRequestWithBody(server string, id DatabaseId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/restore", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCreateDatabaseTunnelSessionRequest calls the generic CreateDatabaseTunnelSession builder with application/json body
+func NewCreateDatabaseTunnelSessionRequest(server string, id DatabaseId, body CreateDatabaseTunnelSessionJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateDatabaseTunnelSessionRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewCreateDatabaseTunnelSessionRequestWithBody generates requests for CreateDatabaseTunnelSession with any type of body
+func NewCreateDatabaseTunnelSessionRequestWithBody(server string, id DatabaseId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/databases/%s/tunnel-sessions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListDeploymentsRequest generates requests for ListDeployments
 func NewListDeploymentsRequest(server string, params *ListDeploymentsParams) (*http.Request, error) {
 	var err error
@@ -15106,6 +21100,22 @@ func NewListDeploymentsRequest(server string, params *ListDeploymentsParams) (*h
 
 		}
 
+		if params.Env != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "env", runtime.ParamLocationQuery, *params.Env); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		if params.Type != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "type", runtime.ParamLocationQuery, *params.Type); err != nil {
@@ -15122,9 +21132,73 @@ func NewListDeploymentsRequest(server string, params *ListDeploymentsParams) (*h
 
 		}
 
+		if params.Q != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "q", runtime.ParamLocationQuery, *params.Q); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Include != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "include", runtime.ParamLocationQuery, *params.Include); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		if params.Page != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
@@ -15562,6 +21636,47 @@ func NewGetBuildRequest(server string, id DeploymentId, bid BuildId) (*http.Requ
 	return req, nil
 }
 
+// NewApproveBuildRequest generates requests for ApproveBuild
+func NewApproveBuildRequest(server string, id DeploymentId, bid BuildId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "bid", runtime.ParamLocationPath, bid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/builds/%s/approve", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewCancelBuildRequest generates requests for CancelBuild
 func NewCancelBuildRequest(server string, id DeploymentId, bid BuildId) (*http.Request, error) {
 	var err error
@@ -15699,6 +21814,60 @@ func NewGetBuildLogStreamTokenRequest(server string, id DeploymentId, bid BuildI
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewRejectBuildRequest calls the generic RejectBuild builder with application/json body
+func NewRejectBuildRequest(server string, id DeploymentId, bid BuildId, body RejectBuildJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRejectBuildRequestWithBody(server, id, bid, "application/json", bodyReader)
+}
+
+// NewRejectBuildRequestWithBody generates requests for RejectBuild with any type of body
+func NewRejectBuildRequestWithBody(server string, id DeploymentId, bid BuildId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "bid", runtime.ParamLocationPath, bid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/builds/%s/reject", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -17583,6 +23752,53 @@ func NewGetDeploymentMetricsRequest(server string, id DeploymentId, params *GetD
 	return req, nil
 }
 
+// NewPromoteBuildRequest calls the generic PromoteBuild builder with application/json body
+func NewPromoteBuildRequest(server string, id DeploymentId, body PromoteBuildJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPromoteBuildRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewPromoteBuildRequestWithBody generates requests for PromoteBuild with any type of body
+func NewPromoteBuildRequestWithBody(server string, id DeploymentId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/promote", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewRestartDeploymentRequest generates requests for RestartDeployment
 func NewRestartDeploymentRequest(server string, id DeploymentId) (*http.Request, error) {
 	var err error
@@ -17634,6 +23850,40 @@ func NewResumeDeploymentRequest(server string, id DeploymentId) (*http.Request, 
 	}
 
 	operationPath := fmt.Sprintf("/deployments/%s/resume", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewResumeDeploymentAutodeployRequest generates requests for ResumeDeploymentAutodeploy
+func NewResumeDeploymentAutodeployRequest(server string, id DeploymentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/resume-autodeploy", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -18699,16 +24949,20 @@ func NewGetEnvironmentDomainDnsGuidanceRequest(server string, eid EnvironmentId,
 	if params != nil {
 		queryValues := queryURL.Query()
 
-		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "domain", runtime.ParamLocationQuery, params.Domain); err != nil {
-			return nil, err
-		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-			return nil, err
-		} else {
-			for k, v := range parsed {
-				for _, v2 := range v {
-					queryValues.Add(k, v2)
+		if params.Domain != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "domain", runtime.ParamLocationQuery, *params.Domain); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
 				}
 			}
+
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -18812,6 +25066,169 @@ func NewToggleEnvironmentSubdomainRequestWithBody(server string, eid Environment
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListEnvironmentDomainsRequest generates requests for ListEnvironmentDomains
+func NewListEnvironmentDomainsRequest(server string, eid EnvironmentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/domains", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewAddEnvironmentDomainRequest calls the generic AddEnvironmentDomain builder with application/json body
+func NewAddEnvironmentDomainRequest(server string, eid EnvironmentId, body AddEnvironmentDomainJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewAddEnvironmentDomainRequestWithBody(server, eid, "application/json", bodyReader)
+}
+
+// NewAddEnvironmentDomainRequestWithBody generates requests for AddEnvironmentDomain with any type of body
+func NewAddEnvironmentDomainRequestWithBody(server string, eid EnvironmentId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/domains", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeleteEnvironmentDomainRequest generates requests for DeleteEnvironmentDomain
+func NewDeleteEnvironmentDomainRequest(server string, eid EnvironmentId, domain string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "domain", runtime.ParamLocationPath, domain)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/domains/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPromoteEnvironmentDomainRequest generates requests for PromoteEnvironmentDomain
+func NewPromoteEnvironmentDomainRequest(server string, eid EnvironmentId, domain string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "domain", runtime.ParamLocationPath, domain)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/domains/%s/promote", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
 
 	return req, nil
 }
@@ -19812,6 +26229,38 @@ func NewListNotificationsRequest(server string, params *ListNotificationsParams)
 
 		}
 
+		if params.Seen != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "seen", runtime.ParamLocationQuery, *params.Seen); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Unread != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "unread", runtime.ParamLocationQuery, *params.Unread); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -20301,6 +26750,227 @@ func NewGetPluginRequest(server string, plid PluginId) (*http.Request, error) {
 	return req, nil
 }
 
+// NewListPreviewsRequest generates requests for ListPreviews
+func NewListPreviewsRequest(server string, params *ListPreviewsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/previews")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "project_id", runtime.ParamLocationQuery, params.ProjectId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewCreatePreviewRequest calls the generic CreatePreview builder with application/json body
+func NewCreatePreviewRequest(server string, body CreatePreviewJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreatePreviewRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCreatePreviewRequestWithBody generates requests for CreatePreview with any type of body
+func NewCreatePreviewRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/previews")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDeletePreviewRequest generates requests for DeletePreview
+func NewDeletePreviewRequest(server string, eid EnvironmentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/previews/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetPreviewRequest generates requests for GetPreview
+func NewGetPreviewRequest(server string, eid EnvironmentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/previews/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewAbortPreviewRequest generates requests for AbortPreview
+func NewAbortPreviewRequest(server string, eid EnvironmentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/previews/%s/abort", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewExtendPreviewRequest generates requests for ExtendPreview
+func NewExtendPreviewRequest(server string, eid EnvironmentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/previews/%s/extend", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewListProjectsRequest generates requests for ListProjects
 func NewListProjectsRequest(server string, params *ListProjectsParams) (*http.Request, error) {
 	var err error
@@ -20333,6 +27003,70 @@ func NewListProjectsRequest(server string, params *ListProjectsParams) (*http.Re
 					queryValues.Add(k, v2)
 				}
 			}
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Name != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "name", runtime.ParamLocationQuery, *params.Name); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Active != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "active", runtime.ParamLocationQuery, *params.Active); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
 		}
 
 		queryURL.RawQuery = queryValues.Encode()
@@ -22253,6 +28987,70 @@ func NewListTeamsRequest(server string, params *ListTeamsParams) (*http.Request,
 			}
 		}
 
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Search != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "search", runtime.ParamLocationQuery, *params.Search); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Name != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "name", runtime.ParamLocationQuery, *params.Name); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -22804,6 +29602,33 @@ func NewUpdateCurrentUserRequestWithBody(server string, contentType string, body
 	return req, nil
 }
 
+// NewGetCurrentIpRequest generates requests for GetCurrentIp
+func NewGetCurrentIpRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/users/me/ip")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewListUserProjectsRequest generates requests for ListUserProjects
 func NewListUserProjectsRequest(server string) (*http.Request, error) {
 	var err error
@@ -23041,9 +29866,9 @@ type ClientWithResponsesInterface interface {
 	ApplyManifestWithResponse(ctx context.Context, params *ApplyManifestParams, body ApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*ApplyManifestResp, error)
 
 	// ValidateApplyManifestWithBodyWithResponse request with any body
-	ValidateApplyManifestWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error)
+	ValidateApplyManifestWithBodyWithResponse(ctx context.Context, params *ValidateApplyManifestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error)
 
-	ValidateApplyManifestWithResponse(ctx context.Context, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error)
+	ValidateApplyManifestWithResponse(ctx context.Context, params *ValidateApplyManifestParams, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error)
 
 	// ListConnectionsWithResponse request
 	ListConnectionsWithResponse(ctx context.Context, params *ListConnectionsParams, reqEditors ...RequestEditorFn) (*ListConnectionsResp, error)
@@ -23072,6 +29897,69 @@ type ClientWithResponsesInterface interface {
 
 	// ListConnectionRepositoriesWithResponse request
 	ListConnectionRepositoriesWithResponse(ctx context.Context, cid ConnectionId, reqEditors ...RequestEditorFn) (*ListConnectionRepositoriesResp, error)
+
+	// ListDatabasesWithResponse request
+	ListDatabasesWithResponse(ctx context.Context, params *ListDatabasesParams, reqEditors ...RequestEditorFn) (*ListDatabasesResp, error)
+
+	// CreateDatabaseWithBodyWithResponse request with any body
+	CreateDatabaseWithBodyWithResponse(ctx context.Context, params *CreateDatabaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDatabaseResp, error)
+
+	CreateDatabaseWithResponse(ctx context.Context, params *CreateDatabaseParams, body CreateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDatabaseResp, error)
+
+	// ListDatabaseInstanceTypesWithResponse request
+	ListDatabaseInstanceTypesWithResponse(ctx context.Context, params *ListDatabaseInstanceTypesParams, reqEditors ...RequestEditorFn) (*ListDatabaseInstanceTypesResp, error)
+
+	// ListDatabasePlansWithResponse request
+	ListDatabasePlansWithResponse(ctx context.Context, params *ListDatabasePlansParams, reqEditors ...RequestEditorFn) (*ListDatabasePlansResp, error)
+
+	// DeleteDatabaseWithResponse request
+	DeleteDatabaseWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*DeleteDatabaseResp, error)
+
+	// GetDatabaseWithResponse request
+	GetDatabaseWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*GetDatabaseResp, error)
+
+	// UpdateDatabaseWithBodyWithResponse request with any body
+	UpdateDatabaseWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDatabaseResp, error)
+
+	UpdateDatabaseWithResponse(ctx context.Context, id DatabaseId, body UpdateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDatabaseResp, error)
+
+	// ListDatabaseBackupsWithResponse request
+	ListDatabaseBackupsWithResponse(ctx context.Context, id DatabaseId, params *ListDatabaseBackupsParams, reqEditors ...RequestEditorFn) (*ListDatabaseBackupsResp, error)
+
+	// GetDatabaseConnectionWithResponse request
+	GetDatabaseConnectionWithResponse(ctx context.Context, id DatabaseId, params *GetDatabaseConnectionParams, reqEditors ...RequestEditorFn) (*GetDatabaseConnectionResp, error)
+
+	// RotateDatabaseCredentialsWithResponse request
+	RotateDatabaseCredentialsWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*RotateDatabaseCredentialsResp, error)
+
+	// GetDatabaseInjectionWithResponse request
+	GetDatabaseInjectionWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*GetDatabaseInjectionResp, error)
+
+	// UpdateDatabaseInjectionWithBodyWithResponse request with any body
+	UpdateDatabaseInjectionWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDatabaseInjectionResp, error)
+
+	UpdateDatabaseInjectionWithResponse(ctx context.Context, id DatabaseId, body UpdateDatabaseInjectionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDatabaseInjectionResp, error)
+
+	// GetDatabaseMetricsWithResponse request
+	GetDatabaseMetricsWithResponse(ctx context.Context, id DatabaseId, params *GetDatabaseMetricsParams, reqEditors ...RequestEditorFn) (*GetDatabaseMetricsResp, error)
+
+	// ListDatabaseMetricCatalogWithResponse request
+	ListDatabaseMetricCatalogWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*ListDatabaseMetricCatalogResp, error)
+
+	// UpdateDatabasePublicAccessWithBodyWithResponse request with any body
+	UpdateDatabasePublicAccessWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDatabasePublicAccessResp, error)
+
+	UpdateDatabasePublicAccessWithResponse(ctx context.Context, id DatabaseId, body UpdateDatabasePublicAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDatabasePublicAccessResp, error)
+
+	// RestoreDatabaseWithBodyWithResponse request with any body
+	RestoreDatabaseWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RestoreDatabaseResp, error)
+
+	RestoreDatabaseWithResponse(ctx context.Context, id DatabaseId, body RestoreDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*RestoreDatabaseResp, error)
+
+	// CreateDatabaseTunnelSessionWithBodyWithResponse request with any body
+	CreateDatabaseTunnelSessionWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDatabaseTunnelSessionResp, error)
+
+	CreateDatabaseTunnelSessionWithResponse(ctx context.Context, id DatabaseId, body CreateDatabaseTunnelSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDatabaseTunnelSessionResp, error)
 
 	// ListDeploymentsWithResponse request
 	ListDeploymentsWithResponse(ctx context.Context, params *ListDeploymentsParams, reqEditors ...RequestEditorFn) (*ListDeploymentsResp, error)
@@ -23106,6 +29994,9 @@ type ClientWithResponsesInterface interface {
 	// GetBuildWithResponse request
 	GetBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*GetBuildResp, error)
 
+	// ApproveBuildWithResponse request
+	ApproveBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*ApproveBuildResp, error)
+
 	// CancelBuildWithResponse request
 	CancelBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*CancelBuildResp, error)
 
@@ -23114,6 +30005,11 @@ type ClientWithResponsesInterface interface {
 
 	// GetBuildLogStreamTokenWithResponse request
 	GetBuildLogStreamTokenWithResponse(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*GetBuildLogStreamTokenResp, error)
+
+	// RejectBuildWithBodyWithResponse request with any body
+	RejectBuildWithBodyWithResponse(ctx context.Context, id DeploymentId, bid BuildId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RejectBuildResp, error)
+
+	RejectBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, body RejectBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*RejectBuildResp, error)
 
 	// GetBuildCacheWithResponse request
 	GetBuildCacheWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*GetBuildCacheResp, error)
@@ -23211,11 +30107,19 @@ type ClientWithResponsesInterface interface {
 	// GetDeploymentMetricsWithResponse request
 	GetDeploymentMetricsWithResponse(ctx context.Context, id DeploymentId, params *GetDeploymentMetricsParams, reqEditors ...RequestEditorFn) (*GetDeploymentMetricsResp, error)
 
+	// PromoteBuildWithBodyWithResponse request with any body
+	PromoteBuildWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PromoteBuildResp, error)
+
+	PromoteBuildWithResponse(ctx context.Context, id DeploymentId, body PromoteBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*PromoteBuildResp, error)
+
 	// RestartDeploymentWithResponse request
 	RestartDeploymentWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*RestartDeploymentResp, error)
 
 	// ResumeDeploymentWithResponse request
 	ResumeDeploymentWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*ResumeDeploymentResp, error)
+
+	// ResumeDeploymentAutodeployWithResponse request
+	ResumeDeploymentAutodeployWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*ResumeDeploymentAutodeployResp, error)
 
 	// RollbackDeploymentWithBodyWithResponse request with any body
 	RollbackDeploymentWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RollbackDeploymentResp, error)
@@ -23318,6 +30222,20 @@ type ClientWithResponsesInterface interface {
 
 	ToggleEnvironmentSubdomainWithResponse(ctx context.Context, eid EnvironmentId, body ToggleEnvironmentSubdomainJSONRequestBody, reqEditors ...RequestEditorFn) (*ToggleEnvironmentSubdomainResp, error)
 
+	// ListEnvironmentDomainsWithResponse request
+	ListEnvironmentDomainsWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*ListEnvironmentDomainsResp, error)
+
+	// AddEnvironmentDomainWithBodyWithResponse request with any body
+	AddEnvironmentDomainWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddEnvironmentDomainResp, error)
+
+	AddEnvironmentDomainWithResponse(ctx context.Context, eid EnvironmentId, body AddEnvironmentDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*AddEnvironmentDomainResp, error)
+
+	// DeleteEnvironmentDomainWithResponse request
+	DeleteEnvironmentDomainWithResponse(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*DeleteEnvironmentDomainResp, error)
+
+	// PromoteEnvironmentDomainWithResponse request
+	PromoteEnvironmentDomainWithResponse(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*PromoteEnvironmentDomainResp, error)
+
 	// UpdateEnvironmentNetworkingWithBodyWithResponse request with any body
 	UpdateEnvironmentNetworkingWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEnvironmentNetworkingResp, error)
 
@@ -23418,6 +30336,26 @@ type ClientWithResponsesInterface interface {
 
 	// GetPluginWithResponse request
 	GetPluginWithResponse(ctx context.Context, plid PluginId, reqEditors ...RequestEditorFn) (*GetPluginResp, error)
+
+	// ListPreviewsWithResponse request
+	ListPreviewsWithResponse(ctx context.Context, params *ListPreviewsParams, reqEditors ...RequestEditorFn) (*ListPreviewsResp, error)
+
+	// CreatePreviewWithBodyWithResponse request with any body
+	CreatePreviewWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePreviewResp, error)
+
+	CreatePreviewWithResponse(ctx context.Context, body CreatePreviewJSONRequestBody, reqEditors ...RequestEditorFn) (*CreatePreviewResp, error)
+
+	// DeletePreviewWithResponse request
+	DeletePreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*DeletePreviewResp, error)
+
+	// GetPreviewWithResponse request
+	GetPreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*GetPreviewResp, error)
+
+	// AbortPreviewWithResponse request
+	AbortPreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*AbortPreviewResp, error)
+
+	// ExtendPreviewWithResponse request
+	ExtendPreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*ExtendPreviewResp, error)
 
 	// ListProjectsWithResponse request
 	ListProjectsWithResponse(ctx context.Context, params *ListProjectsParams, reqEditors ...RequestEditorFn) (*ListProjectsResp, error)
@@ -23634,6 +30572,9 @@ type ClientWithResponsesInterface interface {
 	UpdateCurrentUserWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateCurrentUserResp, error)
 
 	UpdateCurrentUserWithResponse(ctx context.Context, body UpdateCurrentUserJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateCurrentUserResp, error)
+
+	// GetCurrentIpWithResponse request
+	GetCurrentIpWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentIpResp, error)
 
 	// ListUserProjectsWithResponse request
 	ListUserProjectsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListUserProjectsResp, error)
@@ -24632,6 +31573,7 @@ type ApplyManifestResp struct {
 	JSON201                   *ApplyResponse
 	JSON207                   *ApplyResponse
 	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON500 *InternalError
 }
 
@@ -24656,6 +31598,8 @@ type ValidateApplyManifestResp struct {
 	HTTPResponse              *http.Response
 	JSON200                   *ApplyValidationResponse
 	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON500 *InternalError
 }
 
@@ -24876,6 +31820,478 @@ func (r ListConnectionRepositoriesResp) StatusCode() int {
 	return 0
 }
 
+type ListDatabasesResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseList
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDatabasesResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDatabasesResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateDatabaseResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON201                   *Database
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateDatabaseResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateDatabaseResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListDatabaseInstanceTypesResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseInstanceTypeList
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDatabaseInstanceTypesResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDatabaseInstanceTypesResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListDatabasePlansResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabasePlanList
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDatabasePlansResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDatabasePlansResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeleteDatabaseResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteDatabaseResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteDatabaseResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetDatabaseResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *Database
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDatabaseResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDatabaseResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateDatabaseResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *Database
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateDatabaseResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateDatabaseResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListDatabaseBackupsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseBackupList
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDatabaseBackupsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDatabaseBackupsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetDatabaseConnectionResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseConnection
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDatabaseConnectionResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDatabaseConnectionResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RotateDatabaseCredentialsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON202                   *Database
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r RotateDatabaseCredentialsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RotateDatabaseCredentialsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetDatabaseInjectionResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseInjection
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDatabaseInjectionResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDatabaseInjectionResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateDatabaseInjectionResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseInjection
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateDatabaseInjectionResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateDatabaseInjectionResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetDatabaseMetricsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseMetricsResponse
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r GetDatabaseMetricsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetDatabaseMetricsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListDatabaseMetricCatalogResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabaseMetricCatalog
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDatabaseMetricCatalogResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDatabaseMetricCatalogResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateDatabasePublicAccessResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DatabasePublicAccess
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Problem
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateDatabasePublicAccessResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateDatabasePublicAccessResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RestoreDatabaseResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON201                   *Database
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r RestoreDatabaseResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RestoreDatabaseResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateDatabaseTunnelSessionResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON201                   *DatabaseTunnelSession
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateDatabaseTunnelSessionResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateDatabaseTunnelSessionResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type ListDeploymentsResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -24981,6 +32397,7 @@ type UpdateDeploymentResp struct {
 	HTTPResponse              *http.Response
 	JSON200                   *DeploymentOutput
 	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
@@ -25109,6 +32526,33 @@ func (r GetBuildResp) StatusCode() int {
 	return 0
 }
 
+type ApproveBuildResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON202                   *Build
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Problem
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ApproveBuildResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ApproveBuildResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type CancelBuildResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -25179,6 +32623,34 @@ func (r GetBuildLogStreamTokenResp) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r GetBuildLogStreamTokenResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RejectBuildResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *Build
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r RejectBuildResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RejectBuildResp) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -25364,6 +32836,7 @@ type DeployDeploymentResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
 	JSON202                   *DeploymentAccepted
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
@@ -25565,6 +33038,7 @@ type ReplaceDeploymentEnvVarsResp struct {
 	HTTPResponse              *http.Response
 	JSON200                   *DeploymentOutput
 	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
@@ -25589,6 +33063,7 @@ func (r ReplaceDeploymentEnvVarsResp) StatusCode() int {
 type DeleteDeploymentEnvVarResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
@@ -25615,6 +33090,7 @@ type SetDeploymentEnvVarResp struct {
 	HTTPResponse              *http.Response
 	JSON200                   *DeploymentOutput
 	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
@@ -25887,6 +33363,35 @@ func (r GetDeploymentMetricsResp) StatusCode() int {
 	return 0
 }
 
+type PromoteBuildResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON202                   *Build
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r PromoteBuildResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PromoteBuildResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type RestartDeploymentResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -25937,6 +33442,31 @@ func (r ResumeDeploymentResp) StatusCode() int {
 	return 0
 }
 
+type ResumeDeploymentAutodeployResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *ResumeAutodeployResponse
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ResumeDeploymentAutodeployResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ResumeDeploymentAutodeployResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type RollbackDeploymentResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -25968,6 +33498,7 @@ type ScaleDeploymentResp struct {
 	HTTPResponse              *http.Response
 	JSON202                   *DeploymentAccepted
 	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
 	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
@@ -26522,6 +34053,7 @@ type SetEnvironmentCustomDomainResp struct {
 	ApplicationproblemJSON401 *Unauthenticated
 	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
 	ApplicationproblemJSON500 *InternalError
 }
 
@@ -26616,6 +34148,113 @@ func (r ToggleEnvironmentSubdomainResp) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r ToggleEnvironmentSubdomainResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListEnvironmentDomainsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *DomainList
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListEnvironmentDomainsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListEnvironmentDomainsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type AddEnvironmentDomainResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON201                   *Domain
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r AddEnvironmentDomainResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AddEnvironmentDomainResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeleteEnvironmentDomainResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteEnvironmentDomainResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteEnvironmentDomainResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type PromoteEnvironmentDomainResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *Domain
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r PromoteEnvironmentDomainResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PromoteEnvironmentDomainResp) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -27295,6 +34934,165 @@ func (r GetPluginResp) StatusCode() int {
 	return 0
 }
 
+type ListPreviewsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *EnvironmentList
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListPreviewsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListPreviewsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreatePreviewResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON202                   *Environment
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r CreatePreviewResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreatePreviewResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeletePreviewResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON202                   *PreviewActionResult
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r DeletePreviewResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeletePreviewResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetPreviewResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *Environment
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetPreviewResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetPreviewResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type AbortPreviewResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON202                   *PreviewActionResult
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r AbortPreviewResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AbortPreviewResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ExtendPreviewResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *Environment
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ExtendPreviewResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ExtendPreviewResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type ListProjectsResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -27355,6 +35153,7 @@ type DeleteProjectResp struct {
 	ApplicationproblemJSON401 *Unauthenticated
 	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
 	ApplicationproblemJSON500 *InternalError
 }
 
@@ -28724,6 +36523,32 @@ func (r UpdateCurrentUserResp) StatusCode() int {
 	return 0
 }
 
+type GetCurrentIpResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *ClientIp
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r GetCurrentIpResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetCurrentIpResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type ListUserProjectsResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -29212,16 +37037,16 @@ func (c *ClientWithResponses) ApplyManifestWithResponse(ctx context.Context, par
 }
 
 // ValidateApplyManifestWithBodyWithResponse request with arbitrary body returning *ValidateApplyManifestResp
-func (c *ClientWithResponses) ValidateApplyManifestWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error) {
-	rsp, err := c.ValidateApplyManifestWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) ValidateApplyManifestWithBodyWithResponse(ctx context.Context, params *ValidateApplyManifestParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error) {
+	rsp, err := c.ValidateApplyManifestWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseValidateApplyManifestResp(rsp)
 }
 
-func (c *ClientWithResponses) ValidateApplyManifestWithResponse(ctx context.Context, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error) {
-	rsp, err := c.ValidateApplyManifest(ctx, body, reqEditors...)
+func (c *ClientWithResponses) ValidateApplyManifestWithResponse(ctx context.Context, params *ValidateApplyManifestParams, body ValidateApplyManifestJSONRequestBody, reqEditors ...RequestEditorFn) (*ValidateApplyManifestResp, error) {
+	rsp, err := c.ValidateApplyManifest(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -29314,6 +37139,207 @@ func (c *ClientWithResponses) ListConnectionRepositoriesWithResponse(ctx context
 		return nil, err
 	}
 	return ParseListConnectionRepositoriesResp(rsp)
+}
+
+// ListDatabasesWithResponse request returning *ListDatabasesResp
+func (c *ClientWithResponses) ListDatabasesWithResponse(ctx context.Context, params *ListDatabasesParams, reqEditors ...RequestEditorFn) (*ListDatabasesResp, error) {
+	rsp, err := c.ListDatabases(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDatabasesResp(rsp)
+}
+
+// CreateDatabaseWithBodyWithResponse request with arbitrary body returning *CreateDatabaseResp
+func (c *ClientWithResponses) CreateDatabaseWithBodyWithResponse(ctx context.Context, params *CreateDatabaseParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDatabaseResp, error) {
+	rsp, err := c.CreateDatabaseWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDatabaseResp(rsp)
+}
+
+func (c *ClientWithResponses) CreateDatabaseWithResponse(ctx context.Context, params *CreateDatabaseParams, body CreateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDatabaseResp, error) {
+	rsp, err := c.CreateDatabase(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDatabaseResp(rsp)
+}
+
+// ListDatabaseInstanceTypesWithResponse request returning *ListDatabaseInstanceTypesResp
+func (c *ClientWithResponses) ListDatabaseInstanceTypesWithResponse(ctx context.Context, params *ListDatabaseInstanceTypesParams, reqEditors ...RequestEditorFn) (*ListDatabaseInstanceTypesResp, error) {
+	rsp, err := c.ListDatabaseInstanceTypes(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDatabaseInstanceTypesResp(rsp)
+}
+
+// ListDatabasePlansWithResponse request returning *ListDatabasePlansResp
+func (c *ClientWithResponses) ListDatabasePlansWithResponse(ctx context.Context, params *ListDatabasePlansParams, reqEditors ...RequestEditorFn) (*ListDatabasePlansResp, error) {
+	rsp, err := c.ListDatabasePlans(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDatabasePlansResp(rsp)
+}
+
+// DeleteDatabaseWithResponse request returning *DeleteDatabaseResp
+func (c *ClientWithResponses) DeleteDatabaseWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*DeleteDatabaseResp, error) {
+	rsp, err := c.DeleteDatabase(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteDatabaseResp(rsp)
+}
+
+// GetDatabaseWithResponse request returning *GetDatabaseResp
+func (c *ClientWithResponses) GetDatabaseWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*GetDatabaseResp, error) {
+	rsp, err := c.GetDatabase(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDatabaseResp(rsp)
+}
+
+// UpdateDatabaseWithBodyWithResponse request with arbitrary body returning *UpdateDatabaseResp
+func (c *ClientWithResponses) UpdateDatabaseWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDatabaseResp, error) {
+	rsp, err := c.UpdateDatabaseWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDatabaseResp(rsp)
+}
+
+func (c *ClientWithResponses) UpdateDatabaseWithResponse(ctx context.Context, id DatabaseId, body UpdateDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDatabaseResp, error) {
+	rsp, err := c.UpdateDatabase(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDatabaseResp(rsp)
+}
+
+// ListDatabaseBackupsWithResponse request returning *ListDatabaseBackupsResp
+func (c *ClientWithResponses) ListDatabaseBackupsWithResponse(ctx context.Context, id DatabaseId, params *ListDatabaseBackupsParams, reqEditors ...RequestEditorFn) (*ListDatabaseBackupsResp, error) {
+	rsp, err := c.ListDatabaseBackups(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDatabaseBackupsResp(rsp)
+}
+
+// GetDatabaseConnectionWithResponse request returning *GetDatabaseConnectionResp
+func (c *ClientWithResponses) GetDatabaseConnectionWithResponse(ctx context.Context, id DatabaseId, params *GetDatabaseConnectionParams, reqEditors ...RequestEditorFn) (*GetDatabaseConnectionResp, error) {
+	rsp, err := c.GetDatabaseConnection(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDatabaseConnectionResp(rsp)
+}
+
+// RotateDatabaseCredentialsWithResponse request returning *RotateDatabaseCredentialsResp
+func (c *ClientWithResponses) RotateDatabaseCredentialsWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*RotateDatabaseCredentialsResp, error) {
+	rsp, err := c.RotateDatabaseCredentials(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRotateDatabaseCredentialsResp(rsp)
+}
+
+// GetDatabaseInjectionWithResponse request returning *GetDatabaseInjectionResp
+func (c *ClientWithResponses) GetDatabaseInjectionWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*GetDatabaseInjectionResp, error) {
+	rsp, err := c.GetDatabaseInjection(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDatabaseInjectionResp(rsp)
+}
+
+// UpdateDatabaseInjectionWithBodyWithResponse request with arbitrary body returning *UpdateDatabaseInjectionResp
+func (c *ClientWithResponses) UpdateDatabaseInjectionWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDatabaseInjectionResp, error) {
+	rsp, err := c.UpdateDatabaseInjectionWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDatabaseInjectionResp(rsp)
+}
+
+func (c *ClientWithResponses) UpdateDatabaseInjectionWithResponse(ctx context.Context, id DatabaseId, body UpdateDatabaseInjectionJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDatabaseInjectionResp, error) {
+	rsp, err := c.UpdateDatabaseInjection(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDatabaseInjectionResp(rsp)
+}
+
+// GetDatabaseMetricsWithResponse request returning *GetDatabaseMetricsResp
+func (c *ClientWithResponses) GetDatabaseMetricsWithResponse(ctx context.Context, id DatabaseId, params *GetDatabaseMetricsParams, reqEditors ...RequestEditorFn) (*GetDatabaseMetricsResp, error) {
+	rsp, err := c.GetDatabaseMetrics(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetDatabaseMetricsResp(rsp)
+}
+
+// ListDatabaseMetricCatalogWithResponse request returning *ListDatabaseMetricCatalogResp
+func (c *ClientWithResponses) ListDatabaseMetricCatalogWithResponse(ctx context.Context, id DatabaseId, reqEditors ...RequestEditorFn) (*ListDatabaseMetricCatalogResp, error) {
+	rsp, err := c.ListDatabaseMetricCatalog(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDatabaseMetricCatalogResp(rsp)
+}
+
+// UpdateDatabasePublicAccessWithBodyWithResponse request with arbitrary body returning *UpdateDatabasePublicAccessResp
+func (c *ClientWithResponses) UpdateDatabasePublicAccessWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateDatabasePublicAccessResp, error) {
+	rsp, err := c.UpdateDatabasePublicAccessWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDatabasePublicAccessResp(rsp)
+}
+
+func (c *ClientWithResponses) UpdateDatabasePublicAccessWithResponse(ctx context.Context, id DatabaseId, body UpdateDatabasePublicAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateDatabasePublicAccessResp, error) {
+	rsp, err := c.UpdateDatabasePublicAccess(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateDatabasePublicAccessResp(rsp)
+}
+
+// RestoreDatabaseWithBodyWithResponse request with arbitrary body returning *RestoreDatabaseResp
+func (c *ClientWithResponses) RestoreDatabaseWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RestoreDatabaseResp, error) {
+	rsp, err := c.RestoreDatabaseWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRestoreDatabaseResp(rsp)
+}
+
+func (c *ClientWithResponses) RestoreDatabaseWithResponse(ctx context.Context, id DatabaseId, body RestoreDatabaseJSONRequestBody, reqEditors ...RequestEditorFn) (*RestoreDatabaseResp, error) {
+	rsp, err := c.RestoreDatabase(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRestoreDatabaseResp(rsp)
+}
+
+// CreateDatabaseTunnelSessionWithBodyWithResponse request with arbitrary body returning *CreateDatabaseTunnelSessionResp
+func (c *ClientWithResponses) CreateDatabaseTunnelSessionWithBodyWithResponse(ctx context.Context, id DatabaseId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateDatabaseTunnelSessionResp, error) {
+	rsp, err := c.CreateDatabaseTunnelSessionWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDatabaseTunnelSessionResp(rsp)
+}
+
+func (c *ClientWithResponses) CreateDatabaseTunnelSessionWithResponse(ctx context.Context, id DatabaseId, body CreateDatabaseTunnelSessionJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateDatabaseTunnelSessionResp, error) {
+	rsp, err := c.CreateDatabaseTunnelSession(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateDatabaseTunnelSessionResp(rsp)
 }
 
 // ListDeploymentsWithResponse request returning *ListDeploymentsResp
@@ -29421,6 +37447,15 @@ func (c *ClientWithResponses) GetBuildWithResponse(ctx context.Context, id Deplo
 	return ParseGetBuildResp(rsp)
 }
 
+// ApproveBuildWithResponse request returning *ApproveBuildResp
+func (c *ClientWithResponses) ApproveBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*ApproveBuildResp, error) {
+	rsp, err := c.ApproveBuild(ctx, id, bid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseApproveBuildResp(rsp)
+}
+
 // CancelBuildWithResponse request returning *CancelBuildResp
 func (c *ClientWithResponses) CancelBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, reqEditors ...RequestEditorFn) (*CancelBuildResp, error) {
 	rsp, err := c.CancelBuild(ctx, id, bid, reqEditors...)
@@ -29446,6 +37481,23 @@ func (c *ClientWithResponses) GetBuildLogStreamTokenWithResponse(ctx context.Con
 		return nil, err
 	}
 	return ParseGetBuildLogStreamTokenResp(rsp)
+}
+
+// RejectBuildWithBodyWithResponse request with arbitrary body returning *RejectBuildResp
+func (c *ClientWithResponses) RejectBuildWithBodyWithResponse(ctx context.Context, id DeploymentId, bid BuildId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RejectBuildResp, error) {
+	rsp, err := c.RejectBuildWithBody(ctx, id, bid, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRejectBuildResp(rsp)
+}
+
+func (c *ClientWithResponses) RejectBuildWithResponse(ctx context.Context, id DeploymentId, bid BuildId, body RejectBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*RejectBuildResp, error) {
+	rsp, err := c.RejectBuild(ctx, id, bid, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRejectBuildResp(rsp)
 }
 
 // GetBuildCacheWithResponse request returning *GetBuildCacheResp
@@ -29748,6 +37800,23 @@ func (c *ClientWithResponses) GetDeploymentMetricsWithResponse(ctx context.Conte
 	return ParseGetDeploymentMetricsResp(rsp)
 }
 
+// PromoteBuildWithBodyWithResponse request with arbitrary body returning *PromoteBuildResp
+func (c *ClientWithResponses) PromoteBuildWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PromoteBuildResp, error) {
+	rsp, err := c.PromoteBuildWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePromoteBuildResp(rsp)
+}
+
+func (c *ClientWithResponses) PromoteBuildWithResponse(ctx context.Context, id DeploymentId, body PromoteBuildJSONRequestBody, reqEditors ...RequestEditorFn) (*PromoteBuildResp, error) {
+	rsp, err := c.PromoteBuild(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePromoteBuildResp(rsp)
+}
+
 // RestartDeploymentWithResponse request returning *RestartDeploymentResp
 func (c *ClientWithResponses) RestartDeploymentWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*RestartDeploymentResp, error) {
 	rsp, err := c.RestartDeployment(ctx, id, reqEditors...)
@@ -29764,6 +37833,15 @@ func (c *ClientWithResponses) ResumeDeploymentWithResponse(ctx context.Context, 
 		return nil, err
 	}
 	return ParseResumeDeploymentResp(rsp)
+}
+
+// ResumeDeploymentAutodeployWithResponse request returning *ResumeDeploymentAutodeployResp
+func (c *ClientWithResponses) ResumeDeploymentAutodeployWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*ResumeDeploymentAutodeployResp, error) {
+	rsp, err := c.ResumeDeploymentAutodeploy(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseResumeDeploymentAutodeployResp(rsp)
 }
 
 // RollbackDeploymentWithBodyWithResponse request with arbitrary body returning *RollbackDeploymentResp
@@ -30089,6 +38167,50 @@ func (c *ClientWithResponses) ToggleEnvironmentSubdomainWithResponse(ctx context
 	return ParseToggleEnvironmentSubdomainResp(rsp)
 }
 
+// ListEnvironmentDomainsWithResponse request returning *ListEnvironmentDomainsResp
+func (c *ClientWithResponses) ListEnvironmentDomainsWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*ListEnvironmentDomainsResp, error) {
+	rsp, err := c.ListEnvironmentDomains(ctx, eid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListEnvironmentDomainsResp(rsp)
+}
+
+// AddEnvironmentDomainWithBodyWithResponse request with arbitrary body returning *AddEnvironmentDomainResp
+func (c *ClientWithResponses) AddEnvironmentDomainWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddEnvironmentDomainResp, error) {
+	rsp, err := c.AddEnvironmentDomainWithBody(ctx, eid, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddEnvironmentDomainResp(rsp)
+}
+
+func (c *ClientWithResponses) AddEnvironmentDomainWithResponse(ctx context.Context, eid EnvironmentId, body AddEnvironmentDomainJSONRequestBody, reqEditors ...RequestEditorFn) (*AddEnvironmentDomainResp, error) {
+	rsp, err := c.AddEnvironmentDomain(ctx, eid, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAddEnvironmentDomainResp(rsp)
+}
+
+// DeleteEnvironmentDomainWithResponse request returning *DeleteEnvironmentDomainResp
+func (c *ClientWithResponses) DeleteEnvironmentDomainWithResponse(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*DeleteEnvironmentDomainResp, error) {
+	rsp, err := c.DeleteEnvironmentDomain(ctx, eid, domain, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteEnvironmentDomainResp(rsp)
+}
+
+// PromoteEnvironmentDomainWithResponse request returning *PromoteEnvironmentDomainResp
+func (c *ClientWithResponses) PromoteEnvironmentDomainWithResponse(ctx context.Context, eid EnvironmentId, domain string, reqEditors ...RequestEditorFn) (*PromoteEnvironmentDomainResp, error) {
+	rsp, err := c.PromoteEnvironmentDomain(ctx, eid, domain, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePromoteEnvironmentDomainResp(rsp)
+}
+
 // UpdateEnvironmentNetworkingWithBodyWithResponse request with arbitrary body returning *UpdateEnvironmentNetworkingResp
 func (c *ClientWithResponses) UpdateEnvironmentNetworkingWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateEnvironmentNetworkingResp, error) {
 	rsp, err := c.UpdateEnvironmentNetworkingWithBody(ctx, eid, contentType, body, reqEditors...)
@@ -30410,6 +38532,68 @@ func (c *ClientWithResponses) GetPluginWithResponse(ctx context.Context, plid Pl
 		return nil, err
 	}
 	return ParseGetPluginResp(rsp)
+}
+
+// ListPreviewsWithResponse request returning *ListPreviewsResp
+func (c *ClientWithResponses) ListPreviewsWithResponse(ctx context.Context, params *ListPreviewsParams, reqEditors ...RequestEditorFn) (*ListPreviewsResp, error) {
+	rsp, err := c.ListPreviews(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListPreviewsResp(rsp)
+}
+
+// CreatePreviewWithBodyWithResponse request with arbitrary body returning *CreatePreviewResp
+func (c *ClientWithResponses) CreatePreviewWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreatePreviewResp, error) {
+	rsp, err := c.CreatePreviewWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreatePreviewResp(rsp)
+}
+
+func (c *ClientWithResponses) CreatePreviewWithResponse(ctx context.Context, body CreatePreviewJSONRequestBody, reqEditors ...RequestEditorFn) (*CreatePreviewResp, error) {
+	rsp, err := c.CreatePreview(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreatePreviewResp(rsp)
+}
+
+// DeletePreviewWithResponse request returning *DeletePreviewResp
+func (c *ClientWithResponses) DeletePreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*DeletePreviewResp, error) {
+	rsp, err := c.DeletePreview(ctx, eid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeletePreviewResp(rsp)
+}
+
+// GetPreviewWithResponse request returning *GetPreviewResp
+func (c *ClientWithResponses) GetPreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*GetPreviewResp, error) {
+	rsp, err := c.GetPreview(ctx, eid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPreviewResp(rsp)
+}
+
+// AbortPreviewWithResponse request returning *AbortPreviewResp
+func (c *ClientWithResponses) AbortPreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*AbortPreviewResp, error) {
+	rsp, err := c.AbortPreview(ctx, eid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAbortPreviewResp(rsp)
+}
+
+// ExtendPreviewWithResponse request returning *ExtendPreviewResp
+func (c *ClientWithResponses) ExtendPreviewWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*ExtendPreviewResp, error) {
+	rsp, err := c.ExtendPreview(ctx, eid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseExtendPreviewResp(rsp)
 }
 
 // ListProjectsWithResponse request returning *ListProjectsResp
@@ -31106,6 +39290,15 @@ func (c *ClientWithResponses) UpdateCurrentUserWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseUpdateCurrentUserResp(rsp)
+}
+
+// GetCurrentIpWithResponse request returning *GetCurrentIpResp
+func (c *ClientWithResponses) GetCurrentIpWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetCurrentIpResp, error) {
+	rsp, err := c.GetCurrentIp(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetCurrentIpResp(rsp)
 }
 
 // ListUserProjectsWithResponse request returning *ListUserProjectsResp
@@ -33185,6 +41378,13 @@ func ParseApplyManifestResp(rsp *http.Response) (*ApplyManifestResp, error) {
 		}
 		response.ApplicationproblemJSON400 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -33224,6 +41424,20 @@ func ParseValidateApplyManifestResp(rsp *http.Response) (*ValidateApplyManifestR
 			return nil, err
 		}
 		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
@@ -33620,6 +41834,1134 @@ func ParseListConnectionRepositoriesResp(rsp *http.Response) (*ListConnectionRep
 	return response, nil
 }
 
+// ParseListDatabasesResp parses an HTTP response from a ListDatabasesWithResponse call
+func ParseListDatabasesResp(rsp *http.Response) (*ListDatabasesResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDatabasesResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateDatabaseResp parses an HTTP response from a CreateDatabaseWithResponse call
+func ParseCreateDatabaseResp(rsp *http.Response) (*CreateDatabaseResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateDatabaseResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest Database
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListDatabaseInstanceTypesResp parses an HTTP response from a ListDatabaseInstanceTypesWithResponse call
+func ParseListDatabaseInstanceTypesResp(rsp *http.Response) (*ListDatabaseInstanceTypesResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDatabaseInstanceTypesResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseInstanceTypeList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListDatabasePlansResp parses an HTTP response from a ListDatabasePlansWithResponse call
+func ParseListDatabasePlansResp(rsp *http.Response) (*ListDatabasePlansResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDatabasePlansResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabasePlanList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteDatabaseResp parses an HTTP response from a DeleteDatabaseWithResponse call
+func ParseDeleteDatabaseResp(rsp *http.Response) (*DeleteDatabaseResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteDatabaseResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDatabaseResp parses an HTTP response from a GetDatabaseWithResponse call
+func ParseGetDatabaseResp(rsp *http.Response) (*GetDatabaseResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDatabaseResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Database
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateDatabaseResp parses an HTTP response from a UpdateDatabaseWithResponse call
+func ParseUpdateDatabaseResp(rsp *http.Response) (*UpdateDatabaseResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateDatabaseResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Database
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListDatabaseBackupsResp parses an HTTP response from a ListDatabaseBackupsWithResponse call
+func ParseListDatabaseBackupsResp(rsp *http.Response) (*ListDatabaseBackupsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDatabaseBackupsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseBackupList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDatabaseConnectionResp parses an HTTP response from a GetDatabaseConnectionWithResponse call
+func ParseGetDatabaseConnectionResp(rsp *http.Response) (*GetDatabaseConnectionResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDatabaseConnectionResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseConnection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRotateDatabaseCredentialsResp parses an HTTP response from a RotateDatabaseCredentialsWithResponse call
+func ParseRotateDatabaseCredentialsResp(rsp *http.Response) (*RotateDatabaseCredentialsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RotateDatabaseCredentialsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Database
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDatabaseInjectionResp parses an HTTP response from a GetDatabaseInjectionWithResponse call
+func ParseGetDatabaseInjectionResp(rsp *http.Response) (*GetDatabaseInjectionResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDatabaseInjectionResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseInjection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateDatabaseInjectionResp parses an HTTP response from a UpdateDatabaseInjectionWithResponse call
+func ParseUpdateDatabaseInjectionResp(rsp *http.Response) (*UpdateDatabaseInjectionResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateDatabaseInjectionResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseInjection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetDatabaseMetricsResp parses an HTTP response from a GetDatabaseMetricsWithResponse call
+func ParseGetDatabaseMetricsResp(rsp *http.Response) (*GetDatabaseMetricsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetDatabaseMetricsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseMetricsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListDatabaseMetricCatalogResp parses an HTTP response from a ListDatabaseMetricCatalogWithResponse call
+func ParseListDatabaseMetricCatalogResp(rsp *http.Response) (*ListDatabaseMetricCatalogResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDatabaseMetricCatalogResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabaseMetricCatalog
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateDatabasePublicAccessResp parses an HTTP response from a UpdateDatabasePublicAccessWithResponse call
+func ParseUpdateDatabasePublicAccessResp(rsp *http.Response) (*UpdateDatabasePublicAccessResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateDatabasePublicAccessResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatabasePublicAccess
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRestoreDatabaseResp parses an HTTP response from a RestoreDatabaseWithResponse call
+func ParseRestoreDatabaseResp(rsp *http.Response) (*RestoreDatabaseResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RestoreDatabaseResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest Database
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateDatabaseTunnelSessionResp parses an HTTP response from a CreateDatabaseTunnelSessionWithResponse call
+func ParseCreateDatabaseTunnelSessionResp(rsp *http.Response) (*CreateDatabaseTunnelSessionResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateDatabaseTunnelSessionResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest DatabaseTunnelSession
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListDeploymentsResp parses an HTTP response from a ListDeploymentsWithResponse call
 func ParseListDeploymentsResp(rsp *http.Response) (*ListDeploymentsResp, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -33835,6 +43177,13 @@ func ParseUpdateDeploymentResp(rsp *http.Response) (*UpdateDeploymentResp, error
 			return nil, err
 		}
 		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
@@ -34099,6 +43448,67 @@ func ParseGetBuildResp(rsp *http.Response) (*GetBuildResp, error) {
 	return response, nil
 }
 
+// ParseApproveBuildResp parses an HTTP response from a ApproveBuildWithResponse call
+func ParseApproveBuildResp(rsp *http.Response) (*ApproveBuildResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ApproveBuildResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Build
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseCancelBuildResp parses an HTTP response from a CancelBuildWithResponse call
 func ParseCancelBuildResp(rsp *http.Response) (*CancelBuildResp, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -34241,6 +43651,74 @@ func ParseGetBuildLogStreamTokenResp(rsp *http.Response) (*GetBuildLogStreamToke
 			return nil, err
 		}
 		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRejectBuildResp parses an HTTP response from a RejectBuildWithResponse call
+func ParseRejectBuildResp(rsp *http.Response) (*RejectBuildResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RejectBuildResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Build
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
 
 	}
 
@@ -34596,6 +44074,13 @@ func ParseDeployDeploymentResp(rsp *http.Response) (*DeployDeploymentResp, error
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
@@ -34980,6 +44465,13 @@ func ParseReplaceDeploymentEnvVarsResp(rsp *http.Response) (*ReplaceDeploymentEn
 		}
 		response.ApplicationproblemJSON400 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -35020,6 +44512,13 @@ func ParseDeleteDeploymentEnvVarResp(rsp *http.Response) (*DeleteDeploymentEnvVa
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -35073,6 +44572,13 @@ func ParseSetDeploymentEnvVarResp(rsp *http.Response) (*SetDeploymentEnvVarResp,
 			return nil, err
 		}
 		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
@@ -35577,6 +45083,81 @@ func ParseGetDeploymentMetricsResp(rsp *http.Response) (*GetDeploymentMetricsRes
 	return response, nil
 }
 
+// ParsePromoteBuildResp parses an HTTP response from a PromoteBuildWithResponse call
+func ParsePromoteBuildResp(rsp *http.Response) (*PromoteBuildResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PromoteBuildResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Build
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseRestartDeploymentResp parses an HTTP response from a RestartDeploymentWithResponse call
 func ParseRestartDeploymentResp(rsp *http.Response) (*RestartDeploymentResp, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -35644,6 +45225,53 @@ func ParseResumeDeploymentResp(rsp *http.Response) (*ResumeDeploymentResp, error
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseResumeDeploymentAutodeployResp parses an HTTP response from a ResumeDeploymentAutodeployWithResponse call
+func ParseResumeDeploymentAutodeployResp(rsp *http.Response) (*ResumeDeploymentAutodeployResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ResumeDeploymentAutodeployResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ResumeAutodeployResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
@@ -35752,6 +45380,13 @@ func ParseScaleDeploymentResp(rsp *http.Response) (*ScaleDeploymentResp, error) 
 			return nil, err
 		}
 		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest NotFound
@@ -36815,6 +46450,13 @@ func ParseSetEnvironmentCustomDomainResp(rsp *http.Response) (*SetEnvironmentCus
 		}
 		response.ApplicationproblemJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -36997,6 +46639,243 @@ func ParseToggleEnvironmentSubdomainResp(rsp *http.Response) (*ToggleEnvironment
 			return nil, err
 		}
 		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListEnvironmentDomainsResp parses an HTTP response from a ListEnvironmentDomainsWithResponse call
+func ParseListEnvironmentDomainsResp(rsp *http.Response) (*ListEnvironmentDomainsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListEnvironmentDomainsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DomainList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseAddEnvironmentDomainResp parses an HTTP response from a AddEnvironmentDomainWithResponse call
+func ParseAddEnvironmentDomainResp(rsp *http.Response) (*AddEnvironmentDomainResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AddEnvironmentDomainResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest Domain
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteEnvironmentDomainResp parses an HTTP response from a DeleteEnvironmentDomainWithResponse call
+func ParseDeleteEnvironmentDomainResp(rsp *http.Response) (*DeleteEnvironmentDomainResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteEnvironmentDomainResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePromoteEnvironmentDomainResp parses an HTTP response from a PromoteEnvironmentDomainWithResponse call
+func ParsePromoteEnvironmentDomainResp(rsp *http.Response) (*PromoteEnvironmentDomainResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PromoteEnvironmentDomainResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Domain
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
@@ -38265,6 +48144,351 @@ func ParseGetPluginResp(rsp *http.Response) (*GetPluginResp, error) {
 	return response, nil
 }
 
+// ParseListPreviewsResp parses an HTTP response from a ListPreviewsWithResponse call
+func ParseListPreviewsResp(rsp *http.Response) (*ListPreviewsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListPreviewsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest EnvironmentList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreatePreviewResp parses an HTTP response from a CreatePreviewWithResponse call
+func ParseCreatePreviewResp(rsp *http.Response) (*CreatePreviewResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreatePreviewResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest Environment
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeletePreviewResp parses an HTTP response from a DeletePreviewWithResponse call
+func ParseDeletePreviewResp(rsp *http.Response) (*DeletePreviewResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeletePreviewResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest PreviewActionResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetPreviewResp parses an HTTP response from a GetPreviewWithResponse call
+func ParseGetPreviewResp(rsp *http.Response) (*GetPreviewResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetPreviewResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Environment
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseAbortPreviewResp parses an HTTP response from a AbortPreviewWithResponse call
+func ParseAbortPreviewResp(rsp *http.Response) (*AbortPreviewResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AbortPreviewResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest PreviewActionResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseExtendPreviewResp parses an HTTP response from a ExtendPreviewWithResponse call
+func ParseExtendPreviewResp(rsp *http.Response) (*ExtendPreviewResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ExtendPreviewResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest Environment
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseListProjectsResp parses an HTTP response from a ListProjectsWithResponse call
 func ParseListProjectsResp(rsp *http.Response) (*ListProjectsResp, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -38421,6 +48645,13 @@ func ParseDeleteProjectResp(rsp *http.Response) (*DeleteProjectResp, error) {
 			return nil, err
 		}
 		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
@@ -41094,6 +51325,60 @@ func ParseUpdateCurrentUserResp(rsp *http.Response) (*UpdateCurrentUserResp, err
 			return nil, err
 		}
 		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetCurrentIpResp parses an HTTP response from a GetCurrentIpWithResponse call
+func ParseGetCurrentIpResp(rsp *http.Response) (*GetCurrentIpResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetCurrentIpResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ClientIp
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
 
 	}
 
