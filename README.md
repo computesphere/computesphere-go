@@ -28,20 +28,24 @@ import (
 	"os"
 
 	computesphere "github.com/computesphere/computesphere-go"
+	"github.com/google/uuid"
 )
 
 func main() {
 	token := os.Getenv("COMPUTESPHERE_API_TOKEN")
-	accountID := os.Getenv("COMPUTESPHERE_ACCOUNT_ID")
 	bearer := func(_ context.Context, req *http.Request) error {
 		req.Header.Set("Authorization", "Bearer "+token)
 		return nil
 	}
 
-	client, err := computesphere.NewClient(
+	client, err := computesphere.NewClientWithResponses(
 		"https://api.computesphere.com/v2",
 		computesphere.WithRequestEditorFn(bearer),
 	)
+	if err != nil {
+		log.Fatal(err)
+	}
+	accountID, err := uuid.Parse(os.Getenv("COMPUTESPHERE_ACCOUNT_ID"))
 	if err != nil {
 		log.Fatal(err)
 	}
