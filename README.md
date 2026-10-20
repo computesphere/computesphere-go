@@ -67,7 +67,7 @@ func main() {
 
 ## Documentation
 
-Full API reference: <https://docs.computesphere.com>.
+Full API reference: <https://computesphere.com/docs>.
 
 ## License
 
