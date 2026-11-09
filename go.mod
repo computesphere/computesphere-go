@@ -1,6 +1,6 @@
 module github.com/computesphere/computesphere-go
 
-go 1.21
+go 1.25.0
 
 require github.com/oapi-codegen/runtime v1.1.1
 
