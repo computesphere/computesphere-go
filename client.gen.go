@@ -185,6 +185,34 @@ const (
 	AccountRoleResolutionObjectAccountRole AccountRoleResolutionObject = "account_role"
 )
 
+// Defines values for AccountSecretSourceLastErrorCode.
+const (
+	AccountSecretSourceLastErrorCodeAccessDenied       AccountSecretSourceLastErrorCode = "access_denied"
+	AccountSecretSourceLastErrorCodeInvalidReference   AccountSecretSourceLastErrorCode = "invalid_reference"
+	AccountSecretSourceLastErrorCodeRateLimited        AccountSecretSourceLastErrorCode = "rate_limited"
+	AccountSecretSourceLastErrorCodeSecretNotFound     AccountSecretSourceLastErrorCode = "secret_not_found"
+	AccountSecretSourceLastErrorCodeSourceSignInFailed AccountSecretSourceLastErrorCode = "source_sign_in_failed"
+	AccountSecretSourceLastErrorCodeSourceUnreachable  AccountSecretSourceLastErrorCode = "source_unreachable"
+	AccountSecretSourceLastErrorCodeValueTooLarge      AccountSecretSourceLastErrorCode = "value_too_large"
+)
+
+// Defines values for AccountSecretSourceObject.
+const (
+	AccountSecretSourceObjectSecretSource AccountSecretSourceObject = "secret_source"
+)
+
+// Defines values for AccountSecretSourceStatus.
+const (
+	AccountSecretSourceStatusError    AccountSecretSourceStatus = "error"
+	AccountSecretSourceStatusOk       AccountSecretSourceStatus = "ok"
+	AccountSecretSourceStatusUntested AccountSecretSourceStatus = "untested"
+)
+
+// Defines values for AccountSecretSourceListObject.
+const (
+	AccountSecretSourceListObjectList AccountSecretSourceListObject = "list"
+)
+
 // Defines values for AccountStateObject.
 const (
 	AccountStateObjectAccountState AccountStateObject = "account_state"
@@ -1580,6 +1608,16 @@ const (
 	EnvironmentResourceItemObjectEnvironmentResourceItem EnvironmentResourceItemObject = "environment_resource_item"
 )
 
+// Defines values for EnvironmentSecretRefsObject.
+const (
+	EnvironmentSecretRefsObjectEnvironmentSecretRefs EnvironmentSecretRefsObject = "environment_secret_refs"
+)
+
+// Defines values for EnvironmentSecretRefsPatchResponseObject.
+const (
+	EnvironmentSecretRefsPatchResponseObjectEnvironmentSecretRefs EnvironmentSecretRefsPatchResponseObject = "environment_secret_refs"
+)
+
 // Defines values for EnvironmentSecretsResponseObject.
 const (
 	EnvironmentSecretsResponseObjectEnvironmentSecrets EnvironmentSecretsResponseObject = "environment_secrets"
@@ -2139,6 +2177,7 @@ const (
 	ProblemCodeAuthRequired                 ProblemCode = "auth_required"
 	ProblemCodeBadGateway                   ProblemCode = "bad_gateway"
 	ProblemCodeBelowRunning                 ProblemCode = "below_running"
+	ProblemCodeBrowseClosing                ProblemCode = "browse_closing"
 	ProblemCodeBrowseOpen                   ProblemCode = "browse_open"
 	ProblemCodeBrowseReadOnly               ProblemCode = "browse_read_only"
 	ProblemCodeBrowseUnavailable            ProblemCode = "browse_unavailable"
@@ -2146,6 +2185,8 @@ const (
 	ProblemCodeConnectionNoAccess           ProblemCode = "connection_no_access"
 	ProblemCodeConnectionRevoked            ProblemCode = "connection_revoked"
 	ProblemCodeConversationInAnotherAccount ProblemCode = "conversation_in_another_account"
+	ProblemCodeCopyBackUnavailable          ProblemCode = "copy_back_unavailable"
+	ProblemCodeCopyRunning                  ProblemCode = "copy_running"
 	ProblemCodeCredentialHasSessions        ProblemCode = "credential_has_sessions"
 	ProblemCodeCredentialInUse              ProblemCode = "credential_in_use"
 	ProblemCodeCredentialIsDefault          ProblemCode = "credential_is_default"
@@ -2162,6 +2203,7 @@ const (
 	ProblemCodeEnvironmentGone              ProblemCode = "environment_gone"
 	ProblemCodeForbidden                    ProblemCode = "forbidden"
 	ProblemCodeGatewayTimeout               ProblemCode = "gateway_timeout"
+	ProblemCodeGitConnectionRequired        ProblemCode = "git_connection_required"
 	ProblemCodeGithubInstallationTaken      ProblemCode = "github_installation_taken"
 	ProblemCodeGithubPermissionsPending     ProblemCode = "github_permissions_pending"
 	ProblemCodeGone                         ProblemCode = "gone"
@@ -2200,6 +2242,8 @@ const (
 	ProblemCodeSIGNUPTHROTTLEDEVICE         ProblemCode = "SIGNUP_THROTTLE_DEVICE"
 	ProblemCodeSIGNUPTHROTTLEIP             ProblemCode = "SIGNUP_THROTTLE_IP"
 	ProblemCodeSPHERELETQUOTAEXCEEDED       ProblemCode = "SPHERELET_QUOTA_EXCEEDED"
+	ProblemCodeSecretSourceInUse            ProblemCode = "secret_source_in_use"
+	ProblemCodeSecretSourceTestFailed       ProblemCode = "secret_source_test_failed"
 	ProblemCodeServiceUnavailable           ProblemCode = "service_unavailable"
 	ProblemCodeSizeBelowRestorePoint        ProblemCode = "size_below_restore_point"
 	ProblemCodeStaleAction                  ProblemCode = "stale_action"
@@ -2219,6 +2263,7 @@ const (
 	ProblemCodeUnsupportedProvider          ProblemCode = "unsupported_provider"
 	ProblemCodeValidationFailed             ProblemCode = "validation_failed"
 	ProblemCodeVariableKindConflict         ProblemCode = "variable_kind_conflict"
+	ProblemCodeVerifiedTlsTurnoffLimited    ProblemCode = "verified_tls_turnoff_limited"
 	ProblemCodeVolumeBusy                   ProblemCode = "volume_busy"
 	ProblemCodeVolumeGrowOnly               ProblemCode = "volume_grow_only"
 	ProblemCodeVolumeInUse                  ProblemCode = "volume_in_use"
@@ -2230,27 +2275,10 @@ const (
 	ProblemCodeWildcardInvalid              ProblemCode = "wildcard_invalid"
 )
 
-// Defines values for ProblemLimitKind.
-const (
-	ProblemLimitKindDatabaseSize ProblemLimitKind = "database_size"
-	ProblemLimitKindMoney        ProblemLimitKind = "money"
-	ProblemLimitKindProjects     ProblemLimitKind = "projects"
-	ProblemLimitKindSpherelet    ProblemLimitKind = "spherelet"
-	ProblemLimitKindStorage      ProblemLimitKind = "storage"
-)
-
 // Defines values for ProblemLimitSource.
 const (
 	ProblemLimitSourceGrant ProblemLimitSource = "grant"
 	ProblemLimitSourceTrial ProblemLimitSource = "trial"
-)
-
-// Defines values for ProblemLimitUnit.
-const (
-	ProblemLimitUnitCents ProblemLimitUnit = "cents"
-	ProblemLimitUnitCount ProblemLimitUnit = "count"
-	ProblemLimitUnitGB    ProblemLimitUnit = "GB"
-	ProblemLimitUnitSize  ProblemLimitUnit = "size"
 )
 
 // Defines values for ProjectObject.
@@ -2547,6 +2575,67 @@ const (
 	SecretMetaSetByKindSealed   SecretMetaSetByKind = "sealed"
 	SecretMetaSetByKindSystem   SecretMetaSetByKind = "system"
 	SecretMetaSetByKindUser     SecretMetaSetByKind = "user"
+)
+
+// Defines values for SecretRefErrorCode.
+const (
+	SecretRefErrorCodeAccessDenied       SecretRefErrorCode = "access_denied"
+	SecretRefErrorCodeInvalidReference   SecretRefErrorCode = "invalid_reference"
+	SecretRefErrorCodeRateLimited        SecretRefErrorCode = "rate_limited"
+	SecretRefErrorCodeSecretNotFound     SecretRefErrorCode = "secret_not_found"
+	SecretRefErrorCodeSourceNotAllowed   SecretRefErrorCode = "source_not_allowed"
+	SecretRefErrorCodeSourceSignInFailed SecretRefErrorCode = "source_sign_in_failed"
+	SecretRefErrorCodeSourceUnreachable  SecretRefErrorCode = "source_unreachable"
+	SecretRefErrorCodeValueTooLarge      SecretRefErrorCode = "value_too_large"
+)
+
+// Defines values for SecretRefShadowedBy.
+const (
+	SecretRefShadowedByEnvironmentVariable SecretRefShadowedBy = "environment_variable"
+	SecretRefShadowedByServiceVariable     SecretRefShadowedBy = "service_variable"
+)
+
+// Defines values for SecretRefStatus.
+const (
+	SecretRefStatusError SecretRefStatus = "error"
+	SecretRefStatusOk    SecretRefStatus = "ok"
+	SecretRefStatusStale SecretRefStatus = "stale"
+)
+
+// Defines values for SecretRefsObject.
+const (
+	SecretRefsObjectDeploymentSecretRefs SecretRefsObject = "deployment_secret_refs"
+)
+
+// Defines values for SecretRefsPatchResponseObject.
+const (
+	SecretRefsPatchResponseObjectDeploymentSecretRefs SecretRefsPatchResponseObject = "deployment_secret_refs"
+)
+
+// Defines values for SecretSourceTestResultCode.
+const (
+	SecretSourceTestResultCodeAccessDenied       SecretSourceTestResultCode = "access_denied"
+	SecretSourceTestResultCodeInvalidReference   SecretSourceTestResultCode = "invalid_reference"
+	SecretSourceTestResultCodeRateLimited        SecretSourceTestResultCode = "rate_limited"
+	SecretSourceTestResultCodeSecretNotFound     SecretSourceTestResultCode = "secret_not_found"
+	SecretSourceTestResultCodeSourceSignInFailed SecretSourceTestResultCode = "source_sign_in_failed"
+	SecretSourceTestResultCodeSourceUnreachable  SecretSourceTestResultCode = "source_unreachable"
+	SecretSourceTestResultCodeValueTooLarge      SecretSourceTestResultCode = "value_too_large"
+)
+
+// Defines values for SecretSourceTestResultObject.
+const (
+	SecretSourceTestResultObjectSecretSourceTest SecretSourceTestResultObject = "secret_source_test"
+)
+
+// Defines values for SecretSourceTypeObject.
+const (
+	SecretSourceTypeObjectSecretSourceType SecretSourceTypeObject = "secret_source_type"
+)
+
+// Defines values for SecretSourceTypeListObject.
+const (
+	SecretSourceTypeListObjectList SecretSourceTypeListObject = "list"
 )
 
 // Defines values for SecretsPatchResponseObject.
@@ -2949,6 +3038,16 @@ const (
 // Defines values for TemplateEstimateListObject.
 const (
 	TemplateEstimateListObjectList TemplateEstimateListObject = "list"
+)
+
+// Defines values for ToSecretEnvVarsResponseObject.
+const (
+	ToSecretEnvVarsResponseObjectEnvVarsMadeSecret ToSecretEnvVarsResponseObject = "env_vars_made_secret"
+)
+
+// Defines values for ToSecretEnvironmentVariablesResponseObject.
+const (
+	ToSecretEnvironmentVariablesResponseObjectEnvironmentVariablesMadeSecret ToSecretEnvironmentVariablesResponseObject = "environment_variables_made_secret"
 )
 
 // Defines values for UnquoteEnvVarsResponseObject.
@@ -3875,6 +3974,19 @@ type AccountInvitationStatus string
 type AccountInvitationList struct {
 	Items  []AccountInvitation         `json:"items"`
 	Object AccountInvitationListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination Pagination `json:"pagination"`
+	Warnings   []Warning  `json:"warnings"`
 }
 
 // AccountInvitationListObject defines model for AccountInvitationList.Object.
@@ -4100,6 +4212,66 @@ type AccountRoleResolution struct {
 
 // AccountRoleResolutionObject defines model for AccountRoleResolution.Object.
 type AccountRoleResolutionObject string
+
+// AccountSecretSource One of the account's secret managers. `config`, `auth_type`,
+// `credential_set`, `credential_fingerprint`, `access`, `sync_interval_s`
+// and `ref_count` are present only for account owners and admins.
+type AccountSecretSource struct {
+	Access    *SecretSourceAccess `json:"access,omitempty"`
+	AccountId openapi_types.UUID  `json:"account_id"`
+	AuthType  *string             `json:"auth_type,omitempty"`
+	Config    *map[string]string  `json:"config,omitempty"`
+	CreatedAt time.Time           `json:"created_at"`
+
+	// CredentialFingerprint A keyed fingerprint of the stored credential, to tell whether it changed.
+	CredentialFingerprint *string `json:"credential_fingerprint,omitempty"`
+
+	// CredentialSet Always true. The credential itself is never returned.
+	CredentialSet *bool                             `json:"credential_set,omitempty"`
+	Id            openapi_types.UUID                `json:"id"`
+	LastErrorCode *AccountSecretSourceLastErrorCode `json:"last_error_code"`
+	LastTestedAt  *time.Time                        `json:"last_tested_at"`
+	Name          string                            `json:"name"`
+	Object        AccountSecretSourceObject         `json:"object"`
+
+	// RefCount How many secrets read from it, in every project. One in use can't be removed.
+	RefCount      *int                      `json:"ref_count,omitempty"`
+	Status        AccountSecretSourceStatus `json:"status"`
+	SyncIntervalS *int                      `json:"sync_interval_s,omitempty"`
+	Type          string                    `json:"type"`
+	UpdatedAt     time.Time                 `json:"updated_at"`
+}
+
+// AccountSecretSourceLastErrorCode defines model for AccountSecretSource.LastErrorCode.
+type AccountSecretSourceLastErrorCode string
+
+// AccountSecretSourceObject defines model for AccountSecretSource.Object.
+type AccountSecretSourceObject string
+
+// AccountSecretSourceStatus defines model for AccountSecretSource.Status.
+type AccountSecretSourceStatus string
+
+// AccountSecretSourceList defines model for AccountSecretSourceList.
+type AccountSecretSourceList struct {
+	Items  []AccountSecretSource         `json:"items"`
+	Object AccountSecretSourceListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination Pagination `json:"pagination"`
+	Warnings   []Warning  `json:"warnings"`
+}
+
+// AccountSecretSourceListObject defines model for AccountSecretSourceList.Object.
+type AccountSecretSourceListObject string
 
 // AccountSpherelet defines model for AccountSpherelet.
 type AccountSpherelet struct {
@@ -5393,7 +5565,7 @@ type BackgroundWorkerCreate struct {
 	// EnvironmentVariables Plain variables, name to value. Values are stored as text.
 	EnvironmentVariables *ComputeCreateVars `json:"environment_variables,omitempty"`
 
-	// GitConnectionId Git connection that clones the repository.
+	// GitConnectionId Git connection that clones the repository. Required when `git_url` is sent.
 	GitConnectionId *string `json:"git_connection_id,omitempty"`
 
 	// GitUrl Repository to build from.
@@ -5471,7 +5643,7 @@ type BackgroundWorkerCreate struct {
 	// Spherelets Spherelets to run; read when `sphere_count` is left out.
 	Spherelets *ComputeCreateSpherelets `json:"spherelets,omitempty"`
 
-	// StartCommand Start command of a git build.
+	// StartCommand Start command. On a worker built from git, the build's; on an image, the same as `command`.
 	StartCommand *string `json:"start_command,omitempty"`
 
 	// Stor New SphereFiles volume to mount.
@@ -6513,6 +6685,17 @@ type CreateAccountRequest struct {
 	Spherestor int `json:"spherestor"`
 }
 
+// CreateAccountSecretSourceRequest defines model for CreateAccountSecretSourceRequest.
+type CreateAccountSecretSourceRequest struct {
+	Access        *SecretSourceAccessRequest `json:"access,omitempty"`
+	AuthType      string                     `json:"auth_type"`
+	Config        *map[string]string         `json:"config,omitempty"`
+	Credential    *map[string]string         `json:"credential,omitempty"`
+	Name          string                     `json:"name"`
+	SyncIntervalS *int                       `json:"sync_interval_s,omitempty"`
+	Type          string                     `json:"type"`
+}
+
 // CreateAlertRuleRequest `threshold` and `evaluation_period` are required for `cpu`, `memory`
 // and `disk` (a missing one is a `400` naming the field), and ignored
 // for the job types (`threshold` is used by `job_failing_streak`).
@@ -7033,7 +7216,7 @@ type CronJobCreate struct {
 	// EnvironmentVariables Plain variables, name to value. Values are stored as text.
 	EnvironmentVariables *ComputeCreateVars `json:"environment_variables,omitempty"`
 
-	// GitConnectionId Git connection that clones the repository.
+	// GitConnectionId Git connection that clones the repository. Required when `git_url` is sent.
 	GitConnectionId *string `json:"git_connection_id,omitempty"`
 
 	// GitUrl Repository to build from.
@@ -8147,7 +8330,10 @@ type DeployLogEntry struct {
 	// Count How many events in a row this entry stands for: 1 for an event
 	// on its own; more when the same thing happened again and again
 	// (a health check failing again, a crash loop's restarts). Every
-	// event is counted; none is left out.
+	// event is counted; none is left out. When a service restarts
+	// again and again with its health check failing in between, one
+	// `restart_looping` entry counts the restarts, and the failed
+	// checks are part of it.
 	Count     *int    `json:"count,omitempty"`
 	CreatedAt string  `json:"created_at"`
 	EventTime *string `json:"event_time,omitempty"`
@@ -8385,7 +8571,13 @@ type DeploymentFailure struct {
 	// `last_error`. `port_mismatch`: `expected_port`,
 	// `listening_ports`. `crash_loop`: `exit_code`, `restarts`,
 	// `last_exit_at`. `out_of_memory`: `memory_limit_mb`.
-	// `config_error`: `missing` (variable names only).
+	// `config_error`: `missing` (variable names only), and when they
+	// are known, `at` (the app's file and line that read the first
+	// name, as `config/settings.py:136`), `also_missing` (other names
+	// the app's repository reads that the service doesn't set) and
+	// `hints` (`NAME=source`, where source is `service` for one of
+	// your data services, `generate` for a key we can create,
+	// `secret` for a value to type in as a secret, or `type`).
 	// `quota_exceeded`: `tier`, `in_use`, `limit`. `plan_required`:
 	// `feature`, `plan`. `canceled_by_user`: `by_user_id`, `after_s`.
 	// Never a secret or a variable's value. Empty when the reason has
@@ -8429,19 +8621,22 @@ type DeploymentFailurePhase string
 type DeploymentFailureLog struct {
 	From *time.Time `json:"from"`
 
-	// Highlight The line numbers in the window that matter; often empty.
+	// Highlight The lines in the window that matter, as positions from 0 in the
+	// window's lines read oldest first; often empty.
 	Highlight []int `json:"highlight"`
 
 	// Stream The log that shows the failure: `build` for clone and build,
 	// `deploy` for pull, schedule and start, `runtime` for a health
-	// check.
+	// check, and for a start whose cause was read in the app's own
+	// output.
 	Stream DeploymentFailureLogStream `json:"stream"`
 	To     *time.Time                 `json:"to"`
 }
 
 // DeploymentFailureLogStream The log that shows the failure: `build` for clone and build,
 // `deploy` for pull, schedule and start, `runtime` for a health
-// check.
+// check, and for a start whose cause was read in the app's own
+// output.
 type DeploymentFailureLogStream string
 
 // DeploymentHealth Live health of the deployment's spherelets, reduced to the worst
@@ -9317,6 +9512,9 @@ type DomainDetail struct {
 	AccountId   openapi_types.UUID `json:"account_id"`
 	Certificate *DomainCertSummary `json:"certificate"`
 
+	// CertificateState The state of the row's custom-domain certificates, from each custom domain's status: `issued`, `pending` (DNS, validation or issuing under way), `failed` (action is needed, for example the DNS records weren't found or validation gave up), `expired` (past its expiry, checked first), `unknown` (a status this API doesn't name yet), or `none` (the row has no custom domain). With several custom domains the worst one counts: failed, expired, unknown, pending, issued. More values may be added; treat any other as `unknown`.
+	CertificateState string `json:"certificate_state"`
+
 	// CustomDomains The deployment's custom domains; null or empty when it has none.
 	CustomDomains *[]string `json:"custom_domains"`
 
@@ -9628,8 +9826,14 @@ type EnvVarsResponse struct {
 	// Pending Variables saved with `skip_redeploy` that the next deploy or redeploy applies, as the whole set the service will then run with; `null` when nothing is waiting. `env_vars`, `secret_vars` and `variable_scopes` above are what the service runs with now.
 	Pending *PendingEnvVars `json:"pending"`
 
+	// PendingPlainCredentials The same for the pending set; null when nothing is pending.
+	PendingPlainCredentials *[]string `json:"pending_plain_credentials"`
+
 	// PendingQuoted The same for the pending set; null when nothing is pending.
 	PendingQuoted *[]string `json:"pending_quoted"`
+
+	// PlainCredentials Plain variables whose name or value looks like a credential (a password, token or key, or a URL with a password in it). Make them secrets with `POST /deployments/{id}/env-vars/to-secret`. Names only.
+	PlainCredentials *[]string `json:"plain_credentials,omitempty"`
 
 	// PreviewCopy This service's plain variables a pull request's preview copies with their values; `[]` lists none.
 	PreviewCopy []string `json:"preview_copy"`
@@ -9892,6 +10096,32 @@ type EnvironmentResourceItem struct {
 // EnvironmentResourceItemObject defines model for EnvironmentResourceItem.Object.
 type EnvironmentResourceItemObject string
 
+// EnvironmentSecretRefs defines model for EnvironmentSecretRefs.
+type EnvironmentSecretRefs struct {
+	Object EnvironmentSecretRefsObject `json:"object"`
+	Refs   map[string]SecretRef        `json:"refs"`
+}
+
+// EnvironmentSecretRefsObject defines model for EnvironmentSecretRefs.Object.
+type EnvironmentSecretRefsObject string
+
+// EnvironmentSecretRefsPatchResponse defines model for EnvironmentSecretRefsPatchResponse.
+type EnvironmentSecretRefsPatchResponse struct {
+	// Changed Names whose value this request set new or different.
+	Changed []string                                 `json:"changed"`
+	Object  EnvironmentSecretRefsPatchResponseObject `json:"object"`
+	Refs    map[string]SecretRef                     `json:"refs"`
+
+	// ReplacedVariables Plain variables this request removed because a secret of the same name took their place (`replace_variables`).
+	ReplacedVariables []string `json:"replaced_variables"`
+
+	// WaitingForApproval Services whose deploy policy is approval keep their pinned values until a project admin approves.
+	WaitingForApproval bool `json:"waiting_for_approval"`
+}
+
+// EnvironmentSecretRefsPatchResponseObject defines model for EnvironmentSecretRefsPatchResponse.Object.
+type EnvironmentSecretRefsPatchResponseObject string
+
 // EnvironmentSecretsResponse The **key names** of the environment-level secret baseline. Secret
 // values are never returned — every value in this map is an empty
 // string. Inherited per key; a deployment's own value wins.
@@ -9922,6 +10152,9 @@ type EnvironmentSecretsResponseObject string
 // the environment. Inherited per key; a deployment's own value wins.
 type EnvironmentVariablesResponse struct {
 	Object *EnvironmentVariablesResponseObject `json:"object,omitempty"`
+
+	// PlainCredentials On a read only: plain variables whose name or value looks like a credential (a password, token or key, or a URL with a password in it). Make them secrets with `POST /environments/{eid}/variables/to-secret`. Names only.
+	PlainCredentials *[]string `json:"plain_credentials,omitempty"`
 
 	// PreviewCopy Plain variables a pull request's preview copies with their values. Every other plain variable is withheld from it. Listed values are given to every pull request from this repository whose author can write to it, bots included. A change reaches previews created after it, not open ones. A listed variable that is deleted or becomes a secret leaves the list.
 	PreviewCopy *[]string `json:"preview_copy,omitempty"`
@@ -11955,6 +12188,9 @@ type PrivateServiceCreateType string
 
 // Problem RFC 7807 Problem Details envelope for every non-2xx response
 type Problem struct {
+	// Action Present on `SPHERELET_QUOTA_EXCEEDED` when the customer can act: the part of `detail` that says what to do (`Add spherelets on the Spherelets tab, or pick another size.`). A client that shows the refusal to someone who can't add spherelets shows `facts` and its own sentence instead of `action`.
+	Action *string `json:"action,omitempty"`
+
 	// Code Stable machine-readable identifier suitable for client-side dispatch and i18n
 	Code ProblemCode `json:"code"`
 
@@ -11963,6 +12199,9 @@ type Problem struct {
 
 	// Errors Present for field-level validation errors
 	Errors *[]ProblemFieldError `json:"errors,omitempty"`
+
+	// Facts Present on `SPHERELET_QUOTA_EXCEEDED`: the part of `detail` that says what refused the change (`Your account has no room for more Flex spherelets.`). `detail` is `facts`, a space, then `action`.
+	Facts *string `json:"facts,omitempty"`
 
 	// InUse Present on `credential_in_use` and `credential_has_sessions`: what still uses the credential
 	InUse *ProblemInUse `json:"in_use,omitempty"`
@@ -11976,6 +12215,9 @@ type Problem struct {
 	// `cents`): `current` is the next bill with the change, `cap` what the
 	// credit pays a month, `requested` what the change adds a month.
 	Limit *ProblemLimit `json:"limit,omitempty"`
+
+	// QuotaScope Present on `SPHERELET_QUOTA_EXCEEDED`: what was refused. `stack` when a whole stack was refused (nothing was created), `service` when a single service's deploy, scale, size or plan change was. A client uses it to pick its own wording. An open string: a client must accept a value it doesn't know (treat it as no scope) so a later value never breaks it.
+	QuotaScope *string `json:"quota_scope,omitempty"`
 
 	// RequestId Correlates to server logs
 	RequestId string `json:"request_id"`
@@ -12036,8 +12278,8 @@ type ProblemLimit struct {
 	// DaysLeft Days left in the trial, for `trial_limit_reached`
 	DaysLeft *int `json:"days_left,omitempty"`
 
-	// Kind What is limited
-	Kind ProblemLimitKind `json:"kind"`
+	// Kind What is limited: `spherelet`, `projects`, `storage`, `database_size` or `money`. An open string: a client must accept a kind it doesn't know (show `detail`) so a new limit kind never breaks its error parsing.
+	Kind string `json:"kind"`
 
 	// PlanCode The spherelet shape, for `spherelet` (FLX, MAX or PWR)
 	PlanCode *string `json:"plan_code,omitempty"`
@@ -12051,18 +12293,12 @@ type ProblemLimit struct {
 	// Source What set the limit, for `storage_limit_reached`: the account's credit grant (`grant`) or its trial (`trial`)
 	Source *ProblemLimitSource `json:"source,omitempty"`
 
-	// Unit The unit of `current`, `cap` and `requested`: `size` for `database_size`, which has no counts; `cents` for `money`
-	Unit ProblemLimitUnit `json:"unit"`
+	// Unit The unit of `current`, `cap` and `requested`: `count`, `GB`, `size` (for `database_size`, which has no counts) or `cents` (for `money`). An open string: a client must accept a unit it doesn't know (show `detail`) so a new unit never breaks its error parsing.
+	Unit string `json:"unit"`
 }
-
-// ProblemLimitKind What is limited
-type ProblemLimitKind string
 
 // ProblemLimitSource What set the limit, for `storage_limit_reached`: the account's credit grant (`grant`) or its trial (`trial`)
 type ProblemLimitSource string
-
-// ProblemLimitUnit The unit of `current`, `cap` and `requested`: `size` for `database_size`, which has no counts; `cents` for `money`
-type ProblemLimitUnit string
 
 // Project defines model for Project.
 type Project struct {
@@ -12097,11 +12333,17 @@ type Project struct {
 	// `POST /v2/projects`): the environment created with it.
 	Environment *Environment `json:"environment,omitempty"`
 
+	// FailingServiceCount Services in this project with an environment whose deployment failed. These are the services GET /v2/services lists with status failed.
+	FailingServiceCount int32 `json:"failing_service_count"`
+
 	// Id Opaque project identifier
 	Id string `json:"id"`
 
 	// LastOpenedAt Most recent open timestamp, or null if never opened
 	LastOpenedAt *time.Time `json:"last_opened_at"`
+
+	// LiveServiceCount Services in this project that are running: an environment runs and none has failed or is still deploying. These are the services GET /v2/services lists with status running.
+	LiveServiceCount int32 `json:"live_service_count"`
 
 	// Name Display name
 	Name   string        `json:"name"`
@@ -12811,12 +13053,30 @@ type RepositoryNeeds struct {
 		// DataService Present only when provided_by is data_service
 		DataService *RepositoryNeedsVariablesDataService `json:"data_service,omitempty"`
 		Evidence    []NeedsEvidence                      `json:"evidence"`
-		Name        string                               `json:"name"`
+
+		// Generatable Its value is a random key the app makes for itself, in a
+		// format the platform can make too (SECRET_KEY,
+		// DJANGO_SECRET_KEY, FLASK_SECRET_KEY, *_FERNET_KEY,
+		// JWT_SECRET, SESSION_SECRET, COOKIE_SECRET, APP_KEY), so the
+		// console can offer "Generate it". Never a key another
+		// service issued (STRIPE_SECRET_KEY is typed in). Only when
+		// provided_by is you.
+		Generatable bool   `json:"generatable"`
+		Name        string `json:"name"`
 
 		// ProvidedBy `you`: set it on the service. `data_service`: a linked
 		// data service can set it (`data_service` says which).
 		// `service_port`: it should be the service's port.
 		ProvidedBy RepositoryNeedsVariablesProvidedBy `json:"provided_by"`
+
+		// Required The app stops when it isn't set: a read with no fallback
+		// (Python `os.environ["X"]`, python-decouple `config("X")`
+		// with no default, a pydantic-settings field with no default,
+		// Ruby `ENV.fetch("X")` with no fallback, Elixir
+		// `System.fetch_env!`, a Go tag marked required, Rust
+		// `env::var("X").unwrap()`). Any other read may have a
+		// fallback and is false.
+		Required bool `json:"required"`
 
 		// Secret Its name says it holds a secret (KEY, TOKEN, SECRET, PASSWORD, ...), or it is a data service's connection string
 		Secret bool `json:"secret"`
@@ -13200,6 +13460,212 @@ type SecretMeta struct {
 
 // SecretMetaSetByKind Who set the value. sealed: the platform encrypted a value that was already stored, so who set it isn't known.
 type SecretMetaSetByKind string
+
+// SecretRef Where a secret's value comes from and how the last read went. Never the value.
+type SecretRef struct {
+	ErrorCode *SecretRefErrorCode `json:"error_code"`
+	Key       string              `json:"key"`
+	Path      string              `json:"path"`
+
+	// ProviderVersion The source's version id of the value read
+	ProviderVersion string     `json:"provider_version"`
+	ResolvedAt      *time.Time `json:"resolved_at"`
+
+	// ShadowedBy A plain variable with the same name takes this secret's place when the service is deployed, so this secret isn't used. `service_variable`: the service's own plain variable. `environment_variable`: the environment's plain variable, for every service that doesn't set the name itself. Null when this secret is used.
+	ShadowedBy *SecretRefShadowedBy `json:"shadowed_by"`
+
+	// Source The secret source's name.
+	Source     string     `json:"source"`
+	SourceId   string     `json:"source_id"`
+	StaleSince *time.Time `json:"stale_since"`
+
+	// Status `ok`: read. `stale`: the source didn't answer, so the last value read stays in use, with no time limit, since `stale_since`. `error`: a definite answer (`error_code`); deploys are refused until it is fixed.
+	Status SecretRefStatus `json:"status"`
+
+	// Version The pinned version; empty for the latest.
+	Version string `json:"version"`
+}
+
+// SecretRefErrorCode defines model for SecretRef.ErrorCode.
+type SecretRefErrorCode string
+
+// SecretRefShadowedBy A plain variable with the same name takes this secret's place when the service is deployed, so this secret isn't used. `service_variable`: the service's own plain variable. `environment_variable`: the environment's plain variable, for every service that doesn't set the name itself. Null when this secret is used.
+type SecretRefShadowedBy string
+
+// SecretRefStatus `ok`: read. `stale`: the source didn't answer, so the last value read stays in use, with no time limit, since `stale_since`. `error`: a definite answer (`error_code`); deploys are refused until it is fixed.
+type SecretRefStatus string
+
+// SecretRefInput defines model for SecretRefInput.
+type SecretRefInput struct {
+	// Key The key in the source. Defaults to the secret's name. Azure Key Vault names can't contain underscores, so there each underscore becomes a dash, in lower case (DATABASE_URL reads database-url).
+	Key *string `json:"key,omitempty"`
+
+	// Path Where in the source the key is, as the source's type defines it (see its `ref_rules`).
+	Path *string `json:"path,omitempty"`
+
+	// Source The name of one of the account's secret managers, allowed in this environment.
+	Source string `json:"source"`
+
+	// Version A version to pin. Empty reads the latest.
+	Version *string `json:"version,omitempty"`
+}
+
+// SecretRefs defines model for SecretRefs.
+type SecretRefs struct {
+	Object SecretRefsObject `json:"object"`
+
+	// Pending The references saved with `skip_redeploy`, for the next deploy; `null` when nothing is pending.
+	Pending *map[string]SecretRef `json:"pending"`
+	Refs    map[string]SecretRef  `json:"refs"`
+}
+
+// SecretRefsObject defines model for SecretRefs.Object.
+type SecretRefsObject string
+
+// SecretRefsPatchRequest defines model for SecretRefsPatchRequest.
+type SecretRefsPatchRequest struct {
+	// Refs Secrets to read from a secret source, name to reference. At most 100.
+	Refs map[string]SecretRefInput `json:"refs"`
+
+	// ReplaceVariables When a name in `refs` is saved as a plain variable, remove that
+	// variable in the same write, so it becomes a secret read from the
+	// source. Without it, such a name is refused with `409` and nothing
+	// is saved.
+	ReplaceVariables *bool `json:"replace_variables,omitempty"`
+
+	// SkipRedeploy Save the change without redeploying. It is delivered with the next deploy.
+	SkipRedeploy *bool `json:"skip_redeploy,omitempty"`
+}
+
+// SecretRefsPatchResponse defines model for SecretRefsPatchResponse.
+type SecretRefsPatchResponse struct {
+	// Applied The change was delivered; false when it waits for the next deploy (`skip_redeploy`, or an account not set up yet).
+	Applied bool `json:"applied"`
+
+	// Changed Names whose value this request set new or different.
+	Changed []string                      `json:"changed"`
+	Object  SecretRefsPatchResponseObject `json:"object"`
+	Pending *map[string]SecretRef         `json:"pending"`
+	Refs    map[string]SecretRef          `json:"refs"`
+
+	// ReplacedVariables Plain variables this request removed because a secret of the same name took their place (`replace_variables`).
+	ReplacedVariables []string `json:"replaced_variables"`
+}
+
+// SecretRefsPatchResponseObject defines model for SecretRefsPatchResponse.Object.
+type SecretRefsPatchResponseObject string
+
+// SecretSourceAccess defines model for SecretSourceAccess.
+type SecretSourceAccess struct {
+	AllProjects bool                        `json:"all_projects"`
+	Projects    []SecretSourceProjectAccess `json:"projects"`
+}
+
+// SecretSourceAccessRequest defines model for SecretSourceAccessRequest.
+type SecretSourceAccessRequest struct {
+	AllProjects *bool `json:"all_projects,omitempty"`
+	Projects    *[]struct {
+		AllEnvironments *bool                 `json:"all_environments,omitempty"`
+		EnvironmentIds  *[]openapi_types.UUID `json:"environment_ids,omitempty"`
+		ProjectId       openapi_types.UUID    `json:"project_id"`
+	} `json:"projects,omitempty"`
+}
+
+// SecretSourceAuthType defines model for SecretSourceAuthType.
+type SecretSourceAuthType struct {
+	Fields []SecretSourceField `json:"fields"`
+	Id     string              `json:"id"`
+	Title  string              `json:"title"`
+}
+
+// SecretSourceField defines model for SecretSourceField.
+type SecretSourceField struct {
+	// Name The field's key in `config` or `credential`.
+	Name string `json:"name"`
+
+	// Pattern A regular expression the value must match, when the type has one.
+	Pattern  *string `json:"pattern,omitempty"`
+	Required bool    `json:"required"`
+
+	// Secret Write-only. Stored encrypted and never returned.
+	Secret bool   `json:"secret"`
+	Title  string `json:"title"`
+}
+
+// SecretSourceProjectAccess defines model for SecretSourceProjectAccess.
+type SecretSourceProjectAccess struct {
+	AllEnvironments bool                 `json:"all_environments"`
+	EnvironmentIds  []openapi_types.UUID `json:"environment_ids"`
+	ProjectId       openapi_types.UUID   `json:"project_id"`
+
+	// RefCount How many secrets in this project read from it.
+	RefCount *int `json:"ref_count,omitempty"`
+}
+
+// SecretSourceRefRules defines model for SecretSourceRefRules.
+type SecretSourceRefRules struct {
+	KeyPattern string `json:"key_pattern"`
+
+	// PathPattern Absent when references to this type take no path.
+	PathPattern    *string `json:"path_pattern,omitempty"`
+	PathTitle      *string `json:"path_title,omitempty"`
+	VersionPattern *string `json:"version_pattern,omitempty"`
+
+	// Versions Whether a reference can pin a version.
+	Versions bool `json:"versions"`
+}
+
+// SecretSourceTestResult defines model for SecretSourceTestResult.
+type SecretSourceTestResult struct {
+	Code     *SecretSourceTestResultCode  `json:"code"`
+	Message  *string                      `json:"message"`
+	Object   SecretSourceTestResultObject `json:"object"`
+	Ok       bool                         `json:"ok"`
+	TestedAt time.Time                    `json:"tested_at"`
+}
+
+// SecretSourceTestResultCode defines model for SecretSourceTestResult.Code.
+type SecretSourceTestResultCode string
+
+// SecretSourceTestResultObject defines model for SecretSourceTestResult.Object.
+type SecretSourceTestResultObject string
+
+// SecretSourceType defines model for SecretSourceType.
+type SecretSourceType struct {
+	AuthTypes []SecretSourceAuthType `json:"auth_types"`
+
+	// Config The source's settings, none secret.
+	Config []SecretSourceField    `json:"config"`
+	Object SecretSourceTypeObject `json:"object"`
+	Ref    SecretSourceRefRules   `json:"ref"`
+	Title  string                 `json:"title"`
+	Type   string                 `json:"type"`
+}
+
+// SecretSourceTypeObject defines model for SecretSourceType.Object.
+type SecretSourceTypeObject string
+
+// SecretSourceTypeList defines model for SecretSourceTypeList.
+type SecretSourceTypeList struct {
+	Items  []SecretSourceType         `json:"items"`
+	Object SecretSourceTypeListObject `json:"object"`
+
+	// Pagination Every list response carries this envelope. `items` is always an array
+	// (never null). `total = 0` on empty pages. Both offset and cursor
+	// pagination are supported; clients should prefer `next` URLs over
+	// constructing query strings.
+	//
+	// Offset lists: `page` is 1-based, `page_size` is the requested
+	// (clamped) size, and `total` is the exact count of rows matching
+	// every filter. Cursor lists: the next-page cursor is carried only
+	// in `next_cursor` (null on the last page) and `total` describes the
+	// returned page. See docs/rfc/0001 §5.2.1 for the full list contract.
+	Pagination Pagination `json:"pagination"`
+	Warnings   []Warning  `json:"warnings"`
+}
+
+// SecretSourceTypeListObject defines model for SecretSourceTypeList.Object.
+type SecretSourceTypeListObject string
 
 // SecretsPatchRequest defines model for SecretsPatchRequest.
 type SecretsPatchRequest struct {
@@ -14959,6 +15425,53 @@ type TemplateResource struct {
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
+// ToSecretEnvVarsRequest defines model for ToSecretEnvVarsRequest.
+type ToSecretEnvVarsRequest struct {
+	// Names The plain variables to make secrets, at most 500.
+	Names []string `json:"names"`
+
+	// SkipRedeploy Save without redeploying. It is delivered with the next deploy.
+	SkipRedeploy *bool `json:"skip_redeploy,omitempty"`
+}
+
+// ToSecretEnvVarsResponse defines model for ToSecretEnvVarsResponse.
+type ToSecretEnvVarsResponse struct {
+	// MadeSecret The names that are secrets now.
+	MadeSecret []string                      `json:"made_secret"`
+	Object     ToSecretEnvVarsResponseObject `json:"object"`
+
+	// Pending True when the change is saved but not yet delivered (`skip_redeploy`).
+	Pending bool `json:"pending"`
+
+	// PreviewCopyRemoved The names this change took off the preview copy list.
+	PreviewCopyRemoved []string `json:"preview_copy_removed"`
+}
+
+// ToSecretEnvVarsResponseObject defines model for ToSecretEnvVarsResponse.Object.
+type ToSecretEnvVarsResponseObject string
+
+// ToSecretEnvironmentVariablesRequest defines model for ToSecretEnvironmentVariablesRequest.
+type ToSecretEnvironmentVariablesRequest struct {
+	// Names The plain variables to make secrets, at most 500.
+	Names []string `json:"names"`
+}
+
+// ToSecretEnvironmentVariablesResponse defines model for ToSecretEnvironmentVariablesResponse.
+type ToSecretEnvironmentVariablesResponse struct {
+	// MadeSecret The names that are secrets now.
+	MadeSecret []string                                   `json:"made_secret"`
+	Object     ToSecretEnvironmentVariablesResponseObject `json:"object"`
+
+	// PreviewCopyRemoved The names this change took off the preview copy list.
+	PreviewCopyRemoved []string `json:"preview_copy_removed"`
+
+	// WaitingForApproval The services not restarted because their deploy policy is approval and the change wasn't made by a project admin. Each gets the change with its next deploy.
+	WaitingForApproval []WaitingForApproval `json:"waiting_for_approval"`
+}
+
+// ToSecretEnvironmentVariablesResponseObject defines model for ToSecretEnvironmentVariablesResponse.Object.
+type ToSecretEnvironmentVariablesResponseObject string
+
 // ToggleSubdomainRequest defines model for ToggleSubdomainRequest.
 type ToggleSubdomainRequest struct {
 	Enabled bool `json:"enabled"`
@@ -15025,6 +15538,15 @@ type UpdateAccountMemberRoleRequest struct {
 
 // UpdateAccountMemberRoleRequestRole defines model for UpdateAccountMemberRoleRequest.Role.
 type UpdateAccountMemberRoleRequestRole string
+
+// UpdateAccountSecretSourceRequest defines model for UpdateAccountSecretSourceRequest.
+type UpdateAccountSecretSourceRequest struct {
+	AuthType      *string            `json:"auth_type,omitempty"`
+	Config        *map[string]string `json:"config,omitempty"`
+	Credential    *map[string]string `json:"credential,omitempty"`
+	Name          *string            `json:"name,omitempty"`
+	SyncIntervalS *int               `json:"sync_interval_s,omitempty"`
+}
 
 // UpdateAgentPermissionsRequest defines model for UpdateAgentPermissionsRequest.
 type UpdateAgentPermissionsRequest struct {
@@ -16420,6 +16942,12 @@ type QueueId = openapi_types.UUID
 // RestorePointId defines model for RestorePointId.
 type RestorePointId = string
 
+// SecretSourceId defines model for SecretSourceId.
+type SecretSourceId = openapi_types.UUID
+
+// SecretSourceIfMatch defines model for SecretSourceIfMatch.
+type SecretSourceIfMatch = string
+
 // ServiceId defines model for ServiceId.
 type ServiceId = openapi_types.UUID
 
@@ -16516,6 +17044,21 @@ type ListAccountsParams struct {
 type ListAccountDomainDetailsParams struct {
 	// ProjectId Narrow results to a single project
 	ProjectId *openapi_types.UUID `form:"project_id,omitempty" json:"project_id,omitempty"`
+
+	// ProjectIds Narrow results to these projects: ids, comma-separated, at most 50. Combines with `project_id`.
+	ProjectIds *string `form:"project_ids,omitempty" json:"project_ids,omitempty"`
+
+	// Q Text in a custom domain, the sub-domain, the project name or the service name (case-insensitive).
+	Q *string `form:"q,omitempty" json:"q,omitempty"`
+
+	// Cert Certificate states to keep (`certificate_state`), comma-separated: `issued`, `pending`, `failed`, `expired`, `unknown`, `none`. Any other value is a `400`.
+	Cert *string `form:"cert,omitempty" json:"cert,omitempty"`
+
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *int `form:"page_size,omitempty" json:"page_size,omitempty"`
 
 	// XAccountId Selects the active account for this request
 	XAccountId XAccountId `json:"x-account-id"`
@@ -16746,6 +17289,12 @@ type ListAccountInvitationsParams struct {
 	// `rejected`, `revoked`, `expired`, `removed`. Any other value
 	// is a `400`.
 	Status *string `form:"status,omitempty" json:"status,omitempty"`
+
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *int `form:"page_size,omitempty" json:"page_size,omitempty"`
 }
 
 // ListAccountInvitationEventsParams defines parameters for ListAccountInvitationEvents.
@@ -16778,6 +17327,18 @@ type ListAccountInvoicesParams struct {
 	Size      *int                `form:"size,omitempty" json:"size,omitempty"`
 	StartDate *openapi_types.Date `form:"start_date,omitempty" json:"start_date,omitempty"`
 	EndDate   *openapi_types.Date `form:"end_date,omitempty" json:"end_date,omitempty"`
+}
+
+// ListAccountMembersParams defines parameters for ListAccountMembers.
+type ListAccountMembersParams struct {
+	// Q Text in the person's first name, last name or full name (case-insensitive). The email isn't searched.
+	Q *string `form:"q,omitempty" json:"q,omitempty"`
+
+	// Page 1-indexed page number for offset pagination
+	Page *Page `form:"page,omitempty" json:"page,omitempty"`
+
+	// PageSize Results per page
+	PageSize *int `form:"page_size,omitempty" json:"page_size,omitempty"`
 }
 
 // ListAccountPaymentHistoryParams defines parameters for ListAccountPaymentHistory.
@@ -17983,6 +18544,60 @@ type ListRegionsParams struct {
 // ListRegionsParamsInclude defines parameters for ListRegions.
 type ListRegionsParamsInclude string
 
+// ListAccountSecretSourceTypesParams defines parameters for ListAccountSecretSourceTypes.
+type ListAccountSecretSourceTypesParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// ListAccountSecretSourcesParams defines parameters for ListAccountSecretSources.
+type ListAccountSecretSourcesParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// CreateAccountSecretSourceParams defines parameters for CreateAccountSecretSource.
+type CreateAccountSecretSourceParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// DeleteAccountSecretSourceParams defines parameters for DeleteAccountSecretSource.
+type DeleteAccountSecretSourceParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// GetAccountSecretSourceParams defines parameters for GetAccountSecretSource.
+type GetAccountSecretSourceParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// UpdateAccountSecretSourceParams defines parameters for UpdateAccountSecretSource.
+type UpdateAccountSecretSourceParams struct {
+	// IfMatch The secret manager's `updated_at` as it was read (RFC 3339); the change is refused with `412` if it changed since.
+	IfMatch *SecretSourceIfMatch `json:"If-Match,omitempty"`
+
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// PutAccountSecretSourceAccessParams defines parameters for PutAccountSecretSourceAccess.
+type PutAccountSecretSourceAccessParams struct {
+	// IfMatch The secret manager's `updated_at` as it was read (RFC 3339); the change is refused with `412` if it changed since.
+	IfMatch *SecretSourceIfMatch `json:"If-Match,omitempty"`
+
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
+// TestAccountSecretSourceParams defines parameters for TestAccountSecretSource.
+type TestAccountSecretSourceParams struct {
+	// XAccountId Selects the active account for this request
+	XAccountId XAccountId `json:"x-account-id"`
+}
+
 // ListServicesParams defines parameters for ListServices.
 type ListServicesParams struct {
 	// ProjectId Project scope
@@ -18352,6 +18967,9 @@ type AddDeploymentDomainJSONRequestBody = AddDomainRequest
 // ReplaceDeploymentEnvVarsJSONRequestBody defines body for ReplaceDeploymentEnvVars for application/json ContentType.
 type ReplaceDeploymentEnvVarsJSONRequestBody = SetEnvVarsRequest
 
+// ToSecretDeploymentEnvVarsJSONRequestBody defines body for ToSecretDeploymentEnvVars for application/json ContentType.
+type ToSecretDeploymentEnvVarsJSONRequestBody = ToSecretEnvVarsRequest
+
 // UnquoteDeploymentEnvVarsJSONRequestBody defines body for UnquoteDeploymentEnvVars for application/json ContentType.
 type UnquoteDeploymentEnvVarsJSONRequestBody = UnquoteEnvVarsRequest
 
@@ -18372,6 +18990,9 @@ type StartDeploymentRunJSONRequestBody = StartRunRequest
 
 // ScaleDeploymentJSONRequestBody defines body for ScaleDeployment for application/json ContentType.
 type ScaleDeploymentJSONRequestBody = ScaleRequest
+
+// PatchDeploymentSecretRefsJSONRequestBody defines body for PatchDeploymentSecretRefs for application/json ContentType.
+type PatchDeploymentSecretRefsJSONRequestBody = SecretRefsPatchRequest
 
 // PatchDeploymentSecretsJSONRequestBody defines body for PatchDeploymentSecrets for application/json ContentType.
 type PatchDeploymentSecretsJSONRequestBody = SecretsPatchRequest
@@ -18418,6 +19039,9 @@ type MoveEnvironmentJSONRequestBody = MoveEnvironmentRequest
 // UpdateEnvironmentNetworkingJSONRequestBody defines body for UpdateEnvironmentNetworking for application/json ContentType.
 type UpdateEnvironmentNetworkingJSONRequestBody = UpdateNetworkAccessRequest
 
+// PatchEnvironmentSecretRefsJSONRequestBody defines body for PatchEnvironmentSecretRefs for application/json ContentType.
+type PatchEnvironmentSecretRefsJSONRequestBody = SecretRefsPatchRequest
+
 // PatchEnvironmentSecretsJSONRequestBody defines body for PatchEnvironmentSecrets for application/json ContentType.
 type PatchEnvironmentSecretsJSONRequestBody = SecretsPatchRequest
 
@@ -18426,6 +19050,9 @@ type ReplaceEnvironmentSecretsJSONRequestBody = SetEnvironmentSecretsRequest
 
 // ReplaceEnvironmentVariablesJSONRequestBody defines body for ReplaceEnvironmentVariables for application/json ContentType.
 type ReplaceEnvironmentVariablesJSONRequestBody = SetEnvironmentVariablesRequest
+
+// ToSecretEnvironmentVariablesJSONRequestBody defines body for ToSecretEnvironmentVariables for application/json ContentType.
+type ToSecretEnvironmentVariablesJSONRequestBody = ToSecretEnvironmentVariablesRequest
 
 // UnquoteEnvironmentVariablesJSONRequestBody defines body for UnquoteEnvironmentVariables for application/json ContentType.
 type UnquoteEnvironmentVariablesJSONRequestBody = UnquoteEnvironmentVariablesRequest
@@ -18468,6 +19095,15 @@ type CreateQueueJSONRequestBody = CreateQueueRequest
 
 // UpdateQueueJSONRequestBody defines body for UpdateQueue for application/json ContentType.
 type UpdateQueueJSONRequestBody = UpdateQueueRequest
+
+// CreateAccountSecretSourceJSONRequestBody defines body for CreateAccountSecretSource for application/json ContentType.
+type CreateAccountSecretSourceJSONRequestBody = CreateAccountSecretSourceRequest
+
+// UpdateAccountSecretSourceJSONRequestBody defines body for UpdateAccountSecretSource for application/json ContentType.
+type UpdateAccountSecretSourceJSONRequestBody = UpdateAccountSecretSourceRequest
+
+// PutAccountSecretSourceAccessJSONRequestBody defines body for PutAccountSecretSourceAccess for application/json ContentType.
+type PutAccountSecretSourceAccessJSONRequestBody = SecretSourceAccessRequest
 
 // CreateServiceJSONRequestBody defines body for CreateService for application/json ContentType.
 type CreateServiceJSONRequestBody = CreateServiceRequest
@@ -23868,7 +24504,7 @@ type ClientInterface interface {
 	LeaveAccount(ctx context.Context, aid AccountId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAccountMembers request
-	ListAccountMembers(ctx context.Context, aid AccountId, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListAccountMembers(ctx context.Context, aid AccountId, params *ListAccountMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// AddAccountMemberWithBody request with any body
 	AddAccountMemberWithBody(ctx context.Context, aid AccountId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -24240,6 +24876,11 @@ type ClientInterface interface {
 
 	ReplaceDeploymentEnvVars(ctx context.Context, id DeploymentId, params *ReplaceDeploymentEnvVarsParams, body ReplaceDeploymentEnvVarsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ToSecretDeploymentEnvVarsWithBody request with any body
+	ToSecretDeploymentEnvVarsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ToSecretDeploymentEnvVars(ctx context.Context, id DeploymentId, body ToSecretDeploymentEnvVarsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// UnquoteDeploymentEnvVarsWithBody request with any body
 	UnquoteDeploymentEnvVarsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -24322,6 +24963,14 @@ type ClientInterface interface {
 	ScaleDeploymentWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	ScaleDeployment(ctx context.Context, id DeploymentId, body ScaleDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListDeploymentSecretRefs request
+	ListDeploymentSecretRefs(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchDeploymentSecretRefsWithBody request with any body
+	PatchDeploymentSecretRefsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PatchDeploymentSecretRefs(ctx context.Context, id DeploymentId, body PatchDeploymentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PatchDeploymentSecretsWithBody request with any body
 	PatchDeploymentSecretsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -24482,6 +25131,14 @@ type ClientInterface interface {
 
 	UpdateEnvironmentNetworking(ctx context.Context, eid EnvironmentId, body UpdateEnvironmentNetworkingJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListEnvironmentSecretRefs request
+	ListEnvironmentSecretRefs(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PatchEnvironmentSecretRefsWithBody request with any body
+	PatchEnvironmentSecretRefsWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PatchEnvironmentSecretRefs(ctx context.Context, eid EnvironmentId, body PatchEnvironmentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetEnvironmentSecrets request
 	GetEnvironmentSecrets(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -24502,6 +25159,11 @@ type ClientInterface interface {
 	ReplaceEnvironmentVariablesWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	ReplaceEnvironmentVariables(ctx context.Context, eid EnvironmentId, body ReplaceEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ToSecretEnvironmentVariablesWithBody request with any body
+	ToSecretEnvironmentVariablesWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	ToSecretEnvironmentVariables(ctx context.Context, eid EnvironmentId, body ToSecretEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UnquoteEnvironmentVariablesWithBody request with any body
 	UnquoteEnvironmentVariablesWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -24677,6 +25339,36 @@ type ClientInterface interface {
 
 	// GetResourceSchema request
 	GetResourceSchema(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAccountSecretSourceTypes request
+	ListAccountSecretSourceTypes(ctx context.Context, params *ListAccountSecretSourceTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ListAccountSecretSources request
+	ListAccountSecretSources(ctx context.Context, params *ListAccountSecretSourcesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CreateAccountSecretSourceWithBody request with any body
+	CreateAccountSecretSourceWithBody(ctx context.Context, params *CreateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateAccountSecretSource(ctx context.Context, params *CreateAccountSecretSourceParams, body CreateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DeleteAccountSecretSource request
+	DeleteAccountSecretSource(ctx context.Context, sid SecretSourceId, params *DeleteAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAccountSecretSource request
+	GetAccountSecretSource(ctx context.Context, sid SecretSourceId, params *GetAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UpdateAccountSecretSourceWithBody request with any body
+	UpdateAccountSecretSourceWithBody(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UpdateAccountSecretSource(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, body UpdateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// PutAccountSecretSourceAccessWithBody request with any body
+	PutAccountSecretSourceAccessWithBody(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	PutAccountSecretSourceAccess(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, body PutAccountSecretSourceAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// TestAccountSecretSource request
+	TestAccountSecretSource(ctx context.Context, sid SecretSourceId, params *TestAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListServices request
 	ListServices(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -25349,8 +26041,8 @@ func (c *Client) LeaveAccount(ctx context.Context, aid AccountId, reqEditors ...
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListAccountMembers(ctx context.Context, aid AccountId, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListAccountMembersRequest(c.Server, aid)
+func (c *Client) ListAccountMembers(ctx context.Context, aid AccountId, params *ListAccountMembersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAccountMembersRequest(c.Server, aid, params)
 	if err != nil {
 		return nil, err
 	}
@@ -26957,6 +27649,30 @@ func (c *Client) ReplaceDeploymentEnvVars(ctx context.Context, id DeploymentId, 
 	return c.Client.Do(req)
 }
 
+func (c *Client) ToSecretDeploymentEnvVarsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewToSecretDeploymentEnvVarsRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ToSecretDeploymentEnvVars(ctx context.Context, id DeploymentId, body ToSecretDeploymentEnvVarsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewToSecretDeploymentEnvVarsRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) UnquoteDeploymentEnvVarsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUnquoteDeploymentEnvVarsRequestWithBody(c.Server, id, contentType, body)
 	if err != nil {
@@ -27307,6 +28023,42 @@ func (c *Client) ScaleDeploymentWithBody(ctx context.Context, id DeploymentId, c
 
 func (c *Client) ScaleDeployment(ctx context.Context, id DeploymentId, body ScaleDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewScaleDeploymentRequest(c.Server, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListDeploymentSecretRefs(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDeploymentSecretRefsRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PatchDeploymentSecretRefsWithBody(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchDeploymentSecretRefsRequestWithBody(c.Server, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PatchDeploymentSecretRefs(ctx context.Context, id DeploymentId, body PatchDeploymentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchDeploymentSecretRefsRequest(c.Server, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28013,6 +28765,42 @@ func (c *Client) UpdateEnvironmentNetworking(ctx context.Context, eid Environmen
 	return c.Client.Do(req)
 }
 
+func (c *Client) ListEnvironmentSecretRefs(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListEnvironmentSecretRefsRequest(c.Server, eid)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PatchEnvironmentSecretRefsWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchEnvironmentSecretRefsRequestWithBody(c.Server, eid, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PatchEnvironmentSecretRefs(ctx context.Context, eid EnvironmentId, body PatchEnvironmentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPatchEnvironmentSecretRefsRequest(c.Server, eid, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) GetEnvironmentSecrets(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetEnvironmentSecretsRequest(c.Server, eid)
 	if err != nil {
@@ -28099,6 +28887,30 @@ func (c *Client) ReplaceEnvironmentVariablesWithBody(ctx context.Context, eid En
 
 func (c *Client) ReplaceEnvironmentVariables(ctx context.Context, eid EnvironmentId, body ReplaceEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewReplaceEnvironmentVariablesRequest(c.Server, eid, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ToSecretEnvironmentVariablesWithBody(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewToSecretEnvironmentVariablesRequestWithBody(c.Server, eid, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ToSecretEnvironmentVariables(ctx context.Context, eid EnvironmentId, body ToSecretEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewToSecretEnvironmentVariablesRequest(c.Server, eid, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28855,6 +29667,138 @@ func (c *Client) ListResourceSchemas(ctx context.Context, reqEditors ...RequestE
 
 func (c *Client) GetResourceSchema(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetResourceSchemaRequest(c.Server, pType)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListAccountSecretSourceTypes(ctx context.Context, params *ListAccountSecretSourceTypesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAccountSecretSourceTypesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) ListAccountSecretSources(ctx context.Context, params *ListAccountSecretSourcesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAccountSecretSourcesRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateAccountSecretSourceWithBody(ctx context.Context, params *CreateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAccountSecretSourceRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateAccountSecretSource(ctx context.Context, params *CreateAccountSecretSourceParams, body CreateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateAccountSecretSourceRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) DeleteAccountSecretSource(ctx context.Context, sid SecretSourceId, params *DeleteAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDeleteAccountSecretSourceRequest(c.Server, sid, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetAccountSecretSource(ctx context.Context, sid SecretSourceId, params *GetAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAccountSecretSourceRequest(c.Server, sid, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateAccountSecretSourceWithBody(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAccountSecretSourceRequestWithBody(c.Server, sid, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UpdateAccountSecretSource(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, body UpdateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUpdateAccountSecretSourceRequest(c.Server, sid, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PutAccountSecretSourceAccessWithBody(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutAccountSecretSourceAccessRequestWithBody(c.Server, sid, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) PutAccountSecretSourceAccess(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, body PutAccountSecretSourceAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewPutAccountSecretSourceAccessRequest(c.Server, sid, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) TestAccountSecretSource(ctx context.Context, sid SecretSourceId, params *TestAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTestAccountSecretSourceRequest(c.Server, sid, params)
 	if err != nil {
 		return nil, err
 	}
@@ -30480,6 +31424,86 @@ func NewListAccountDomainDetailsRequest(server string, params *ListAccountDomain
 
 		}
 
+		if params.ProjectIds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "project_ids", runtime.ParamLocationQuery, *params.ProjectIds); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Q != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "q", runtime.ParamLocationQuery, *params.Q); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Cert != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "cert", runtime.ParamLocationQuery, *params.Cert); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -31863,6 +32887,38 @@ func NewListAccountInvitationsRequest(server string, aid AccountId, params *List
 
 		}
 
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -32353,7 +33409,7 @@ func NewLeaveAccountRequest(server string, aid AccountId) (*http.Request, error)
 }
 
 // NewListAccountMembersRequest generates requests for ListAccountMembers
-func NewListAccountMembersRequest(server string, aid AccountId) (*http.Request, error) {
+func NewListAccountMembersRequest(server string, aid AccountId, params *ListAccountMembersParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -32376,6 +33432,60 @@ func NewListAccountMembersRequest(server string, aid AccountId) (*http.Request, 
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Q != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "q", runtime.ParamLocationQuery, *params.Q); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page", runtime.ParamLocationQuery, *params.Page); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.PageSize != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "page_size", runtime.ParamLocationQuery, *params.PageSize); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -38807,6 +39917,53 @@ func NewReplaceDeploymentEnvVarsRequestWithBody(server string, id DeploymentId, 
 	return req, nil
 }
 
+// NewToSecretDeploymentEnvVarsRequest calls the generic ToSecretDeploymentEnvVars builder with application/json body
+func NewToSecretDeploymentEnvVarsRequest(server string, id DeploymentId, body ToSecretDeploymentEnvVarsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewToSecretDeploymentEnvVarsRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewToSecretDeploymentEnvVarsRequestWithBody generates requests for ToSecretDeploymentEnvVars with any type of body
+func NewToSecretDeploymentEnvVarsRequestWithBody(server string, id DeploymentId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/env-vars/to-secret", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewUnquoteDeploymentEnvVarsRequest calls the generic UnquoteDeploymentEnvVars builder with application/json body
 func NewUnquoteDeploymentEnvVarsRequest(server string, id DeploymentId, body UnquoteDeploymentEnvVarsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -40249,6 +41406,87 @@ func NewScaleDeploymentRequestWithBody(server string, id DeploymentId, contentTy
 	}
 
 	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewListDeploymentSecretRefsRequest generates requests for ListDeploymentSecretRefs
+func NewListDeploymentSecretRefsRequest(server string, id DeploymentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/secret-refs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchDeploymentSecretRefsRequest calls the generic PatchDeploymentSecretRefs builder with application/json body
+func NewPatchDeploymentSecretRefsRequest(server string, id DeploymentId, body PatchDeploymentSecretRefsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchDeploymentSecretRefsRequestWithBody(server, id, "application/json", bodyReader)
+}
+
+// NewPatchDeploymentSecretRefsRequestWithBody generates requests for PatchDeploymentSecretRefs with any type of body
+func NewPatchDeploymentSecretRefsRequestWithBody(server string, id DeploymentId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/deployments/%s/secret-refs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -42343,6 +43581,87 @@ func NewUpdateEnvironmentNetworkingRequestWithBody(server string, eid Environmen
 	return req, nil
 }
 
+// NewListEnvironmentSecretRefsRequest generates requests for ListEnvironmentSecretRefs
+func NewListEnvironmentSecretRefsRequest(server string, eid EnvironmentId) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/secret-refs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewPatchEnvironmentSecretRefsRequest calls the generic PatchEnvironmentSecretRefs builder with application/json body
+func NewPatchEnvironmentSecretRefsRequest(server string, eid EnvironmentId, body PatchEnvironmentSecretRefsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPatchEnvironmentSecretRefsRequestWithBody(server, eid, "application/json", bodyReader)
+}
+
+// NewPatchEnvironmentSecretRefsRequestWithBody generates requests for PatchEnvironmentSecretRefs with any type of body
+func NewPatchEnvironmentSecretRefsRequestWithBody(server string, eid EnvironmentId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/secret-refs", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetEnvironmentSecretsRequest generates requests for GetEnvironmentSecrets
 func NewGetEnvironmentSecretsRequest(server string, eid EnvironmentId) (*http.Request, error) {
 	var err error
@@ -42543,6 +43862,53 @@ func NewReplaceEnvironmentVariablesRequestWithBody(server string, eid Environmen
 	}
 
 	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewToSecretEnvironmentVariablesRequest calls the generic ToSecretEnvironmentVariables builder with application/json body
+func NewToSecretEnvironmentVariablesRequest(server string, eid EnvironmentId, body ToSecretEnvironmentVariablesJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewToSecretEnvironmentVariablesRequestWithBody(server, eid, "application/json", bodyReader)
+}
+
+// NewToSecretEnvironmentVariablesRequestWithBody generates requests for ToSecretEnvironmentVariables with any type of body
+func NewToSecretEnvironmentVariablesRequestWithBody(server string, eid EnvironmentId, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "eid", runtime.ParamLocationPath, eid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/environments/%s/variables/to-secret", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -45028,6 +46394,422 @@ func NewGetResourceSchemaRequest(server string, pType string) (*http.Request, er
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewListAccountSecretSourceTypesRequest generates requests for ListAccountSecretSourceTypes
+func NewListAccountSecretSourceTypesRequest(server string, params *ListAccountSecretSourceTypesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-source-types")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewListAccountSecretSourcesRequest generates requests for ListAccountSecretSources
+func NewListAccountSecretSourcesRequest(server string, params *ListAccountSecretSourcesParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewCreateAccountSecretSourceRequest calls the generic CreateAccountSecretSource builder with application/json body
+func NewCreateAccountSecretSourceRequest(server string, params *CreateAccountSecretSourceParams, body CreateAccountSecretSourceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateAccountSecretSourceRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCreateAccountSecretSourceRequestWithBody generates requests for CreateAccountSecretSource with any type of body
+func NewCreateAccountSecretSourceRequestWithBody(server string, params *CreateAccountSecretSourceParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewDeleteAccountSecretSourceRequest generates requests for DeleteAccountSecretSource
+func NewDeleteAccountSecretSourceRequest(server string, sid SecretSourceId, params *DeleteAccountSecretSourceParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "sid", runtime.ParamLocationPath, sid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewGetAccountSecretSourceRequest generates requests for GetAccountSecretSource
+func NewGetAccountSecretSourceRequest(server string, sid SecretSourceId, params *GetAccountSecretSourceParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "sid", runtime.ParamLocationPath, sid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewUpdateAccountSecretSourceRequest calls the generic UpdateAccountSecretSource builder with application/json body
+func NewUpdateAccountSecretSourceRequest(server string, sid SecretSourceId, params *UpdateAccountSecretSourceParams, body UpdateAccountSecretSourceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUpdateAccountSecretSourceRequestWithBody(server, sid, params, "application/json", bodyReader)
+}
+
+// NewUpdateAccountSecretSourceRequestWithBody generates requests for UpdateAccountSecretSource with any type of body
+func NewUpdateAccountSecretSourceRequestWithBody(server string, sid SecretSourceId, params *UpdateAccountSecretSourceParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "sid", runtime.ParamLocationPath, sid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+		var headerParam1 string
+
+		headerParam1, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam1)
+
+	}
+
+	return req, nil
+}
+
+// NewPutAccountSecretSourceAccessRequest calls the generic PutAccountSecretSourceAccess builder with application/json body
+func NewPutAccountSecretSourceAccessRequest(server string, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, body PutAccountSecretSourceAccessJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewPutAccountSecretSourceAccessRequestWithBody(server, sid, params, "application/json", bodyReader)
+}
+
+// NewPutAccountSecretSourceAccessRequestWithBody generates requests for PutAccountSecretSourceAccess with any type of body
+func NewPutAccountSecretSourceAccessRequestWithBody(server string, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "sid", runtime.ParamLocationPath, sid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources/%s/access", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+		var headerParam1 string
+
+		headerParam1, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam1)
+
+	}
+
+	return req, nil
+}
+
+// NewTestAccountSecretSourceRequest generates requests for TestAccountSecretSource
+func NewTestAccountSecretSourceRequest(server string, sid SecretSourceId, params *TestAccountSecretSourceParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "sid", runtime.ParamLocationPath, sid)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/secret-sources/%s/test", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "x-account-id", runtime.ParamLocationHeader, params.XAccountId)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("x-account-id", headerParam0)
+
 	}
 
 	return req, nil
@@ -49219,7 +51001,7 @@ type ClientWithResponsesInterface interface {
 	LeaveAccountWithResponse(ctx context.Context, aid AccountId, reqEditors ...RequestEditorFn) (*LeaveAccountResp, error)
 
 	// ListAccountMembersWithResponse request
-	ListAccountMembersWithResponse(ctx context.Context, aid AccountId, reqEditors ...RequestEditorFn) (*ListAccountMembersResp, error)
+	ListAccountMembersWithResponse(ctx context.Context, aid AccountId, params *ListAccountMembersParams, reqEditors ...RequestEditorFn) (*ListAccountMembersResp, error)
 
 	// AddAccountMemberWithBodyWithResponse request with any body
 	AddAccountMemberWithBodyWithResponse(ctx context.Context, aid AccountId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AddAccountMemberResp, error)
@@ -49591,6 +51373,11 @@ type ClientWithResponsesInterface interface {
 
 	ReplaceDeploymentEnvVarsWithResponse(ctx context.Context, id DeploymentId, params *ReplaceDeploymentEnvVarsParams, body ReplaceDeploymentEnvVarsJSONRequestBody, reqEditors ...RequestEditorFn) (*ReplaceDeploymentEnvVarsResp, error)
 
+	// ToSecretDeploymentEnvVarsWithBodyWithResponse request with any body
+	ToSecretDeploymentEnvVarsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ToSecretDeploymentEnvVarsResp, error)
+
+	ToSecretDeploymentEnvVarsWithResponse(ctx context.Context, id DeploymentId, body ToSecretDeploymentEnvVarsJSONRequestBody, reqEditors ...RequestEditorFn) (*ToSecretDeploymentEnvVarsResp, error)
+
 	// UnquoteDeploymentEnvVarsWithBodyWithResponse request with any body
 	UnquoteDeploymentEnvVarsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnquoteDeploymentEnvVarsResp, error)
 
@@ -49673,6 +51460,14 @@ type ClientWithResponsesInterface interface {
 	ScaleDeploymentWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ScaleDeploymentResp, error)
 
 	ScaleDeploymentWithResponse(ctx context.Context, id DeploymentId, body ScaleDeploymentJSONRequestBody, reqEditors ...RequestEditorFn) (*ScaleDeploymentResp, error)
+
+	// ListDeploymentSecretRefsWithResponse request
+	ListDeploymentSecretRefsWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*ListDeploymentSecretRefsResp, error)
+
+	// PatchDeploymentSecretRefsWithBodyWithResponse request with any body
+	PatchDeploymentSecretRefsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchDeploymentSecretRefsResp, error)
+
+	PatchDeploymentSecretRefsWithResponse(ctx context.Context, id DeploymentId, body PatchDeploymentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchDeploymentSecretRefsResp, error)
 
 	// PatchDeploymentSecretsWithBodyWithResponse request with any body
 	PatchDeploymentSecretsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchDeploymentSecretsResp, error)
@@ -49833,6 +51628,14 @@ type ClientWithResponsesInterface interface {
 
 	UpdateEnvironmentNetworkingWithResponse(ctx context.Context, eid EnvironmentId, body UpdateEnvironmentNetworkingJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateEnvironmentNetworkingResp, error)
 
+	// ListEnvironmentSecretRefsWithResponse request
+	ListEnvironmentSecretRefsWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*ListEnvironmentSecretRefsResp, error)
+
+	// PatchEnvironmentSecretRefsWithBodyWithResponse request with any body
+	PatchEnvironmentSecretRefsWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEnvironmentSecretRefsResp, error)
+
+	PatchEnvironmentSecretRefsWithResponse(ctx context.Context, eid EnvironmentId, body PatchEnvironmentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEnvironmentSecretRefsResp, error)
+
 	// GetEnvironmentSecretsWithResponse request
 	GetEnvironmentSecretsWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*GetEnvironmentSecretsResp, error)
 
@@ -49853,6 +51656,11 @@ type ClientWithResponsesInterface interface {
 	ReplaceEnvironmentVariablesWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ReplaceEnvironmentVariablesResp, error)
 
 	ReplaceEnvironmentVariablesWithResponse(ctx context.Context, eid EnvironmentId, body ReplaceEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*ReplaceEnvironmentVariablesResp, error)
+
+	// ToSecretEnvironmentVariablesWithBodyWithResponse request with any body
+	ToSecretEnvironmentVariablesWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ToSecretEnvironmentVariablesResp, error)
+
+	ToSecretEnvironmentVariablesWithResponse(ctx context.Context, eid EnvironmentId, body ToSecretEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*ToSecretEnvironmentVariablesResp, error)
 
 	// UnquoteEnvironmentVariablesWithBodyWithResponse request with any body
 	UnquoteEnvironmentVariablesWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnquoteEnvironmentVariablesResp, error)
@@ -50028,6 +51836,36 @@ type ClientWithResponsesInterface interface {
 
 	// GetResourceSchemaWithResponse request
 	GetResourceSchemaWithResponse(ctx context.Context, pType string, reqEditors ...RequestEditorFn) (*GetResourceSchemaResp, error)
+
+	// ListAccountSecretSourceTypesWithResponse request
+	ListAccountSecretSourceTypesWithResponse(ctx context.Context, params *ListAccountSecretSourceTypesParams, reqEditors ...RequestEditorFn) (*ListAccountSecretSourceTypesResp, error)
+
+	// ListAccountSecretSourcesWithResponse request
+	ListAccountSecretSourcesWithResponse(ctx context.Context, params *ListAccountSecretSourcesParams, reqEditors ...RequestEditorFn) (*ListAccountSecretSourcesResp, error)
+
+	// CreateAccountSecretSourceWithBodyWithResponse request with any body
+	CreateAccountSecretSourceWithBodyWithResponse(ctx context.Context, params *CreateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccountSecretSourceResp, error)
+
+	CreateAccountSecretSourceWithResponse(ctx context.Context, params *CreateAccountSecretSourceParams, body CreateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccountSecretSourceResp, error)
+
+	// DeleteAccountSecretSourceWithResponse request
+	DeleteAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *DeleteAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*DeleteAccountSecretSourceResp, error)
+
+	// GetAccountSecretSourceWithResponse request
+	GetAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *GetAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*GetAccountSecretSourceResp, error)
+
+	// UpdateAccountSecretSourceWithBodyWithResponse request with any body
+	UpdateAccountSecretSourceWithBodyWithResponse(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAccountSecretSourceResp, error)
+
+	UpdateAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, body UpdateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAccountSecretSourceResp, error)
+
+	// PutAccountSecretSourceAccessWithBodyWithResponse request with any body
+	PutAccountSecretSourceAccessWithBodyWithResponse(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAccountSecretSourceAccessResp, error)
+
+	PutAccountSecretSourceAccessWithResponse(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, body PutAccountSecretSourceAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAccountSecretSourceAccessResp, error)
+
+	// TestAccountSecretSourceWithResponse request
+	TestAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *TestAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*TestAccountSecretSourceResp, error)
 
 	// ListServicesWithResponse request
 	ListServicesWithResponse(ctx context.Context, params *ListServicesParams, reqEditors ...RequestEditorFn) (*ListServicesResp, error)
@@ -50411,6 +52249,7 @@ type ListAccountDomainDetailsResp struct {
 	ApplicationproblemJSON400 *ValidationFailed
 	ApplicationproblemJSON401 *Unauthenticated
 	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON429 *RateLimited
 	ApplicationproblemJSON500 *InternalError
 }
@@ -50996,6 +52835,7 @@ type ListAccountMembersResp struct {
 	ApplicationproblemJSON401 *Unauthenticated
 	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
 }
 
@@ -51048,6 +52888,7 @@ type BulkUpdateAccountMemberRolesResp struct {
 	ApplicationproblemJSON401 *Unauthenticated
 	ApplicationproblemJSON403 *Forbidden
 	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
 	ApplicationproblemJSON500 *InternalError
 }
 
@@ -53782,6 +55623,33 @@ func (r ReplaceDeploymentEnvVarsResp) StatusCode() int {
 	return 0
 }
 
+type ToSecretDeploymentEnvVarsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *ToSecretEnvVarsResponse
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ToSecretDeploymentEnvVarsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ToSecretDeploymentEnvVarsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type UnquoteDeploymentEnvVarsResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -54372,6 +56240,62 @@ func (r ScaleDeploymentResp) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r ScaleDeploymentResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListDeploymentSecretRefsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *SecretRefs
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListDeploymentSecretRefsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListDeploymentSecretRefsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type PatchDeploymentSecretRefsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *SecretRefsPatchResponse
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchDeploymentSecretRefsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchDeploymentSecretRefsResp) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -55528,6 +57452,62 @@ func (r UpdateEnvironmentNetworkingResp) StatusCode() int {
 	return 0
 }
 
+type ListEnvironmentSecretRefsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *EnvironmentSecretRefs
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListEnvironmentSecretRefsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListEnvironmentSecretRefsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type PatchEnvironmentSecretRefsResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *EnvironmentSecretRefsPatchResponse
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r PatchEnvironmentSecretRefsResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PatchEnvironmentSecretRefsResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type GetEnvironmentSecretsResp struct {
 	Body                      []byte
 	HTTPResponse              *http.Response
@@ -55658,6 +57638,35 @@ func (r ReplaceEnvironmentVariablesResp) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r ReplaceEnvironmentVariablesResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ToSecretEnvironmentVariablesResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *ToSecretEnvironmentVariablesResponse
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r ToSecretEnvironmentVariablesResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ToSecretEnvironmentVariablesResp) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -56957,6 +58966,231 @@ func (r GetResourceSchemaResp) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r GetResourceSchemaResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListAccountSecretSourceTypesResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *SecretSourceTypeList
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAccountSecretSourceTypesResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAccountSecretSourceTypesResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type ListAccountSecretSourcesResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *AccountSecretSourceList
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAccountSecretSourcesResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAccountSecretSourcesResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type CreateAccountSecretSourceResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON201                   *AccountSecretSource
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r CreateAccountSecretSourceResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CreateAccountSecretSourceResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type DeleteAccountSecretSourceResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r DeleteAccountSecretSourceResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DeleteAccountSecretSourceResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type GetAccountSecretSourceResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *AccountSecretSource
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAccountSecretSourceResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAccountSecretSourceResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UpdateAccountSecretSourceResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *AccountSecretSource
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON412 *Problem
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r UpdateAccountSecretSourceResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UpdateAccountSecretSourceResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type PutAccountSecretSourceAccessResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *AccountSecretSource
+	ApplicationproblemJSON400 *ValidationFailed
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON409 *Problem
+	ApplicationproblemJSON412 *Problem
+	ApplicationproblemJSON500 *InternalError
+}
+
+// Status returns HTTPResponse.Status
+func (r PutAccountSecretSourceAccessResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r PutAccountSecretSourceAccessResp) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type TestAccountSecretSourceResp struct {
+	Body                      []byte
+	HTTPResponse              *http.Response
+	JSON200                   *SecretSourceTestResult
+	ApplicationproblemJSON401 *Unauthenticated
+	ApplicationproblemJSON403 *Forbidden
+	ApplicationproblemJSON404 *NotFound
+	ApplicationproblemJSON422 *UnprocessableEntity
+	ApplicationproblemJSON429 *RateLimited
+	ApplicationproblemJSON500 *InternalError
+	ApplicationproblemJSON503 *Problem
+}
+
+// Status returns HTTPResponse.Status
+func (r TestAccountSecretSourceResp) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r TestAccountSecretSourceResp) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -59365,8 +61599,8 @@ func (c *ClientWithResponses) LeaveAccountWithResponse(ctx context.Context, aid 
 }
 
 // ListAccountMembersWithResponse request returning *ListAccountMembersResp
-func (c *ClientWithResponses) ListAccountMembersWithResponse(ctx context.Context, aid AccountId, reqEditors ...RequestEditorFn) (*ListAccountMembersResp, error) {
-	rsp, err := c.ListAccountMembers(ctx, aid, reqEditors...)
+func (c *ClientWithResponses) ListAccountMembersWithResponse(ctx context.Context, aid AccountId, params *ListAccountMembersParams, reqEditors ...RequestEditorFn) (*ListAccountMembersResp, error) {
+	rsp, err := c.ListAccountMembers(ctx, aid, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -60541,6 +62775,23 @@ func (c *ClientWithResponses) ReplaceDeploymentEnvVarsWithResponse(ctx context.C
 	return ParseReplaceDeploymentEnvVarsResp(rsp)
 }
 
+// ToSecretDeploymentEnvVarsWithBodyWithResponse request with arbitrary body returning *ToSecretDeploymentEnvVarsResp
+func (c *ClientWithResponses) ToSecretDeploymentEnvVarsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ToSecretDeploymentEnvVarsResp, error) {
+	rsp, err := c.ToSecretDeploymentEnvVarsWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseToSecretDeploymentEnvVarsResp(rsp)
+}
+
+func (c *ClientWithResponses) ToSecretDeploymentEnvVarsWithResponse(ctx context.Context, id DeploymentId, body ToSecretDeploymentEnvVarsJSONRequestBody, reqEditors ...RequestEditorFn) (*ToSecretDeploymentEnvVarsResp, error) {
+	rsp, err := c.ToSecretDeploymentEnvVars(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseToSecretDeploymentEnvVarsResp(rsp)
+}
+
 // UnquoteDeploymentEnvVarsWithBodyWithResponse request with arbitrary body returning *UnquoteDeploymentEnvVarsResp
 func (c *ClientWithResponses) UnquoteDeploymentEnvVarsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UnquoteDeploymentEnvVarsResp, error) {
 	rsp, err := c.UnquoteDeploymentEnvVarsWithBody(ctx, id, contentType, body, reqEditors...)
@@ -60802,6 +63053,32 @@ func (c *ClientWithResponses) ScaleDeploymentWithResponse(ctx context.Context, i
 		return nil, err
 	}
 	return ParseScaleDeploymentResp(rsp)
+}
+
+// ListDeploymentSecretRefsWithResponse request returning *ListDeploymentSecretRefsResp
+func (c *ClientWithResponses) ListDeploymentSecretRefsWithResponse(ctx context.Context, id DeploymentId, reqEditors ...RequestEditorFn) (*ListDeploymentSecretRefsResp, error) {
+	rsp, err := c.ListDeploymentSecretRefs(ctx, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListDeploymentSecretRefsResp(rsp)
+}
+
+// PatchDeploymentSecretRefsWithBodyWithResponse request with arbitrary body returning *PatchDeploymentSecretRefsResp
+func (c *ClientWithResponses) PatchDeploymentSecretRefsWithBodyWithResponse(ctx context.Context, id DeploymentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchDeploymentSecretRefsResp, error) {
+	rsp, err := c.PatchDeploymentSecretRefsWithBody(ctx, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchDeploymentSecretRefsResp(rsp)
+}
+
+func (c *ClientWithResponses) PatchDeploymentSecretRefsWithResponse(ctx context.Context, id DeploymentId, body PatchDeploymentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchDeploymentSecretRefsResp, error) {
+	rsp, err := c.PatchDeploymentSecretRefs(ctx, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchDeploymentSecretRefsResp(rsp)
 }
 
 // PatchDeploymentSecretsWithBodyWithResponse request with arbitrary body returning *PatchDeploymentSecretsResp
@@ -61311,6 +63588,32 @@ func (c *ClientWithResponses) UpdateEnvironmentNetworkingWithResponse(ctx contex
 	return ParseUpdateEnvironmentNetworkingResp(rsp)
 }
 
+// ListEnvironmentSecretRefsWithResponse request returning *ListEnvironmentSecretRefsResp
+func (c *ClientWithResponses) ListEnvironmentSecretRefsWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*ListEnvironmentSecretRefsResp, error) {
+	rsp, err := c.ListEnvironmentSecretRefs(ctx, eid, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListEnvironmentSecretRefsResp(rsp)
+}
+
+// PatchEnvironmentSecretRefsWithBodyWithResponse request with arbitrary body returning *PatchEnvironmentSecretRefsResp
+func (c *ClientWithResponses) PatchEnvironmentSecretRefsWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PatchEnvironmentSecretRefsResp, error) {
+	rsp, err := c.PatchEnvironmentSecretRefsWithBody(ctx, eid, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchEnvironmentSecretRefsResp(rsp)
+}
+
+func (c *ClientWithResponses) PatchEnvironmentSecretRefsWithResponse(ctx context.Context, eid EnvironmentId, body PatchEnvironmentSecretRefsJSONRequestBody, reqEditors ...RequestEditorFn) (*PatchEnvironmentSecretRefsResp, error) {
+	rsp, err := c.PatchEnvironmentSecretRefs(ctx, eid, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePatchEnvironmentSecretRefsResp(rsp)
+}
+
 // GetEnvironmentSecretsWithResponse request returning *GetEnvironmentSecretsResp
 func (c *ClientWithResponses) GetEnvironmentSecretsWithResponse(ctx context.Context, eid EnvironmentId, reqEditors ...RequestEditorFn) (*GetEnvironmentSecretsResp, error) {
 	rsp, err := c.GetEnvironmentSecrets(ctx, eid, reqEditors...)
@@ -61378,6 +63681,23 @@ func (c *ClientWithResponses) ReplaceEnvironmentVariablesWithResponse(ctx contex
 		return nil, err
 	}
 	return ParseReplaceEnvironmentVariablesResp(rsp)
+}
+
+// ToSecretEnvironmentVariablesWithBodyWithResponse request with arbitrary body returning *ToSecretEnvironmentVariablesResp
+func (c *ClientWithResponses) ToSecretEnvironmentVariablesWithBodyWithResponse(ctx context.Context, eid EnvironmentId, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ToSecretEnvironmentVariablesResp, error) {
+	rsp, err := c.ToSecretEnvironmentVariablesWithBody(ctx, eid, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseToSecretEnvironmentVariablesResp(rsp)
+}
+
+func (c *ClientWithResponses) ToSecretEnvironmentVariablesWithResponse(ctx context.Context, eid EnvironmentId, body ToSecretEnvironmentVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*ToSecretEnvironmentVariablesResp, error) {
+	rsp, err := c.ToSecretEnvironmentVariables(ctx, eid, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseToSecretEnvironmentVariablesResp(rsp)
 }
 
 // UnquoteEnvironmentVariablesWithBodyWithResponse request with arbitrary body returning *UnquoteEnvironmentVariablesResp
@@ -61931,6 +64251,102 @@ func (c *ClientWithResponses) GetResourceSchemaWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseGetResourceSchemaResp(rsp)
+}
+
+// ListAccountSecretSourceTypesWithResponse request returning *ListAccountSecretSourceTypesResp
+func (c *ClientWithResponses) ListAccountSecretSourceTypesWithResponse(ctx context.Context, params *ListAccountSecretSourceTypesParams, reqEditors ...RequestEditorFn) (*ListAccountSecretSourceTypesResp, error) {
+	rsp, err := c.ListAccountSecretSourceTypes(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAccountSecretSourceTypesResp(rsp)
+}
+
+// ListAccountSecretSourcesWithResponse request returning *ListAccountSecretSourcesResp
+func (c *ClientWithResponses) ListAccountSecretSourcesWithResponse(ctx context.Context, params *ListAccountSecretSourcesParams, reqEditors ...RequestEditorFn) (*ListAccountSecretSourcesResp, error) {
+	rsp, err := c.ListAccountSecretSources(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAccountSecretSourcesResp(rsp)
+}
+
+// CreateAccountSecretSourceWithBodyWithResponse request with arbitrary body returning *CreateAccountSecretSourceResp
+func (c *ClientWithResponses) CreateAccountSecretSourceWithBodyWithResponse(ctx context.Context, params *CreateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateAccountSecretSourceResp, error) {
+	rsp, err := c.CreateAccountSecretSourceWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccountSecretSourceResp(rsp)
+}
+
+func (c *ClientWithResponses) CreateAccountSecretSourceWithResponse(ctx context.Context, params *CreateAccountSecretSourceParams, body CreateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateAccountSecretSourceResp, error) {
+	rsp, err := c.CreateAccountSecretSource(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateAccountSecretSourceResp(rsp)
+}
+
+// DeleteAccountSecretSourceWithResponse request returning *DeleteAccountSecretSourceResp
+func (c *ClientWithResponses) DeleteAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *DeleteAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*DeleteAccountSecretSourceResp, error) {
+	rsp, err := c.DeleteAccountSecretSource(ctx, sid, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDeleteAccountSecretSourceResp(rsp)
+}
+
+// GetAccountSecretSourceWithResponse request returning *GetAccountSecretSourceResp
+func (c *ClientWithResponses) GetAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *GetAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*GetAccountSecretSourceResp, error) {
+	rsp, err := c.GetAccountSecretSource(ctx, sid, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAccountSecretSourceResp(rsp)
+}
+
+// UpdateAccountSecretSourceWithBodyWithResponse request with arbitrary body returning *UpdateAccountSecretSourceResp
+func (c *ClientWithResponses) UpdateAccountSecretSourceWithBodyWithResponse(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UpdateAccountSecretSourceResp, error) {
+	rsp, err := c.UpdateAccountSecretSourceWithBody(ctx, sid, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAccountSecretSourceResp(rsp)
+}
+
+func (c *ClientWithResponses) UpdateAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *UpdateAccountSecretSourceParams, body UpdateAccountSecretSourceJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateAccountSecretSourceResp, error) {
+	rsp, err := c.UpdateAccountSecretSource(ctx, sid, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUpdateAccountSecretSourceResp(rsp)
+}
+
+// PutAccountSecretSourceAccessWithBodyWithResponse request with arbitrary body returning *PutAccountSecretSourceAccessResp
+func (c *ClientWithResponses) PutAccountSecretSourceAccessWithBodyWithResponse(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*PutAccountSecretSourceAccessResp, error) {
+	rsp, err := c.PutAccountSecretSourceAccessWithBody(ctx, sid, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutAccountSecretSourceAccessResp(rsp)
+}
+
+func (c *ClientWithResponses) PutAccountSecretSourceAccessWithResponse(ctx context.Context, sid SecretSourceId, params *PutAccountSecretSourceAccessParams, body PutAccountSecretSourceAccessJSONRequestBody, reqEditors ...RequestEditorFn) (*PutAccountSecretSourceAccessResp, error) {
+	rsp, err := c.PutAccountSecretSourceAccess(ctx, sid, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParsePutAccountSecretSourceAccessResp(rsp)
+}
+
+// TestAccountSecretSourceWithResponse request returning *TestAccountSecretSourceResp
+func (c *ClientWithResponses) TestAccountSecretSourceWithResponse(ctx context.Context, sid SecretSourceId, params *TestAccountSecretSourceParams, reqEditors ...RequestEditorFn) (*TestAccountSecretSourceResp, error) {
+	rsp, err := c.TestAccountSecretSource(ctx, sid, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseTestAccountSecretSourceResp(rsp)
 }
 
 // ListServicesWithResponse request returning *ListServicesResp
@@ -63124,6 +65540,13 @@ func ParseListAccountDomainDetailsResp(rsp *http.Response) (*ListAccountDomainDe
 			return nil, err
 		}
 		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
 		var dest RateLimited
@@ -64404,6 +66827,13 @@ func ParseListAccountMembersResp(rsp *http.Response) (*ListAccountMembersResp, e
 		}
 		response.ApplicationproblemJSON404 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -64511,6 +66941,13 @@ func ParseBulkUpdateAccountMemberRolesResp(rsp *http.Response) (*BulkUpdateAccou
 			return nil, err
 		}
 		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest InternalError
@@ -70473,6 +72910,67 @@ func ParseReplaceDeploymentEnvVarsResp(rsp *http.Response) (*ReplaceDeploymentEn
 	return response, nil
 }
 
+// ParseToSecretDeploymentEnvVarsResp parses an HTTP response from a ToSecretDeploymentEnvVarsWithResponse call
+func ParseToSecretDeploymentEnvVarsResp(rsp *http.Response) (*ToSecretDeploymentEnvVarsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ToSecretDeploymentEnvVarsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ToSecretEnvVarsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseUnquoteDeploymentEnvVarsResp parses an HTTP response from a UnquoteDeploymentEnvVarsWithResponse call
 func ParseUnquoteDeploymentEnvVarsResp(rsp *http.Response) (*UnquoteDeploymentEnvVarsResp, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -71695,6 +74193,142 @@ func ParseScaleDeploymentResp(rsp *http.Response) (*ScaleDeploymentResp, error) 
 			return nil, err
 		}
 		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListDeploymentSecretRefsResp parses an HTTP response from a ListDeploymentSecretRefsWithResponse call
+func ParseListDeploymentSecretRefsResp(rsp *http.Response) (*ListDeploymentSecretRefsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListDeploymentSecretRefsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest SecretRefs
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchDeploymentSecretRefsResp parses an HTTP response from a PatchDeploymentSecretRefsWithResponse call
+func ParsePatchDeploymentSecretRefsResp(rsp *http.Response) (*PatchDeploymentSecretRefsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchDeploymentSecretRefsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest SecretRefsPatchResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
 
 	}
 
@@ -74247,6 +76881,142 @@ func ParseUpdateEnvironmentNetworkingResp(rsp *http.Response) (*UpdateEnvironmen
 	return response, nil
 }
 
+// ParseListEnvironmentSecretRefsResp parses an HTTP response from a ListEnvironmentSecretRefsWithResponse call
+func ParseListEnvironmentSecretRefsResp(rsp *http.Response) (*ListEnvironmentSecretRefsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListEnvironmentSecretRefsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest EnvironmentSecretRefs
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePatchEnvironmentSecretRefsResp parses an HTTP response from a PatchEnvironmentSecretRefsWithResponse call
+func ParsePatchEnvironmentSecretRefsResp(rsp *http.Response) (*PatchEnvironmentSecretRefsResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PatchEnvironmentSecretRefsResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest EnvironmentSecretRefsPatchResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGetEnvironmentSecretsResp parses an HTTP response from a GetEnvironmentSecretsWithResponse call
 func ParseGetEnvironmentSecretsResp(rsp *http.Response) (*GetEnvironmentSecretsResp, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -74553,6 +77323,81 @@ func ParseReplaceEnvironmentVariablesResp(rsp *http.Response) (*ReplaceEnvironme
 			return nil, err
 		}
 		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseToSecretEnvironmentVariablesResp parses an HTTP response from a ToSecretEnvironmentVariablesWithResponse call
+func ParseToSecretEnvironmentVariablesResp(rsp *http.Response) (*ToSecretEnvironmentVariablesResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ToSecretEnvironmentVariablesResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ToSecretEnvironmentVariablesResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
 
 	}
 
@@ -77362,6 +80207,557 @@ func ParseGetResourceSchemaResp(rsp *http.Response) (*GetResourceSchemaResp, err
 			return nil, err
 		}
 		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListAccountSecretSourceTypesResp parses an HTTP response from a ListAccountSecretSourceTypesWithResponse call
+func ParseListAccountSecretSourceTypesResp(rsp *http.Response) (*ListAccountSecretSourceTypesResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAccountSecretSourceTypesResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest SecretSourceTypeList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseListAccountSecretSourcesResp parses an HTTP response from a ListAccountSecretSourcesWithResponse call
+func ParseListAccountSecretSourcesResp(rsp *http.Response) (*ListAccountSecretSourcesResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAccountSecretSourcesResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AccountSecretSourceList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCreateAccountSecretSourceResp parses an HTTP response from a CreateAccountSecretSourceWithResponse call
+func ParseCreateAccountSecretSourceResp(rsp *http.Response) (*CreateAccountSecretSourceResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CreateAccountSecretSourceResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest AccountSecretSource
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDeleteAccountSecretSourceResp parses an HTTP response from a DeleteAccountSecretSourceWithResponse call
+func ParseDeleteAccountSecretSourceResp(rsp *http.Response) (*DeleteAccountSecretSourceResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DeleteAccountSecretSourceResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAccountSecretSourceResp parses an HTTP response from a GetAccountSecretSourceWithResponse call
+func ParseGetAccountSecretSourceResp(rsp *http.Response) (*GetAccountSecretSourceResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAccountSecretSourceResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AccountSecretSource
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUpdateAccountSecretSourceResp parses an HTTP response from a UpdateAccountSecretSourceWithResponse call
+func ParseUpdateAccountSecretSourceResp(rsp *http.Response) (*UpdateAccountSecretSourceResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UpdateAccountSecretSourceResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AccountSecretSource
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 412:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON412 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParsePutAccountSecretSourceAccessResp parses an HTTP response from a PutAccountSecretSourceAccessWithResponse call
+func ParsePutAccountSecretSourceAccessResp(rsp *http.Response) (*PutAccountSecretSourceAccessResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &PutAccountSecretSourceAccessResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AccountSecretSource
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ValidationFailed
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 412:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON412 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseTestAccountSecretSourceResp parses an HTTP response from a TestAccountSecretSourceWithResponse call
+func ParseTestAccountSecretSourceResp(rsp *http.Response) (*TestAccountSecretSourceResp, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &TestAccountSecretSourceResp{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest SecretSourceTestResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest Unauthenticated
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest Forbidden
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest NotFound
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest UnprocessableEntity
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RateLimited
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest InternalError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest Problem
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.ApplicationproblemJSON503 = &dest
 
 	}
 
